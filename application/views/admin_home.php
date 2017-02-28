@@ -20,15 +20,19 @@
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+
+    <!-- include summernote css/js-->
     <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#summernote').summernote();
-        });
-    </script>
+
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -87,7 +91,10 @@
                         <div class="form-group">
                             <label>Text area</label>
 
+
                             <textarea id="summernote" class="form-control" rows="3"></textarea>
+
+
                         </div>
 
                         <div class="form-group">
@@ -111,11 +118,9 @@
                                     <input type="text" name="main_content_big"  >
                                     <br>
                                     <label>Main Content Small</label>
-                                    <!--                                            <div id="summernote"><p>Hello Summernote</p></div>-->
 
-                                    <div id="summernote">
-                                    <textarea  name="main_content_small" ></textarea>
-                                    </div>
+                                    <textarea  id="summernote" name="main_content_small" ></textarea>
+
                                     <br>
 
                                     <input class="btn btn-success" type="submit">
@@ -131,11 +136,8 @@
 
                                         <div class="form-group">
                                             <label>Main Content Small</label>
-                                            <div id="summernote"></div>
-                                            <textarea class="form-control"  name="main_content_small" value="<?php echo $s->small?>" ></textarea>
 
-                                            </div>
-
+                                            <textarea id="summernote" class="form-control"  name="main_content_small" value="<?php echo $s->small?>" ></textarea>
 
                                         <br>
                                         <input class="btn btn-success" type="submit">
@@ -490,6 +492,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- /.row -->
 
         </div>
@@ -502,15 +505,13 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script src="js/jquery.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
 <script>
     $(document).ready(function() {
         $('#summernote').summernote();
     });
 </script>
+
+
 </body>
 
 </html>
