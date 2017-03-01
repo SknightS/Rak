@@ -38,10 +38,10 @@
             <a href="<?php echo base_url()?>Admin_Faq"><i class="fa fa-fw fa-bar-chart-o"></i> Faq</a>
         </li>
         <li>
-            <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
+            <a href="<?php echo base_url()?>Admin_contact"><i class="fa fa-fw fa-table"></i> Contact</a>
         </li>
         <li>
-            <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
+            <a href="<?php echo base_url()?>Admin_aboutus"><i class="fa fa-fw fa-edit"></i> Forms</a>
         </li>
         <li>
             <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>

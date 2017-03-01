@@ -179,6 +179,7 @@
 
     var span = document.getElementsByClassName("close")[0];
 
+
     // When the user clicks the button, open the modal
     // btn = $(x).data('panel-name');
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 26, 2017 at 09:59 AM
+-- Generation Time: Mar 01, 2017 at 02:08 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -19,6 +19,112 @@ SET time_zone = "+00:00";
 --
 -- Database: `rak`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `about_us`
+--
+
+CREATE TABLE `about_us` (
+  `id` int(10) NOT NULL,
+  `small` varchar(1000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `about_us_details`
+--
+
+CREATE TABLE `about_us_details` (
+  `id` int(10) NOT NULL,
+  `header` varchar(1000) DEFAULT NULL,
+  `details` varchar(10000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `about_us_feature`
+--
+
+CREATE TABLE `about_us_feature` (
+  `id` int(10) NOT NULL,
+  `big` varchar(100) DEFAULT NULL,
+  `small` varchar(1000) DEFAULT NULL,
+  `box_header` varchar(100) DEFAULT NULL,
+  `box_details` varchar(9000) DEFAULT NULL,
+  `box_icon` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int(10) NOT NULL,
+  `small` varchar(1000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `small`) VALUES
+(1, 'this is small');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact_customer_service`
+--
+
+CREATE TABLE `contact_customer_service` (
+  `id` int(10) NOT NULL,
+  `details` varchar(10000) NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact_restutant_service`
+--
+
+CREATE TABLE `contact_restutant_service` (
+  `id` int(10) NOT NULL,
+  `details` varchar(10000) DEFAULT NULL,
+  `phone` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `faq`
+--
+
+CREATE TABLE `faq` (
+  `id` int(10) NOT NULL,
+  `header` varchar(100) DEFAULT NULL,
+  `sub_header` varchar(1000) DEFAULT NULL,
+  `details` varchar(10000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `faq`
+--
+
+INSERT INTO `faq` (`id`, `header`, `sub_header`, `details`) VALUES
+(1, ' Payments ', ' Anim pariatur cliche reprehenderit? ', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven''t heard of them accusamus labore '),
+(2, 'Payments', 'Parsnip lotus root celery?', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven''t heard of them accusamus labore sustainable VHS.'),
+(3, 'How it works', 'Parsnip lotus root celery?', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven''t heard of them accusamus labore sustainable VHS.'),
+(4, 'How it works', 'Beet greens peanut salad?', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven''t heard of them accusamus labore sustainable VHS.'),
+(5, 'Delivery delay', 'Anim pariatur cliche reprehenderit?', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven''t heard of them accusamus labore sustainable VHS.');
 
 -- --------------------------------------------------------
 
@@ -72,7 +178,8 @@ INSERT INTO `home_main_content` (`id`, `big`, `small`) VALUES
 (6, 'this is big content and thanks a lot ', 'this is small content and thanks for that'),
 (7, 'this is big content and thanks a lot ', 'this is small content and thanks for that'),
 (8, 'this is big content and thanks a lot ', 'this is small content and thanks for that . ok '),
-(9, 'this is big content and thanks a lot ', 'this is small content and thanks for that . ok ');
+(9, 'this is big content and thanks a lot ', 'this is small content and thanks for that . ok '),
+(10, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -96,7 +203,8 @@ INSERT INTO `home_resturant_andmore_content` (`id`, `resturant`, `people_served`
 (2, 'this is new content ', '12160', ''),
 (3, 'this is new content ', '12160', 'hello dolly'),
 (4, 'this is new content ', '12160', 'hello '),
-(5, NULL, NULL, NULL);
+(5, NULL, NULL, NULL),
+(6, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -165,6 +273,104 @@ INSERT INTO `home_section_6` (`id`, `big`, `small`, `submit_big`, `submit_small`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `icon`
+--
+
+CREATE TABLE `icon` (
+  `id` int(10) NOT NULL,
+  `icon_name` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `icon`
+--
+
+INSERT INTO `icon` (`id`, `icon_name`) VALUES
+(1, 'arrow_up'),
+(2, 'arrow_down'),
+(3, 'arrow_carrot-2up'),
+(4, 'arrow_carrot-2down'),
+(5, 'icon_close_alt2'),
+(6, 'icon_check_alt2'),
+(7, 'icon_minus-06'),
+(8, 'icon_plus'),
+(9, 'icon_close'),
+(10, 'icon_box-checked'),
+(11, 'icon_circle-empty'),
+(12, 'icon_circle-slelected'),
+(13, 'icon_menu-circle_alt2'),
+(14, 'icon_ul'),
+(15, 'icon_ol'),
+(16, 'icon_documents_alt'),
+(17, 'icon_pencil'),
+(18, 'icon_pencil-edit_alt'),
+(19, 'icon_mail_alt'),
+(20, 'icon_pin_alt'),
+(21, 'icon_blocked'),
+(22, 'icon_printer'),
+(23, 'icon_like'),
+(24, 'icon_dislike'),
+(25, 'icon_target'),
+(26, 'icon_calculator_alt'),
+(27, 'icon_building_alt'),
+(28, 'icon_floppy_alt'),
+(29, 'icon_drive_alt'),
+(30, 'con_search_alt'),
+(31, 'icon_id_alt'),
+(32, 'icon_id-2_alt'),
+(33, 'icon_briefcase_alt'),
+(34, 'icon_currency_alt'),
+(35, 'icon_wallet_alt'),
+(36, 'icon_pens_alt'),
+(37, 'icon_easel_alt'),
+(38, 'icon_datareport_alt'),
+(39, 'icon_clipboard'),
+(40, 'icon_globe_alt'),
+(41, 'icon_clipboard'),
+(42, 'icon_datareport_alt'),
+(43, 'icon_balance'),
+(44, 'icon_calulator'),
+(45, 'icon_search'),
+(46, 'icon_puzzle'),
+(47, 'icon_mug'),
+(48, 'icon_flowchart'),
+(49, 'icon_shield'),
+(50, 'icon_percent'),
+(51, 'icon_globe-2'),
+(52, 'icon_hourglass'),
+(53, 'icon_star_alt'),
+(54, 'icon_star-half_alt'),
+(55, 'icon_star'),
+(56, 'arrow_up_alt'),
+(57, 'arrow_down_alt'),
+(58, 'con_comment'),
+(59, 'icon_chat'),
+(60, 'icon_lock-open'),
+(61, 'icon_key'),
+(62, 'icon_house'),
+(63, 'icon_mail'),
+(64, 'icon_cone'),
+(65, 'icon_bag'),
+(66, 'icon_cart'),
+(67, 'icon_tag'),
+(68, 'icon_trash'),
+(69, 'icon_pin'),
+(70, 'icon_toolbox'),
+(71, 'icon_grid-3x3'),
+(72, 'icon_phone'),
+(73, 'social_facebook'),
+(74, 'social_twitter'),
+(75, 'social_pinterest'),
+(76, 'social_googleplus'),
+(77, 'social_tumblr'),
+(78, 'social_skype'),
+(79, 'social_youtube'),
+(80, 'icon_trash'),
+(81, 'icon_refresh');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `login`
 --
 
@@ -185,6 +391,42 @@ INSERT INTO `login` (`id`, `username`, `password`, `type`) VALUES
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `about_us`
+--
+ALTER TABLE `about_us`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `about_us_details`
+--
+ALTER TABLE `about_us_details`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `contact_customer_service`
+--
+ALTER TABLE `contact_customer_service`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `contact_restutant_service`
+--
+ALTER TABLE `contact_restutant_service`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `faq`
+--
+ALTER TABLE `faq`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `home_main_content`
@@ -217,6 +459,12 @@ ALTER TABLE `home_section_6`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `icon`
+--
+ALTER TABLE `icon`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `login`
 --
 ALTER TABLE `login`
@@ -227,15 +475,45 @@ ALTER TABLE `login`
 --
 
 --
+-- AUTO_INCREMENT for table `about_us`
+--
+ALTER TABLE `about_us`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `about_us_details`
+--
+ALTER TABLE `about_us_details`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `contact_customer_service`
+--
+ALTER TABLE `contact_customer_service`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `contact_restutant_service`
+--
+ALTER TABLE `contact_restutant_service`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `faq`
+--
+ALTER TABLE `faq`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
 -- AUTO_INCREMENT for table `home_main_content`
 --
 ALTER TABLE `home_main_content`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `home_resturant_andmore_content`
 --
 ALTER TABLE `home_resturant_andmore_content`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `home_section_4`
 --
@@ -251,6 +529,11 @@ ALTER TABLE `home_section_5`
 --
 ALTER TABLE `home_section_6`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `icon`
+--
+ALTER TABLE `icon`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 --
 -- AUTO_INCREMENT for table `login`
 --
