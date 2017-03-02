@@ -22,8 +22,22 @@ class Aboutusm extends CI_Model
         return $query->result();
 
     }
-    function insert_main_content(){
-        $small = $this->input->post('csmall');
+    public function show_about_us_banner_content(){
+
+        $query=$this->db->query("SELECT * FROM `about_us_banner` ");
+        return $query->result();
+
+    }
+    public function show_icon(){
+
+        $query=$this->db->query("SELECT * FROM `icon` ");
+        return $query->result();
+
+    }
+
+
+    function insert_about_us_content(){
+        $small = $this->input->post('asmall');
         // $small  = $this->input->post('main_content_small');
 
         $data = array(
@@ -32,9 +46,38 @@ class Aboutusm extends CI_Model
 
         );
 
-        $this->db->insert('contact',$data);
+        $this->db->insert('about_us',$data);
     }
-    function insert_customer_service_content(){
+    function insert_about_us_details_content(){
+
+        $header = $this->input->post('header');
+        $details  = $this->input->post('details');
+
+        $data = array(
+            'header' => $header,
+            'details' => $details,
+
+        );
+
+        $this->db->insert('about_us_details',$data);
+    }
+    function insert_about_us_feature_content(){
+        $big = $this->input->post('details');
+        $small  = $this->input->post('phone');
+        $box_header = $this->input->post('boxheader');
+        $box_details = $this->input->post('boxdetails');
+        $icon = $this->input->post('icon');
+        $data = array(
+            'big' => $big,
+            'small' => $small,
+            'box_header' => $box_header,
+            'box_details' => $box_details,
+            'box_icon' => $icon
+        );
+
+        $this->db->insert('about_us_feature',$data);
+    }
+    function insert_about_us_banner_content(){
         $details = $this->input->post('details');
         $phone  = $this->input->post('phone');
         $email = $this->input->post('email');
@@ -44,19 +87,7 @@ class Aboutusm extends CI_Model
             'email' => $email
         );
 
-        $this->db->insert('contact_customer_service',$data);
-    }
-    function insert_resturant_service_content(){
-        $details = $this->input->post('details');
-        $phone  = $this->input->post('phone');
-        $email = $this->input->post('email');
-        $data = array(
-            'details' => $details,
-            'phone' => $phone,
-            'email' => $email
-        );
-
-        $this->db->insert('contact_restutant_service',$data);
+        $this->db->insert('about_us_banner',$data);
     }
 }
 ?>
