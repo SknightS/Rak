@@ -19,6 +19,7 @@
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo  base_url()?>css/elegant_font/elegant_font.min.css" rel="stylesheet" type="text/css">
 
     <script src="js/jquery.js"></script>
 
@@ -157,7 +158,8 @@
                             </form>
                         </div>
                     </div>
-
+                    </div>
+                <div class="col-lg-12">
                     <div class="panel panel-success">
                         <div class="panel-heading">
                             <h3>About feature</h3>
@@ -208,72 +210,61 @@
 
 
                                     <input class="btn btn-success" type="submit">
-                                <?php }else{
+                                <?php }else{ ?>
+                                    <table class="table table-responsive">
+                                            <tr>
+                                                <td>Sl</td>
+                                                <td style="width: 10%">Big</td>
+                                                <td style="width: 10%">Small</td>
+                                                <td style="width: 10%">Box Header</td>
+                                                <td style="width: 50%">Box details</td>
+                                                <td style="width: 20%">Icon</td>
+                                                <td style="width: 20%">Icon image</td>
+                                                <td style="width: 10%">Action</td>
 
+                                            </tr>
+                                    <?php
+                                    $count=1;
                                     foreach ($show_about_us_feature_content as $s){
                                         ?>
 
-                                        <table>
-                                            <tr>
-                                                <td>Sl</td>
-                                                <td>Big</td>
-                                                <td>Small</td>
-                                                <td>Box Header</td>
-                                                <td>Box details</td>
-                                                <td>Icon</td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td><input class="form-control" type="text" name="big" value="<?php echo $s->big?>" ></td>
-                                                <td><input class="form-control" type="text" name="small" value="<?php echo $s->small?>"></td>
-                                                <td><input class="form-control" type="text" name="boxheader" value="<?php echo $s->box_header?>"></td>
-                                                <td><input class="form-control" type="text" name="boxdetails" value="<?php echo $s->box_details?>"></td>
-                                                <td>
-                                                    <select class="form-control"  name="dst" id="dst" >
 
-                                                        <option value="<?php echo $s->icon_name ?>" selected disabled><?php echo $s->icon_name ?></option>
+                                            <tr>
+                                                <td><?php echo $count;?></td>
+                                                <td><?php echo $s->big?></td>
+                                                <td><?php echo $s->small?></td>
+                                                <td><?php echo $s->box_header?></td>
+                                                <td><?php echo $s->box_details?></td>
+                                                <td>
+                                                    <select class="form-control"  name="icon" id="dst" onchange="myfunc()">
+
+                                                        <option value="<?php echo $s->box_icon ?>" selected disabled><?php echo $s->box_icon ?></option>
 
                                                         <?php
 
                                                         foreach ($icon as $i)
                                                         {
-                                                            echo "<option value='" . $i->icon_name . "'>" . $i->icon_name . "</option>";
+                                                            echo "<option  value='" . $i->icon_name . "'>" . $i->icon_name . "</option>";
                                                         }
 
                                                         ?>
                                                     </select>
                                                 </td>
-
+                                                <td ><i id="icon" class="<?php echo $s->box_icon ?>"></i></td>
+                                                <td><button>edit</button></td>
                                             </tr>
                                         </table>
-
-
-                                        <div class="form-group">
-                                            <label>Icon</label>
-
-                                            <select class="form-control"  name="dst" id="dst" >
-
-                                                <option value="<?php echo $s->icon_name ?>" selected disabled><?php echo $s->icon_name ?></option>
-
-                                                <?php
-
-                                                foreach ($icon as $i)
-                                                {
-                                                    echo "<option value='" . $i->icon_name . "'>" . $i->icon_name . "</option>";
-                                                }
-
-                                                ?>
-                                            </select>
-                                        </div>
-
+                                        <?php $count++; } ?>
                                         <input class="btn btn-success" type="submit">
                                         <?php
-                                    }}
+                                    }
                                 ?>
 
                             </form>
                         </div>
                     </div>
+                    </div>
+                <div class="col-lg-6">
                     <div class="panel panel-success">
                         <div class="panel-heading">
                             <h3>About banner</h3>
@@ -337,6 +328,11 @@
     $(document).ready(function() {
         $('#summernote').summernote();
     });
+
+    function myfunc() {
+        var x = document.getElementById("dst").value;
+        document.getElementById("icon").className = x;
+    }
 </script>
 
 

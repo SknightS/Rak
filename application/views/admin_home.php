@@ -137,7 +137,7 @@
                                         <div class="form-group">
                                             <label>Main Content Small</label>
 
-                                            <textarea id="summernote" class="form-control"  name="main_content_small" value="<?php echo $s->small?>" ></textarea>
+                                            <textarea id="summernote" class="form-control"  name="main_content_small" value="<?php echo $s->small?>" ><?php echo $s->small?></textarea>
 
                                         <br>
                                         <input class="btn btn-success" type="submit">

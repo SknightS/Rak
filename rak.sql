@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 02, 2017 at 09:23 AM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 5.5.38
+-- Generation Time: Mar 03, 2017 at 07:42 PM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -89,8 +89,7 @@ CREATE TABLE `about_us_feature` (
 --
 
 INSERT INTO `about_us_feature` (`id`, `big`, `small`, `box_header`, `box_details`, `box_icon`) VALUES
-(0, 'Quick food quality feautures', 'Cum doctus civibus efficiantur in imperdiet deterruisset.', '+ 1000 Restaurants', 'Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.', NULL),
-(0, '', NULL, NULL, NULL, NULL);
+(1, 'Quick food quality feautures', 'Cum doctus civibus efficiantur in imperdiet deterruisset.', '+ 1000 Restaurants', 'Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.', 'icon_pencil');
 
 -- --------------------------------------------------------
 
@@ -474,6 +473,12 @@ ALTER TABLE `about_us_details`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `about_us_feature`
+--
+ALTER TABLE `about_us_feature`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `contact`
 --
 ALTER TABLE `contact`
@@ -559,6 +564,11 @@ ALTER TABLE `about_us_banner`
 ALTER TABLE `about_us_details`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
+-- AUTO_INCREMENT for table `about_us_feature`
+--
+ALTER TABLE `about_us_feature`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
@@ -587,7 +597,7 @@ ALTER TABLE `home_main_content`
 -- AUTO_INCREMENT for table `home_resturant_andmore_content`
 --
 ALTER TABLE `home_resturant_andmore_content`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `home_section_4`
 --
