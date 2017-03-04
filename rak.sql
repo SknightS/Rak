@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 03, 2017 at 07:42 PM
+-- Generation Time: Mar 04, 2017 at 01:10 PM
 -- Server version: 10.1.19-MariaDB
--- PHP Version: 5.6.24
+-- PHP Version: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -450,6 +450,35 @@ CREATE TABLE `login` (
 INSERT INTO `login` (`id`, `username`, `password`, `type`) VALUES
 (1, 'admin', 'admin@123', 'Admin');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `restaurant`
+--
+
+CREATE TABLE `restaurant` (
+  `res_id` int(100) NOT NULL,
+  `name` varchar(1000) DEFAULT NULL,
+  `type` varchar(1000) DEFAULT NULL,
+  `address` varchar(1000) DEFAULT NULL,
+  `city` varchar(100) DEFAULT NULL,
+  `state` varchar(100) DEFAULT NULL,
+  `postal_code` varchar(100) DEFAULT NULL,
+  `country` varchar(100) DEFAULT NULL,
+  `time` varchar(1000) DEFAULT NULL,
+  `username` varchar(1000) DEFAULT NULL,
+  `password` varchar(1000) DEFAULT NULL,
+  `vat` varchar(1000) DEFAULT NULL,
+  `status` varchar(1000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `restaurant`
+--
+
+INSERT INTO `restaurant` (`res_id`, `name`, `type`, `address`, `city`, `state`, `postal_code`, `country`, `time`, `username`, `password`, `vat`, `status`) VALUES
+(1, 'American Burger', 'Burger', 'banani', 'dhaka', 'dhaka', '1206', 'bangladesh', '6-10', 'aburger', '123', '15', 'active');
+
 --
 -- Indexes for dumped tables
 --
@@ -545,6 +574,12 @@ ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `restaurant`
+--
+ALTER TABLE `restaurant`
+  ADD PRIMARY KEY (`res_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -623,6 +658,11 @@ ALTER TABLE `icon`
 --
 ALTER TABLE `login`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `restaurant`
+--
+ALTER TABLE `restaurant`
+  MODIFY `res_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

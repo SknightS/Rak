@@ -44,7 +44,7 @@
             <a href="<?php echo base_url()?>Admin_aboutus"><i class="fa fa-fw fa-edit"></i> About us</a>
         </li>
         <li>
-            <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+            <a href="<?php echo base_url()?>Admin_Restaurant"><i class="fa fa-fw fa-desktop"></i> Restaurant</a>
         </li>
         <li>
             <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
