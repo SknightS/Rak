@@ -67,4 +67,5 @@ class Viewall extends CI_Model
 
 
 
+
 }
