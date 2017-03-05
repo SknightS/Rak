@@ -67,7 +67,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        Restaurant Page Contents
+                        Menu Page Contents
                     </h1>
                 </div>
             </div>
@@ -85,48 +85,48 @@
                             <a href="#"> <button class="btn btn-success" onclick="selectid2(this)">Add New</button></a>
                             <?php
                             $count=1;
-                           ?>
-                                    <table class=" table table-responsive" border="1">
-                                        <tr>
-                                            <td>SL</td>
-                                            <td>Name</td>
-                                            <td>Type</td>
-                                            <td>Address</td>
-                                            <td>City</td>
-                                            <td>State</td>
-                                            <td>Postal Code</td>
-                                            <td>Country</td>
-                                            <td>Time</td>
-                                            <td>Username</td>
-                                            <td>Password</td>
-                                            <td>VAT</td>
-                                            <td>Status</td>
-                                            <td>Action</td>
+                            ?>
+                            <table class=" table table-responsive" border="1">
+                                <tr>
+                                    <td>SL</td>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Address</td>
+                                    <td>City</td>
+                                    <td>State</td>
+                                    <td>Postal Code</td>
+                                    <td>Country</td>
+                                    <td>Time</td>
+                                    <td>Username</td>
+                                    <td>Password</td>
+                                    <td>VAT</td>
+                                    <td>Status</td>
+                                    <td>Action</td>
 
-                                        </tr>
-                             <?php foreach ($show_res_content as $s){?>
-                                        <tr>
-                                            <td><?php echo $count ?></td>
-                                            <td><?php echo $s->name ?></td>
-                                            <td><?php echo $s->type ?></td>
-                                            <td><?php echo $s->address ?></td>
-                                            <td><?php echo $s->city ?></td>
-                                            <td><?php echo $s->state ?></td>
-                                            <td><?php echo $s->postal_code ?></td>
-                                            <td><?php echo $s->country ?></td>
-                                            <td><?php echo $s->time ?></td>
-                                            <td><?php echo $s->username ?></td>
-                                            <td><?php echo $s->password ?></td>
-                                            <td><?php echo $s->vat ?></td>
-                                            <td><?php echo $s->status ?></td>
-                                            <td><button data-panel-id="<?= $s->res_id ?>" onclick="selectid(this)">Edit</button></td>
-                                        </tr>
+                                </tr>
+                                <?php foreach ($show_res_content as $s){?>
+                                    <tr>
+                                        <td><?php echo $count ?></td>
+                                        <td><?php echo $s->name ?></td>
+                                        <td><?php echo $s->type ?></td>
+                                        <td><?php echo $s->address ?></td>
+                                        <td><?php echo $s->city ?></td>
+                                        <td><?php echo $s->state ?></td>
+                                        <td><?php echo $s->postal_code ?></td>
+                                        <td><?php echo $s->country ?></td>
+                                        <td><?php echo $s->time ?></td>
+                                        <td><?php echo $s->username ?></td>
+                                        <td><?php echo $s->password ?></td>
+                                        <td><?php echo $s->vat ?></td>
+                                        <td><?php echo $s->status ?></td>
+                                        <td><button data-panel-id="<?= $s->res_id ?>" onclick="selectid(this)">Edit</button></td>
+                                    </tr>
 
                                     <?php
-                                $count++;
-                            }
-                            ?>
-                                    </table>
+                                    $count++;
+                                }
+                                ?>
+                            </table>
                             <div id="myModal2" class="modal">
 
                                 <!-- Modal content -->
