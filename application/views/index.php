@@ -34,10 +34,15 @@
     <section class="header-video">
     <div id="hero_video">
         <div id="sub_content">
-            <h1>Order Takeaway or Delivery Food</h1>
+            <?php
+            foreach($head as $big ){?>
+            <h1>
+                <?php echo $big['big']; ?></h1>
             <p>
-                Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.
+
+                   <?php echo $big['small']; ?>
             </p>
+            <?php } ?>
             <form method="post" action="list_page.php">
                 <div id="custom-search-input">
                     <div class="input-group">
@@ -53,10 +58,16 @@
     <img src="img/video_fix.png" alt="" class="header-video--media" data-video-src="video/intro" data-teaser-source="video/intro" data-provider="Vimeo" data-video-width="1920" data-video-height="960">
     <div id="count" class="hidden-xs">
         <ul>
-            <li><span class="number">2650</span> Restaurant</li>
-            <li><span class="number">5350</span> People Served</li>
-            <li><span class="number">12350</span> Registered Users</li>
+            <?php
+            foreach($head_res_ad_more as $res_ad_more ){?>
+            <li> <?php echo $res_ad_more['resturant']; ?></li>
+            <li>
+                    <?php echo $res_ad_more['people_served']; ?> </li>
+            <li>
+                   <?php echo $res_ad_more['registered_user']; ?></li>
+            <?php } ?>
         </ul>
+
     </div>
     <video autoplay loop muted id="teaser-video" class="teaser-video"><source src="video/intro.mp4" type="video/mp4"><source src="video/intro.ogv" type="video/ogg"></video>
     <iframe id="video" src="video/intro.mp4" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
@@ -65,56 +76,57 @@
     
    <!-- Content ================================================== -->
          <div class="container margin_60">
+             <?php
+             foreach($head_how_itworks as $hiw ){?>
         
          <div class="main_title">
-            <h2 class="nomargin_top" style="padding-top:0">How it works</h2>
+
+            <h2 class="nomargin_top" style="padding-top:0"><?php echo $hiw['big']; ?></h2>
             <p>
-                Cum doctus civibus efficiantur in imperdiet deterruisset.
+                <?php echo $hiw['small']; ?>
             </p>
         </div>
         <div class="row">
             <div class="col-md-3">
                 <div class="box_home" id="one">
                     <span>1</span>
-                    <h3>Search by address</h3>
+                    <h3><?php echo $hiw['one_big']; ?></h3>
                     <p>
-                        Find all restaurants available in your zone.
+                        <?php echo $hiw['one_small']; ?>
                     </p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="box_home" id="two">
                     <span>2</span>
-                    <h3>Choose a restaurant</h3>
+                    <h3><?php echo $hiw['two_big']; ?></h3>
                     <p>
-                        We have more than 1000s of menus online.
+                        <?php echo $hiw['two_small']; ?>
                     </p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="box_home" id="three">
                     <span>3</span>
-                    <h3>Pay by card or cash</h3>
+                    <h3><?php echo $hiw['three_big']; ?></h3>
                     <p>
-                        It's quick, easy and totally secure.
+                        <?php echo $hiw['three_small']; ?>
                     </p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="box_home" id="four">
                     <span>4</span>
-                    <h3>Delivery or takeaway</h3>
+                    <h3><?php echo $hiw['four_big']; ?></h3>
                     <p>
-                        You are lazy? Are you backing home?
+                        <?php echo $hiw['three_small']; ?>
                     </p>
                 </div>
             </div>
         </div><!-- End row -->
         
-        <div id="delivery_time" class="hidden-xs">
-            <strong><span>2</span><span>5</span></strong>
-            <h4>The minutes that usually takes to deliver!</h4>
-        </div>
+
+             <?php } ?>
         </div><!-- End container -->
             
     <div class="white_bg">
@@ -271,9 +283,14 @@
         
        <div class="high_light">
       	<div class="container">
-      		<h3>Choose from over 2,000 Restaurants</h3>
-            <p>Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.</p>
+
+            <?php
+            foreach($head_section_4 as $h_s_4 ){?>
+
+      		<h3><?php echo $h_s_4['big']; ?></h3>
+            <p><?php echo $h_s_4['small']; ?></p>
             <a href="<?php echo base_url()?>Restaurants">View all Restaurants</a>
+            <?php }?>
         </div><!-- End container -->
       </div><!-- End hight_light -->
                   
@@ -281,10 +298,13 @@
     <div class="parallax-content">
         <div class="sub_content">
             <i class="icon_mug"></i>
-            <h3>We also deliver to your office</h3>
+            <?php
+            foreach($head_section_5 as $h_s_5 ){?>
+            <h3><?php echo $h_s_5['big']; ?></h3>
             <p>
-                Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.
+                <?php echo $h_s_5['small']; ?>
             </p>
+            <?php }?>
         </div><!-- End sub_content -->
     </div><!-- End subheader -->
     </section><!-- End section -->

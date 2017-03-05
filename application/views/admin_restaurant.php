@@ -119,6 +119,7 @@
                                             <td><?php echo $s->password ?></td>
                                             <td><?php echo $s->vat ?></td>
                                             <td><?php echo $s->status ?></td>
+
                                             <td><button data-panel-id="<?= $s->res_id ?>" onclick="selectid(this)">Edit</button></td>
                                         </tr>
 
@@ -249,22 +250,12 @@
     }
 
 
+
+
     function selectid(x) {
-        modal3.style.display = "block";
+        //modal3.style.display = "block";
         btn = $(x).data('panel-id');
-
-        $.ajax({
-            type:'POST',
-            url:'<?php echo base_url("Admin_Restaurant/showedit/")?>'+btn,
-            data:{'id':btn},
-            cache: false,
-            success:function(data)
-            {
-                $('#txtHint').html(data);
-            }
-
-        });
-
+        print_r(btn);
 
 
     }
@@ -273,6 +264,9 @@
     span.onclick = function() {
         modal2.style.display = "none";
     }
+
+    // When the user clicks anywhere outside of the modal, close it
+
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
