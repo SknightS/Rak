@@ -311,19 +311,22 @@
     <!-- End Content =============================================== -->
     
     <div class="container margin_60">
+        <?php
+        foreach($head_section_6 as $h_s_6 ){?>
+
       <div class="main_title margin_mobile">
-            <h2 class="nomargin_top">Work with Us</h2>
+            <h2 class="nomargin_top"><?php echo $h_s_6['big']; ?></h2>
             <p>
-                Cum doctus civibus efficiantur in imperdiet deterruisset.
+                <?php echo $h_s_6['small']; ?>
             </p>
         </div>
       	<div class="row">
             <div class="col-md-4 col-md-offset-2">
             	<a class="box_work" href="submit_restaurant.php">
                 <img src="img/submit_restaurant.jpg" width="848" height="480" alt="" class="img-responsive">
-                <h3>Submit your Restaurant<span>Start to earn customers</span></h3>
-                <p>Lorem ipsum dolor sit amet, ut virtute fabellas vix, no pri falli eloquentiam adversarium. Ea legere labore eam. Et eum sumo ocurreret, eos ei saepe oratio omittantur, legere eligendi partiendo pro te.</p>
-                <div class="btn_1">Read more</div>
+                <h3><?php echo $h_s_6['submit_big']; ?><span><?php echo $h_s_6['submit_small']; ?></span></h3>
+                <p><?php echo $h_s_6['submit_details']; ?>
+                    <div class="btn_1">Read more</div>
                 </a>
             </div>
             <div class="col-md-4">
@@ -335,6 +338,7 @@
                 </a>
             </div>
       </div><!-- End row -->
+        <?php }?>
       </div><!-- End container -->
     
     <!-- Footer ================================================== -->

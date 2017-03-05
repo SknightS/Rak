@@ -43,7 +43,8 @@ class Viewall extends CI_Model
     return $query->result_array();
 
 }
-    public function show_sectionfive_content(){
+    public function show_sectionfive_content()
+    {
 
         $this->db->order_by("id", "desc");
         $this->db->limit(1);
@@ -51,7 +52,19 @@ class Viewall extends CI_Model
         $query = $this->db->get('home_section_5');
         return $query->result_array();
 
+
     }
+
+    public function show_sectionsix_content(){
+
+        $this->db->order_by("id", "desc");
+        $this->db->limit(1);
+
+        $query = $this->db->get('home_section_6');
+        return $query->result_array();
+
+    }
+
 
 
 }
