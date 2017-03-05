@@ -85,7 +85,7 @@
                             <a href="#"> <button class="btn btn-success" onclick="selectid2(this)">Add New</button></a>
                             <?php
                             $count=1;
-                            foreach ($show_res_content as $s){?>
+                           ?>
                                     <table class=" table table-responsive" border="1">
                                         <tr>
                                             <td>SL</td>
@@ -104,6 +104,7 @@
                                             <td>Action</td>
 
                                         </tr>
+                             <?php foreach ($show_res_content as $s){?>
                                         <tr>
                                             <td><?php echo $count ?></td>
                                             <td><?php echo $s->name ?></td>
@@ -120,12 +121,12 @@
                                             <td><?php echo $s->status ?></td>
                                             <td><button data-panel-id="<?= $s->res_id ?>" onclick="selectid(this)">Edit</button></td>
                                         </tr>
-                                    </table>
+
                                     <?php
                                 $count++;
                             }
                             ?>
-
+                                    </table>
                             <div id="myModal2" class="modal">
 
                                 <!-- Modal content -->
@@ -254,7 +255,7 @@
 
         $.ajax({
             type:'POST',
-            url:'<?php echo base_url("Admin_faq/showedit/")?>'+btn,
+            url:'<?php echo base_url("Admin_Restaurant/showedit/")?>'+btn,
             data:{'id':btn},
             cache: false,
             success:function(data)

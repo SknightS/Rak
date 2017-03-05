@@ -13,37 +13,71 @@ class Admin_Restaurant extends CI_Controller
 
     public function insert_res(){
 
-
-        $name = $this->input->post('name');
-        $type  = $this->input->post('type');
-        $address = $this->input->post('address');
-        $city = $this->input->post('city');
-        $state= $this->input->post('state');
-        $postal_code  = $this->input->post('postal_code');
-        $country = $this->input->post('country');
-        $time  = $this->input->post('time');
-        $username= $this->input->post('username');
-        $password= $this->input->post('password');
-        $vat= $this->input->post('vat');
-        $status  = $this->input->post('status');
-        $data = array(
-            'name' => $name,
-            'type' => $type,
-            'address' => $address,
-            'city' => $city,
-            'state' => $state,
-            'country' => $country,
-            'time' => $time,
-            'postal_code' => $postal_code,
-            'username' => $username,
-            'password' => $password,
-            'vat' => $vat,
-            'status' => $status
-
-        );
-
-        $this->db->insert('restaurant',$data);
+        $this->load->model('Restaurantm');
+        $this->Restaurantm->insert_restuarant_content();
         redirect(Admin_Restaurant);
+    }
+
+    public function showedit(){
+
+        $id = $this->input->post('id');
+        $this->load->model('Restaurantm');
+        $this->data['edit'] = $this->Restaurantm->showedit($id);
+        foreach ($this->data['edit'] as $e) {
+            echo "<form role=\"form\" method=\"post\" action=\"<?php echo base_url()?>Admin_Restaurant/insert_res\" >
+                                        <div class=\"form-group\">
+                                            <label>Name</label>
+                                            <input class=\"form-control\" type=\"text\" name=\"name\" value=\" $e->name \">
+                                        </div>
+                                        <div class=\"form-group\">
+                                            <label>Type</label>
+                                            <input class=\"form-control\" type=\"text\" name=\"type\" value=\" $e->type \">
+                                        </div>
+                                        <div class=\"form-group\">
+                                            <label>Address</label>
+                                            <input class=\"form-control\" type=\"text\" name=\"address\" value=\" $e->address \">
+                                        </div>
+                                        <div class=\"form-group\">
+                                            <label>City</label>
+                                            <input class=\"form-control\" type=\"text\" name=\"city\" value=\" $e->city \">
+                                        </div>
+                                        <div class=\"form-group\">
+                                            <label>State</label>
+                                            <input class=\"form-control\" type=\"text\" name=\"state\" value=\" $e->state \">
+                                        </div>
+                                        <div class=\"form-group\">
+                                            <label>Postal Code</label>
+                                            <input class=\"form-control\" type=\"text\" name=\"postal_code\" value=\" $e->postal_code \">
+                                        </div>
+                                        <div class=\"form-group\">
+                                            <label>Country</label>
+                                            <input class=\"form-control\" type=\"text\" name=\"country\" value=\" $e->country \">
+                                        </div>
+                                        <div class=\"form-group\">
+                                            <label>Time</label>
+                                            <input class=\"form-control\" type=\"text\" name=\"time\" value=\" $e->time \">
+                                        </div>
+                                        <div class=\"form-group\">
+                                            <label>Username</label>
+                                            <input class=\"form-control\" type=\"text\" name=\"username\" value=\" $e->username \">
+                                        </div>
+                                        <div class=\"form-group\">
+                                            <label>password</label>
+                                            <input class=\"form-control\" type=\"text\" name=\"password\" value=\" $e->password \">
+                                        </div>
+                                        <div class=\"form-group\">
+                                            <label>VAT</label>
+                                            <input class=\"form-control\" type=\"text\" name=\"vat\" value=\" $e->vat \">
+                                        </div>
+                                        <div class=\"form-group\">
+                                            <label>Status</label>
+                                            <input class=\"form-control\" type=\"text\" name=\"status\" value=\" $e->status \">
+                                        </div>
+
+                                        <input class=\"btn btn-success\" type=\"submit\">
+                                    </form>
+                                    ";
+        }
     }
 
 }
