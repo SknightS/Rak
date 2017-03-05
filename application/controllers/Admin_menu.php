@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin_Restaurant extends CI_Controller
+class Admin_menu extends CI_Controller
 {
     public function index()
     {

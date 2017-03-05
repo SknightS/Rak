@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 04, 2017 at 01:10 PM
+-- Generation Time: Mar 05, 2017 at 09:34 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -453,6 +453,36 @@ INSERT INTO `login` (`id`, `username`, `password`, `type`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `menu`
+--
+
+CREATE TABLE `menu` (
+  `id` int(10) NOT NULL,
+  `res_id` varchar(100) DEFAULT NULL,
+  `res_name` varchar(1000) DEFAULT NULL,
+  `item_type` varchar(1000) DEFAULT NULL,
+  `item_name` varchar(1000) DEFAULT NULL,
+  `item_description` varchar(10000) DEFAULT NULL,
+  `item_price` varchar(1000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `menu_attribute`
+--
+
+CREATE TABLE `menu_attribute` (
+  `id` int(10) NOT NULL,
+  `res_id` varchar(100) NOT NULL,
+  `item_name` varchar(1000) NOT NULL,
+  `item_attribute` varchar(1000) NOT NULL,
+  `price` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `restaurant`
 --
 
@@ -477,7 +507,8 @@ CREATE TABLE `restaurant` (
 --
 
 INSERT INTO `restaurant` (`res_id`, `name`, `type`, `address`, `city`, `state`, `postal_code`, `country`, `time`, `username`, `password`, `vat`, `status`) VALUES
-(1, 'American Burger', 'Burger', 'banani', 'dhaka', 'dhaka', '1206', 'bangladesh', '6-10', 'aburger', '123', '15', 'active');
+(1, 'American Burger', 'Burger', 'banani', 'dhaka', 'dhaka', '1206', 'bangladesh', '6-10', 'aburger', '123', '15', 'active'),
+(2, 'tarka', 'italian', 'banani', 'dhaka', 'dhaka', '1206', 'bangladesh', '7-9', 'tarka', '123', '15', 'active');
 
 --
 -- Indexes for dumped tables
@@ -574,6 +605,12 @@ ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `menu`
+--
+ALTER TABLE `menu`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `restaurant`
 --
 ALTER TABLE `restaurant`
@@ -659,10 +696,15 @@ ALTER TABLE `icon`
 ALTER TABLE `login`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT for table `menu`
+--
+ALTER TABLE `menu`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `restaurant`
 --
 ALTER TABLE `restaurant`
-  MODIFY `res_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `res_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
