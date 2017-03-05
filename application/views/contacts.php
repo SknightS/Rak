@@ -33,7 +33,11 @@
         <div id="subheader">
             <div id="sub_content">
              <h1>Contacts</h1>
-             <p>Qui debitis meliore ex, tollit debitis conclusionemque te eos.</p>
+                <?php
+                foreach ($contacts as $contact) {
+                }
+                ?>
+             <p><?php echo $contact['small']; ?></p>
             </div><!-- End sub_content -->
         </div><!-- End subheader -->
     </section><!-- End section -->
@@ -55,18 +59,30 @@
 	<div class="row" id="contacts">
     	<div class="col-md-6 col-sm-6">
         	<div class="box_style_2">
+                <?php
+                //$showData = $data;
+                foreach ($info as $d){
+
+                   // echo $d['details'];
+
+                ?>
             	<h2 class="inner">Customer service</h2>
-                <p class="add_bottom_30">Adipisci conclusionemque ea duo, quo id fuisset prodesset, vis ea agam quas. <strong>Lorem iisque periculis</strong> id vis, no eum utinam interesset. Quis voluptaria id per, an nibh atqui vix. Mei falli simul nusquam te.</p>
-                <p><a href="tel://004542344599" class="phone"><i class="icon-phone-circled"></i>  +45 423 445 70</a></p>
-                <p class="nopadding"><a href="mailto:customercare@quickfood.com"><i class="icon-mail-3"></i> customercare@quickfood.com</a></p>
+                <p class="add_bottom_30"><?php echo $d['details']; ?></p>
+                <p><a href="tel://004542344599" class="phone"><i class="icon-phone-circled"></i><?php echo $d['phone']; ?></a></p>
+                <p class="nopadding"><a href="mailto:customercare@quickfood.com"><i class="icon-mail-3"></i><?php echo $d['email']; ?></a></p>
+                <?php }?>
             </div>
     	</div>
         <div class="col-md-6 col-sm-6">
         	<div class="box_style_2">
+                <?php
+                foreach ($details as $dt){
+                ?>
             	<h2 class="inner">Restaurant Support</h2>
-                <p class="add_bottom_30">Quo ex rebum petentium, cum alia illud molestiae in, pro ea paulo gubergren. Ne case constituto pro, ex vis delenit complectitur, per ad <strong>everti timeam</strong> conclusionemque. Quis voluptaria id per, an nibh atqui vix.</p>
-                <p><a href="tel://004542344599" class="phone"><i class="icon-phone-circled"></i>  +45 423 445 99</a></p>
-                <p class="nopadding"><a href="mailto:customercare@quickfood.com"><i class="icon-mail-3"></i> support@quickfood.com</a></p>
+                <p class="add_bottom_30"><?php echo $dt['details']; ?></p>
+                <p><a href="tel://004542344599" class="phone"><i class="icon-phone-circled"></i><?php echo $dt['phone']; ?></a></p>
+                <p class="nopadding"><a href="mailto:customercare@quickfood.com"><i class="icon-mail-3"></i><?php echo $dt['email']; ?></a></p>
+                <?php }?>
             </div>
     	</div>
     </div><!-- End row -->

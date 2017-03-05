@@ -7,19 +7,20 @@ class Contactm extends CI_Model
     public function show_contact_content(){
 
         $query=$this->db->query("SELECT * FROM `contact` ORDER by id DESC LIMIT 1 ");
-        return $query->result();
+        return $query->result_array();
 
     }
+
     public function show_customer_service_content(){
 
         $query=$this->db->query("SELECT * FROM `contact_customer_service` ORDER by id DESC LIMIT 1");
-        return $query->result();
+        return $query->result_array();
 
     }
     public function show_resturant_service_content(){
 
         $query=$this->db->query("SELECT * FROM `contact_restutant_service` ORDER by id DESC LIMIT 1");
-        return $query->result();
+        return $query->result_array();
 
     }
     function insert_main_content(){
@@ -57,6 +58,11 @@ class Contactm extends CI_Model
         );
 
         $this->db->insert('contact_restutant_service',$data);
+    }
+    function show_customer_service()
+    {
+        $query=$this->db->query("SELECT * FROM contact_customer_service ");
+        return $query->result();
     }
 }
 ?>

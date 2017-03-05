@@ -56,23 +56,14 @@
 	<div class="row">
 		<div class="col-md-4">
 			<h3 class="nomargin_top">Some words about us</h3>
+            <?php
+            foreach ($aboutUs as $aus) {
+            }
+            ?>
 			<p>
-				 Id pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. Libris hendrerit ex sea. Duo legere evertitur an, pri hinc <strong>doctus definitiones</strong> an, vix id dicam putent. Ius ornatus instructior in.
-			</p>
-			<p>
-				 Id pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. Libris hendrerit ex sea. Duo legere evertitur an, pri hinc doctus definitiones an, vix id dicam putent. Ius ornatus instructior in.
-			</p>
-			<h4>Mission</h4>
-			<p>
-				 Id pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. <strong>Libris hendrerit</strong> ex sea. Duo legere evertitur an, pri hinc doctus definitiones an, vix id dicam putent. Ius ornatus instructior in.
-			</p>
-			<p>
-				 Id pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. Libris hendrerit ex sea. Duo legere evertitur an, pri hinc doctus definitiones an, vix id dicam putent. Ius ornatus instructior in.
-			</p>
-			<h4>Filosofy</h4>
-			<p>
-				 Id pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. <strong>Libris hendrerit</strong> ex sea. Duo legere evertitur an, pri hinc doctus definitiones an, vix id dicam putent. Ius ornatus instructior in.
-			</p>
+                <?php echo $aus['details']; ?>
+            </p>
+
 		</div>
 		<div class="col-md-7 col-md-offset-1 text-right hidden-sm hidden-xs">
 			<img src="img/devices.jpg" alt="" class="img-responsive">
@@ -157,13 +148,15 @@
 		</div>
 		<div class="col-md-6 nopadding">
 			<div class="features-content">
-				<h3>"Ex vero mediocrem"</h3>
+                <?php
+                foreach ($aboutUsDetails as $ausdtls) {
+                }
+                ?>
+				<h3>"<?php echo $ausdtls['header']?>"</h3>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                    <?php echo $ausdtls['details']?>
 				</p>
-				<p>
-					Per ea erant aeque corpora, an agam tibique nec. At recusabo expetendis vim. Tractatos principes mel te, dolor solet viderer usu ad.
-				</p>
+
 			</div>
 		</div>
 	</div>

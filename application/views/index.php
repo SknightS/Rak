@@ -36,7 +36,7 @@
         <div id="sub_content">
             <h1>Order Takeaway or Delivery Food</h1>
             <p>
-                Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.
+                Get the best food at the potimized price with the fastest service.
             </p>
             <form method="post" action="list_page.php">
                 <div id="custom-search-input">
