@@ -1,3 +1,15 @@
+New Text Document.txt
+DETAILS
+ACTIVITY
+Today
+
+mujtaba rumi uploaded an item
+2:41 PM
+Text
+New Text Document.txt
+No recorded activity before March 6, 2017
+All selections cleared
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,140 +93,72 @@
                     <div class="panel panel-success">
                         <div class="panel-heading"><h3>Restaurant Content</h3></div>
                         <div class="panel-body">
+                            <form role="form" method="post"  >
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <select class="form-group" data-style="btn-primary" name="name" >
+                                        <option class="form-control" selected="selected">select name</option>
 
-                            <a href="#"> <button class="btn btn-success" onclick="selectid2(this)">Add New</button></a>
-                            <?php
-                            $count=1;
-                            ?>
-                            <table class=" table table-responsive" border="1">
-                                <tr>
-                                    <td>SL</td>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Address</td>
-                                    <td>City</td>
-                                    <td>State</td>
-                                    <td>Postal Code</td>
-                                    <td>Country</td>
-                                    <td>Time</td>
-                                    <td>Username</td>
-                                    <td>Password</td>
-                                    <td>VAT</td>
-                                    <td>Status</td>
-                                    <td>Action</td>
-
-                                </tr>
-                                <?php foreach ($show_res_content as $s){?>
-                                    <tr>
-                                        <td><?php echo $count ?></td>
-                                        <td><?php echo $s->name ?></td>
-                                        <td><?php echo $s->type ?></td>
-                                        <td><?php echo $s->address ?></td>
-                                        <td><?php echo $s->city ?></td>
-                                        <td><?php echo $s->state ?></td>
-                                        <td><?php echo $s->postal_code ?></td>
-                                        <td><?php echo $s->country ?></td>
-                                        <td><?php echo $s->time ?></td>
-                                        <td><?php echo $s->username ?></td>
-                                        <td><?php echo $s->password ?></td>
-                                        <td><?php echo $s->vat ?></td>
-                                        <td><?php echo $s->status ?></td>
-                                        <td><button data-panel-id="<?= $s->res_id ?>" onclick="selectid(this)">Edit</button></td>
-                                    </tr>
-
-                                    <?php
-                                    $count++;
-                                }
-                                ?>
-                            </table>
-                            <div id="myModal2" class="modal">
-
-                                <!-- Modal content -->
-                                <div class="modal-content">
-                                    <span class="close">×</span>
-
-                                    <h2>Add Restaurant Content</h2>
-                                    <form role="form" method="post" action="<?php echo base_url()?>Admin_Restaurant/insert_res" >
-                                        <div class="form-group">
-                                            <label>Name</label>
-                                            <input class="form-control" type="text" name="name">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Type</label>
-                                            <input class="form-control"type="text" name="type">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Address</label>
-                                            <input class="form-control"type="text" name="address">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>City</label>
-                                            <input class="form-control"type="text" name="city">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>State</label>
-                                            <input class="form-control"type="text" name="state">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Postal Code</label>
-                                            <input class="form-control"type="text" name="postal_code">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Country</label>
-                                            <input class="form-control"type="text" name="country">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Time</label>
-                                            <input class="form-control"type="text" name="time">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Username</label>
-                                            <input class="form-control"type="text" name="username">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>password</label>
-                                            <input class="form-control"type="text" name="password">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>VAT</label>
-                                            <input class="form-control"type="text" name="vat">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Status</label>
-                                            <input class="form-control"type="text" name="status">
-                                        </div>
-
-                                        <input class="btn btn-success" type="submit">
-                                    </form>
-
-                                </div>
+                                        <?php foreach ($show_res_content as $s){?>
 
 
-                            </div>
+                                            <option class="form-control" value="<?= $s->res_id ?>"><?php echo $s->name ?></option>
+                                            <?php
+                                        }
+                                        ?>
+                                    </select>
 
-                            <div id="myModal3" class="modal">
+                                    <div class="form-group">
+                                        <label>Item Type</label>
+                                        <input class="form-control"type="text" name="item_type">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Item Name</label>
+                                        <input class="form-control"type="text" name="Item_name">
+                                        <label>If u want to add some attribute. click +</label>
+                                        <button data-panel-id="<?= $s->res_id ?>" onclick="selectid4(this)">ADD</button>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Item Description</label>
+                                        <input class="form-control"type="text" name="Item_description">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Item Price</label>
+                                        <input class="form-control"type="text" name="Item_price">
+                                    </div>
 
-                                <!-- Modal content -->
-                                <div class="modal-content">
-                                    <span class="close">×</span>
 
-                                    <h2>Edit Content</h2>
-                                    <div id="txtHint"></div>
-
-                                </div>
-
-
-                            </div>
+                                    <input class="btn btn-success" type="submit" value="Submit" formaction="<?php echo base_url("Admin_menu/insert_res")?>"">
+                            </form>
 
                         </div>
 
 
                     </div>
+
+                    <div id="myModal4" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close">×</span>
+
+                            <h2>Edit Content</h2>
+                            <div id="txtHint"></div>
+
+                        </div>
+
+
+                    </div>
+
                 </div>
+
+
             </div>
         </div>
     </div>
-    <!-- /.container-fluid -->
+</div>
+</div>
+<!-- /.container-fluid -->
 
 </div>
 <!-- /#page-wrapper -->
@@ -229,8 +173,8 @@
 
     // Get the modal
     // var modal = document.getElementById('myModal');
-    var modal2 = document.getElementById('myModal2');
-    var modal3 = document.getElementById('myModal3');
+
+    var modal4 = document.getElementById('myModal4');
 
     // Get the button that opens the modal
     //var btn = document.getElementById("myBtn");
@@ -241,21 +185,16 @@
     // When the user clicks the button, open the modal
     // btn = $(x).data('panel-name');
 
-    function selectid2(x) {
 
 
-        modal2.style.display = "block";
 
-    }
-
-
-    function selectid(x) {
-        modal3.style.display = "block";
+    function selectid4(x) {
+        modal4.style.display = "block";
         btn = $(x).data('panel-id');
 
         $.ajax({
             type:'POST',
-            url:'<?php echo base_url("Admin_Restaurant/showedit/")?>'+btn,
+            url:'<?php echo base_url("")?>'+btn,
             data:{'id':btn},
             cache: false,
             success:function(data)

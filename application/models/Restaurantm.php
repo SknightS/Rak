@@ -9,12 +9,16 @@ class Restaurantm extends CI_Model
         $query=$this->db->query("SELECT * FROM `restaurant`");
         return $query->result();
 
+
     }
 
     public function insert_restuarant_content(){
-        $name = $this->input->post('name');
-        $type  = $this->input->post('type');
-        $address = $this->input->post('address');
+        $name = $this->input->post('Item_name');
+        $type  = $this->input->post('item_type');
+        $itemDescription = $this->input->post('Item_description');
+        $price  = $this->input->post('Item_price');
+
+        //$address = $this->input->post('address');
         $city = $this->input->post('city');
         $state= $this->input->post('state');
         $postal_code  = $this->input->post('postal_code');
@@ -22,12 +26,13 @@ class Restaurantm extends CI_Model
         $time  = $this->input->post('time');
         $username= $this->input->post('username');
         $password= $this->input->post('password');
-        $vat= $this->input->post('vat');
+        //$vat= $this->input->post('vat');
         $status  = $this->input->post('status');
+
         $data = array(
             'name' => $name,
             'type' => $type,
-            'address' => $address,
+            'address' => $itemDescription,
             'city' => $city,
             'state' => $state,
             'country' => $country,
@@ -35,7 +40,7 @@ class Restaurantm extends CI_Model
             'postal_code' => $postal_code,
             'username' => $username,
             'password' => $password,
-            'vat' => $vat,
+            'vat' => $price,
             'status' => $status
 
         );
