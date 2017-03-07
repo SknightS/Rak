@@ -33,4 +33,16 @@ class Menum extends CI_Model
 
         $this->db->insert('menu',$data);
     }
+
+    public function insert_menu_attr(){
+
+
+
+
+    }
+    public function getres_id($rname){
+
+        $query=$this->db->query("SELECT * FROM `restaurant` WHERE `name`= '$rname'");
+        return $query->result();
+    }
 }

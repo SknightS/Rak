@@ -32,6 +32,20 @@ class Admin_menu extends CI_Controller
 
 
     }
+    function insert_menu_attr(){
+        $this->load->model('Menum');
+        $this->Menum->insert_menu_attr();
+
+    }
+    function getres_id() {
+
+        $rname = $this->input->post('rname');
+        $this->load->model('Menum');
+        $this->data['edit'] = $this->Menum->getres_id($rname);
+        foreach ($this->data['edit'] as $s){
+            echo $s->name;
+        }
+    }
     function showadd()
     {
         $id = $this->input->post('id');

@@ -87,7 +87,7 @@
 
                                 <div class="form-group">
                                     <label>Restuarant</label>
-                                    <select class="form-control"  name="name" id="dst" >
+                                    <select class="form-control"  name="name" id="dst" onchange="selectid()" >
 
                                         <option value="" selected disabled>Res Name</option>
 
@@ -101,6 +101,7 @@
                                         ?>
                                     </select>
                                 </div>
+                                <input type="hidden" id="res_id" name="res_id">
                                 <div class="form-group">
                                     <label>Item Type</label>
                                     <input class="form-control" type="text" name="Item_type">
@@ -132,20 +133,20 @@
                                     <span class="close">×</span>
 
                                     <h2>Add Content</h2>
-                                    <form role="form" method="post" action="<?php echo base_url()?>Admin_menu/test" >
+                                    <form role="form" method="post" action="<?php echo base_url()?>Admin_menu/insert_menu_attr" >
                                         <div class="form-group">
                                             <label>Item Name</label>
                                             <input class="form-control" type="text" id="iname" name="iname">
                                         </div>
-                                        <div id='TextBoxesGroup'>
-                                            <div id="TextBoxDiv1">
-                                                <label>Textbox #1 : </label><input type='textbox' id='textbox1' name="textbox[]" >
-                                                <label>Textbox #1 : </label><input type='textbox' id='textimage1' name="textimage[]">
+                                        <div id='TextBoxesGroup' class="form-group">
+                                            <div id="TextBoxDiv1" class="form-group">
+                                                <label>Size/Extra #1 : </label><input class="form-control" type='textbox' id='textbox1' name="textbox[]" >
+                                                <label>Price #1 : </label><input class="form-control" type='textbox' id='textimage1' name="textimage[]">
                                             </div>
                                         </div>
                                         <input type='button' value='Add Button' id='addButton'>
                                         <input type='button' value='Remove Button' id='removeButton'>
-                                        <input type='button' value='Get TextBox Value' id='getButtonValue'>
+<!--                                        <input type='button' value='Get TextBox Value' id='getButtonValue'>-->
 
                                         <input class="btn btn-success" type="submit">
                                     </form>
@@ -230,16 +231,20 @@
 
 
     function selectid(x) {
-        modal3.style.display = "block";
-        btn = $(x).data('panel-id');
+        //modal3.style.display = "block";
+         btn = document.getElementById('dst').value;
+        //alert(btn);
+        //btn = $(x).data('panel-id');
 
         $.ajax({
             type:'POST',
-            url:'<?php echo base_url("Admin_menu/")?>'+btn,
-            data:{'id':btn},
+            url:'<?php echo base_url("Admin_menu/getres_id/")?>'+btn,
+            data:{'rname':btn},
             cache: false,
             success:function(data)
             {
+                $('#res_id').val(data)
+                //alert(data);
                 //$('#txtHint').html(data);
             }
 
@@ -294,10 +299,10 @@
                 .attr("id", 'TextBoxDiv' + counter);
 
 
-            newTextBoxDiv.after().html('<label>Textbox #'+ counter + ' : </label>' +
-                '<input type="text" name="textbox[]' + counter +
-                '" id="textbox' + counter + '" value="" >' + '<label>Textbox #'+ counter + ' : </label>' +
-                '<input type="text" name="textimage[]' + counter +
+            newTextBoxDiv.after().html('<label>Size/Extra #'+ counter + ' : </label>' +
+                '<input class="form-control" type="text" name="textbox[]' + counter +
+                '" id="textbox' + counter + '" value="" >' + '<label>Price #'+ counter + ' : </label>' +
+                '<input class="form-control" type="text" name="textimage[]' + counter +
                 '" id="textimage' + counter + '" value="" >'
             );
 
