@@ -7,7 +7,13 @@ class Menum extends CI_Model
     public function show_menu_attribute()
     {
         $query = $this->db->query("SELECT * FROM `menu_attribute`");
-        return $query->result_array();
+        return $query->result();
+    }
+    public function showadd($id){
+
+        $query=$this->db->query("SELECT * FROM 'menu_attribute' WHERE `id`= '$id'");
+        return $query->result();
+
     }
     public function insert_menu_content(){
         $name = $this->input->post('name');

@@ -10,7 +10,7 @@ class Admin_menu extends CI_Controller
         $data['show_res_content'] = $this->Restaurantm->show_restuarant_content();
         $data['mattribute'] = $this->Menum->show_menu_attribute();
         $this->data['show_res_content'] = $this->Restaurantm->show_restuarant_content();
-        $this->load->view('admin_menu',$data);
+        $this->load->view('admin_menu',$this->data);
 
     }
     public function insert_res(){
@@ -18,5 +18,28 @@ class Admin_menu extends CI_Controller
         $this->load->model('Menum');
         $this->Menum->insert_menu_content();
         redirect(Admin_Restaurant);
+    }
+    function showadd()
+    {
+        $id = $this->input->post('id');
+        $this->load->model('Menum');
+        $this->data['edit'] = $this->Menum->showedit($id);
+        foreach ($this->data['edit'] as $e) {
+            echo "<form role=\"form\" method=\"post\" action=\"http://localhost/Rak/Admin_menu/editcontent/$e->id\" >
+                                    <div class=\"form-group\">
+                                        <label>Resturant name</label>
+                                        <input class=\"form-control\" type=\"text\" name=\"header\" value=\" $e->header \">
+                                    </div>
+                                    <div class=\"form-group\">
+                                        <label>Sub Header</label>
+                                        <input class=\"form-control\"type=\"text\" name=\"sub_header\" value=\" $e->sub_header \">
+                                    </div>
+                                    <div class=\"form-group\">
+                                        <label>Details</label>
+                                        <textarea class=\"form-control\"  name=\"details\" value=\" $e->details \">$e->details</textarea>
+                                    </div>
+                                        <input class=\"btn btn-success\" type=\"submit\">
+                                    </form>";
+        }
     }
 }

@@ -1,15 +1,3 @@
-New Text Document.txt
-DETAILS
-ACTIVITY
-Today
-
-mujtaba rumi uploaded an item
-2:41 PM
-Text
-New Text Document.txt
-No recorded activity before March 6, 2017
-All selections cleared
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +9,7 @@ All selections cleared
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Rak</title>
+    <title>SB Admin - Bootstrap Admin Template</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -79,86 +67,128 @@ All selections cleared
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        Menu Page Contents
+                       Menu Page Contents
                     </h1>
                 </div>
             </div>
             <!-- /.row -->
 
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-6">
 
 
 
                     <div class="panel panel-success">
-                        <div class="panel-heading"><h3>Restaurant Content</h3></div>
+                        <div class="panel-heading"><h3>Main Content</h3></div>
                         <div class="panel-body">
-                            <form role="form" method="post"  >
+
+
+                            <form role="form" method="post" action="<?php echo base_url()?>Admin_menu/insert_res" >
+
                                 <div class="form-group">
-                                    <label>Name</label>
-                                    <select class="form-group" data-style="btn-primary" name="name" >
-                                        <option class="form-control" selected="selected">select name</option>
+                                    <label>Restuarant</label>
+                                <select class="form-control"  name="name" id="dst" >
 
-                                        <?php foreach ($show_res_content as $s){?>
+                                    <option value="" selected disabled>Res Name</option>
 
+                                    <?php
 
-                                            <option class="form-control" value="<?= $s->res_id ?>"><?php echo $s->name ?></option>
-                                            <?php
-                                        }
-                                        ?>
-                                    </select>
+                                    foreach ($show_res_content as $s)
+                                    {
+                                        echo "<option value='" . $s->name . "'>" . $s->name . "</option>";
+                                    }
 
-                                    <div class="form-group">
-                                        <label>Item Type</label>
-                                        <input class="form-control"type="text" name="item_type">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Item Name</label>
-                                        <input class="form-control"type="text" name="Item_name">
-                                        <label>If u want to add some attribute. click +</label>
-                                        <button data-panel-id="<?= $s->res_id ?>" onclick="selectid4(this)">ADD</button>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Item Description</label>
-                                        <input class="form-control"type="text" name="Item_description">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Item Price</label>
-                                        <input class="form-control"type="text" name="Item_price">
-                                    </div>
-
-
-                                    <input class="btn btn-success" type="submit" value="Submit" formaction="<?php echo base_url("Admin_menu/insert_res")?>"">
+                                    ?>
+                                </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Item Type</label>
+                                    <input class="form-control" type="text" name="item_type">
+                                </div>
+                                <div class="form-group">
+                                    <label>Item name</label>
+                                    <input class="form-control"type="text" name="Item_name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Item description</label>
+                                    <textarea class="form-control"  name="Item_description"></textarea><br/>
+                                    <label>If you want to add some item click </label>
+                                    <button  onclick="selectid2(this)">Add</button>
+                                </div>
+                                <div class="form-group">
+                                    <label>Item Price</label>
+                                    <input class="form-control"type="text" name="Item_price">
+                                </div>
+                                <input class="btn btn-success" type="submit">
                             </form>
 
+
+
+                            <div id="myModal2" class="modal">
+
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <span class="close">×</span>
+
+                                    <h2>Add Content</h2>
+                                    <form role="form" method="post" action="<?php echo base_url()?>Admin_Faq/insert_faq" >
+                                        <div class="form-group">
+                                            <label>Header</label>
+                                            <input class="form-control" type="text" name="header">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Sub Header</label>
+                                            <input class="form-control"type="text" name="sub_header">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Details</label>
+                                            <textarea class="form-control"  name="details"></textarea>
+                                        </div>
+                                        <input class="btn btn-success" type="submit">
+                                    </form>
+
+                                </div>
+
+                            </div>
+
+                            <div id="myModal3" class="modal">
+
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <span class="close">×</span>
+
+                                    <h2>Edit Content</h2>
+                                    <form role="form" method="post" action="<?php echo base_url()?>Admin_Faq/insert_faq" >
+                                        <div class="form-group">
+                                            <label>Header</label>
+                                            <input class="form-control" type="text" name="header">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Sub Header</label>
+                                            <input class="form-control"type="text" name="sub_header">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Details</label>
+                                            <textarea class="form-control"  name="details"></textarea>
+                                        </div>
+                                        <input class="btn btn-success" type="submit">
+                                    </form>
+                                    <div id="txtHint"></div>
+
+                                </div>
+
+
+                            </div>
+
                         </div>
 
 
                     </div>
-
-                    <div id="myModal4" class="modal">
-
-                        <!-- Modal content -->
-                        <div class="modal-content">
-                            <span class="close">×</span>
-
-                            <h2>Edit Content</h2>
-                            <div id="txtHint"></div>
-
-                        </div>
-
-
-                    </div>
-
                 </div>
-
-
             </div>
         </div>
     </div>
-</div>
-</div>
-<!-- /.container-fluid -->
+    <!-- /.container-fluid -->
 
 </div>
 <!-- /#page-wrapper -->
@@ -173,8 +203,8 @@ All selections cleared
 
     // Get the modal
     // var modal = document.getElementById('myModal');
-
-    var modal4 = document.getElementById('myModal4');
+    var modal2 = document.getElementById('myModal2');
+    var modal3 = document.getElementById('myModal3');
 
     // Get the button that opens the modal
     //var btn = document.getElementById("myBtn");
@@ -185,21 +215,26 @@ All selections cleared
     // When the user clicks the button, open the modal
     // btn = $(x).data('panel-name');
 
+    function selectid2(x) {
 
 
+        modal2.style.display = "block";
 
-    function selectid4(x) {
-        modal4.style.display = "block";
+    }
+
+
+    function selectid(x) {
+        modal3.style.display = "block";
         btn = $(x).data('panel-id');
 
         $.ajax({
             type:'POST',
-            url:'<?php echo base_url("")?>'+btn,
+            url:'<?php echo base_url("Admin_menu/")?>'+btn,
             data:{'id':btn},
             cache: false,
             success:function(data)
             {
-                $('#txtHint').html(data);
+                //$('#txtHint').html(data);
             }
 
         });
@@ -221,12 +256,13 @@ All selections cleared
     }
 
 
+
+    // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
         if (event.target == modal3) {
             modal3.style.display = "none";
         }
     }
-
 
 </script>
 <script>
