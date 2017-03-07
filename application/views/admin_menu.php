@@ -103,11 +103,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Item Type</label>
-                                    <input class="form-control" type="text" name="item_type">
+                                    <input class="form-control" type="text" name="Item_type">
                                 </div>
                                 <div class="form-group">
                                     <label>Item name</label>
-                                    <input class="form-control"type="text" name="Item_name">
+                                    <input class="form-control"type="text" id="Item_name" name="Item_name">
                                 </div>
                                 <div class="form-group">
                                     <label>Item description</label>
@@ -132,19 +132,21 @@
                                     <span class="close">×</span>
 
                                     <h2>Add Content</h2>
-                                    <form role="form" method="post" action="<?php echo base_url()?>Admin_Faq/insert_faq" >
+                                    <form role="form" method="post" action="<?php echo base_url()?>Admin_menu/test" >
                                         <div class="form-group">
-                                            <label>Header</label>
-                                            <input class="form-control" type="text" name="header">
+                                            <label>Item Name</label>
+                                            <input class="form-control" type="text" id="iname" name="iname">
                                         </div>
-                                        <div class="form-group">
-                                            <label>Sub Header</label>
-                                            <input class="form-control"type="text" name="sub_header">
+                                        <div id='TextBoxesGroup'>
+                                            <div id="TextBoxDiv1">
+                                                <label>Textbox #1 : </label><input type='textbox' id='textbox1' name="textbox[]" >
+                                                <label>Textbox #1 : </label><input type='textbox' id='textimage1' name="textimage[]">
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label>Details</label>
-                                            <textarea class="form-control"  name="details"></textarea>
-                                        </div>
+                                        <input type='button' value='Add Button' id='addButton'>
+                                        <input type='button' value='Remove Button' id='removeButton'>
+                                        <input type='button' value='Get TextBox Value' id='getButtonValue'>
+
                                         <input class="btn btn-success" type="submit">
                                     </form>
 
@@ -161,8 +163,8 @@
                                     <h2>Edit Content</h2>
                                     <form role="form" method="post" action="<?php echo base_url()?>Admin_Faq/insert_faq" >
                                         <div class="form-group">
-                                            <label>Header</label>
-                                            <input class="form-control" type="text" name="header">
+                                            <label>Item Name</label>
+                                            <input class="form-control" type="text" id="iname" name="iname">
                                         </div>
                                         <div class="form-group">
                                             <label>Sub Header</label>
@@ -218,6 +220,8 @@
 
     function selectid2(x) {
 
+        var x = document.getElementById('Item_name').value;
+        document.getElementById('iname').value = x;
 
         modal2.style.display = "block";
         return false;
@@ -273,7 +277,61 @@
     });
 </script>
 
+<script type="text/javascript">
 
+    $(document).ready(function(){
+
+        var counter = 2;
+
+        $("#addButton").click(function () {
+
+            if(counter>10){
+                alert("Only 10 textboxes allow");
+                return false;
+            }
+
+            var newTextBoxDiv = $(document.createElement('div'))
+                .attr("id", 'TextBoxDiv' + counter);
+
+
+            newTextBoxDiv.after().html('<label>Textbox #'+ counter + ' : </label>' +
+                '<input type="text" name="textbox[]' + counter +
+                '" id="textbox' + counter + '" value="" >' + '<label>Textbox #'+ counter + ' : </label>' +
+                '<input type="text" name="textimage[]' + counter +
+                '" id="textimage' + counter + '" value="" >'
+            );
+
+
+
+            newTextBoxDiv.appendTo("#TextBoxesGroup");
+
+
+
+            counter++;
+        });
+
+        $("#removeButton").click(function () {
+            if(counter==1){
+                alert("No more textbox to remove");
+                return false;
+            }
+
+            counter--;
+
+            $("#TextBoxDiv" + counter).remove();
+
+        });
+
+        $("#getButtonValue").click(function () {
+
+            var msg = '';
+            for(i=1; i<counter; i++){
+                msg += "\n Textbox #" + i + " : " + $('#textbox' + i).val()+"\n Textimage #" + i + " : " + $('#textimage' + i).val();
+            }
+            alert(msg);
+        });
+    });
+</script>
 </body>
 
 </html>

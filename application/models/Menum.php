@@ -17,7 +17,7 @@ class Menum extends CI_Model
     }
     public function insert_menu_content(){
         $name = $this->input->post('name');
-        $type  = $this->input->post('item_type');
+        $type  = $this->input->post('Item_type');
         $itemDescription = $this->input->post('Item_description');
         $price  = $this->input->post('Item_price');
         $item_name = $this->input->post('Item_name');

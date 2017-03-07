@@ -19,6 +19,19 @@ class Admin_menu extends CI_Controller
         $this->Menum->insert_menu_content();
         redirect(Admin_Restaurant);
     }
+
+    function test(){
+        extract($_POST);
+
+        //print_r($textbox);
+
+        for ($i=0;$i<2;$i++){
+            echo $textbox[$i]."<br>";
+            echo $textimage[$i]."<br>";
+        }
+
+
+    }
     function showadd()
     {
         $id = $this->input->post('id');
