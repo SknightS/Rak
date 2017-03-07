@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 05, 2017 at 09:34 AM
+-- Generation Time: Mar 07, 2017 at 03:19 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -216,8 +216,7 @@ CREATE TABLE `home_howitworks_content` (
 --
 
 INSERT INTO `home_howitworks_content` (`id`, `big`, `small`, `one_big`, `one_small`, `two_big`, `two_small`, `three_big`, `three_small`, `four_big`, `four_small`) VALUES
-(0, 'this is big ', '', '', '', '', '', '', '', '', ''),
-(0, 'How it works', 'Cum doctus civibus efficiantur in imperdiet deterruisset.', 'Search by address', 'Find all restaurants available in your zone.', 'Choose a restaurant', 'We have more than 1000s of menus online', 'Pay by card or cash', 'It''s quick, easy and totally secure.', 'Delivery or takeaway', 'You are lazy? Are you backing home?');
+(2, 'How it works', 'Cum doctus civibus efficiantur in imperdiet deterruisset.', 'Search by address', 'Find all restaurants available in your zone.', 'Choose a restaurant', 'We have more than 1000s of menus online', 'Pay by card or cash', 'It''s quick, easy and totally secure.', 'Delivery or takeaway', 'You are lazy? Are you backing home?');
 
 -- --------------------------------------------------------
 
@@ -244,8 +243,7 @@ INSERT INTO `home_main_content` (`id`, `big`, `small`) VALUES
 (6, 'this is big content and thanks a lot ', 'this is small content and thanks for that'),
 (7, 'this is big content and thanks a lot ', 'this is small content and thanks for that'),
 (8, 'this is big content and thanks a lot ', 'this is small content and thanks for that . ok '),
-(9, 'this is big content and thanks a lot ', 'this is small content and thanks for that . ok '),
-(10, NULL, NULL);
+(9, 'Order Takeaway or Delivery Food', 'Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.');
 
 -- --------------------------------------------------------
 
@@ -265,8 +263,7 @@ CREATE TABLE `home_resturant_andmore_content` (
 --
 
 INSERT INTO `home_resturant_andmore_content` (`id`, `resturant`, `people_served`, `registered_user`) VALUES
-(1, '2650 Restaurant', '5350 People Served', '12350 Registered Users'),
-(2, 'this is new content ', '12160', '');
+(1, '2650 Restaurant', '5350 People Served', '12350 Registered Users');
 
 -- --------------------------------------------------------
 
@@ -305,8 +302,7 @@ CREATE TABLE `home_section_5` (
 --
 
 INSERT INTO `home_section_5` (`id`, `big`, `small`, `image`) VALUES
-(1, 'We also deliver to your office', 'Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.', ''),
-(2, 'this is big', '', '15777061_1283400545037215_5109786879746060967_o.jpg');
+(1, 'We also deliver to your office', 'Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.', '');
 
 -- --------------------------------------------------------
 
@@ -329,8 +325,7 @@ CREATE TABLE `home_section_6` (
 --
 
 INSERT INTO `home_section_6` (`id`, `big`, `small`, `submit_big`, `submit_small`, `submit_details`, `image`) VALUES
-(1, 'Work with Us', 'Cum doctus civibus efficiantur in imperdiet deterruisset.', 'Submit your Restaurant', 'Start to earn customers', 'Lorem ipsum dolor sit amet, ut virtute fabellas vix, no pri falli eloquentiam adversarium. Ea legere labore eam. Et eum sumo ocurreret, eos ei saepe oratio omittantur, legere eligendi partiendo pro te.', ''),
-(2, 'Work with Us', '\nCum doctus civibus efficiantur in imperdiet deterruisset.', 'We are looking for a Driver', 'Start to earn money', 'Lorem ipsum dolor sit amet, ut virtute fabellas vix, no pri falli eloquentiam adversarium. Ea legere labore eam. Et eum sumo ocurreret, eos ei saepe oratio omittantur, legere eligendi partiendo pro te.', '');
+(1, 'Work with Us', 'Cum doctus civibus efficiantur in imperdiet deterruisset.', 'Submit your Restaurant', 'Start to earn customers', 'Lorem ipsum dolor sit amet, ut virtute fabellas vix, no pri falli eloquentiam adversarium. Ea legere labore eam. Et eum sumo ocurreret, eos ei saepe oratio omittantur, legere eligendi partiendo pro te.', '');
 
 -- --------------------------------------------------------
 
@@ -475,9 +470,9 @@ CREATE TABLE `menu` (
 CREATE TABLE `menu_attribute` (
   `id` int(10) NOT NULL,
   `res_id` varchar(100) NOT NULL,
-  `item_name` varchar(1000) NOT NULL,
-  `item_attribute` varchar(1000) NOT NULL,
-  `price` varchar(1000) NOT NULL
+  `item_name` varchar(1000) DEFAULT NULL,
+  `item_attribute` varchar(1000) DEFAULT NULL,
+  `price` varchar(1000) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -560,6 +555,12 @@ ALTER TABLE `contact_restutant_service`
 -- Indexes for table `faq`
 --
 ALTER TABLE `faq`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `home_howitworks_content`
+--
+ALTER TABLE `home_howitworks_content`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -661,15 +662,20 @@ ALTER TABLE `contact_restutant_service`
 ALTER TABLE `faq`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
+-- AUTO_INCREMENT for table `home_howitworks_content`
+--
+ALTER TABLE `home_howitworks_content`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `home_main_content`
 --
 ALTER TABLE `home_main_content`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `home_resturant_andmore_content`
 --
 ALTER TABLE `home_resturant_andmore_content`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `home_section_4`
 --
@@ -679,12 +685,12 @@ ALTER TABLE `home_section_4`
 -- AUTO_INCREMENT for table `home_section_5`
 --
 ALTER TABLE `home_section_5`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `home_section_6`
 --
 ALTER TABLE `home_section_6`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `icon`
 --
