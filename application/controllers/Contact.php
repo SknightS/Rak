@@ -7,11 +7,11 @@ class Contact extends CI_Controller {
     public function index()
     {
         $this->load->model('Contactm');
-        $data['info'] = $this->Contactm->show_customer_service_content();
-        $data['details'] = $this->Contactm->show_resturant_service_content();
-        $data['contacts']= $this->Contactm->show_contact_content();
+        $this->data['info'] = $this->Contactm->show_customer_service_content();
+        $this->data['details'] = $this->Contactm->show_resturant_service_content();
+        $this->data['contacts']= $this->Contactm->show_contact_content();
         //print_r($data['info']);
 
-        $this->load->view('contacts', $data);
+        $this->load->view('contacts', $this->data);
     }
 }

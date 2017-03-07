@@ -83,23 +83,23 @@
                         <div class="panel-body">
 
 
-                            <form role="form" method="post" action="<?php echo base_url()?>Admin_menu/insert_res" >
+                            <form method="post" action="<?php echo base_url()?>Admin_menu/insert_res" >
 
                                 <div class="form-group">
                                     <label>Restuarant</label>
-                                <select class="form-control"  name="name" id="dst" >
+                                    <select class="form-control"  name="name" id="dst" >
 
-                                    <option value="" selected disabled>Res Name</option>
+                                        <option value="" selected disabled>Res Name</option>
 
-                                    <?php
+                                        <?php
 
-                                    foreach ($show_res_content as $s)
-                                    {
-                                        echo "<option value='" . $s->name . "'>" . $s->name . "</option>";
-                                    }
+                                        foreach ($show_res_content as $s)
+                                        {
+                                            echo "<option value='" . $s->name . "'>" . $s->name . "</option>";
+                                        }
 
-                                    ?>
-                                </select>
+                                        ?>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Item Type</label>
@@ -113,7 +113,8 @@
                                     <label>Item description</label>
                                     <textarea class="form-control"  name="Item_description"></textarea><br/>
                                     <label>If you want to add some item click </label>
-                                    <button  onclick="selectid2(this)">Add</button>
+<!--                                    <button data-panel-id="" onclick="selectid2()">Edit</button>-->
+                                    <input type="button" name = 'add' value='Add'onclick="selectid2()">
                                 </div>
                                 <div class="form-group">
                                     <label>Item Price</label>
@@ -219,6 +220,7 @@
 
 
         modal2.style.display = "block";
+        return false;
 
     }
 
