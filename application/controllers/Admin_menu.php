@@ -36,6 +36,7 @@ class Admin_menu extends CI_Controller
         $this->load->model('Menum');
         $this->Menum->insert_menu_attr();
 
+        redirect(Admin_menu);
     }
     function getres_id() {
 

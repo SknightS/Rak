@@ -83,7 +83,7 @@
                         <div class="panel-body">
 
 
-                            <form method="post" action="<?php echo base_url()?>Admin_menu/insert_res" >
+                            <form method="post" action="<?php echo base_url()?>Menum/insert_menu_attr" >
 
                                 <div class="form-group">
                                     <label>Restuarant</label>
@@ -101,6 +101,7 @@
                                         ?>
                                     </select>
                                 </div>
+
                                 <input type="hidden" id="res_id" name="res_id">
                                 <div class="form-group">
                                     <label>Item Type</label>
@@ -116,6 +117,17 @@
                                     <label>If you want to add some item click </label>
 <!--                                    <button data-panel-id="" onclick="selectid2()">Edit</button>-->
                                     <input type="button" name = 'add' value='Add'onclick="selectid2()">
+
+                                </div>
+                                <div id="showattr" class="form-group" style="display: none">
+                                <div id='TextBoxesGroup' class="form-group">
+                                    <div id="TextBoxDiv1" class="form-group">
+                                        <label>Size/Extra #1 : </label><input class="form-control" type='textbox' id='textbox1' name="textbox[]" >
+                                        <label>Price #1 : </label><input class="form-control" type='textbox' id='textimage1' name="textimage[]">
+                                    </div>
+                                </div>
+                                    <input type='button' value='Add Button' id='addButton'>
+                                    <input type='button' value='Remove Button' id='removeButton'>
                                 </div>
                                 <div class="form-group">
                                     <label>Item Price</label>
@@ -221,10 +233,10 @@
 
     function selectid2(x) {
 
-        var x = document.getElementById('Item_name').value;
-        document.getElementById('iname').value = x;
+        //var x = document.getElementById('Item_name').value;
+        //document.getElementById('iname').value = x;
 
-        modal2.style.display = "block";
+        document.getElementById('showattr').style.display = "block";
         return false;
 
     }
