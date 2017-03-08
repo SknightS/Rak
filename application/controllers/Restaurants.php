@@ -6,7 +6,9 @@ class Restaurants extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('grid_list');
-        //echo "Hello dolly";
+        $this->load->model('Restaurantm');
+        $this->data['show_res_content'] = $this->Restaurantm->show_restuarant_content();
+        $this->load->view('grid_list', $this->data);
+
     }
 }

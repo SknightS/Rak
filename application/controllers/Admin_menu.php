@@ -25,7 +25,7 @@ class Admin_menu extends CI_Controller
 
         //print_r($textbox);
 
-        for ($i=0;$i<2;$i++){
+        for ($i=0;$i<count($textbox);$i++){
             echo $textbox[$i]."<br>";
             echo $textimage[$i]."<br>";
         }

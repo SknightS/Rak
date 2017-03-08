@@ -83,7 +83,7 @@
                         <div class="panel-body">
 
 
-                            <form method="post" action="<?php echo base_url()?>Menum/insert_menu_attr" >
+                            <form method="post" action="<?php echo base_url()?>Admin_menu/test" >
 
                                 <div class="form-group">
                                     <label>Restuarant</label>
