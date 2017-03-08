@@ -47,7 +47,7 @@
             <a href="<?php echo base_url()?>Admin_Restaurant"><i class="fa fa-fw fa-desktop"></i> Restaurant</a>
         </li>
         <li>
-            <a href="<?php echo base_url()?>Admin_menu"><i class="fa fa-fw fa-desktop"></i> Menu</a>
+            <a href="<?php echo base_url()?>Admin_menu" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-desktop"></i> Menu</a>
         </li>
         <li>
             <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>

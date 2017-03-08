@@ -12,12 +12,13 @@ class Admin_menu extends CI_Controller
         $this->data['show_res_content'] = $this->Restaurantm->show_restuarant_content();
         $this->load->view('admin_menu',$this->data);
 
+
     }
     public function insert_res(){
 
         $this->load->model('Menum');
         $this->Menum->insert_menu_content();
-        redirect(Admin_Restaurant);
+        //redirect(Admin_Restaurant);
     }
 
     function test(){
@@ -35,8 +36,9 @@ class Admin_menu extends CI_Controller
     function insert_menu_attr(){
         $this->load->model('Menum');
         $this->Menum->insert_menu_attr();
+        //$this->load->view('admin_faq');
 
-        redirect(Admin_menu);
+        //redirect(Admin_menu);
     }
     function getres_id() {
 
@@ -44,7 +46,7 @@ class Admin_menu extends CI_Controller
         $this->load->model('Menum');
         $this->data['edit'] = $this->Menum->getres_id($rname);
         foreach ($this->data['edit'] as $s){
-            echo $s->name;
+            echo $s->res_id;
         }
     }
     function showadd()
