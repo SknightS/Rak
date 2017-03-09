@@ -47,7 +47,16 @@
             <a href="<?php echo base_url()?>Admin_Restaurant"><i class="fa fa-fw fa-desktop"></i> Restaurant</a>
         </li>
         <li>
-            <a href="<?php echo base_url()?>Admin_menu" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-desktop"></i> Menu</a>
+            <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Menu <i class="fa fa-fw fa-caret-down"></i></a>
+            <ul id="demo" class="collapse">
+                <li>
+                    <a href="<?php echo base_url()?>Admin_menu">Menu</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url()?>Restaurant_menu">Restaurant Menu</a>
+                </li>
+            </ul>
+            <!--<a href="<?php echo base_url()?>Admin_menu"><i class="fa fa-fw fa-desktop"></i> Menu</a>-->
         </li>
         <li>
             <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
