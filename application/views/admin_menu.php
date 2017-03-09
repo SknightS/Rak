@@ -105,7 +105,13 @@
                                 <input type="hidden" id="res_id" name="res_id">
                                 <div class="form-group">
                                     <label>Item Type</label>
-                                    <input class="form-control" type="text" name="Item_type">
+                                    <!--<input class="form-control" type="text" name="Item_type">-->
+                                    <select class="form-control" name="type" id="type"  >
+                                        <option selected  >Item Type</option>
+                                        <input type="button" class="btn btn-success" name="additem" value="+" onclick="selectid5(this)">
+
+
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Item name</label>
@@ -196,6 +202,46 @@
 
                             </div>
 
+                            <div id="myModal5" class="modal">
+
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <span class="close">×</span>
+
+                                    <h2>Edit Content</h2>
+                                    <form role="form" method="post" action="<?php echo base_url()?>/Admin_menu/insertmenuitem" >
+                                        <div class="form-group">
+                                            <label>Restuarant</label>
+                                            <select class="form-control"  name="name" id="name" onchange="selectid4()" >
+
+                                                <option value="" selected disabled>Res Name</option>
+
+                                                <?php
+
+                                                foreach ($show_res_content as $s)
+                                                {
+                                                    echo "<option value='" . $s->name . "'>" . $s->name . "</option>";
+                                                }
+
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <input type="hidden" id="res_id2" name="res_id">
+
+                                        <div class="form-group">
+                                            <label>Item type</label>
+                                            <input class="form-control" type="text" id="itype" name="itype">
+                                        </div>
+
+                                        <input class="btn btn-success" type="submit">
+                                    </form>
+                                    <div id="txtHint"></div>
+
+                                </div>
+
+
+                            </div>
+
                         </div>
 
 
@@ -221,11 +267,13 @@
     // var modal = document.getElementById('myModal');
     var modal2 = document.getElementById('myModal2');
     var modal3 = document.getElementById('myModal3');
+    var modal5 = document.getElementById('myModal5');
 
     // Get the button that opens the modal
     //var btn = document.getElementById("myBtn");
 
     var span = document.getElementsByClassName("close")[0];
+    var span2 = document.getElementsByClassName("close")[1];
 
 
     // When the user clicks the button, open the modal
@@ -239,6 +287,19 @@
         document.getElementById('showattr').style.display = "block";
         document.getElementById('Item_price').style.display = "none";
         return false;
+
+    }
+
+    function selectid5(x) {
+
+
+        modal5.style.display = "block";
+        //btn1 = document.getElementById('addtype').value;
+
+
+
+
+
 
     }
 
@@ -257,8 +318,22 @@
             success:function(data)
             {
                 $('#res_id').val(data)
+
+            }
+
+        });
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Admin_menu/getres_idformenu/")?>'+btn,
+            data:{'rname':btn},
+            cache: false,
+            success:function(data)
+            {
+                //$('#type').val(data)
+                //$('#type').html(data)
+
                 //alert(data);
-                //$('#txtHint').html(data);
+                $('#type').html(data);
             }
 
         });
@@ -266,12 +341,36 @@
 
 
     }
+    function selectid4(x) {
+        //modal3.style.display = "block";
+        btn1 = document.getElementById('name').value;
+        //alert(btn1);
+        //btn = $(x).data('panel-id');
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Admin_menu/getres_id/")?>'+btn1,
+            data:{'rname':btn1},
+            cache: false,
+            success:function(data)
+            {
+                $('#res_id2').val(data)
+                //$('#itemtype').html(data)
+
+                //alert(data);
+                //$('#txtHint').html(data);
+            }
+
+        });
+
+    }
 
 
     span.onclick = function() {
         modal2.style.display = "none";
     }
-
+    span2.onclick = function() {
+        modal5.style.display = "none";
+    }
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
         if (event.target == modal2) {
@@ -283,8 +382,8 @@
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
-        if (event.target == modal3) {
-            modal3.style.display = "none";
+        if (event.target == modal5) {
+            modal5.style.display = "none";
         }
     }
 

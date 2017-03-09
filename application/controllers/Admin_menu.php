@@ -10,7 +10,9 @@ class Admin_menu extends CI_Controller
         $data['show_res_content'] = $this->Restaurantm->show_restuarant_content();
         $data['mattribute'] = $this->Menum->show_menu_attribute();
         $this->data['show_res_content'] = $this->Restaurantm->show_restuarant_content();
+
         $this->load->view('admin_menu',$this->data);
+
 
 
     }
@@ -40,15 +42,40 @@ class Admin_menu extends CI_Controller
 
         redirect(Admin_menu);
     }
-    function getres_id() {
+    function getres_id()
+    {
 
         $rname = $this->input->post('rname');
         $this->load->model('Menum');
         $this->data['edit'] = $this->Menum->getres_id($rname);
-        foreach ($this->data['edit'] as $s){
+        foreach ($this->data['edit'] as $s) {
             echo $s->res_id;
+            /*$id=$s->res_id;
+            $this->data['show_menu_item_content'] = $this->Menum->show_menu_item_content($id);
+            foreach ($this->data['show_menu_item_content'] as $e) {
+                echo $e->item_type;
+            }*/
         }
     }
+
+        function getres_idformenu() {
+
+            $rname = $this->input->post('rname');
+            $this->load->model('Menum');
+            $this->data['edit'] = $this->Menum->getres_id($rname);
+            foreach ($this->data['edit'] as $s) {
+                //echo $s->res_id;
+                $id = $s->res_id;
+                $this->data['show_menu_item_content'] = $this->Menum->show_menu_item_content($id);
+               // print_r($this->data['show_menu_item_content']);
+                foreach ($this->data['show_menu_item_content'] as $e) {
+                    //echo $e->item_type;
+                    echo "<option value='" . $e->item_type . "'>" . $e->item_type . "</option>";
+                }
+            }
+            }
+
+
     function showadd()
     {
         $id = $this->input->post('id');
@@ -72,4 +99,13 @@ class Admin_menu extends CI_Controller
                                     </form>";
         }
     }
+    function insertmenuitem(){
+        $this->load->model('Menum');
+        $this->Menum->insertmenuitem();
+        //$this->load->view('admin_faq');
+
+        redirect(Admin_menu);
+    }
+
+
 }

@@ -140,10 +140,48 @@ class Menum extends CI_Model
         return $query->result();
 
     }
+    public function show_menu_item_content($id){
+
+        $query=$this->db->query("SELECT * FROM `menu` WHERE `res_id`= '$id'");
+        return $query->result();
+
+
+    }
 
     public function show_menu($res_id){
         $query=$this->db->query("SELECT * FROM `menu` WHERE `res_id`= '$res_id'");
         return $query->result();
+    }
+    public function get_id($tname)
+    {
+        $query=$this->db->query("SELECT * FROM `menu` WHERE `res_name`= '$tname'");
+        return $query->result();
+    }
+
+    public function show_menu_additem_content($id){
+
+        $query=$this->db->query("SELECT * FROM `menu` WHERE `id`= '$id'");
+        return $query->result();
+
+
+    }
+    public function insertmenuitem(){
+
+        $resid= $this->input->post('res_id');
+        $name = $this->input->post('name');
+        $type  = $this->input->post('itype');
+
+
+
+        $data = array(
+            'res_name' => $name,
+            'item_type' => $type,
+            'res_id' => $resid,
+
+
+        );
+
+        $this->db->insert('menu',$data);
     }
 
 

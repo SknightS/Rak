@@ -9,9 +9,9 @@ class Menu extends CI_Controller
     }
     public function show_menu($red_id)
     {
-        $this->load->model('Menum');
-        $this->data['show_menu'] = $this->Menum->show_menu($red_id);
-        $this->load->view('detail_page', $this->data);
+        //$this->load->model('Menum');
+        //$this->data['show_menu'] = $this->Menum->show_menu($red_id);
+        $this->load->view('detail_page');
 
     }
 }
