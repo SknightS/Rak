@@ -13,12 +13,12 @@ class Restaurantm extends CI_Model
     }
 
     public function insert_restuarant_content(){
-        $name = $this->input->post('Item_name');
-        $type  = $this->input->post('item_type');
-        $itemDescription = $this->input->post('Item_description');
-        $price  = $this->input->post('Item_price');
+        $name = $this->input->post('name');
+        $type  = $this->input->post('type');
+        //$itemDescription = $this->input->post('address');
+        //$price  = $this->input->post('Item_price');
 
-        //$address = $this->input->post('address');
+        $address = $this->input->post('address');
         $city = $this->input->post('city');
         $state= $this->input->post('state');
         $postal_code  = $this->input->post('postal_code');
@@ -26,13 +26,17 @@ class Restaurantm extends CI_Model
         $time  = $this->input->post('time');
         $username= $this->input->post('username');
         $password= $this->input->post('password');
-        //$vat= $this->input->post('vat');
+        $vat= $this->input->post('vat');
         $status  = $this->input->post('status');
+        $image = $this->input->post('image');
+
+        $fileName = $_FILES["res_image"]["name"];
+        move_uploaded_file($_FILES["res_image"]["tmp_name"], "img/" . $fileName);
 
         $data = array(
             'name' => $name,
             'type' => $type,
-            'address' => $itemDescription,
+            'address' => $address,
             'city' => $city,
             'state' => $state,
             'country' => $country,
@@ -40,12 +44,48 @@ class Restaurantm extends CI_Model
             'postal_code' => $postal_code,
             'username' => $username,
             'password' => $password,
-            'vat' => $price,
-            'status' => $status
+            'vat' => $vat,
+            'status' => $status,
+            'Image' => $fileName,
 
         );
 
         $this->db->insert('restaurant',$data);
+    }
+
+    public function edit_res($id){
+        $rname = $this->input->post('name');
+        $rtype = $this->input->post('type');
+        $raddress = $this->input->post('address');
+        $rcity = $this->input->post('city');
+        $rstate = $this->input->post('state');
+        $rpostal_code = $this->input->post('postal_code');
+        $rcountry = $this->input->post('country');
+        $rtime = $this->input->post('time');
+        $rusername = $this->input->post('username');
+        $rpassword = $this->input->post('password');
+        $rvat = $this->input->post('vat');
+        $rstatus = $this->input->post('status');
+        $rimage = $this->input->post('res_image');
+
+        $data = array(
+            'name' => $rname,
+            'type' => $rtype,
+            'address' => $raddress,
+            'city' => $rcity,
+            'state' => $rstate,
+            'postal_code' => $rpostal_code,
+            'country' => $rcountry,
+            'time' => $rtime,
+            'username' => $rusername,
+            'password' => $rpassword,
+            'vat' => $rvat,
+            'status' => $rstatus,
+            'Image' => $rimage,
+        );
+        $this->db->where('res_id', $id);
+        $this->db->update('restaurant', $data);
+
     }
 
     public function showedit($id){
@@ -54,6 +94,4 @@ class Restaurantm extends CI_Model
     return $query->result();
 
     }
-
-
 }

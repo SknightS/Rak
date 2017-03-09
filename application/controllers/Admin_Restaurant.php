@@ -18,6 +18,18 @@ class Admin_Restaurant extends CI_Controller
         redirect(Admin_Restaurant);
     }
 
+    public function edit_res($id){
+
+        $this->load->model('Restaurantm');
+        $this->Restaurantm->edit_res($id);
+        redirect(Admin_Restaurant);
+        /*
+        $this->load->model('Menum');
+        $this->Menum->menuedit($id);
+        redirect(Restaurant_menu);
+        */
+    }
+
     public function showedit(){
 
         $id = $this->input->post('id');
@@ -25,7 +37,7 @@ class Admin_Restaurant extends CI_Controller
         $this->data['edit'] = $this->Restaurantm->showedit($id);
         // print_r($this->data['edit']);
         foreach ($this->data['edit'] as $e) {
-            echo "<form role=\"form\" method=\"post\" action=\"<?php echo base_url()?>Admin_Restaurant/insert_res\" >
+            echo "<form role=\"form\" method=\"post\" action=\"http://localhost/Rak/Admin_Restaurant/edit_res/$e->res_id\" >
                                         <div class=\"form-group\">
                                             <label>Name</label>
                                             <input class=\"form-control\" type=\"text\" name=\"name\" value=\" $e->name \">
@@ -73,6 +85,10 @@ class Admin_Restaurant extends CI_Controller
                                         <div class=\"form-group\">
                                             <label>Status</label>
                                             <input class=\"form-control\" type=\"text\" name=\"status\" value=\" $e->status \">
+                                        </div>
+                                        <div class=\"form - group\">
+                                            <label>Image</label>
+                                            <input class=\"form - control\" type=\"file\" name=\"res_image\" value=\" $e->Image \">
                                         </div>
 
                                         <input class=\"btn btn-success\" type=\"submit\">

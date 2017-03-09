@@ -101,6 +101,7 @@
                                             <td>Password</td>
                                             <td>VAT</td>
                                             <td>Status</td>
+                                            <td>Image</td>
                                             <td>Action</td>
 
                                         </tr>
@@ -119,6 +120,7 @@
                                             <td><?php echo $s->password ?></td>
                                             <td><?php echo $s->vat ?></td>
                                             <td><?php echo $s->status ?></td>
+                                            <td><img src = "<?php echo base_url()?>/img/slider_single_restuarant/<?php echo $s->Image ?>" alt = 'pic' height="100" width="100"/></td>
 
                                             <td><button data-panel-id="<?= $s->res_id ?>" onclick="selectid(this)">Edit</button></td>
                                         </tr>
@@ -135,7 +137,7 @@
                                     <span class="close">×</span>
 
                                     <h2>Add Restaurant Content</h2>
-                                    <form role="form" method="post" action="<?php echo base_url()?>Admin_Restaurant/insert_res" >
+                                    <form method="post" action="<?php echo base_url()?>Admin_Restaurant/insert_res" enctype="multipart/form-data">
                                         <div class="form-group">
                                             <label>Name</label>
                                             <input class="form-control" type="text" name="name">
@@ -183,6 +185,11 @@
                                         <div class="form-group">
                                             <label>Status</label>
                                             <input class="form-control"type="text" name="status">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>File input</label>
+                                            <input class="form-control" type="file" name="res_image" value="res_image">
                                         </div>
 
                                         <input class="btn btn-success" type="submit">

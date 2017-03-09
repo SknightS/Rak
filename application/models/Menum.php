@@ -47,7 +47,7 @@ class Menum extends CI_Model
         $textbox = $this->input->post('textbox[]');
         $textimage = $this->input->post('textimage[]');
 
-        if($res_id!=null && $iname!=null && $textbox != null && $textimage !=null )
+        if($res_id!=null && $iname!=null && $textbox != null && $textimage !=null && $res_name !=null && $itype !=null && $idescription !=null )
         {
             for($i = 0; $i<count($textbox);$i++)
             {
