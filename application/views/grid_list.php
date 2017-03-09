@@ -134,7 +134,7 @@
             <div class="row">
         <?php foreach ($show_res_content as $s) { ?>
                 <div class="col-md-6 col-sm-6 wow zoomIn" data-wow-delay="0.1s">
-                    <a class="strip_list grid" href="<?php echo base_url()?>Menu/show_menu">
+                    <a class="strip_list grid" href="<?php echo base_url()?>Item_Menu/show_menu/<?php echo $s->res_id?>">
                         <div class="ribbon_1">Popular</div>
                         <div class="desc">
                             <div class="thumb_strip">
