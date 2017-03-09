@@ -39,6 +39,9 @@ class Menum extends CI_Model
 
         $res_id = $this->input->post('res_id');
         $iname = $this->input->post('Item_name');
+        $res_name = $this->input->post('name');
+        $itype = $this->input->post('Item_type');
+        $idescription = $this->input->post('Item_description');
         // $iattribute = $this->input->post('textbox[]');
         //$price  = $this->input->post('textimage[]');
         $textbox = $this->input->post('textbox[]');
@@ -56,7 +59,16 @@ class Menum extends CI_Model
                     'item_attribute	' => $textbox[$i],
                     'price' => $textimage[$i],
                 );
+                $menudata = array(
+                    'res_id' => $res_id,
+                    'res_name' => $res_name,
+                    'item_type' => $itype,
+                    'item_name' => $iname,
+                    'item_description' => $idescription,
+                    'item_price' => $textimage[$i],
+                );
                 $this->db->insert('menu_attribute',$data);
+                $this->db->insert('menu',$menudata);
             }
         }
         else{
