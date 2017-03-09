@@ -35,6 +35,33 @@ class Menum extends CI_Model
     }
 
     public function insert_menu_attr(){
+        extract($_POST);
+
+        $res_id = $this->input->post('res_id');
+        $iname = $this->input->post('Item_name');
+        // $iattribute = $this->input->post('textbox[]');
+        //$price  = $this->input->post('textimage[]');
+        $textbox = $this->input->post('textbox[]');
+        $textimage = $this->input->post('textimage[]');
+
+        if($res_id!=null && $iname!=null && $textbox != null && $textimage !=null )
+        {
+            for($i = 0; $i<count($textbox);$i++)
+            {
+                //  $iattribute[$i]."<br/>";
+                //$price[$i]."<br/>";
+                $data = array(
+                    'res_id' => $res_id,
+                    'item_name' => $iname,
+                    'item_attribute	' => $textbox[$i],
+                    'price' => $textimage[$i],
+                );
+                $this->db->insert('menu_attribute',$data);
+            }
+        }
+        else{
+            echo "som fields are missing";
+        }
 
 
 

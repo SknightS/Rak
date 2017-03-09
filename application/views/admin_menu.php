@@ -83,7 +83,7 @@
                         <div class="panel-body">
 
 
-                            <form method="post" action="<?php echo base_url()?>Admin_menu/test" >
+                            <form method="post" action="<?php echo base_url()?>Admin_menu/insert_menu_attr" >
 
                                 <div class="form-group">
                                     <label>Restuarant</label>
@@ -129,9 +129,9 @@
                                     <input type='button' value='Add Button' id='addButton'>
                                     <input type='button' value='Remove Button' id='removeButton'>
                                 </div>
-                                <div class="form-group">
+                                <div id = "Item_price" class="form-group">
                                     <label>Item Price</label>
-                                    <input class="form-control"type="text" name="Item_price">
+                                    <input class="form-control"type="text" name="Item_price" >
                                 </div>
                                 <input class="btn btn-success" type="submit">
                             </form>
@@ -237,6 +237,7 @@
         //document.getElementById('iname').value = x;
 
         document.getElementById('showattr').style.display = "block";
+        document.getElementById('Item_price').style.display = "none";
         return false;
 
     }
