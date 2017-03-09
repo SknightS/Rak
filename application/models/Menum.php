@@ -60,11 +60,8 @@ class Menum extends CI_Model
             }
         }
         else{
-            echo "som fields are missing";
+            echo "some fields are missing";
         }
-
-
-
 
     }
     public function getres_id($rname){

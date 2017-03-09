@@ -237,6 +237,7 @@
     //var btn = document.getElementById("myBtn");
 
     var span = document.getElementsByClassName("close")[0];
+    var span2 = document.getElementsByClassName("close")[1];
 
 
     // When the user clicks the button, open the modal
@@ -253,9 +254,21 @@
 
 
     function selectid(x) {
-        //modal3.style.display = "block";
+        modal3.style.display = "block";
         btn = $(x).data('panel-id');
-        print_r(btn);
+        //alert(btn);
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Admin_Restaurant/showedit/")?>'+btn,
+            data:{'id':btn},
+            cache: false,
+            success:function(data)
+            {
+                $('#txtHint').html(data);
+            }
+
+        });
 
 
     }
@@ -263,6 +276,9 @@
 
     span.onclick = function() {
         modal2.style.display = "none";
+    }
+    span2.onclick = function() {
+        modal3.style.display = "none";
     }
 
     // When the user clicks anywhere outside of the modal, close it

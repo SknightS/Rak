@@ -50,7 +50,7 @@ class Restaurantm extends CI_Model
 
     public function showedit($id){
 
-    $query=$this->db->query("SELECT *  FROM  restaurant WHERE `id`= '$id'");
+    $query=$this->db->query("SELECT *  FROM  restaurant WHERE `res_id`= '$id'");
     return $query->result();
 
     }

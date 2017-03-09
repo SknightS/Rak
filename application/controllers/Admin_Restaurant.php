@@ -23,8 +23,8 @@ class Admin_Restaurant extends CI_Controller
         $id = $this->input->post('id');
         $this->load->model('Restaurantm');
         $this->data['edit'] = $this->Restaurantm->showedit($id);
-         print_r($this->data[edit]);
-        /*foreach ($this->data['edit'] as $e) {
+        // print_r($this->data['edit']);
+        foreach ($this->data['edit'] as $e) {
             echo "<form role=\"form\" method=\"post\" action=\"<?php echo base_url()?>Admin_Restaurant/insert_res\" >
                                         <div class=\"form-group\">
                                             <label>Name</label>
@@ -78,7 +78,7 @@ class Admin_Restaurant extends CI_Controller
                                         <input class=\"btn btn-success\" type=\"submit\">
                                     </form>
                                     ";
-        }*/
+        }
     }
 
 }
