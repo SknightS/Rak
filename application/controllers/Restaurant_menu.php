@@ -25,7 +25,6 @@ class Restaurant_menu extends CI_Controller
 
         }
 
-
     }
 
     public function editmenu($id)
@@ -39,14 +38,9 @@ class Restaurant_menu extends CI_Controller
 
     public function delete($id)
     {
-
-//echo $id;
-        //print_r($id);
-
         $this->load->model('Menum');
         $this->Menum->deletemenu($id);
         redirect(Restaurant_menu);
-
 
     }
 
@@ -88,15 +82,6 @@ class Restaurant_menu extends CI_Controller
                                     
                                    <input class=\"btn btn - success\" type=\"submit\">
                                     </form>";
-                                    
-                                    
-                                 
-                                
-
-
-
-
-
 
         }
 

@@ -141,5 +141,10 @@ class Menum extends CI_Model
 
     }
 
+    public function show_menu($res_id){
+        $query=$this->db->query("SELECT * FROM `menu` WHERE `res_id`= '$res_id'");
+        return $query->result();
+    }
+
 
 }
