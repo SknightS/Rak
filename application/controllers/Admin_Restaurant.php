@@ -51,7 +51,7 @@ class Admin_Restaurant extends CI_Controller
                                             <input class=\"form-control\" type=\"text\" name=\"address\" value=\" $e->address \">
                                         </div>
                                         <div class=\"form-group\">
-                                            <label>City</label>
+                                            <label>Time</label>
                                             <input class=\"form-control\" type=\"text\" name=\"city\" value=\" $e->city \">
                                         </div>
                                         <div class=\"form-group\">

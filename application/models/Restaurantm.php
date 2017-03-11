@@ -93,5 +93,48 @@ class Restaurantm extends CI_Model
     $query=$this->db->query("SELECT *  FROM  restaurant WHERE `res_id`= '$id'");
     return $query->result();
 
+}
+    public function restaurant_details_description($id){
+
+
+
+        $query = $this->db->get_where('restaurant_details', array('res_id' => $id));
+        return $query->result();
+
+    }
+
+    public function restaurant_details_head($id){
+
+
+
+        $query = $this->db->get_where('restaurant', array('res_id' => $id));
+        return $query->result();
+
+    }
+    public function restaurant_details(){
+
+
+
+        $query = $this->db->get('restaurant_details');
+        return $query->result();
+
+    }
+    public function editadddetails($id){
+
+        $query = $this->db->get_where('restaurant_details', array('res_id' => $id));
+        return $query->result();
+    }
+    public function add_new_res_details($id,$rating,$description,$time){
+
+
+
+        $data = array(
+            'res_id' => $id ,
+            'rating' => $rating ,
+            'description' => $description,
+            'time'=>$time,
+        );
+
+        $this->db->insert('restaurant_details', $data);
     }
 }
