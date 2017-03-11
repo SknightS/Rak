@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 09, 2017 at 12:49 PM
+-- Generation Time: Mar 11, 2017 at 01:24 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.13
 
@@ -89,7 +89,8 @@ CREATE TABLE `about_us_feature` (
 --
 
 INSERT INTO `about_us_feature` (`id`, `big`, `small`, `box_header`, `box_details`, `box_icon`) VALUES
-(1, 'Quick food quality feautures', 'Cum doctus civibus efficiantur in imperdiet deterruisset.', '+ 1000 Restaurants', 'Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.', 'icon_pencil');
+(1, 'Quick food quality feautures', 'Cum doctus civibus efficiantur in imperdiet deterruisset.', '+ 1000 Restaurants', 'Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.', 'icon_pencil'),
+(2, 'Quick food quality feautures', 'Cum doctus civibus efficiantur in imperdiet deterruisset.', '+ 1000 Restaurants', 'Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.', 'icon_pencil');
 
 -- --------------------------------------------------------
 
@@ -167,14 +168,14 @@ CREATE TABLE `faq` (
 --
 
 INSERT INTO `faq` (`id`, `header`, `sub_header`, `details`) VALUES
-(1, '    Payments    ', '    Anim pariatur cliche reprehenderit?    ', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven''t heard of them accusamus labore '),
+(1, ' Payments ', ' Anim pariatur cliche reprehenderit? ', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven''t heard of them accusamus labore '),
 (2, 'Payments', 'Parsnip lotus root celery?', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven''t heard of them accusamus labore sustainable VHS.'),
 (3, 'How it works', 'Parsnip lotus root celery?', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven''t heard of them accusamus labore sustainable VHS.'),
 (4, 'How it works', 'Beet greens peanut salad?', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven''t heard of them accusamus labore sustainable VHS.'),
 (5, 'Delivery delay', 'Anim pariatur cliche reprehenderit?', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven''t heard of them accusamus labore sustainable VHS.'),
 (6, 'Delivery delay', 'Parsnip lotus root celery?', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven''t heard of them accusamus labore sustainable VHS.'),
 (7, 'Delivery delay', 'Parsnip lotus root celery?', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven''t heard of them accusamus labore sustainable VHS.'),
-(8, ' Delivery delay ', ' Beet greens peanut salad? ', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven''t heard of them accusamus labore sustainable VHS.'),
+(8, 'Delivery delay', 'Beet greens peanut salad?', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven''t heard of them accusamus labore sustainable VHS.'),
 (9, 'Takeaway', 'Anim pariatur cliche reprehenderit?', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven''t heard of them accusamus labore sustainable VHS.'),
 (10, 'Takeaway', 'Parsnip lotus root celery?', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven''t heard of them accusamus labore sustainable VHS.'),
 (11, 'Takeaway', 'Beet greens peanut salad?', 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven''t heard of them accusamus labore sustainable VHS.'),
@@ -217,7 +218,8 @@ CREATE TABLE `home_howitworks_content` (
 
 INSERT INTO `home_howitworks_content` (`id`, `big`, `small`, `one_big`, `one_small`, `two_big`, `two_small`, `three_big`, `three_small`, `four_big`, `four_small`) VALUES
 (0, 'this is big ', '', '', '', '', '', '', '', '', ''),
-(0, 'How it works', 'Cum doctus civibus efficiantur in imperdiet deterruisset.', 'Search by address', 'Find all restaurants available in your zone.', 'Choose a restaurant', 'We have more than 1000s of menus online', 'Pay by card or cash', 'It''s quick, easy and totally secure.', 'Delivery or takeaway', 'You are lazy? Are you backing home?');
+(0, 'How it works', 'Cum doctus civibus efficiantur in imperdiet deterruisset.', 'Search by address', 'Find all restaurants available in your zone.', 'Choose a restaurant', 'We have more than 1000s of menus online', 'Pay by card or cash', 'It''s quick, easy and totally secure.', 'Delivery or takeaway', 'You are lazy? Are you backing home?'),
+(1, 'How it works', 'Cum doctus civibus efficiantur in imperdiet deterr...', 'Search by address', 'Find all restaurants available in your zone.', 'Choose a restaurant', 'We have more than 1000s of menus online', 'Pay by card or cash', 'It''s quick, easy and totally secure', 'Delivery or takeaway', 'You are lazy? Are you backing home?');
 
 -- --------------------------------------------------------
 
@@ -244,8 +246,7 @@ INSERT INTO `home_main_content` (`id`, `big`, `small`) VALUES
 (6, 'this is big content and thanks a lot ', 'this is small content and thanks for that'),
 (7, 'this is big content and thanks a lot ', 'this is small content and thanks for that'),
 (8, 'this is big content and thanks a lot ', 'this is small content and thanks for that . ok '),
-(9, 'this is big content and thanks a lot ', 'this is small content and thanks for that . ok '),
-(10, NULL, NULL);
+(9, 'this is big content and thanks a lot ', 'this is small content and thanks for that . ok ');
 
 -- --------------------------------------------------------
 
@@ -266,7 +267,8 @@ CREATE TABLE `home_resturant_andmore_content` (
 
 INSERT INTO `home_resturant_andmore_content` (`id`, `resturant`, `people_served`, `registered_user`) VALUES
 (1, '2650 Restaurant', '5350 People Served', '12350 Registered Users'),
-(2, 'this is new content ', '12160', '');
+(2, 'this is new content ', '12160', ''),
+(3, '2650 Restaurant', '5350 People Served', '12350 Registered Users');
 
 -- --------------------------------------------------------
 
@@ -306,7 +308,8 @@ CREATE TABLE `home_section_5` (
 
 INSERT INTO `home_section_5` (`id`, `big`, `small`, `image`) VALUES
 (1, 'We also deliver to your office', 'Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.', ''),
-(2, 'this is big', '', '15777061_1283400545037215_5109786879746060967_o.jpg');
+(2, 'this is big', '', '15777061_1283400545037215_5109786879746060967_o.jpg'),
+(3, 'We also deliver to your office', 'Ridiculus sociosqu cursus neque cursus curae ante ..', '15777061_1283400545037215_5109786879746060967_o.jpg.');
 
 -- --------------------------------------------------------
 
@@ -330,8 +333,7 @@ CREATE TABLE `home_section_6` (
 
 INSERT INTO `home_section_6` (`id`, `big`, `small`, `submit_big`, `submit_small`, `submit_details`, `image`) VALUES
 (1, 'Work with Us', 'Cum doctus civibus efficiantur in imperdiet deterruisset.', 'Submit your Restaurant', 'Start to earn customers', 'Lorem ipsum dolor sit amet, ut virtute fabellas vix, no pri falli eloquentiam adversarium. Ea legere labore eam. Et eum sumo ocurreret, eos ei saepe oratio omittantur, legere eligendi partiendo pro te.', ''),
-(2, 'Work with Us', '\nCum doctus civibus efficiantur in imperdiet deterruisset.', 'We are looking for a Driver', 'Start to earn money', 'Lorem ipsum dolor sit amet, ut virtute fabellas vix, no pri falli eloquentiam adversarium. Ea legere labore eam. Et eum sumo ocurreret, eos ei saepe oratio omittantur, legere eligendi partiendo pro te.', ''),
-(3, 'Work with Us', 'Cum doctus civibus efficiantur in imperdiet deterruisset.', 'We are looking for a Driver', 'Start to earn money', 'Lorem ipsum dolor sit amet, ut virtute fabellas vix, no pri falli eloquentiam adversarium. Ea legere labore eam. Et eum sumo ocurreret, eos ei saepe oratio omittantur, legere eligendi partiendo pro te.', 'avatar3.jpg');
+(2, 'Work with Us', '\nCum doctus civibus efficiantur in imperdiet deterruisset.', 'We are looking for a Driver', 'Start to earn money', 'Lorem ipsum dolor sit amet, ut virtute fabellas vix, no pri falli eloquentiam adversarium. Ea legere labore eam. Et eum sumo ocurreret, eos ei saepe oratio omittantur, legere eligendi partiendo pro te.', '');
 
 -- --------------------------------------------------------
 
@@ -459,12 +461,12 @@ INSERT INTO `login` (`id`, `username`, `password`, `type`) VALUES
 
 CREATE TABLE `menu` (
   `id` int(10) NOT NULL,
-  `res_id` varchar(100) DEFAULT NULL,
-  `res_name` varchar(1000) DEFAULT NULL,
-  `item_type` varchar(1000) DEFAULT NULL,
-  `item_name` varchar(1000) DEFAULT NULL,
-  `item_description` varchar(10000) DEFAULT NULL,
-  `item_price` varchar(1000) DEFAULT NULL
+  `res_id` varchar(100) NOT NULL,
+  `res_name` varchar(1000) NOT NULL,
+  `item_type` varchar(1000) NOT NULL,
+  `item_name` varchar(1000) NOT NULL,
+  `item_description` varchar(10000) NOT NULL,
+  `item_price` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -472,28 +474,10 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`id`, `res_id`, `res_name`, `item_type`, `item_name`, `item_description`, `item_price`) VALUES
-(1, '', '', '', '', '', ''),
-(2, NULL, '12', ' italian ', ' pizzz', ' dskfjs sdkfj skjdf sd ', ' 500 '),
-(3, NULL, '12', ' italian ', ' pizzz', ' dskfjs sdkfj skjdf sd ', ' 500 '),
-(4, NULL, 'select name', ' italian ', ' pizzz', ' dskfjs sdkfj skjdf sd ', ' 500 '),
-(5, NULL, '10', ' italian ', ' pizzz', ' dskfjs sdkfj skjdf sd ', ' 500 '),
-(6, NULL, '8', ' italian ', ' pizzz', ' dskfjs sdkfj skjdf sd ', ' 500 '),
-(7, NULL, 'select name', ' italian ', ' pizzz', ' dskfjs sdkfj skjdf sd ', ' 500 '),
-(8, NULL, '9', ' italian ', ' pizzz', ' dskfjs sdkfj skjdf sd ', ' 500 '),
-(9, NULL, 'select name', ' italian ', ' pizzz', ' dskfjs sdkfj skjdf sd ', ' 500 '),
-(10, NULL, 'select name', ' italian ', ' pizzz', ' dskfjs sdkfj skjdf sd ', ' 500 '),
-(11, NULL, 'select name', ' italian ', ' pizzz', ' dskfjs sdkfj skjdf sd ', ' 500 '),
-(12, NULL, 'select name', ' italian ', ' pizzz', ' dskfjs sdkfj skjdf sd ', ' 500 '),
-(13, NULL, 'select name', ' italian ', ' pizzz', ' dskfjs sdkfj skjdf sd ', ' 500 '),
-(14, NULL, NULL, ' italian ', ' pizzz', ' dskfjs sdkfj skjdf sd ', ' 500 '),
-(37, NULL, 'American Burger', 'hotdog', 'double', 'double chicken', '200'),
-(38, NULL, 'American Burger', 'hotdog', 'double', 'double chicken', '300'),
-(39, NULL, 'tarka', 'set menu', 'indian biriyani', 'spicy masala', '1000'),
-(40, NULL, 'tarka', 'set menu', 'indian biriyani', 'spicy masala', '600'),
-(41, '1', 'American Burger', 'pasta', 'Italian pasta', 'grilled with mozarella', '300'),
-(42, '1', 'American Burger', 'pasta', 'Italian pasta', 'grilled with mozarella', '500'),
-(43, '', NULL, 'burger', NULL, NULL, NULL),
-(44, '1', 'American Burger', 'bur', NULL, NULL, NULL);
+(1, '1', 'American Burger', 'italian', '', '', ''),
+(8, '1', 'American Burger', 'franch', '', '', ''),
+(12, '1', 'American Burger', 'admin', '', '', ''),
+(13, '1', 'American Burger', 'emon', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -506,27 +490,21 @@ CREATE TABLE `menu_attribute` (
   `res_id` varchar(100) NOT NULL,
   `item_name` varchar(1000) NOT NULL,
   `item_attribute` varchar(1000) NOT NULL,
-  `price` varchar(1000) NOT NULL
+  `price` varchar(1000) NOT NULL,
+  `serial` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `menu_attribute`
+-- Table structure for table `menu_type`
 --
 
-INSERT INTO `menu_attribute` (`id`, `res_id`, `item_name`, `item_attribute`, `price`) VALUES
-(1, '', 'roll', 'm', '300'),
-(2, '', 'roll', 'l', '450'),
-(3, '2', 'dsad', '', ''),
-(4, '1', 'asd', '', ''),
-(5, '1', 'fsdf', '', ''),
-(6, '8', 'dasd', 'm', '500'),
-(7, '1', 'double', 'm', '200'),
-(8, '1', 'double', 'm', '200'),
-(9, '1', 'double', 'l', '300'),
-(10, '2', 'indian biriyani', 'large', '1000'),
-(11, '2', 'indian biriyani', 'medium', '600'),
-(12, '1', 'Italian pasta', 'medium', '300'),
-(13, '1', 'Italian pasta', 'large', '500');
+CREATE TABLE `menu_type` (
+  `id` int(11) NOT NULL,
+  `res_id` varchar(20) NOT NULL,
+  `type` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -556,15 +534,35 @@ CREATE TABLE `restaurant` (
 --
 
 INSERT INTO `restaurant` (`res_id`, `name`, `type`, `address`, `city`, `state`, `postal_code`, `country`, `time`, `username`, `password`, `vat`, `status`, `Image`) VALUES
-(1, '    American Burger    ', '    Burger    ', '    banani    ', '    dhaka    ', 'none', '    1206    ', '    bangladesh    ', '    6-10    ', '    aburger    ', '    123    ', '    15    ', '    active    ', ''),
+(1, '  American Burger  ', '  Burger  ', '  banani  ', '  dhaka  ', '  dhaka  ', '  1206  ', '  bangladesh  ', '  6-10  ', '  aburger  ', '  123  ', '  15  ', '  active  ', 'wall 1.jpg'),
 (2, 'tarka', 'italian', 'banani', 'dhaka', 'dhaka', '1206', 'bangladesh', '7-9', 'tarka', '123', '15', 'active', ''),
-(8, 'Preetom', 'Preetom', ' banani ', ' Dhaka ', ' none ', ' 1213 ', ' Bangladesh ', '9-22', 'ptom', '123', '15', 'active', '1_medium.jpg'),
-(9, 'Food', 'Food', 'banani', 'Dhaka', 'none', '1213', 'Bangladesh', '  10-10', 'bking', '123', '15', 'active', '7_medium.jpg'),
-(10, 'naga', 'burger ', 'thai', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '300', NULL, ''),
-(11, 'naga', 'burger ', 'thai', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '340', NULL, ''),
-(12, 'chicken', 'roll', 'indian', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '150', NULL, ''),
-(13, NULL, NULL, NULL, '', '', '', '', '', '', '', NULL, '', ''),
-(14, '  Grand Indian  ', '  Indian  ', '  basundhara  ', '  Dhaka  ', '  noe  ', '  1212  ', '  Bangladesh  ', '  9-22  ', '  gmughal  ', '  123  ', '  15  ', '  active  ', '9_medium.jpg');
+(3, '2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, ''),
+(4, '3', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `restaurant_details`
+--
+
+CREATE TABLE `restaurant_details` (
+  `res_id` varchar(100) NOT NULL,
+  `rating` varchar(100) NOT NULL,
+  `description` varchar(10000) NOT NULL,
+  `time` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `restaurant_details`
+--
+
+INSERT INTO `restaurant_details` (`res_id`, `rating`, `description`, `time`) VALUES
+('1', '5', 'this is description', 'monday-thursday'),
+('1', '3', ' this is description ??', ' monday-thursday '),
+('1', '3', ' this is description ??', ' monday-thursday '),
+('5', '2', 'fdg', 'sf'),
+('5', '2', 'fdg', 'sf'),
+('5', '2', 'fdg', 'sf');
 
 --
 -- Indexes for dumped tables
@@ -667,9 +665,9 @@ ALTER TABLE `menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `menu_attribute`
+-- Indexes for table `menu_type`
 --
-ALTER TABLE `menu_attribute`
+ALTER TABLE `menu_type`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -701,7 +699,7 @@ ALTER TABLE `about_us_details`
 -- AUTO_INCREMENT for table `about_us_feature`
 --
 ALTER TABLE `about_us_feature`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `contact`
 --
@@ -726,12 +724,12 @@ ALTER TABLE `faq`
 -- AUTO_INCREMENT for table `home_main_content`
 --
 ALTER TABLE `home_main_content`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `home_resturant_andmore_content`
 --
 ALTER TABLE `home_resturant_andmore_content`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `home_section_4`
 --
@@ -741,12 +739,12 @@ ALTER TABLE `home_section_4`
 -- AUTO_INCREMENT for table `home_section_5`
 --
 ALTER TABLE `home_section_5`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `home_section_6`
 --
 ALTER TABLE `home_section_6`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `icon`
 --
@@ -761,17 +759,17 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
---
--- AUTO_INCREMENT for table `menu_attribute`
---
-ALTER TABLE `menu_attribute`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+--
+-- AUTO_INCREMENT for table `menu_type`
+--
+ALTER TABLE `menu_type`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `restaurant`
 --
 ALTER TABLE `restaurant`
-  MODIFY `res_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `res_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
