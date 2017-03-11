@@ -127,29 +127,31 @@
                                      <?php
 
 
+                                     if ($menu_attr == ""){}else
 
-                                     ?>
-                                     <div class="dropdown-menu">
-                                         <h5>Select an option</h5>
-                                         <label>
-                                             <input type="radio" value="option1" name="options_1" checked>Medium <span>+ $3.30</span>
-                                         </label>
-                                         <label>
-                                             <input type="radio" value="option2" name="options_1">Large
-                                             <span>+ $5.30</span>
-                                         </label>
-                                         <label>
-                                             <input type="radio" value="option3" name="options_1">Extra Large <span>+ $8.30</span>
-                                         </label>
-                                         <h5>Add ingredients</h5>
-                                         <label>
-                                             <input type="checkbox" value="">Extra Tomato <span>+ $4.30</span>
-                                         </label>
-                                         <label>
-                                             <input type="checkbox" value="">Extra Peppers <span>+ $2.50</span>
-                                         </label>
-                                         <a href="#0" class="add_to_basket">Add to cart</a>
-                                     </div>
+                                         $res_id=$s->res_id;
+                                     $item_name=$q->item_name;
+
+                                     $query2=$this->db->query("SELECT * FROM `menu_attribute` WHERE `res_id`= '$res_id' AND item_name = '$item_name'");
+
+
+
+
+
+                                         ?>
+                                         <div class="dropdown-menu">
+                                             <h5>Select an option</h5>
+                                             <?php
+                                             foreach ($query2->result() as $m) {
+                                             ?>
+                                             <label>
+                                                 <input type="checkbox" id="check1" value="<?php echo $m->id?>" class="chk" name="options_1"><?php echo $m->item_attribute ?>
+                                                 <span>+ <?php echo $m->price ?></span>
+                                             </label>
+
+                                             <?php } ?>
+                                             <a href="#0" class="add_to_basket" onclick="myfunc()">Add to cart</a>
+                                         </div>
 
                                  </div>
 
@@ -170,47 +172,12 @@
                 <div id="cart_box" >
                     <h3>Your order <i class="icon_cart_alt pull-right"></i></h3>
                     <table class="table table_summary">
+
                         <tbody>
-                        <tr>
-                            <td>
-                                <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>1x</strong> Enchiladas
-                            </td>
-                            <td>
-                                <strong class="pull-right">$11</strong>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>2x</strong> Burrito
-                            </td>
-                            <td>
-                                <strong class="pull-right">$14</strong>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>1x</strong> Chicken
-                            </td>
-                            <td>
-                                <strong class="pull-right">$20</strong>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>2x</strong> Corona Beer
-                            </td>
-                            <td>
-                                <strong class="pull-right">$9</strong>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>2x</strong> Cheese Cake
-                            </td>
-                            <td>
-                                <strong class="pull-right">$12</strong>
-                            </td>
-                        </tr>
+                       <div id="txt"></div>
+
+
+
                         </tbody>
                     </table>
                     <hr>
@@ -341,5 +308,34 @@
     });
 </script>
 
+
+
+<script>
+
+    function myfunc() {
+        var chkArray = [];
+        var i;
+        /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+        $(".chk:checked").each(function () {
+            chkArray.push($(this).val());
+        });
+        for (i = 0; i < chkArray.length; i++) {
+            $.ajax({
+                type: 'POST',
+                url: '<?php echo base_url("Item_Menu/showedit/")?>' + chkArray[i],
+                data: {'id': chkArray[i]},
+                cache: false,
+                success: function (data) {
+                      $('#txt').html(data);
+                    //alert(data);
+                }
+
+            });
+        //alert(chkArray[i]);
+        }
+        $("input:checkbox").attr('checked', false);
+    }
+
+</script>
 </body>
 </html>

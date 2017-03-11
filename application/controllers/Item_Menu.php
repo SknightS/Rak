@@ -18,4 +18,30 @@ class Item_Menu extends CI_Controller
         $this->load->view('detail_page', $this->data);
 
     }
+
+    public function showedit(){
+        $id = $this->input->post('id');
+        //echo $id;
+
+        $data = array(
+            'id'      => $id,
+            'qty'     => 1,
+            'price'   => 39.95,
+            'name'    => 'T-Shirt',
+
+        );
+
+        $this->cart->insert($data);
+
+        foreach ($this->cart->contents() as $i) {
+            echo "<tr>
+                            <td>
+                                <a href=\"#0\" class=\"remove_item\"><i class=\"icon_minus_alt\"></i></a> <strong>1x</strong>
+                                $i->id;
+                            </td>
+                            
+                        </tr>";
+        }
+    }
+
 }
