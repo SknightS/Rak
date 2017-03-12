@@ -174,10 +174,19 @@
                     <table class="table table_summary">
 
                         <tbody>
-                       <div id="txt"></div>
+                        <?php foreach ($this->cart->contents() as $c) { ?>
+                            <tr>
+                                <td>
+                                    <a href=\"#0\" class=\"remove_item\"><i class=\"icon_minus_alt\"></i></a>
+                                    <strong>1x</strong>
+<!--                                    <span id="txt"></span>;-->
+                                    <?php echo $c['id']?>
+                                </td>
 
-
-
+                            </tr>
+                            <?php
+                        }
+                        ?>
                         </tbody>
                     </table>
                     <hr>
@@ -326,7 +335,7 @@
                 data: {'id': chkArray[i]},
                 cache: false,
                 success: function (data) {
-                      $('#txt').html(data);
+                     // $('#txt').html(data);
                     //alert(data);
                 }
 
@@ -334,6 +343,7 @@
         //alert(chkArray[i]);
         }
         $("input:checkbox").attr('checked', false);
+        $("#cart_box").load(location.href + " #cart_box");
     }
 
 </script>

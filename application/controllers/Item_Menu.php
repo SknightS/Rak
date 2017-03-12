@@ -33,15 +33,9 @@ class Item_Menu extends CI_Controller
 
         $this->cart->insert($data);
 
-        foreach ($this->cart->contents() as $i) {
-            echo "<tr>
-                            <td>
-                                <a href=\"#0\" class=\"remove_item\"><i class=\"icon_minus_alt\"></i></a> <strong>1x</strong>
-                                $i->id;
-                            </td>
-                            
-                        </tr>";
-        }
+       // foreach ($this->cart->contents() as $i) {
+         //   echo $i['id'];
+        //}
     }
 
 }
