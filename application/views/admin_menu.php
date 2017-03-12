@@ -144,63 +144,9 @@
 
 
 
-                            <div id="myModal2" class="modal">
-
-                                <!-- Modal content -->
-                                <div class="modal-content">
-                                    <span class="close">×</span>
-
-                                    <h2>Add Content</h2>
-                                    <form role="form" method="post" action="<?php echo base_url()?>Admin_menu/insert_menu_attr" >
-                                        <div class="form-group">
-                                            <label>Item Name</label>
-                                            <input class="form-control" type="text" id="iname" name="iname">
-                                        </div>
-                                        <div id='TextBoxesGroup' class="form-group">
-                                            <div id="TextBoxDiv1" class="form-group">
-                                                <label>Size/Extra #1 : </label><input class="form-control" type='textbox' id='textbox1' name="textbox[]" >
-                                                <label>Price #1 : </label><input class="form-control" type='textbox' id='textimage1' name="textimage[]">
-                                            </div>
-                                        </div>
-                                        <input type='button' value='Add Button' id='addButton'>
-                                        <input type='button' value='Remove Button' id='removeButton'>
-<!--                                        <input type='button' value='Get TextBox Value' id='getButtonValue'>-->
-
-                                        <input class="btn btn-success" type="submit">
-                                    </form>
-
-                                </div>
-
-                            </div>
-
-                            <div id="myModal3" class="modal">
-
-                                <!-- Modal content -->
-                                <div class="modal-content">
-                                    <span class="close">×</span>
-
-                                    <h2>Edit Content</h2>
-                                    <form role="form" method="post" action="<?php echo base_url()?>Admin_Faq/insert_faq" >
-                                        <div class="form-group">
-                                            <label>Item Name</label>
-                                            <input class="form-control" type="text" id="iname" name="iname">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Sub Header</label>
-                                            <input class="form-control"type="text" name="sub_header">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Details</label>
-                                            <textarea class="form-control"  name="details"></textarea>
-                                        </div>
-                                        <input class="btn btn-success" type="submit">
-                                    </form>
-                                    <div id="txtHint"></div>
-
-                                </div>
 
 
-                            </div>
+
 
                             <div id="myModal5" class="modal">
 
@@ -266,7 +212,7 @@
     // Get the modal
     // var modal = document.getElementById('myModal');
     var modal2 = document.getElementById('myModal2');
-    var modal3 = document.getElementById('myModal3');
+
     var modal5 = document.getElementById('myModal5');
 
     // Get the button that opens the modal

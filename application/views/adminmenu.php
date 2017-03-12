@@ -44,13 +44,21 @@
             <a href="<?php echo base_url()?>Admin_aboutus"><i class="fa fa-fw fa-edit"></i> About us</a>
         </li>
         <li>
-            <a href="<?php echo base_url()?>Admin_Restaurant"><i class="fa fa-fw fa-desktop"></i> Restaurant</a>
+            <!--<a href="<?php echo base_url()?>Admin_Restaurant"><i class="fa fa-fw fa-desktop"></i> Restaurant</a>-->
+            <a href="javascript:;" data-toggle="collapse" data-target="#dropdown"><i class="fa fa-fw fa-arrows-v"></i> Restaurant <i class="fa fa-fw fa-caret-down"></i></a>
+            <ul id="dropdown" class="collapse">
+                <li>
+                    <a href="<?php echo base_url()?>Admin_Restaurant">Restaurant</a>
+
+                    <a href="<?php echo base_url()?>Admin_Res_Details">Add Restaurant Details</a>
+                </li>
+            </ul>
 
         </li>
-        <li>
+        <!--<li>
             <a href="<?php echo base_url()?>Admin_Res_Details"><i class="fa fa-fw fa-desktop"></i> Add Restaurant Details</a>
 
-        </li>
+        </li>-->
         <li>
             <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Menu <i class="fa fa-fw fa-caret-down"></i></a>
             <ul id="demo" class="collapse">
@@ -67,8 +75,8 @@
             <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
         </li>
         <li>
-            <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-            <ul id="demo" class="collapse">
+            <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+            <ul id="demo1" class="collapse">
                 <li>
                     <a href="#">Dropdown Item</a>
                 </li>

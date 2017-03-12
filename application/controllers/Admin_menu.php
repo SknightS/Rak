@@ -36,6 +36,17 @@ class Admin_menu extends CI_Controller
 
     }
     function insert_menu_attr(){
+
+
+        //$textbox = $this->input->post('textbox[]');
+        //$textimg = $this->input->post('textimage[]');
+        //$price  = $this->input->post('Item_price');
+
+        //if (count($textbox)<1){ print_r($textbox );}else{echo "variable is not empty";}
+
+        //print_r($price);
+
+
         $this->load->model('Menum');
         $this->Menum->insert_menu_attr();
         //$this->load->view('admin_faq');

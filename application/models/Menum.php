@@ -35,24 +35,38 @@ class Menum extends CI_Model
     }
 
     public function insert_menu_attr(){
-        extract($_POST);
+        //extract($_POST);
 
         $res_id = $this->input->post('res_id');
         $iname = $this->input->post('Item_name');
         $res_name = $this->input->post('name');
-        $itype = $this->input->post('Item_type');
+        $itype = $this->input->post('type');
         $idescription = $this->input->post('Item_description');
         // $iattribute = $this->input->post('textbox[]');
-        //$price  = $this->input->post('textimage[]');
+        $price  = $this->input->post('Item_price');
         $textbox = $this->input->post('textbox[]');
         $textimage = $this->input->post('textimage[]');
 
-        if($res_id!=null && $iname!=null && $textbox != null && $textimage !=null && $res_name !=null && $itype !=null && $idescription !=null )
-        {
-            for($i = 0; $i<count($textbox);$i++)
-            {
-                //  $iattribute[$i]."<br/>";
-                //$price[$i]."<br/>";
+
+
+        if(array_filter($textbox)==null && array_filter($textimage) ==null) {
+
+
+            $menudata = array(
+                'res_id' => $res_id,
+                'res_name' => $res_name,
+                'item_type' => $itype,
+                'item_name' => $iname,
+                'item_description' => $idescription,
+                'item_price' => $price,
+            );
+            $this->db->insert('menu', $menudata);
+
+
+
+        }else{
+
+            for($i = 0; $i<count($textbox);$i++) {
                 $data = array(
                     'res_id' => $res_id,
                     'item_name' => $iname,
@@ -67,12 +81,10 @@ class Menum extends CI_Model
                     'item_description' => $idescription,
                     'item_price' => $textimage[$i],
                 );
-                $this->db->insert('menu_attribute',$data);
-                $this->db->insert('menu',$menudata);
+                $this->db->insert('menu_attribute', $data);
+                $this->db->insert('menu', $menudata);
+
             }
-        }
-        else{
-            echo "some fields are missing";
         }
 
     }
