@@ -43,8 +43,6 @@ class Item_Menu extends CI_Controller
 
             $this->cart->insert($data);
 
-            $this->cart->insert($data);
-
             //echo $cr->id;
 
         }

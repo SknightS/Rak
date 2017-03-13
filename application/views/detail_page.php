@@ -177,10 +177,10 @@
                         <?php foreach ($this->cart->contents() as $c) { ?>
                             <tr>
                                 <td>
-                                    <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>1x</strong> <?php echo $c['name'];?>
+                                    <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong><?php echo $c['qty']?>x</strong> <?php echo $c['name'];?>
                                 </td>
                                 <td>
-                                    <strong class="pull-right"><?php echo $c['price'];?></strong>
+                                    <strong class="pull-right"><?php echo $c['price']*$c['qty'];?></strong>
                                 </td>
                             </tr>
                             <?php
