@@ -177,7 +177,9 @@
                         <?php foreach ($this->cart->contents() as $c) { ?>
                             <tr>
                                 <td>
-                                    <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong><?php echo $c['qty']?>x</strong> <?php echo $c['name'];?>
+                                    <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a>  <input type='button' value='-' class='qtyminus' field='<?php echo $c['id']?>' />
+                                    <input type='text' name='<?php echo $c['id']?>' value="<?php echo $c['qty']?>" class='qty' style="width: 20px" />
+                                    <input type='button' value='+' class='qtyplus' field='<?php echo $c['id']?>' /> <?php echo $c['name'];?>
                                 </td>
                                 <td>
                                     <strong class="pull-right"><?php echo $c['price']*$c['qty'];?></strong>
@@ -346,6 +348,53 @@
         $("input:checkbox").attr('checked', false);
 
     }
+
+</script>
+
+<script>
+
+    jQuery(document).ready(function(){
+        // This button will increment the value
+        $('.qtyplus').click(function(e){
+            // Stop acting like a button
+            e.preventDefault();
+            // Get the field name
+            fieldName = $(this).attr('field');
+            alert(fieldName)
+            // Get its current value
+            var currentVal = parseInt($('input[name='+fieldName+']').val());
+
+            // If is not undefined
+            if (!isNaN(currentVal)) {
+                // Increment
+                  $('input[name='+fieldName+']').val(currentVal + 1);
+            } else {
+                // Otherwise put a 0 there
+                $('input[name='+fieldName+']').val(0);
+            }
+
+        });
+        // This button will decrement the value till 0
+        $(".qtyminus").click(function(e) {
+            // Stop acting like a button
+            e.preventDefault();
+            // Get the field name
+            fieldName = $(this).attr('field');
+            // Get its current value
+            var currentVal = parseInt($('input[name='+fieldName+']').val());
+            // If it isn't undefined or its greater than 0
+            if (!isNaN(currentVal) && currentVal > 0) {
+                // Decrement one
+                $('input[name='+fieldName+']').val(currentVal - 1);
+            } else {
+                // Otherwise put a 0 there
+                $('input[name='+fieldName+']').val(0);
+            }
+        });
+    });
+
+
+
 
 </script>
 </body>
