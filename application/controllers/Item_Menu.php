@@ -19,23 +19,35 @@ class Item_Menu extends CI_Controller
 
     }
 
-    public function showedit(){
+    public function inser_cart(){
         $id = $this->input->post('id');
-        //echo $id;
 
-        $data = array(
-            'id'      => $id,
-            'qty'     => 1,
-            'price'   => 39.95,
-            'name'    => 'T-Shirt',
+        $this->load->model('Menum');
+        $this->data['get_cart_pro'] = $this->Menum->get_pro_cart($id);
 
-        );
+       // print_r($this->data['get_cart_pro']);
 
-        $this->cart->insert($data);
+        foreach ($this->data['get_cart_pro'] as $cr) {
 
-       // foreach ($this->cart->contents() as $i) {
-         //   echo $i['id'];
-        //}
+            $cid=$cr->id;
+            $citem_name=$cr->item_name;
+            $price= $cr->price;
+
+            $data = array(
+                'id' => $cid,
+                'qty' => 1,
+                'price' => $price,
+                'name' => $citem_name,
+                'coupon' => 'XMAS-50OFF'
+            );
+
+            $this->cart->insert($data);
+
+            $this->cart->insert($data);
+
+            //echo $cr->id;
+
+        }
     }
 
 }

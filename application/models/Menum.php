@@ -205,6 +205,11 @@ class Menum extends CI_Model
         $query=$this->db->query("SELECT * FROM `menu_attribute` WHERE  `res_id`= '$res_id' ");
         return $query->result();
     }
+    public function get_pro_cart($id){
+
+        $query=$this->db->query("SELECT * FROM `menu_attribute` WHERE  `id`= '$id' ");
+        return $query->result();
+    }
 
 
 }

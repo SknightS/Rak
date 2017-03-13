@@ -32,7 +32,7 @@
 <section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url()?>img/sub_header_2.jpg" data-natural-width="1400" data-natural-height="470">
     <div id="subheader">
         <div id="sub_content">
-            <div id="thumb"><img src="<?php echo base_url()?><?php echo base_url()?>img/thumb_restaurant.jpg" alt=""></div>
+            <div id="thumb"><img src="<?php echo base_url()?>img/thumb_restaurant.jpg" alt=""></div>
             <div class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i> (<small><a href="<?php echo base_url()?>Admin_Res_Details/showdetails/<?php echo $id ?>">Read 98 reviews</a></small>)</div>
             <h1>Mexican TacoMex</h1>
             <div><em>Mexican / American</em></div>
@@ -177,12 +177,11 @@
                         <?php foreach ($this->cart->contents() as $c) { ?>
                             <tr>
                                 <td>
-                                    <a href=\"#0\" class=\"remove_item\"><i class=\"icon_minus_alt\"></i></a>
-                                    <strong>1x</strong>
-<!--                                    <span id="txt"></span>;-->
-                                    <?php echo $c['id']?>
+                                    <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>1x</strong> <?php echo $c['name'];?>
                                 </td>
-
+                                <td>
+                                    <strong class="pull-right"><?php echo $c['price'];?></strong>
+                                </td>
                             </tr>
                             <?php
                         }
@@ -331,19 +330,21 @@
         for (i = 0; i < chkArray.length; i++) {
             $.ajax({
                 type: 'POST',
-                url: '<?php echo base_url("Item_Menu/showedit/")?>' + chkArray[i],
+                url: '<?php echo base_url("Item_Menu/inser_cart/")?>' + chkArray[i],
                 data: {'id': chkArray[i]},
                 cache: false,
                 success: function (data) {
                      // $('#txt').html(data);
                     //alert(data);
-                }
+
+                    }
 
             });
         //alert(chkArray[i]);
+            $("#cart_box").load(location.href + " #cart_box");
         }
         $("input:checkbox").attr('checked', false);
-        $("#cart_box").load(location.href + " #cart_box");
+
     }
 
 </script>
