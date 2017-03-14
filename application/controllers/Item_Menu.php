@@ -48,4 +48,34 @@ class Item_Menu extends CI_Controller
         }
     }
 
+    public function update_add_cart(){
+
+        $id = $this->input->post('id');
+       $amount = $this->input->post('amount');
+
+
+        $data = array(
+            'rowid' => $id,
+            'qty' => $amount,
+
+        );
+        $this->cart->update($data);
+    }
+
+
+
+    public function update_minus_cart(){
+
+        $id = $this->input->post('id');
+        $amount = $this->input->post('amount');
+
+
+        $data = array(
+            'rowid' => $id,
+            'qty' => $amount,
+
+        );
+        $this->cart->update($data);
+    }
+
 }

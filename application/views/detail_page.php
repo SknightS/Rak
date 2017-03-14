@@ -171,16 +171,24 @@
             <div class="theiaStickySidebar">
                 <div id="cart_box" >
                     <h3>Your order <i class="icon_cart_alt pull-right"></i></h3>
+
                     <table class="table table_summary">
 
                         <tbody>
-                        <?php foreach ($this->cart->contents() as $c) { ?>
+                        <?php foreach ($this->cart->contents() as $c) {    ?>
+
                             <tr>
-                                <td>
-                                    <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a>  <input type='button' value='-' class='qtyminus' field='<?php echo $c['id']?>' />
-                                    <input type='text' name='<?php echo $c['id']?>' value="<?php echo $c['qty']?>" class='qty' style="width: 20px" />
-                                    <input type='button' value='+' class='qtyplus' field='<?php echo $c['id']?>' /> <?php echo $c['name'];?>
+
+<!--                                    <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a>  <input type='button' value='-' class='qtyminus' field='--><?php //echo $c['id']?><!--' />-->
+<!--                                    <input type='text' name='--><?php //echo $c['id']?><!--' value="--><?php //echo $c['qty']?><!--" class='qty' style="width: 20px" />-->
+<!--                                    <input type='button' onclick="plus()" value='+' class='qtyplus' field='--><?php //echo $c['id']?><!--' /> --><?php //echo $c['name'];?>
+                                <div>
+                                    <td>
+                                    <input type="button"  class="btn btn-success" style="width: 20px; float: left" data-panel-id="<?= $c['rowid'] ?>" onclick="minus(this)" value="-">
+                                    <input type="text"  id="<?php echo $c['rowid']?>" class="form-control" style="width: 45px; height:auto; float: left" value="<?php echo $c['qty']?>">
+                                    <input type="button" class="btn btn-success" data-panel-id="<?= $c['rowid'] ?>" onclick="plus(this)" style="width: 20px; float: left" value="+"> <?php echo $c['name']?>
                                 </td>
+                                </div>
                                 <td>
                                     <strong class="pull-right"><?php echo $c['price']*$c['qty'];?></strong>
                                 </td>
@@ -190,6 +198,48 @@
                         ?>
                         </tbody>
                     </table>
+                    <script>
+
+                        // This button will increment the value
+                        $('.qtyplus').click(function(e){
+                            // Stop acting like a button
+                            //e.preventDefault();
+                            // Get the field name
+                            fieldName = $(this).attr('field');
+                            alert(fieldName)
+                            // Get its current value
+                            var currentVal = parseInt($('input[name='+fieldName+']').val());
+
+                            // If is not undefined
+                            if (!isNaN(currentVal)) {
+                                // Increment
+                                $('input[name='+fieldName+']').val(currentVal + 1);
+                            } else {
+                                // Otherwise put a 0 there
+                                $('input[name='+fieldName+']').val(0);
+                            }
+
+                        });
+                        // This button will decrement the value till 0
+                        $(".qtyminus").click(function(e) {
+                            // Stop acting like a button
+                            //  e.preventDefault();
+                            // Get the field name
+                            fieldName = $(this).attr('field');
+                            // Get its current value
+                            var currentVal = parseInt($('input[name='+fieldName+']').val());
+                            // If it isn't undefined or its greater than 0
+                            if (!isNaN(currentVal) && currentVal > 0) {
+                                // Decrement one
+                                $('input[name='+fieldName+']').val(currentVal - 1);
+                            } else {
+                                // Otherwise put a 0 there
+                                $('input[name='+fieldName+']').val(0);
+                            }
+                        });
+
+
+                    </script>
                     <hr>
                     <div class="row" id="options_2">
                         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
@@ -222,6 +272,7 @@
                     </table>
                     <hr>
                     <a class="btn_full" href="cart.php">Order now</a>
+
                 </div><!-- End cart_box -->
             </div><!-- End theiaStickySidebar -->
         </div><!-- End col-md-3 -->
@@ -343,59 +394,109 @@
 
             });
         //alert(chkArray[i]);
-            $("#cart_box").load(location.href + " #cart_box");
+          // $("#cart_box").load(location.href + " #cart_box");
+            //$("#cart_boxt").load('detail_page.php');
+            $('#cart_box').load(document.URL +  ' #cart_box');
+            $('#reload').load(document.URL +  ' #reload');
+
+
         }
         $("input:checkbox").attr('checked', false);
 
+
     }
+
 
 </script>
 
 <script>
 
-    jQuery(document).ready(function(){
-        // This button will increment the value
-        $('.qtyplus').click(function(e){
-            // Stop acting like a button
-            e.preventDefault();
-            // Get the field name
-            fieldName = $(this).attr('field');
-            alert(fieldName)
-            // Get its current value
-            var currentVal = parseInt($('input[name='+fieldName+']').val());
-
-            // If is not undefined
-            if (!isNaN(currentVal)) {
-                // Increment
-                  $('input[name='+fieldName+']').val(currentVal + 1);
-            } else {
-                // Otherwise put a 0 there
-                $('input[name='+fieldName+']').val(0);
-            }
-
-        });
-        // This button will decrement the value till 0
-        $(".qtyminus").click(function(e) {
-            // Stop acting like a button
-            e.preventDefault();
-            // Get the field name
-            fieldName = $(this).attr('field');
-            // Get its current value
-            var currentVal = parseInt($('input[name='+fieldName+']').val());
-            // If it isn't undefined or its greater than 0
-            if (!isNaN(currentVal) && currentVal > 0) {
-                // Decrement one
-                $('input[name='+fieldName+']').val(currentVal - 1);
-            } else {
-                // Otherwise put a 0 there
-                $('input[name='+fieldName+']').val(0);
-            }
-        });
-    });
-
-
+//    // This button will increment the value
+//        $('.qtyplus').click(function(e){
+//            // Stop acting like a button
+//            //e.preventDefault();
+//            // Get the field name
+//            fieldName = $(this).attr('field');
+//            alert(fieldName)
+//            // Get its current value
+//            var currentVal = parseInt($('input[name='+fieldName+']').val());
+//
+//            // If is not undefined
+//            if (!isNaN(currentVal)) {
+//                // Increment
+//                  $('input[name='+fieldName+']').val(currentVal + 1);
+//            } else {
+//                // Otherwise put a 0 there
+//                $('input[name='+fieldName+']').val(0);
+//            }
+//
+//        });
+//        // This button will decrement the value till 0
+//        $(".qtyminus").click(function(e) {
+//            // Stop acting like a button
+//          //  e.preventDefault();
+//            // Get the field name
+//            fieldName = $(this).attr('field');
+//            // Get its current value
+//            var currentVal = parseInt($('input[name='+fieldName+']').val());
+//            // If it isn't undefined or its greater than 0
+//            if (!isNaN(currentVal) && currentVal > 0) {
+//                // Decrement one
+//                $('input[name='+fieldName+']').val(currentVal - 1);
+//            } else {
+//                // Otherwise put a 0 there
+//                $('input[name='+fieldName+']').val(0);
+//            }
+//        });
 
 
 </script>
+<script>
+    function plus(x) {
+
+        var btn = $(x).data('panel-id');
+        var x = parseInt(document.getElementById(btn).value);
+        var newx= x+1;
+
+        document.getElementById(btn).value = newx;
+        $.ajax({
+            type: 'POST',
+            url: '<?php echo base_url("Item_Menu/update_add_cart/")?>' + btn,
+            data: {'id':btn, 'amount':newx },
+            cache: false,
+            success: function (data) {
+                // $('#txt').html(data);
+              //  alert(data);
+
+            }
+
+        });
+
+    }
+
+    function minus(x) {
+
+        var btn = $(x).data('panel-id');
+        var x = parseInt(document.getElementById(btn).value);
+        var newx= x-1;
+
+        document.getElementById(btn).value = newx;
+
+        $.ajax({
+            type: 'POST',
+            url: '<?php echo base_url("Item_Menu/update_add_cart/")?>' + btn,
+            data: {'id':btn, 'amount':newx },
+            cache: false,
+            success: function (data) {
+                // $('#txt').html(data);
+                //  alert(data);
+
+            }
+
+        });
+    }
+
+</script>
+
 </body>
 </html>
