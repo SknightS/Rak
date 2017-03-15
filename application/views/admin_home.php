@@ -11,6 +11,12 @@
 
     <title>SB Admin - Bootstrap Admin Template</title>
 
+
+    <!--star rating -->
+    <link href="rating.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="rating.js"></script>
+
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -508,6 +514,19 @@
 <script>
     $(document).ready(function() {
         $('#summernote').summernote();
+    });
+
+
+</script>
+<script>
+    $(function() {
+        $("#rating_star").codexworld_rating_widget({
+            starLength: '5',
+            initialValue: '',
+            callbackFunctionName: 'processRating',
+            imageDirectory: 'images/',
+            inputAttr: 'postID'
+        });
     });
 </script>
 

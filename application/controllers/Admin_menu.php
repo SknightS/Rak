@@ -12,9 +12,6 @@ class Admin_menu extends CI_Controller
         $this->data['show_res_content'] = $this->Restaurantm->show_restuarant_content();
 
         $this->load->view('admin_menu',$this->data);
-
-
-
     }
     public function insert_res(){
 

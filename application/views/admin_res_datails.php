@@ -3,9 +3,116 @@
 <!--[if IE 9]><html class="ie ie9"> <![endif]-->
 <html>
 <head>
-
+    <script src="<?php echo base_url()?>js/jquery-2.2.4.min.js"></script>
+    <script src="<?php echo base_url()?>js/common_scripts_min.js"></script>
+    <script src="<?php echo base_url()?>js/functions.js"></script>
+    <script src="<?php echo base_url()?>assets/validate.js"></script>
+    <!--<script type="text/javascript" src="<?php echo base_url()?>js/jquery/jquery.js" language="javascript"></script>-->
     <?php include ('head.php') ?>
     <![endif]-->    <title>RAK - Quality Delivery or Take Away Food</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <!-- COMMON SCRIPTS -->
+
+
+    <!-- SPECIFIC SCRIPTS -->
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAs_JyKE9YfYLSQujbyFToZwZy-wc09w7s"></script>
+
+    <script src="<?php echo base_url()?>js/map_single.js"></script>
+    <script src="<?php echo base_url()?>js/infobox.js"></script>
+
+    <script src="<?php echo base_url()?>js/jquery.sliderPro.min.js"></script>
+
+    <!--rating star-->
+    <link href="rating.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/rating.js"></script>
+    <title>stars.css Demos</title>
+<!--    <script type="text/javascript" src="--><?php //echo base_url()?><!--js/jquery/jquery.js" language="javascript"></script>-->
+
+
+    <script type="text/javascript" src="<?php echo base_url()?>js/rating.js" language="javascript"></script>
+
+    <style>
+        .relativeWrap
+        {
+            z-index: 0;
+        }
+        .rating {
+            cursor: pointer;
+            color:#000;
+            clear: both;
+            display: block;
+        }
+        .rating:after {
+            content: '.';
+            display: block;
+            height: 0;
+            width: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        .cancel,
+        .star {
+            float: left;
+            width: 17px;
+            height: 15px;
+            overflow: hidden;
+            text-indent: -999em;
+            cursor: pointer;
+        }
+
+        .star,
+        .star a {background: url(<?php echo base_url()?>img/star.gif) no-repeat 0 0px;}
+
+        .cancel a,
+        .star a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-position: 0 0px;
+        }
+
+        div.rating div.on a {
+            background-position: 0 -16px;
+        }
+        div.rating div.hover a,
+        div.rating div a:hover {
+            background-position: 0 -32px;
+        }
+
+
+    </style>
+    <link href="http://www.cssscript.com/wp-includes/css/sticky.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript">
+
+
+        $( document ).ready(function( $ ) {
+            $( '#Img_carousel' ).sliderPro({
+                width: 960,
+                height: 500,
+                fade: true,
+                arrows: true,
+                buttons: false,
+                fullScreen: false,
+                smallSize: 500,
+                startSlide: 0,
+                mediumSize: 1000,
+                largeSize: 3000,
+                thumbnailArrows: true,
+                autoplay: false
+            });
+            $('#rate1').rating6('', {maxvalue:5, curvalue:0});
+
+        });
+        function rating_system() {
+
+            var star1 = document.getElementById("get_text1").value;
+
+            var total_count=(Number(star1));
+            document.getElementById("total_star").value=total_count;
+        }
+    </script>
 
 </head>
 
@@ -123,6 +230,22 @@
             <div class="box_style_2">
                 <h2 class="inner">Description</h2>
 
+                <!-- Rating-->
+                this wasnt des
+                <br/><br/>
+
+
+                <div id="rate1" class=" rating col-md-12">
+                    <p class="col-md-6">&nbsp;<strong>Skills</strong></p>
+                </div>
+                <input type="text" id="get_text1" name="get_text1">
+
+                <input type="text" id="total_star" name="total_count">
+                <button data-panel-id="total_rating" onclick="rating_system()">Click to see result</button>
+                <a href="<?php echo base_url()?>Admin_menu_attribute">Menu Attribute</a>
+
+
+                <br/><br/>
                 <?php foreach ($details as $e){?>
                 <?php echo $e->description ?>
                     <?php }?>
@@ -133,8 +256,9 @@
                 <div id="summary_review">
                     <div id="general_rating">
                         11 Reviews
-                        <div class="rating">
-                            <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
+
+                        <div id="rate1" class=" rating col-md-12">
+                            <p class="col-md-6">&nbsp;<strong>Skills</strong></p>
                         </div>
                     </div>
 
@@ -484,37 +608,44 @@
 </div>
 <!-- End Search Menu -->
 
-<!-- COMMON SCRIPTS -->
-<script src="<?php echo base_url()?>js/jquery-2.2.4.min.js"></script>
-<script src="<?php echo base_url()?>js/common_scripts_min.js"></script>
-<script src="<?php echo base_url()?>js/functions.js"></script>
-<script src="<?php echo base_url()?>assets/validate.js"></script>
 
-<!-- SPECIFIC SCRIPTS -->
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAs_JyKE9YfYLSQujbyFToZwZy-wc09w7s"></script>
-
-<script src="<?php echo base_url()?>js/map_single.js"></script>
-<script src="<?php echo base_url()?>js/infobox.js"></script>
-
-<script src="<?php echo base_url()?>js/jquery.sliderPro.min.js"></script>
+<!--
 <script type="text/javascript">
-    $( document ).ready(function( $ ) {
-        $( '#Img_carousel' ).sliderPro({
-            width: 960,
-            height: 500,
-            fade: true,
-            arrows: true,
-            buttons: false,
-            fullScreen: false,
-            smallSize: 500,
-            startSlide: 0,
-            mediumSize: 1000,
-            largeSize: 3000,
-            thumbnailArrows: true,
-            autoplay: false
-        });
-    });
-</script>
+    $(document).ready(function() {
 
+    });
+
+    function rating_system(x)
+    {
+
+        var star1 = document.getElementById("get_text1").value;
+        var star2 = document.getElementById("get_text2").value;
+        var star3 = document.getElementById("get_text3").value;
+        var star4 = document.getElementById("get_text4").value;
+        var star5 = document.getElementById("get_text5").value;
+        var star6 = document.getElementById("get_text6").value;
+        var total_count=(Number(star1)+Number(star2)+Number(star3)+Number(star4)+Number(star5)+Number(star6))/6;
+        document.getElementById("total_star").value=total_count;
+
+        rating= $(x).data('panel-id');
+        /*
+
+        $.ajax({
+            type:'POST',
+            url:''+rating,
+            data:{'id':rating},
+            cache: false,
+            success:function(data)
+            {
+                $('#txtHint').html(data);
+            }
+
+        });
+
+        */
+    }
+-->
+</script>
+<script type="text/javascript" src="js/jquery/jquery.js" language="javascript"></script>
 </body>
 </html>
