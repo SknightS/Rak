@@ -89,6 +89,9 @@
             </ul>
         </li>
         <li>
+            <a href="<?php echo base_url()?>Order"><i class="fa fa-fw fa-wrench"></i>order</a>
+        </li>
+        <li>
             <a href="<?php echo base_url()?>Rating"><i class="fa fa-fw fa-file"></i> Rating</a>
         </li>
         <li>

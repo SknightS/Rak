@@ -172,7 +172,7 @@
                 <div id="cart_box" >
                     <h3>Your order <i class="icon_cart_alt pull-right"></i></h3>
 
-                    <table  id="cart_table" class="table table_summary">
+                    <table id="cart_table" class="table table_summary">
 
                         <tbody>
                         <?php foreach ($this->cart->contents() as $c) {    ?>
@@ -184,8 +184,11 @@
 <!--                                    <input type='button' onclick="plus()" value='+' class='qtyplus' field='--><?php //echo $c['id']?><!--' /> --><?php //echo $c['name'];?>
                                 <div>
                                     <td>
-                                    <input type="button"  class="btn btn-success" style="width: 20px; float: left" data-panel-id="<?= $c['rowid'] ?>" onclick="minus(this)" value="-">
-                                    <input type="text"  id="<?php echo $c['rowid']?>" class="form-control" style="width: 45px; height:auto; float: left" value="<?php echo $c['qty']?>">
+                                    <input type="button"  class="btn btn-success" style="width: 20px; float: left" data-panel-id="<?= $c['rowid'] ?>" onclick="minus(this)" value="-"/>
+                                    <input type="text"  name="qty" id="<?php echo $c['rowid']?>" class="form-control" style="width: 45px; height:auto; float: left" value="<?php echo $c['qty']?>"/>
+                                        <input type="hidden" name="res_id" class="form-control"  value="<?php echo $c['id']?>"/>
+                                        <input type="hidden" name="item_name" class="form-control"  value="<?php echo $c['name']?>"/>
+                                        <input type="hidden" name="price" class="form-control"  value="<?php echo $c['price']*$c['qty'];?>"/>
                                     <input type="button" class="btn btn-success" data-panel-id="<?= $c['rowid'] ?>" onclick="plus(this)" style="width: 20px; float: left" value="+"> <?php echo $c['name']?>
                                 </td>
                                 </div>
@@ -230,7 +233,8 @@
                         </tbody>
                     </table>
                     <hr>
-                    <a class="btn_full" href="cart.php">Order now</a>
+                    <!--<a class="btn_full" href="cart.php">Order now</a>-->
+                    <a class="btn_full" href="<?php echo base_url("Item_Menu/order_now/")?>">Order now</a>
 
                 </div><!-- End cart_box -->
             </div><!-- End theiaStickySidebar -->
@@ -425,11 +429,12 @@
             cache: false,
             success: function (data) {
                 // $('#txt').html(data);
-              //  alert(data);
+
 
             }
 
         });
+
         $('#cart_table').load(document.URL +  ' #cart_table');
     }
 

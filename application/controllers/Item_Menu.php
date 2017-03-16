@@ -32,13 +32,14 @@ class Item_Menu extends CI_Controller
             $cid=$cr->id;
             $citem_name=$cr->item_name;
             $price= $cr->price;
+            $res_id=$cr->res_id;
 
             $data = array(
                 'id' => $cid,
                 'qty' => 1,
                 'price' => $price,
                 'name' => $citem_name,
-                'coupon' => 'XMAS-50OFF'
+                'coupon' => $res_id
             );
 
             $this->cart->insert($data);
@@ -51,7 +52,7 @@ class Item_Menu extends CI_Controller
     public function update_add_cart(){
 
         $id = $this->input->post('id');
-       $amount = $this->input->post('amount');
+        $amount = $this->input->post('amount');
 
 
         $data = array(
@@ -60,6 +61,9 @@ class Item_Menu extends CI_Controller
 
         );
         $this->cart->update($data);
+
+
+
     }
 
 
@@ -76,6 +80,49 @@ class Item_Menu extends CI_Controller
 
         );
         $this->cart->update($data);
-    }
 
+        echo $id;
+    }
+    public function order_now(){
+
+        $this->load->view('cart');
+    }
+    public function order_confirm(){
+
+        //$this->load->view('cart');
+        $name = $this->input->post('name_order');
+        //$userid=$this->session->userdata('userid');
+        $userid= 1;
+        $phone = $this->input->post('tel_order');
+        $email = $this->input->post('email_order');
+        $address = $this->input->post('address_order');
+        $city = $this->input->post('city_order');
+        $state = $this->input->post('state_order');
+        $post_code = $this->input->post('pcode_oder');
+        $country = $this->input->post('country_order');
+        $order_day = $this->input->post('delivery_schedule_day');
+        $order_time = $this->input->post('delivery_schedule_time');
+        $id = $this->input->post('res_id');
+        $att_id = $this->input->post('attr_id');
+        $price = $this->input->post('price');
+        $quantity=$this->input->post('qty');
+        $item_name = $this->input->post('item_name');
+        //print_r($id);
+
+        $this->load->model('Orderm');
+        $this->data['show_resinfo'] = $this->Orderm->show_resinfo($id,$att_id);
+        foreach ($this->data['show_resinfo'] as $e){
+
+            $res_name=$e->name;
+            $item_attr=$e->item_attribute;
+            //print_r($item_attr);
+            $this->load->model('Orderm');
+            $this->Orderm->order($userid,$name,$phone,$email,$address,$city,$state,$post_code,$country,$order_day,$order_time,$id,$res_name,$item_attr,$price,$quantity,$item_name);
+        }
+        redirect(Home);
+        //print_r($res_id);
+
+
+
+    }
 }

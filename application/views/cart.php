@@ -97,14 +97,12 @@
 			<div class="col-md-6">
 				<div class="box_style_2" id="order_process">
 					<h2 class="inner">Your order details</h2>
+                    <form method="post" action="<?php echo base_url("Item_Menu/order_confirm/")?>">
 					<div class="form-group">
-						<label>First name</label>
-						<input type="text" class="form-control" id="firstname_order" name="firstname_order" placeholder="First name">
+						<label>Name</label>
+						<input type="text" class="form-control"  name="name_order" placeholder="name">
 					</div>
-					<div class="form-group">
-						<label>Last name</label>
-						<input type="text" class="form-control" id="lastname_order" name="lastname_order" placeholder="Last name">
-					</div>
+
 					<div class="form-group">
 						<label>Telephone/mobile</label>
 						<input type="text" id="tel_order" name="tel_order" class="form-control" placeholder="Telephone/mobile">
@@ -124,12 +122,25 @@
 								<input type="text" id="city_order" name="city_order" class="form-control" placeholder="Your city">
 							</div>
 						</div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <label>State</label>
+                                <input type="text" id="city_order" name="state_order" class="form-control" placeholder="Your state">
+                            </div>
+                        </div>
+
 						<div class="col-md-6 col-sm-6">
 							<div class="form-group">
 								<label>Postal code</label>
 								<input type="text" id="pcode_oder" name="pcode_oder" class="form-control" placeholder=" Your postal code">
 							</div>
 						</div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <label>Country</label>
+                                <input type="text" id="city_order" name="country_order" class="form-control" placeholder="Your county">
+                            </div>
+                        </div>
 					</div>
 					<hr>
 					<div class="row">
@@ -184,86 +195,77 @@
             
 			<div class="col-md-3" id="sidebar">
             	<div class="theiaStickySidebar">
-				<div id="cart_box">
-					<h3>Your order <i class="icon_cart_alt pull-right"></i></h3>
-					<table class="table table_summary">
-					<tbody>
-					<tr>
-						<td>
-							<a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>1x</strong> Enchiladas
-						</td>
-						<td>
-							<strong class="pull-right">$11</strong>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>2x</strong> Burrito
-						</td>
-						<td>
-							<strong class="pull-right">$14</strong>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>1x</strong> Chicken
-						</td>
-						<td>
-							<strong class="pull-right">$20</strong>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>2x</strong> Corona Beer
-						</td>
-						<td>
-							<strong class="pull-right">$9</strong>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a> <strong>2x</strong> Cheese Cake
-						</td>
-						<td>
-							<strong class="pull-right">$12</strong>
-						</td>
-					</tr>
-					</tbody>
-					</table>
-					<hr>
-					<div class="row" id="options_2">
-						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-							<label><input type="radio" value="" checked name="option_2" class="icheck">Delivery</label>
-						</div>
-						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
-							<label><input type="radio" value="" name="option_2" class="icheck">Take Away</label>
-						</div>
-					</div><!-- Edn options 2 -->
-					<hr>
-					<table class="table table_summary">
-					<tbody>
-					<tr>
-						<td>
-							 Subtotal <span class="pull-right">$56</span>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							 Delivery fee <span class="pull-right">$10</span>
-						</td>
-					</tr>
-					<tr>
-						<td class="total">
-							 TOTAL <span class="pull-right">$66</span>
-						</td>
-					</tr>
-					</tbody>
-					</table>
-					<hr>
-					<a class="btn_full" href="cart_2.php">Go to checkout</a>
-					<a class="btn_full_outline" href="detail_page.php"><i class="icon-right"></i> Add other items</a>
+                    <div id="cart_box" >
+                        <h3>Your order <i class="icon_cart_alt pull-right"></i></h3>
+
+                        <table class="table table_summary">
+
+                            <tbody>
+                            <?php foreach ($this->cart->contents() as $c) {    ?>
+
+                                <tr>
+
+                                    <!--  <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a>  <input type='button' value='-' class='qtyminus' field='--><?php //echo $c['id']?><!--' />-->
+                                    <!--  <input type='text' name='--><?php //echo $c['id']?><!--' value="--><?php //echo $c['qty']?><!--" class='qty' style="width: 20px" />-->
+                                    <!--  <input type='button' onclick="plus()" value='+' class='qtyplus' field='--><?php //echo $c['id']?><!--' /> --><?php //echo $c['name'];?>
+                                    <div>
+                                        <td>
+                                            <input type="button"  class="btn btn-success" style="width: 20px; float: left" data-panel-id="<?= $c['rowid'] ?>" onclick="minus(this)" value="-">
+                                            <input type="text"  name="qty" id="<?php echo $c['rowid']?>" class="form-control" style="width: 45px; height:auto; float: left" value="<?php echo $c['qty']?>">
+                                            <input type="hidden" name="res_id" class="form-control"  value="<?php echo $c['coupon']?>"/>
+                                            <input type="hidden" name="attr_id" class="form-control"  value="<?php echo $c['id']?>"/>
+                                            <input type="hidden" name="item_name" class="form-control"  value="<?php echo $c['name']?>"/>
+                                            <input type="hidden" name="price" class="form-control"  value="<?php echo $c['price']*$c['qty'];?>"/>
+                                            <input type="button" class="btn btn-success" data-panel-id="<?= $c['rowid'] ?>" onclick="plus(this)" style="width: 20px; float: left" value="+"> <?php echo $c['name']?>
+                                        </td>
+                                    </div>
+                                    <td>
+                                        <strong class="pull-right"><?php echo $c['price']*$c['qty'];?></strong>
+                                    </td>
+                                </tr>
+                                <?php
+                            }
+                            ?>
+                            </tbody>
+                        </table>
+
+                        <hr>
+                        <div class="row" id="options_2">
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
+                                <label><input type="radio" value="" checked name="option_2" class="icheck">Delivery</label>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6">
+                                <label><input type="radio" value="" name="option_2" class="icheck">Take Away</label>
+                            </div>
+                        </div><!-- Edn options 2 -->
+
+                        <hr>
+                        <table class="table table_summary">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    Subtotal <span class="pull-right">$56</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Delivery fee <span class="pull-right">$10</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="total">
+                                    TOTAL <span class="pull-right">$66</span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <hr>
+					<!--<a class="btn_full" href="<?php echo base_url("Item_Menu/order_confirm/")?>">Go to checkout</a>-->
+                        <button type="submit" class="btn btn-submit">Go to checkout</button>
+					<a class="btn_full_outline" href="<?php echo base_url("Item_Menu")?>"><i class="icon-right"></i> Add other items</a>
 				</div><!-- End cart_box -->
                 </div><!-- End theiaStickySidebar -->
+            </form>
 			</div><!-- End col-md-3 -->
             
 		</div><!-- End row -->
@@ -331,18 +333,65 @@
 	<!-- End Search Menu -->
     
 <!-- COMMON SCRIPTS -->
-<script src="js/jquery-2.2.4.min.js"></script>
-<script src="js/common_scripts_min.js"></script>
-<script src="js/functions.js"></script>
-<script src="assets/validate.js"></script>
+<script src=<?php echo base_url()?>js/jquery-2.2.4.min.js></script>
+<script src=<?php echo base_url()?>js/common_scripts_min.js></script>
+<script src=<?php echo base_url()?>js/functions.js></script>
+<script src=<?php echo base_url()?>assets/validate.js></script>
 
 <!-- SPECIFIC SCRIPTS -->
-<script src="js/theia-sticky-sidebar.js"></script>
+<script src=<?php echo base_url()?>js/theia-sticky-sidebar.js></script>
 <script>
     jQuery('#sidebar').theiaStickySidebar({
       additionalMarginTop: 80
     });
 </script>
+
+    <script>
+        function plus(x) {
+
+            var btn = $(x).data('panel-id');
+            var x = parseInt(document.getElementById(btn).value);
+            var newx= x+1;
+
+            document.getElementById(btn).value = newx;
+            $.ajax({
+                type: 'POST',
+                url: '<?php echo base_url("Item_Menu/update_add_cart/")?>' + btn,
+                data: {'id':btn, 'amount':newx },
+                cache: false,
+                success: function (data) {
+                    // $('#txt').html(data);
+                    //  alert(data);
+
+                }
+
+            });
+
+        }
+
+        function minus(x) {
+
+            var btn = $(x).data('panel-id');
+            var x = parseInt(document.getElementById(btn).value);
+            var newx= x-1;
+
+            document.getElementById(btn).value = newx;
+
+            $.ajax({
+                type: 'POST',
+                url: '<?php echo base_url("Item_Menu/update_add_cart/")?>' + btn,
+                data: {'id':btn, 'amount':newx },
+                cache: false,
+                success: function (data) {
+                    // $('#txt').html(data);
+                    //  alert(data);
+
+                }
+
+            });
+        }
+
+    </script>
 
 </body>
 </html>
