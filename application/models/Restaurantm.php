@@ -137,4 +137,6 @@ class Restaurantm extends CI_Model
 
         $this->db->insert('restaurant_details', $data);
     }
+
+    public function insert_rating(){}
 }
