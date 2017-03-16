@@ -50,22 +50,17 @@ class Menum extends CI_Model
 
 
         if(array_filter($textbox)==null && array_filter($textimage) ==null) {
-
-
             $menudata = array(
                 'res_id' => $res_id,
                 'res_name' => $res_name,
                 'item_type' => $itype,
                 'item_name' => $iname,
                 'item_description' => $idescription,
-                'item_price' => $price,
+                //'item_price' => $price,
             );
             $this->db->insert('menu', $menudata);
-
-
-
-        }else{
-
+        }
+        else{
             for($i = 0; $i<count($textbox);$i++) {
                 $data = array(
                     'res_id' => $res_id,
@@ -79,11 +74,9 @@ class Menum extends CI_Model
                     'item_type' => $itype,
                     'item_name' => $iname,
                     'item_description' => $idescription,
-                    'item_price' => $textimage[$i],
                 );
-                $this->db->insert('menu_attribute', $data);
                 $this->db->insert('menu', $menudata);
-
+                $this->db->insert('menu_attribute', $data);
             }
         }
 
@@ -101,11 +94,18 @@ class Menum extends CI_Model
         $this->db->like('res_name',$text,'after');
         $query = $this->db->get();
         return $query->result();
-
-
-
-
     }
+
+    public function showsearch_menu_attribute($text){
+
+
+        $this->db->select('*');
+        $this->db->from('menu_attribute');
+        $this->db->like('item_name',$text,'after');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     public function menuedit($id){
 
         $item_name = $this->input->post('item_name');
@@ -183,14 +183,10 @@ class Menum extends CI_Model
         $name = $this->input->post('name');
         $type  = $this->input->post('itype');
 
-
-
         $data = array(
             'res_name' => $name,
             'item_type' => $type,
             'res_id' => $resid,
-
-
         );
 
         $this->db->insert('menu',$data);
@@ -210,6 +206,44 @@ class Menum extends CI_Model
         $query=$this->db->query("SELECT * FROM `menu_attribute` WHERE  `id`= '$id' ");
         return $query->result();
     }
+    public function showedit($id){
 
+        $query=$this->db->query("SELECT *  FROM  `menu_attribute` WHERE `id`= '$id'");
+        return $query->result();
+
+    }
+
+    public function edit_res($id){
+        $iname = $this->input->post('Item_name');
+        $iattribute = $this->input->post('textbox');
+        $price  = $this->input->post('Item_price');
+        $serial = $this->input->post('serial');
+
+        $data = array(
+            'item_name' => $iname,
+            'item_attribute' => $iattribute,
+            'price' => $price,
+            'serial' => $serial,
+
+        );
+        $this->db->where('id', $id);
+        $this->db->update('menu_attribute', $data);
+
+    }
+
+    function get_search_menu_attr_autocomplete($q)
+    {
+        $this->db->select('item_name');
+        $this->db->like('item_name', $q);
+        $query = $this->db->get('menu_attribute');
+        // $query=$this->db->query("SELECT * FROM `products` WHERE `product_name` LIKE "%$q%" ");
+        // return $query->result();
+        if ($query->num_rows() > 0) {
+            foreach ($query->result_array() as $row) {
+                $row_set[] = htmlentities(stripslashes($row['item_name'])); //build an array
+            }
+            echo json_encode($row_set); //format the array into json data
+        }
+    }
 
 }

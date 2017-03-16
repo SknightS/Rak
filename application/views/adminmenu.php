@@ -68,11 +68,14 @@
                 <li>
                     <a href="<?php echo base_url()?>Restaurant_menu">Restaurant Menu</a>
                 </li>
+                <li>
+                    <a href="<?php echo base_url()?>Admin_menu_attribute">Admin Menu Attribute</a>
+                </li>
             </ul>
             <!--<a href="<?php echo base_url()?>Admin_menu"><i class="fa fa-fw fa-desktop"></i> Menu</a>-->
         </li>
         <li>
-            <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
+            <a href="<?php echo base_url()?>Admin_menu_attribute"><i class="fa fa-fw fa-wrench"></i>Menu Attribute</a>
         </li>
         <li>
             <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
@@ -86,7 +89,7 @@
             </ul>
         </li>
         <li>
-            <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
+            <a href="<?php echo base_url()?>Rating"><i class="fa fa-fw fa-file"></i> Rating</a>
         </li>
         <li>
             <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
