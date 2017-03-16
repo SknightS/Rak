@@ -172,7 +172,7 @@
                 <div id="cart_box" >
                     <h3>Your order <i class="icon_cart_alt pull-right"></i></h3>
 
-                    <table class="table table_summary">
+                    <table  id="cart_table" class="table table_summary">
 
                         <tbody>
                         <?php foreach ($this->cart->contents() as $c) {    ?>
@@ -190,7 +190,7 @@
                                 </td>
                                 </div>
                                 <td>
-                                    <strong class="pull-right"><?php echo $c['price']*$c['qty'];?></strong>
+                                    <strong class="pull-right"><span id="update_price"><?php echo $c['price']*$c['qty'];?></span></strong>
                                 </td>
                             </tr>
                             <?php
@@ -355,7 +355,7 @@
         //alert(chkArray[i]);
           // $("#cart_box").load(location.href + " #cart_box");
             //$("#cart_boxt").load('detail_page.php');
-            $('#cart_box').load(document.URL +  ' #cart_box');
+            $('#cart_table').load(document.URL +  ' #cart_table');
             $('#reload').load(document.URL +  ' #reload');
 
 
@@ -430,7 +430,7 @@
             }
 
         });
-
+        $('#cart_table').load(document.URL +  ' #cart_table');
     }
 
     function minus(x) {
@@ -453,6 +453,7 @@
             }
 
         });
+        $('#cart_table').load(document.URL +  ' #cart_table');
     }
 
 </script>

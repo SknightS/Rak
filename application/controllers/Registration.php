@@ -9,51 +9,52 @@ class Registration extends CI_Controller {
 
 
             $name=$this->input->post('Name');
-            $email = $this->input->post('Email');
+            $emailto = $this->input->post('Email');
             $username=$this->input->post('UserName');
-            $password1=$this->input->post('password1');
             $full_address=$this->input->post('full_address');
+            $city=$this->input->post('city');
+            $postal_code=$this->input->post('postal_code');
+            $password1=$this->input->post('password1');
+            $password2=$this->input->post('password2');
+
+
+
+        $data = [
+            //'id_user' => $result->id_user,
+            'name' => $name,
+            'email'=>$emailto,
+            'username'=>$username,
+            'full_address'=>$full_address,
+            'city'=>$city,
+            'postal_code'=>$postal_code,
+            'password'=>$password1,
+            'password1'=>$password2
+        ];
+
+        //$this->load->model('Registrationm');
+        //$this->Registrationm->registeruser($name,$email,$username,$password1);
+        $this->session->set_userdata($data);
 
 
 
 
-        $this->load->model('Registrationm');
-        $this->Registrationm->registeruser($name,$email,$username,$password1);
-        $this->session->set_userdata($name,$email,$username,$password1);
-        /*$this->send_validation_email();
-       // $this->data['get_reg']=$this->Registrationm->getregisteruser($name,$email,$username,$password1);
-        //echo 'window.alert("user has been registerd")';
-        //print_r($this->data['get_reg']);
-
-        foreach ($this->data['get_reg'] as $e){
-
-            $data = array(
-                'reg_id'=>$e->id,
-            'name' => $e->name,
-            'email' =>$e->email ,
-            'username' => $e->username,
-            'password' => $e->password
-
-        );
-
-            $this->session->set_userdata($data);}
-             //alert("hello");
-            //print_r($this->session->userdata('username'));
-
-            $this->load->view('registeruser');*/
-
-
-            /*$this->load->model('Registrationm');
-            $this->Registrationm->registeruser($name,$email,$username,$password1);
-            //print_r($password1);
-            /*if ($password1==$password2){
-                $this->load->model('Registrationm');
-               $this->Registrationm->registeruser($name,$email,$username,$password1);
-            }*/
+        //Email information
+        $admin_email = $emailto;
+        $email = "";
+        $subject = "Rak";
+        $comment = 'http://sakibrahman.com/rak/Registration/Approve';
 
 
 
 
+        //send email
+        mail($admin_email, $subject, $comment , $email);
+
+    }
+
+    public function Approve(){
+
+        echo $this->session->userdata('name');
 
     }
 

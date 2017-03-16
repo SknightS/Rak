@@ -20,6 +20,8 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('forms');
+		//$this->load->view('forms');
+
+		echo $this->session->userdata('name');
 	}
 }

@@ -384,7 +384,7 @@
 
                         </div>
                         <div class="col-md-6 col-sm-6">
-                            <input type="text"  name="pcode_oder" class="form-control form-white" placeholder=" Your postal code">
+                            <input type="text"  name="postal_code" class="form-control form-white" placeholder=" Your postal code">
 
                         </div>
                     </div>
