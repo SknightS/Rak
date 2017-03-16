@@ -13,19 +13,19 @@ class Aboutusm extends CI_Model
     public function show_about_us_details_content(){
 
         $query=$this->db->query("SELECT * FROM `about_us_details` ORDER by id DESC LIMIT 1");
-        return $query->result_array();
+        return $query->result();
 
     }
     public function show_about_us_feature_content(){
 
         $query=$this->db->query("SELECT * FROM `about_us_feature` ");
-        return $query->result_array();
+        return $query->result();
 
     }
     public function show_about_us_banner_content(){
 
         $query=$this->db->query("SELECT * FROM `about_us_banner` ");
-        return $query->result_array();
+        return $query->result();
 
     }
     public function show_icon(){

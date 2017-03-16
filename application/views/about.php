@@ -13,7 +13,6 @@
     <!--[if lte IE 8]>
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>.</p>
     <![endif]-->
-    
     <div id="preloader">
         <div class="sk-spinner sk-spinner-wave" id="status">
             <div class="sk-rect1"></div>
@@ -22,7 +21,10 @@
             <div class="sk-rect4"></div>
             <div class="sk-rect5"></div>
         </div>
-    </div><!-- End Preload -->
+    </div>
+
+
+    <!-- End Preload -->
     
     <!-- Header ================================================== -->
     <?php include ('menu.php') ?>
@@ -61,7 +63,7 @@
             }
             ?>
 			<p>
-                <?php echo $aus['details']; ?>
+                <?php echo $aus->details; ?>
             </p>
 
 		</div>
@@ -75,9 +77,9 @@
     }
     ?>
     <div class="main_title">
-            <h2 class="nomargin_top"><?php echo $ausf['big']; ?></h2>
+            <h2 class="nomargin_top"><?php echo $ausf->big; ?></h2>
             <p>
-                <?php echo $ausf['small']; ?>
+                <?php echo $ausf->small ?>
             </p>
 
         <php }?>
@@ -85,10 +87,10 @@
 	<div class="row">
 		<div class="col-md-6 wow fadeIn" data-wow-delay="0.1s">
 			<div class="feature">
-				<i class="<?php echo $ausf['box_icon']; ?>"></i>
-				<h3><span><?php echo $ausf['box_header']; ?></span></h3>
+				<i class="<?php echo $ausf->box_icon ?>"></i>
+				<h3><span><?php echo $ausf->box_header ?></span></h3>
 				<p>
-                    <?php echo $ausf['box_details']; ?></p>
+                    <?php echo $ausf->box_details ?></p>
 			</div>
 		</div>
 		<div class="col-md-6 wow fadeIn" data-wow-delay="0.2s">
@@ -157,9 +159,9 @@
                 foreach ($aboutUsDetails as $ausdtls) {
                 }
                 ?>
-				<h3>"<?php echo $ausdtls['header']?>"</h3>
+				<h3>"<?php echo $ausdtls->header?>"</h3>
 				<p>
-                    <?php echo $ausdtls['details']?>
+                    <?php echo $ausdtls->details?>
 				</p>
 
 			</div>
