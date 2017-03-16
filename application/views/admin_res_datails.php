@@ -133,9 +133,17 @@
                 <div id="summary_review">
                     <div id="general_rating">
                         11 Reviews
-                        <div class="rating">
-                            <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
-                        </div>
+
+                    </div>
+                    <div class="rating">
+                        <!--                            <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>-->
+
+                        <img src="<?php echo base_url()?>img/blank.png" id="imgA" class="img-responsive"  onclick="myfuncA()" width="60px" style="float: left">
+                        <img src="<?php echo base_url()?>img/blank.png" id="imgB" class="img-responsive"  onclick="myfuncB()" width="60px" style="float: left">
+                        <img src="<?php echo base_url()?>img/blank.png" id="imgC" class="img-responsive"  onclick="myfuncC()" width="60px" style="float: left">
+                        <img src="<?php echo base_url()?>img/blank.png" id="imgD" class="img-responsive"  onclick="myfuncD()" width="60px" style="float: left">
+                        <img src="<?php echo base_url()?>img/blank.png" id="imgE" class="img-responsive"  onclick="myfuncE()" width="60px" style="float: left">
+
                     </div>
 
                     <div class="row" id="rating_summary">
@@ -515,6 +523,167 @@
         });
     });
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>
 
+    var count =0;
+
+    $("document").ready(function () {
+        $("#imgA").mouseover(function () {
+            this.src = "<?php echo base_url()?>img/yellow.png"
+        }).mouseout(function () {
+            if (count = 1) {
+            } else
+                this.src = "<?php echo base_url()?>img/blank.png"
+        });
+
+        $("#imgB").mouseover(function () {
+            this.src = "<?php echo base_url()?>img/yellow.png";
+            document.getElementById("imgA").src = "<?php echo base_url()?>img/yellow.png";
+        }).mouseout(function () {
+
+            this.src = "<?php echo base_url()?>img/blank.png"
+            document.getElementById("imgA").src = "<?php echo base_url()?>img/blank.png";
+        });
+
+        $("#imgC").mouseover(function () {
+            this.src = "<?php echo base_url()?>img/yellow.png"
+            document.getElementById("imgB").src = "<?php echo base_url()?>img/yellow.png";
+            document.getElementById("imgA").src = "<?php echo base_url()?>img/yellow.png";
+        }).mouseout(function () {
+
+            this.src = "<?php echo base_url()?>img/blank.png"
+            document.getElementById("imgB").src = "<?php echo base_url()?>img/blank.png";
+            document.getElementById("imgA").src = "<?php echo base_url()?>img/blank.png";
+        });
+
+        $("#imgD").mouseover(function () {
+            this.src = "<?php echo base_url()?>img/yellow.png"
+            document.getElementById("imgC").src = "<?php echo base_url()?>img/yellow.png";
+            document.getElementById("imgB").src = "<?php echo base_url()?>img/yellow.png";
+            document.getElementById("imgA").src = "<?php echo base_url()?>img/yellow.png";
+
+        }).mouseout(function () {
+
+            this.src = "<?php echo base_url()?>img/blank.png"
+            document.getElementById("imgC").src = "<?php echo base_url()?>img/blank.png";
+            document.getElementById("imgB").src = "<?php echo base_url()?>img/blank.png";
+            document.getElementById("imgA").src = "<?php echo base_url()?>img/blank.png";
+
+        });
+
+        $("#imgE").mouseover(function () {
+            this.src = "<?php echo base_url()?>img/yellow.png"
+            document.getElementById("imgD").src = "<?php echo base_url()?>img/yellow.png";
+            document.getElementById("imgC").src = "<?php echo base_url()?>img/yellow.png";
+            document.getElementById("imgB").src = "<?php echo base_url()?>img/yellow.png";
+            document.getElementById("imgA").src = "<?php echo base_url()?>img/yellow.png";
+
+        }).mouseout(function () {
+
+            this.src = "<?php echo base_url()?>img/blank.png"
+            document.getElementById("imgD").src = "<?php echo base_url()?>img/blank.png";
+            document.getElementById("imgC").src = "<?php echo base_url()?>img/blank.png";
+            document.getElementById("imgB").src = "<?php echo base_url()?>img/blank.png";
+            document.getElementById("imgA").src = "<?php echo base_url()?>img/blank.png";
+
+        });
+
+    });
+
+
+    function myfuncA() {
+        count =1;
+
+
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Admin_Res_Details/insert_rating/")?>'+count,
+            data:{'id':count},
+            cache: false,
+            success:function(data)
+            {
+
+            }
+
+        });
+
+
+    }
+    function myfuncB() {
+        count =2;
+
+
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Admin_Res_Details/insert_rating/")?>'+count,
+            data:{'id':count},
+            cache: false,
+            success:function(data)
+            {
+
+            }
+
+        });
+
+    }
+    function myfuncC() {
+        count =3;
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Admin_Res_Details/insert_rating/")?>'+count,
+            data:{'id':count},
+            cache: false,
+            success:function(data)
+            {
+
+            }
+
+        });
+
+    }
+    function myfuncD() {
+        count =4;
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Admin_Res_Details/insert_rating/")?>'+count,
+            data:{'id':count},
+            cache: false,
+            success:function(data)
+            {
+
+            }
+
+        });
+
+    }
+    function myfuncE() {
+        count =5;
+
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Admin_Res_Details/insert_rating/")?>'+count,
+            data:{'id':count},
+            cache: false,
+            success:function(data)
+            {
+
+            }
+
+        });
+
+
+    }
+
+
+
+
+
+</script>
 </body>
 </html>
