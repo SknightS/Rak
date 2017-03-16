@@ -63,10 +63,18 @@ class Admin_Res_Details extends CI_Controller {
         redirect(Admin_Res_Details);
     }
 
-    public function insert_rating(){
-
-        $id=$this->input->post('id');
-        echo $id;
+    public function insert_rating()
+    {
+        //redirect(Home);
+        //$this->id=$this->input->post('id');
+        //$this->res_id=$this->input->post('res_id');
+        //$this->user_id=$this->input->post('user_id');
+        $this->load->model('Ratingm');
+        $this->rating=$this->input->post('rating');
+        $this->res_id=$this->input->post('r_id');
+        $this->Ratingm->insert_rating($this->rating,$this->r_id);
+        echo $this->rating;
+        redirect(Home);
     }
 
 }

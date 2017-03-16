@@ -73,6 +73,7 @@
             <h1><?php foreach ($details_head as $s){?>
                     <?php echo $s->name ?>
                 </h1>
+            <div><input type="hidden" name="<?php echo $s->res_id ?>" id="res_id" value="<?php echo $s->res_id ?>" style="color: black"></div>
             <div><em><?php echo $s->type ?></em></div><?php }?>
             <div><i class="icon_pin"></i> <?php echo $s->address ?> ,<?php echo $s->city ?>-<?php echo $s->postal_code ?> ,<?php echo $s->country ?>- <strong>Delivery charge:</strong> $10, free over $15.</div>
         </div><!-- End sub_content -->
@@ -136,7 +137,7 @@
 
                     </div>
                     <div class="rating">
-                        <!--                            <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>-->
+                        <!--<i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>-->
 
                         <img src="<?php echo base_url()?>img/blank.png" id="imgA" class="img-responsive"  onclick="myfuncA()" width="60px" style="float: left">
                         <img src="<?php echo base_url()?>img/blank.png" id="imgB" class="img-responsive"  onclick="myfuncB()" width="60px" style="float: left">
@@ -527,6 +528,7 @@
 <script>
 
     var count =0;
+    var res_id = document.getElementById("res_id").value;
 
     $("document").ready(function () {
         $("#imgA").mouseover(function () {
@@ -592,19 +594,18 @@
     });
 
 
+
     function myfuncA() {
         count =1;
-
-
 
         $.ajax({
             type:'POST',
             url:'<?php echo base_url("Admin_Res_Details/insert_rating/")?>'+count,
-            data:{'id':count},
+            data:{'rating':count,'r_id':res_id},
             cache: false,
             success:function(data)
             {
-
+                alert("You have successfully gave rating rating 1");
             }
 
         });
@@ -619,11 +620,11 @@
         $.ajax({
             type:'POST',
             url:'<?php echo base_url("Admin_Res_Details/insert_rating/")?>'+count,
-            data:{'id':count},
+            data:{'rating':count,'r_id':res_id},
             cache: false,
             success:function(data)
             {
-
+                alert("You have successfully gave rating rating 2");
             }
 
         });
@@ -635,11 +636,12 @@
         $.ajax({
             type:'POST',
             url:'<?php echo base_url("Admin_Res_Details/insert_rating/")?>'+count,
-            data:{'id':count},
+            data:{'rating':count,'r_id':res_id},
             cache: false,
             success:function(data)
             {
-
+                //$('#myReview').html(data);
+                alert("You have successfully gave rating rating 3");
             }
 
         });
@@ -651,11 +653,11 @@
         $.ajax({
             type:'POST',
             url:'<?php echo base_url("Admin_Res_Details/insert_rating/")?>'+count,
-            data:{'id':count},
+            data:{'rating':count,'r_id':res_id},
             cache: false,
             success:function(data)
             {
-
+                alert("You have successfully gave rating rating 4");
             }
 
         });
@@ -665,14 +667,15 @@
         count =5;
 
 
+
         $.ajax({
             type:'POST',
             url:'<?php echo base_url("Admin_Res_Details/insert_rating/")?>'+count,
-            data:{'id':count},
+            data:{'rating':count,'r_id':res_id},
             cache: false,
             success:function(data)
             {
-
+                alert("You have successfully gave rating rating 5");
             }
 
         });

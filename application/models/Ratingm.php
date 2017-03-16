@@ -12,7 +12,7 @@ class Ratingm extends CI_Model
         return $query->result_array();
 
     }
-    public function insert_rating($postID)
+    public function insert_rate($postID)
     {
         extract($_POST);
 
@@ -51,6 +51,17 @@ class Ratingm extends CI_Model
             //Return json formatted rating data
             echo json_encode($ratingRow);
         }
+    }
+
+    public function insert_rating($rating,$r_id)
+    {
+        $rating= $this->input->post('rating');
+        $r_id = $this->input->post('r_id');
+        $data = array(
+            'res_id' => $r_id,
+            'rating' => $rating,
+        );
+        $this->db->insert('res_rating',$data);
     }
 }
 

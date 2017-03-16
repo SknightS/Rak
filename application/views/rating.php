@@ -74,11 +74,8 @@
     {
 
         var star1 = document.getElementById("get_text1").value;
-
         var total_count=(Number(star1));
         document.getElementById("total_star").value=total_count;
-
-
     }
 
 </script>
