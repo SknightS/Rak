@@ -74,8 +74,9 @@
                     <?php echo $s->name ?>
                 </h1>
             <div><input type="hidden" name="<?php echo $s->res_id ?>" id="res_id" value="<?php echo $s->res_id ?>" style="color: black"></div>
-            <div><em><?php echo $s->type ?></em></div><?php }?>
+            <div><em><?php echo $s->type ?></em></div>
             <div><i class="icon_pin"></i> <?php echo $s->address ?> ,<?php echo $s->city ?>-<?php echo $s->postal_code ?> ,<?php echo $s->country ?>- <strong>Delivery charge:</strong> $10, free over $15.</div>
+            <?php }?>
         </div><!-- End sub_content -->
     </div><!-- End subheader -->
 </section><!-- End section -->
@@ -414,67 +415,19 @@
     <div class="modal-dialog">
         <div class="modal-content modal-popup">
             <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-            <form method="post" action="assets/review_restaurant.php" name="review" id="review" class="popup-form">
+
+            <form method="post" action="<?php echo base_url() ?>Admin_Res_Details/insert_comment/" name="review" id="review" class="popup-form">
                 <div class="login_icon"><i class="icon_comment_alt"></i></div>
+                <?php foreach ($details as $e){?>
+
                 <input name="restaurant_name" id="restaurant_name" type="hidden" value="Mexican Taco Mex">
-                <div class="row" >
-                    <div class="col-md-6">
-                        <input name="name_review" id="name_review" type="text" placeholder="Name" class="form-control form-white">
-                    </div>
-                    <div class="col-md-6">
-                        <input name="email_review" id="email_review" type="email" placeholder="Your email" class="form-control form-white">
-                    </div>
-                </div><!-- End Row -->
+                <input name="re_id" id="re_id" type="text" value="<?php echo $e->res_id ?>" style="color: violet">
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <select class="form-control form-white" name="food_review" id="food_review">
-                            <option value="">Food Quality</option>
-                            <option value="Low">Low</option>
-                            <option value="Sufficient">Sufficient</option>
-                            <option value="Good">Good</option>
-                            <option value="Excellent">Excellent</option>
-                            <option value="Superb">Super</option>
-                            <option value="Not rated">I don't know</option>
-                        </select>                            </div>
-                    <div class="col-md-6">
-                        <select class="form-control form-white"  name="price_review" id="price_review">
-                            <option value="">Price</option>
-                            <option value="Low">Low</option>
-                            <option value="Sufficient">Sufficient</option>
-                            <option value="Good">Good</option>
-                            <option value="Excellent">Excellent</option>
-                            <option value="Superb">Super</option>
-                            <option value="Not rated">I don't know</option>
-                        </select>
-                    </div>
-                </div><!--End Row -->
+                <?php }?>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <select class="form-control form-white"  name="punctuality_review" id="punctuality_review">
-                            <option value="">Punctuality</option>
-                            <option value="Low">Low</option>
-                            <option value="Sufficient">Sufficient</option>
-                            <option value="Good">Good</option>
-                            <option value="Excellent">Excellent</option>
-                            <option value="Superb">Super</option>
-                            <option value="Not rated">I don't know</option>
-                        </select>                       </div>
-                    <div class="col-md-6">
-                        <select class="form-control form-white"  name="courtesy_review" id="courtesy_review">
-                            <option value="">Courtesy</option>
-                            <option value="Low">Low</option>
-                            <option value="Sufficient">Sufficient</option>
-                            <option value="Good">Good</option>
-                            <option value="Excellent">Excellent</option>
-                            <option value="Superb">Super</option>
-                            <option value="Not rated">I don't know</option>
-                        </select>
-                    </div>
-                </div><!--End Row -->
-                <textarea name="review_text" id="review_text" class="form-control form-white" style="height:100px" placeholder="Write your review"></textarea>
-                <input type="text" id="verify_review" class="form-control form-white" placeholder="Are you human? 3 + 1 =">
+
+                <textarea name="review_text" id="review_text" class="form-control form-white" style="height:100px" placeholder="write review" ></textarea>
+                <input type="text" name="verify_review" id="verify_review" class="form-control form-white" placeholder="Are you human? 3 + 1 =">
                 <input type="submit" value="Submit" class="btn btn-submit" id="submit-review">
             </form>
             <div id="message-review"></div>
@@ -682,11 +635,6 @@
 
 
     }
-
-
-
-
-
 </script>
 </body>
 </html>

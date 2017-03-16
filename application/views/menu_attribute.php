@@ -88,6 +88,8 @@
             <div class="row">
                 <div class="col-lg-12">
 
+                    <!--                search                  -->
+
                     <form method="post" action="<?php echo base_url()?>Admin_menu_attribute">
                         <div id="custom-search-input">
                             <div class="input-group">
@@ -96,9 +98,6 @@
                                         <input type="submit" name="btn_search_menu_attr" class="btn_search" value="Search"><br/><br/><br/><br/>
                                         </span>
                                 <br/><br/><br/><br/>
-                            </div>
-                            <div id="suggestions">
-                                <div id="autoSuggestionsList"></div>
                             </div>
                         </div>
                     </form>

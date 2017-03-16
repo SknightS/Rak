@@ -74,7 +74,15 @@ class Admin_Res_Details extends CI_Controller {
         $this->res_id=$this->input->post('r_id');
         $this->Ratingm->insert_rating($this->rating,$this->r_id);
         echo $this->rating;
-        redirect(Home);
+        //redirect(Home);
+    }
+
+    public function insert_comment()
+    {
+        $this->load->model('Commentm');
+        $review = $this->input->post('review_text');
+        $res_id = $this->input->post('restaurant_name');
+        $this->Commentm->insert_comment($review,$res_id);
     }
 
 }
