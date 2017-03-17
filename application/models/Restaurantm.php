@@ -138,5 +138,19 @@ class Restaurantm extends CI_Model
         $this->db->insert('restaurant_details', $data);
     }
 
-    public function insert_rating(){}
+
+    public function get_rating(){
+
+        $res_id=$this->uri->segment(3);
+        $query=$this->db->query("SELECT *  FROM  res_rating WHERE `res_id`= '$res_id' AND user_id = 1 ORDER BY `id` DESC LIMIT 1");
+        return $query->result();
+    }
+
+    public function get_rating_avg(){
+
+        $res_id=$this->uri->segment(3);
+        $query=$this->db->query("SELECT ROUND(AVG(`rating`)) as rat FROM `res_rating` WHERE res_id = '$res_id'");
+        return $query->result();
+
+    }
 }

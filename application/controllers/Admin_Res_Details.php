@@ -8,7 +8,13 @@ class Admin_Res_Details extends CI_Controller {
     $this->load->model('Restaurantm');
     $this->data['res_details']= $this->Restaurantm->restaurant_details();
 
+
+    $this->data['res_rating']= $this->Restaurantm->get_rating();
+    $this->data['rating_avg']= $this->Restaurantm->get_rating_avg();
+
     $this->load->view('add_res_details',$this->data);
+
+
 
 }
     public function showdetails($id)
@@ -16,6 +22,8 @@ class Admin_Res_Details extends CI_Controller {
         $this->load->model('Restaurantm');
         $this->data['details']= $this->Restaurantm->restaurant_details_description($id);
         $this->data['details_head']= $this->Restaurantm->restaurant_details_head($id);
+        $this->data['res_rating']= $this->Restaurantm->get_rating();
+        $this->data['rating_avg']= $this->Restaurantm->get_rating_avg();
         //print_r($this->data);
         $this->load->view('admin_res_datails',$this->data);
     }
@@ -70,8 +78,11 @@ class Admin_Res_Details extends CI_Controller {
         //$this->res_id=$this->input->post('res_id');
         //$this->user_id=$this->input->post('user_id');
         $this->load->model('Ratingm');
+        $this->load->model('Restaurantm');
+        $this->data['res_rating']= $this->Restaurantm->get_rating();
         $this->rating=$this->input->post('rating');
         $this->res_id=$this->input->post('r_id');
+
         $this->Ratingm->insert_rating($this->rating,$this->r_id);
         echo $this->rating;
         //redirect(Home);

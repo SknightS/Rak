@@ -33,7 +33,20 @@
     <div id="subheader">
         <div id="sub_content">
             <div id="thumb"><img src="<?php echo base_url()?>img/thumb_restaurant.jpg" alt=""></div>
-            <div class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i> (<small><a href="<?php echo base_url()?>Admin_Res_Details/showdetails/<?php echo $id ?>">Read 98 reviews</a></small>)</div>
+            <div class="rating">
+                <?php
+                foreach ($rating_avg as $r){ $rating_avg = $r->rat;}
+                for ($i=1 ; $i<=$rating_avg; $i++ ) {
+                    ?>
+                    <i class="icon_star voted"></i>
+                    <?php
+                }
+                for ($i=1 ; $i<=(5-$rating_avg); $i++ ) {
+                    ?>
+                    <i class="icon_star"></i></i>
+                    <?php
+                }
+                ?>(<small><a href="<?php echo base_url()?>Admin_Res_Details/showdetails/<?php echo $id ?>">Read 98 reviews</a></small>)</div>
             <h1>Mexican TacoMex</h1>
             <div><em>Mexican / American</em></div>
             <div><i class="icon_pin"></i> 135 Newtownards Road, Belfast, BT4 1AB - <strong>Delivery charge:</strong> $10, free over $15.</div>
@@ -372,48 +385,6 @@
 
 </script>
 
-<script>
-
-//    // This button will increment the value
-//        $('.qtyplus').click(function(e){
-//            // Stop acting like a button
-//            //e.preventDefault();
-//            // Get the field name
-//            fieldName = $(this).attr('field');
-//            alert(fieldName)
-//            // Get its current value
-//            var currentVal = parseInt($('input[name='+fieldName+']').val());
-//
-//            // If is not undefined
-//            if (!isNaN(currentVal)) {
-//                // Increment
-//                  $('input[name='+fieldName+']').val(currentVal + 1);
-//            } else {
-//                // Otherwise put a 0 there
-//                $('input[name='+fieldName+']').val(0);
-//            }
-//
-//        });
-//        // This button will decrement the value till 0
-//        $(".qtyminus").click(function(e) {
-//            // Stop acting like a button
-//          //  e.preventDefault();
-//            // Get the field name
-//            fieldName = $(this).attr('field');
-//            // Get its current value
-//            var currentVal = parseInt($('input[name='+fieldName+']').val());
-//            // If it isn't undefined or its greater than 0
-//            if (!isNaN(currentVal) && currentVal > 0) {
-//                // Decrement one
-//                $('input[name='+fieldName+']').val(currentVal - 1);
-//            } else {
-//                // Otherwise put a 0 there
-//                $('input[name='+fieldName+']').val(0);
-//            }
-//        });
-
-
-</script>
 <script>
     function plus(x) {
 

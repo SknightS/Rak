@@ -69,7 +69,21 @@
     <div id="subheader">
         <div id="sub_content">
             <div id="thumb"><img src="<?php echo base_url() ?>img/thumb_restaurant.jpg" alt=""></div>
-            <div class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i> ( <small><a href="#0">98 reviews</a></small> )</div>
+            <div class="rating">
+                <?php
+                foreach ($rating_avg as $r){ $rating_avg = $r->rat;}
+                for ($i=1 ; $i<=$rating_avg; $i++ ) {
+                    ?>
+                    <i class="icon_star voted"></i>
+                    <?php
+                }
+                for ($i=1 ; $i<=(5-$rating_avg); $i++ ) {
+                ?>
+                    <i class="icon_star"></i></i>
+                <?php
+                }
+                ?>
+                 ( <small><a href="#0">98 reviews</a></small> )</div>
             <h1><?php foreach ($details_head as $s){?>
                     <?php echo $s->name ?>
                 </h1>
@@ -136,15 +150,63 @@
                     <div id="general_rating">
                         11 Reviews
 
+
+
                     </div>
                     <div class="rating">
                         <!--<i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>-->
+                        <?php
+                        if ($res_rating == ""){
+                            ?>
+                            <img src="<?php echo base_url()?>img/blank.png" id="imgA" class="img-responsive"  onclick="myfuncA()" width="60px" style="float: left">
+                            <img src="<?php echo base_url()?>img/blank.png" id="imgB" class="img-responsive"  onclick="myfuncB()" width="60px" style="float: left">
+                            <img src="<?php echo base_url()?>img/blank.png" id="imgC" class="img-responsive"  onclick="myfuncC()" width="60px" style="float: left">
+                            <img src="<?php echo base_url()?>img/blank.png" id="imgD" class="img-responsive"  onclick="myfuncD()" width="60px" style="float: left">
+                            <img src="<?php echo base_url()?>img/blank.png" id="imgE" class="img-responsive"  onclick="myfuncE()" width="60px" style="float: left">
 
-                        <img src="<?php echo base_url()?>img/blank.png" id="imgA" class="img-responsive"  onclick="myfuncA()" width="60px" style="float: left">
-                        <img src="<?php echo base_url()?>img/blank.png" id="imgB" class="img-responsive"  onclick="myfuncB()" width="60px" style="float: left">
-                        <img src="<?php echo base_url()?>img/blank.png" id="imgC" class="img-responsive"  onclick="myfuncC()" width="60px" style="float: left">
-                        <img src="<?php echo base_url()?>img/blank.png" id="imgD" class="img-responsive"  onclick="myfuncD()" width="60px" style="float: left">
-                        <img src="<?php echo base_url()?>img/blank.png" id="imgE" class="img-responsive"  onclick="myfuncE()" width="60px" style="float: left">
+                        <?php }
+                        foreach ($res_rating as $r){
+                            $rating=$r->rating;
+                        }
+                        echo $rating;
+
+                        if ($rating == 1){?>
+                            <img src="<?php echo base_url()?>img/yellow.png" id="imgA" class="img-responsive"  onclick="myfuncA()" width="60px" style="float: left">
+                            <img src="<?php echo base_url()?>img/blank.png" id="imgB" class="img-responsive"  onclick="myfuncB()" width="60px" style="float: left">
+                            <img src="<?php echo base_url()?>img/blank.png" id="imgC" class="img-responsive"  onclick="myfuncC()" width="60px" style="float: left">
+                            <img src="<?php echo base_url()?>img/blank.png" id="imgD" class="img-responsive"  onclick="myfuncD()" width="60px" style="float: left">
+                            <img src="<?php echo base_url()?>img/blank.png" id="imgE" class="img-responsive"  onclick="myfuncE()" width="60px" style="float: left">
+                        <?php } else if( $rating == 2) {?>
+                            <img src="<?php echo base_url()?>img/yellow.png" id="imgA" class="img-responsive"  onclick="myfuncA()" width="60px" style="float: left">
+                            <img src="<?php echo base_url()?>img/yellow.png" id="imgB" class="img-responsive"  onclick="myfuncB()" width="60px" style="float: left">
+                            <img src="<?php echo base_url()?>img/blank.png" id="imgC" class="img-responsive"  onclick="myfuncC()" width="60px" style="float: left">
+                            <img src="<?php echo base_url()?>img/blank.png" id="imgD" class="img-responsive"  onclick="myfuncD()" width="60px" style="float: left">
+                            <img src="<?php echo base_url()?>img/blank.png" id="imgE" class="img-responsive"  onclick="myfuncE()" width="60px" style="float: left">
+
+
+                        <?php } else if( $rating == 3) { ?>
+                            <img src="<?php echo base_url()?>img/yellow.png" id="imgA" class="img-responsive"  onclick="myfuncA()" width="60px" style="float: left">
+                            <img src="<?php echo base_url()?>img/yellow.png" id="imgB" class="img-responsive"  onclick="myfuncB()" width="60px" style="float: left">
+                            <img src="<?php echo base_url()?>img/yellow.png" id="imgC" class="img-responsive"  onclick="myfuncC()" width="60px" style="float: left">
+                            <img src="<?php echo base_url()?>img/blank.png" id="imgD" class="img-responsive"  onclick="myfuncD()" width="60px" style="float: left">
+                            <img src="<?php echo base_url()?>img/blank.png" id="imgE" class="img-responsive"  onclick="myfuncE()" width="60px" style="float: left">
+
+                        <?php  } else if( $rating == 4) { ?>
+                            <img src="<?php echo base_url()?>img/yellow.png" id="imgA" class="img-responsive"  onclick="myfuncA()" width="60px" style="float: left">
+                            <img src="<?php echo base_url()?>img/yellow.png" id="imgB" class="img-responsive"  onclick="myfuncB()" width="60px" style="float: left">
+                            <img src="<?php echo base_url()?>img/yellow.png" id="imgC" class="img-responsive"  onclick="myfuncC()" width="60px" style="float: left">
+                            <img src="<?php echo base_url()?>img/yellow.png" id="imgD" class="img-responsive"  onclick="myfuncD()" width="60px" style="float: left">
+                            <img src="<?php echo base_url()?>img/blank.png" id="imgE" class="img-responsive"  onclick="myfuncE()" width="60px" style="float: left">
+
+                        <?php    } else if( $rating == 5) { ?>
+                            <img src="<?php echo base_url()?>img/yellow.png" id="imgA" class="img-responsive"  onclick="myfuncA()" width="60px" style="float: left">
+                            <img src="<?php echo base_url()?>img/yellow.png" id="imgB" class="img-responsive"  onclick="myfuncB()" width="60px" style="float: left">
+                            <img src="<?php echo base_url()?>img/yellow.png" id="imgC" class="img-responsive"  onclick="myfuncC()" width="60px" style="float: left">
+                            <img src="<?php echo base_url()?>img/yellow.png" id="imgD" class="img-responsive"  onclick="myfuncD()" width="60px" style="float: left">
+                            <img src="<?php echo base_url()?>img/yellow.png" id="imgE" class="img-responsive"  onclick="myfuncE()" width="60px" style="float: left">
+
+                        <?php }
+                        ?>
 
                     </div>
 

@@ -55,6 +55,7 @@ class Registration extends CI_Controller {
     public function Approve(){
 
         echo $this->session->userdata('name');
+        
 
     }
 
