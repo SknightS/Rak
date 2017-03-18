@@ -1,5 +1,5 @@
 <!-- Header ================================================== -->
-    <header>
+<header xmlns:font-size="http://www.w3.org/1999/xhtml">
     <div class="container-fluid">
         <div class="row">
             <div class="col--md-4 col-sm-4 col-xs-4">
@@ -33,8 +33,9 @@
                         </button>
                         <button class="btn btn-sm btn-success" href="#0" data-toggle="modal" data-target="#register">User Register</button>
                         <?php
-                    }else echo $username
+                    }else
                     ?>
+                   <a href="<?php echo base_url()?>Home/Logout"> <span style="color: red"; > <?php echo $username ?></span></a>
 
                 </ul>
             </div><!-- End main-menu -->
@@ -43,3 +44,11 @@
     </div><!-- End container -->
     </header>
 	<!-- End Header =============================================== -->
+<style>
+    .showme{
+        display: none;
+    }
+    .showhim:hover .showme{
+        display : block;
+    }
+</style>

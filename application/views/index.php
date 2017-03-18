@@ -354,7 +354,7 @@
 				<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
 				<form action="<?php echo base_url()?>Home/login" class="popup-form" id="myLogin" method="post">
                 	<div class="login_icon"><i class="icon_lock_alt"></i></div>
-					<input type="text" class="form-control form-white" placeholder="Username" name="username">
+					<input type="text" class="form-control form-white" placeholder="Username" name="username" >
 					<input type="password" class="form-control form-white" placeholder="Password" name="password">
 					<div class="text-left">
 						<a href="#">Forgot Password?</a>
@@ -375,7 +375,8 @@
 					<input type="text" class="form-control form-white" placeholder="Name" name="Name">
 
                     <input type="email" class="form-control form-white" placeholder="Email" name="Email">
-                    <input type="text" class="form-control form-white" placeholder="UserName" name="UserName">
+                    <input type="text" class="form-control form-white" id="Username" placeholder="UserName" name="UserName" onclick="hidediv()" onfocusout="myFunc()">
+                    <div style="display: none" id="alerttext"><span style="color: red"> UserName Already Taken</span></div>
 
                     <input type="text" class="form-control form-white" placeholder=" Your full address" name="full_address"  >
                     <div class="row">
@@ -420,6 +421,9 @@
 
 <!-- SPECIFIC SCRIPTS -->
 <script src="js/video_header.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
 $(document).ready(function() {
 	'use strict';
@@ -431,6 +435,36 @@ $(document).ready(function() {
     });    
 
 });
+</script>
+<script>
+   function hidediv() {
+       document.getElementById("alerttext").style.display= 'none'
+   }
+</script>
+<script>
+    function myFunc() {
+       var x = document.getElementById("Username").value;
+
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Registration/check_user/")?>'+x,
+            data:{'id':x},
+            cache: false,
+            success:function(data)
+            {
+              //  $('#txtHint').html(data);
+                if (data == "duplicate"){
+
+
+                    $( "#Username" ).effect( "shake" );
+                    $('#Username').css('border-color', 'red');
+                    document.getElementById("alerttext").style.display= 'block'
+                }
+            }
+
+        });
+    }
 </script>
 
 </body>

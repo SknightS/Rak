@@ -47,6 +47,17 @@ class Home extends CI_Controller {
 
 
 
+            if ($this->session->userdata('type') == "Admin"){
+                redirect(Admin_Home);
+            } elseif ($this->session->userdata('type') == "User"){
+
+                redirect(Home);
+            } elseif ($this->session->userdata('type') == ""){
+
+
+            }
+
+
 
         }
         else
@@ -61,6 +72,10 @@ class Home extends CI_Controller {
         }
     }
 
+    public function Logout(){
+        $this->session->sess_destroy();
+        redirect(Home);
+    }
 
 
 }

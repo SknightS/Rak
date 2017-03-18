@@ -90,5 +90,16 @@ class Registration extends CI_Controller {
 
     }
 
+    public function check_user(){
+        $this->load->model('Registrationm');
+        $username=$this->input->post('id');
+        $result = $this->Registrationm->check_username($username);
+
+        if (!empty($result)){
+            echo "duplicate";
+        }
+
+    }
+
 
 }
