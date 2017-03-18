@@ -13,7 +13,9 @@ class Registration extends CI_Controller {
             $username=$this->input->post('UserName');
             $full_address=$this->input->post('full_address');
             $city=$this->input->post('city');
+            $state=$this->input->post('state');
             $postal_code=$this->input->post('postal_code');
+            $country = $this->input->post('country');
             $password1=$this->input->post('password1');
             $password2=$this->input->post('password2');
 
@@ -22,13 +24,15 @@ class Registration extends CI_Controller {
         $data = [
             //'id_user' => $result->id_user,
             'name' => $name,
-            'email'=>$emailto,
-            'username'=>$username,
-            'full_address'=>$full_address,
-            'city'=>$city,
-            'postal_code'=>$postal_code,
-            'password'=>$password1,
-            'password1'=>$password2
+            'email'=> $emailto,
+            'username'=> $username,
+            'full_address'=> $full_address,
+            'state' => $state,
+            'city'=> $city,
+            'postal_code'=> $postal_code,
+            'country' => $country,
+            'password'=> $password1,
+            'password1'=> $password2
         ];
 
         //$this->load->model('Registrationm');
@@ -39,17 +43,18 @@ class Registration extends CI_Controller {
 
 
         //Email information
-        $admin_email = $emailto;
-        $email = "";
-        $subject = "Rak";
-        $comment = 'http://sakibrahman.com/rak/Registration/Approve';
+      //  $admin_email = $emailto;
+       // $email = "";
+        //$subject = "Rak";
+       // $comment = 'http://sakibrahman.com/rak/Registration/Approve';
 
 
 
 
         //send email
-        mail($admin_email, $subject, $comment , $email);
+       // mail($admin_email, $subject, $comment , $email);
 
+        echo 'http://localhost/Rak/Registration/Approve';
     }
 
     public function Approve(){
@@ -60,12 +65,19 @@ class Registration extends CI_Controller {
         $emailto = $this->session->userdata('Email');
         $username=$this->session->userdata('UserName');
         $full_address=$this->session->userdata('full_address');
+        $state= $this->session->userdata('state');
         $city=$this->session->userdata('city');
         $postal_code=$this->session->userdata('postal_code');
         $password1=$this->session->userdata('password1');
         $password2=$this->session->userdata('password2');
+        $country=$this->session->userdata('password2');
+
+        $this->load->model('Registrationm');
+        $this->Registrationm->insert_registeruser($name,$emailto,$username,$full_address,$state, $city,$postal_code,$password2,$country);;
+       // $this->load->view('rating',$this->data);
 
 
+        redirect(Home);
 
     }
 

@@ -3,7 +3,7 @@
 
 class Registrationm extends CI_Model
 {
-    public function registeruser($name,$email,$username,$password1,$full_address,$city,$state,$pcode,$country){
+    public function insert_registeruser($name,$emailto,$username,$full_address,$state,$city,$postal_code,$password2,$country){
 
         /*$query=$this->db->query("SELECT * FROM `restaurant`");
         return $query->result();*/
@@ -12,13 +12,13 @@ class Registrationm extends CI_Model
 
         $data = array(
             'name' => $name,
-            'email' => $email ,
+            'email' => $emailto,
             'username' => $username,
-            'password' => $password1,
+            'password' => $password2,
             'full_address'=>$full_address,
             'city'=>$city,
             'state'=>$state,
-            'postcode'=>$pcode,
+            'postcode'=>$postal_code,
             'country'=>$country
 
 
