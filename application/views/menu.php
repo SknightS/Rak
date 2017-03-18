@@ -25,8 +25,17 @@
                     <li><a href="<?php echo base_url()?>About">About us</a></li>
                     <li><a href="<?php echo base_url()?>Faq">Faq</a></li>
                     <li><a href="<?php echo base_url()?>Contact">Contacts</a></li>
-                    <button class="btn btn-sm btn-info" href="#0" data-toggle="modal" data-target="#login_2">User Login</button>
-                    <button class="btn btn-sm btn-success" href="#0" data-toggle="modal" data-target="#register">User Register</button>                                                      
+                    <?php  $username=$this->session->userdata('username');
+                    if ($username == "") {
+                        ?>
+                        <button class="btn btn-sm btn-info" href="#0" data-toggle="modal" data-target="#login_2">User
+                            Login
+                        </button>
+                        <button class="btn btn-sm btn-success" href="#0" data-toggle="modal" data-target="#register">User Register</button>
+                        <?php
+                    }else echo $username
+                    ?>
+
                 </ul>
             </div><!-- End main-menu -->
             </nav>

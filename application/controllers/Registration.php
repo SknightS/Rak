@@ -7,6 +7,13 @@ class Registration extends CI_Controller {
     public function index()
     {
 
+        $this->load->model('Registrationm');
+        $username=$this->input->post('UserName');
+        $result = $this->Registrationm->check_username($username);
+
+
+        if (empty($result)) {
+
 
             $name=$this->input->post('Name');
             $emailto = $this->input->post('Email');
@@ -41,7 +48,7 @@ class Registration extends CI_Controller {
 
 
 
-
+///////////important/////////////////////////////////////////////////////////|
         //Email information
       //  $admin_email = $emailto;
        // $email = "";
@@ -53,8 +60,10 @@ class Registration extends CI_Controller {
 
         //send email
        // mail($admin_email, $subject, $comment , $email);
-
+////////////////////////////////////////////////////////////////////////////
         echo 'http://localhost/Rak/Registration/Approve';
+
+        }else{ ?> <script>alert("Username already taken");</script><?php }
     }
 
     public function Approve(){
@@ -62,15 +71,15 @@ class Registration extends CI_Controller {
        // echo $this->session->userdata('name');
 
         $name=$this->session->userdata('name');
-        $emailto = $this->session->userdata('Email');
-        $username=$this->session->userdata('UserName');
+        $emailto = $this->session->userdata('email');
+        $username=$this->session->userdata('username');
         $full_address=$this->session->userdata('full_address');
         $state= $this->session->userdata('state');
         $city=$this->session->userdata('city');
         $postal_code=$this->session->userdata('postal_code');
         $password1=$this->session->userdata('password1');
-        $password2=$this->session->userdata('password2');
-        $country=$this->session->userdata('password2');
+        $password2=$this->session->userdata('password');
+        $country=$this->session->userdata('country');
 
         $this->load->model('Registrationm');
         $this->Registrationm->insert_registeruser($name,$emailto,$username,$full_address,$state, $city,$postal_code,$password2,$country);;

@@ -31,7 +31,7 @@ class Home extends CI_Controller {
 
         $this->load->model('Login');
         $result = $this->Login->validate_user($_POST);
-        echo $result;
+        //echo $result;
 
         if (!empty($result)) {
 
@@ -46,7 +46,7 @@ class Home extends CI_Controller {
             $this->session->userdata($data);
 
 
-            redirect('Admin_Home');
+
 
         }
         else

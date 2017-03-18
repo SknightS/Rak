@@ -384,7 +384,15 @@
 
                         </div>
                         <div class="col-md-6 col-sm-6">
-                            <input type="text"  name="postal_code" class="form-control form-white" placeholder=" Your postal code">
+                            <input type="text"  name="postal_code" class="form-control form-white" placeholder="Your postal code">
+
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <input type="text"  name="state" class="form-control form-white" placeholder="State">
+
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <input type="text"  name="country" class="form-control form-white" placeholder="Country">
 
                         </div>
                     </div>
