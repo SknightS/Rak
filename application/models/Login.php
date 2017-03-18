@@ -3,10 +3,7 @@
 
 class Login extends CI_Model {
 
-
-
-
-        public function validate_user($data) {
+    public function validate_user($data) {
 
             $username = $this->input->post('username');
             $password = $this->input->post('password');
@@ -14,6 +11,19 @@ class Login extends CI_Model {
             $this->db->where('password', $password);
 
         return $this->db->get('login')->row();
+    }
+
+    public function insert_user() {
+
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+
+        $data = array(
+            'username' => $username,
+            'password' => $password
+        );
+
+        $this->db->insert('login',$data);
     }
 }
 

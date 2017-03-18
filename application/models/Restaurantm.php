@@ -12,6 +12,59 @@ class Restaurantm extends CI_Model
 
     }
 
+    public function get_submitted_restaurant(){
+
+        $query=$this->db->query("SELECT * FROM `res_request`");
+        return $query->result();
+
+
+    }
+
+    public function submit_restuarant_content(){
+        $name = $this->input->post('name');
+        $type  = $this->input->post('type');
+        //$itemDescription = $this->input->post('address');
+        //$price  = $this->input->post('Item_price');
+
+        $address = $this->input->post('address');
+        $city = $this->input->post('city');
+        $state= $this->input->post('state');
+        $postal_code  = $this->input->post('postal_code');
+        $country = $this->input->post('country');
+        $time  = $this->input->post('time');
+        $username= $this->input->post('username');
+        $password= $this->input->post('password');
+        $vat= $this->input->post('vat');
+        $status  = $this->input->post('status');
+        $image = $this->input->post('image');
+        $website = $this->input->post('website');
+        $email = $this->input->post('email');
+
+        $fileName = $_FILES["res_image"]["name"];
+        move_uploaded_file($_FILES["res_image"]["tmp_name"], "img/" . $fileName);
+
+        $data = array(
+            'name' => $name,
+            'type' => $type,
+            'address' => $address,
+            'website' => $website,
+            'email' =>$email,
+            'city' => $city,
+            'state' => $state,
+            'country' => $country,
+            'time' => $time,
+            'postal_code' => $postal_code,
+            'username' => $username,
+            'password' => $password,
+            'vat' => $vat,
+            'status' => $status,
+            'Image' => $fileName,
+
+        );
+
+        $this->db->insert('res_request',$data);
+    }
+
     public function insert_restuarant_content(){
         $name = $this->input->post('name');
         $type  = $this->input->post('type');
@@ -29,6 +82,8 @@ class Restaurantm extends CI_Model
         $vat= $this->input->post('vat');
         $status  = $this->input->post('status');
         $image = $this->input->post('image');
+        $website = $this->input->post('website');
+        $email = $this->input->post('email');
 
         $fileName = $_FILES["res_image"]["name"];
         move_uploaded_file($_FILES["res_image"]["tmp_name"], "img/" . $fileName);
@@ -37,6 +92,8 @@ class Restaurantm extends CI_Model
             'name' => $name,
             'type' => $type,
             'address' => $address,
+            'website' => $website,
+            'email' =>$email,
             'city' => $city,
             'state' => $state,
             'country' => $country,
@@ -67,11 +124,15 @@ class Restaurantm extends CI_Model
         $rvat = $this->input->post('vat');
         $rstatus = $this->input->post('status');
         $rimage = $this->input->post('res_image');
+        $website = $this->input->post('website');
+        $email = $this->input->post('email');
 
         $data = array(
             'name' => $rname,
             'type' => $rtype,
             'address' => $raddress,
+            'website' => $website,
+            'email' =>$email,
             'city' => $rcity,
             'state' => $rstate,
             'postal_code' => $rpostal_code,
@@ -92,8 +153,14 @@ class Restaurantm extends CI_Model
 
     $query=$this->db->query("SELECT *  FROM  restaurant WHERE `res_id`= '$id'");
     return $query->result();
+    }
 
-}
+    public function show_res_request($id){
+
+        $query=$this->db->query("SELECT *  FROM  res_request WHERE `res_id`= '$id'");
+        return $query->result();
+    }
+
     public function restaurant_details_description($id){
 
 

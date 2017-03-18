@@ -54,7 +54,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
 
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-        <?php $this->load->view('adminmenu');?>
+        <?php $this->load->view('res_adminmenu');?>
 
         <!-- /.navbar-collapse -->
     </nav>
@@ -137,7 +137,7 @@
                                     <span class="close">×</span>
 
                                     <h2>Add Restaurant Content</h2>
-                                    <form method="post" action="<?php echo base_url()?>Admin_Restaurant/insert_res" enctype="multipart/form-data">
+                                    <form method="post" action="<?php echo base_url()?>Res_Admin_Restaurant/insert_res" enctype="multipart/form-data">
                                         <div class="form-group">
                                             <label>Name</label>
                                             <input class="form-control" type="text" name="name">
@@ -149,14 +149,6 @@
                                         <div class="form-group">
                                             <label>Address</label>
                                             <input class="form-control"type="text" name="address">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Website</label>
-                                            <input class="form-control"type="text" name="website">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Email</label>
-                                            <input class="form-control"type="text" name="email">
                                         </div>
                                         <div class="form-group">
                                             <label>City</label>
@@ -275,7 +267,7 @@
 
         $.ajax({
             type:'POST',
-            url:'<?php echo base_url("Admin_Restaurant/showedit/")?>'+btn,
+            url:'<?php echo base_url("Res_Admin_Restaurant/showedit/")?>'+btn,
             data:{'id':btn},
             cache: false,
             success:function(data)

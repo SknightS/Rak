@@ -97,5 +97,14 @@
         <li>
             <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
         </li>
+        <li>
+            <a href="<?php echo base_url()?>Res_Admin_Home"><i class="fa fa-fw fa-dashboard"></i> Menu</a>
+        </li>
+        <li>
+            <a href="<?php echo base_url()?>Submit_Restaurant_Request"><i class="fa fa-fw fa-dashboard"></i> Submit Restaurant</a>
+        </li>
+        <li>
+            <a href="<?php echo base_url()?>Admin_Restaurant_Req"><i class="fa fa-fw fa-dashboard"></i> Restaurant Request</a>
+        </li>
     </ul>
 </div>

@@ -82,16 +82,18 @@
                         <div class="panel-heading"><h3>Restaurant Content</h3></div>
                         <div class="panel-body">
 
-                            <a href="#"> <button class="btn btn-success" onclick="selectid2(this)">Add New</button></a>
                             <?php
                             $count=1;
                            ?>
+
                                     <table class=" table table-responsive" border="1">
                                         <tr>
                                             <td>SL</td>
                                             <td>Name</td>
                                             <td>Type</td>
                                             <td>Address</td>
+                                            <td>Website</td>
+                                            <td>Email</td>
                                             <td>City</td>
                                             <td>State</td>
                                             <td>Postal Code</td>
@@ -102,15 +104,17 @@
                                             <td>VAT</td>
                                             <td>Status</td>
                                             <td>Image</td>
-                                            <td>Action</td>
+                                            <td colspan="2">Action</td>
 
                                         </tr>
-                             <?php foreach ($show_res_content as $s){?>
+                             <?php foreach ($req_restaurant as $s){?>
                                         <tr>
                                             <td><?php echo $count ?></td>
                                             <td><?php echo $s->name ?></td>
                                             <td><?php echo $s->type ?></td>
                                             <td><?php echo $s->address ?></td>
+                                            <td><?php echo $s->website ?></td>
+                                            <td><?php echo $s->email ?></td>
                                             <td><?php echo $s->city ?></td>
                                             <td><?php echo $s->state ?></td>
                                             <td><?php echo $s->postal_code ?></td>
@@ -120,19 +124,23 @@
                                             <td><?php echo $s->password ?></td>
                                             <td><?php echo $s->vat ?></td>
                                             <td><?php echo $s->status ?></td>
-                                            <td><img src = "<?php echo base_url()?>/img/slider_single_restuarant/<?php echo $s->Image ?>" alt = 'pic' height="100" width="100"/></td>
+                                            <td><img src = "<?php echo base_url()?>/img/slider_single_restuarant/<?php echo $s->image ?>" alt = 'pic' height="100" width="100"/></td>
 
-                                            <td><button data-panel-id="<?= $s->res_id ?>" onclick="selectid(this)">Edit</button></td>
+                                            <td><button data-panel-id="<?= $s->res_id ?>" onclick="selectid(this)">Accept</button></td>
+
                                         </tr>
 
                                     <?php
                                 $count++;
                             }
                             ?>
-                                    </table>
+                                </table>
+
+
+                            <!--
                             <div id="myModal2" class="modal">
 
-                                <!-- Modal content -->
+                                <!-- Modal content
                                 <div class="modal-content">
                                     <span class="close">×</span>
 
@@ -204,8 +212,7 @@
                                     </form>
 
                                 </div>
-
-
+                            -->
                             </div>
 
                             <div id="myModal3" class="modal">
@@ -260,7 +267,6 @@
 
     function selectid2(x) {
 
-
         modal2.style.display = "block";
 
     }
@@ -269,18 +275,18 @@
 
 
     function selectid(x) {
-        modal3.style.display = "block";
+        //modal3.style.display = "block";
         btn = $(x).data('panel-id');
         //alert(btn);
 
         $.ajax({
             type:'POST',
-            url:'<?php echo base_url("Admin_Restaurant/showedit/")?>'+btn,
+            url:'<?php echo base_url("Admin_Restaurant_Req/insert_res/")?>'+btn,
             data:{'id':btn},
             cache: false,
             success:function(data)
             {
-                $('#txtHint').html(data);
+                alert("Restaurant request accepted");
             }
 
         });
