@@ -54,8 +54,18 @@ class Registration extends CI_Controller {
 
     public function Approve(){
 
-        echo $this->session->userdata('name');
-        
+       // echo $this->session->userdata('name');
+
+        $name=$this->session->userdata('name');
+        $emailto = $this->session->userdata('Email');
+        $username=$this->session->userdata('UserName');
+        $full_address=$this->session->userdata('full_address');
+        $city=$this->session->userdata('city');
+        $postal_code=$this->session->userdata('postal_code');
+        $password1=$this->session->userdata('password1');
+        $password2=$this->session->userdata('password2');
+
+
 
     }
 

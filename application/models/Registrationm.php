@@ -8,6 +8,8 @@ class Registrationm extends CI_Model
         /*$query=$this->db->query("SELECT * FROM `restaurant`");
         return $query->result();*/
 
+
+
         $data = array(
             'name' => $name,
             'email' => $email ,
@@ -21,7 +23,7 @@ class Registrationm extends CI_Model
 
 
         );
-            $this->db->insert('registration', $data);
+            $this->db->insert('user', $data);
 
 
     }
