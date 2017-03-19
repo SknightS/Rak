@@ -39,6 +39,10 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
+
+
 
     <![endif]-->
 
@@ -147,7 +151,8 @@
 
                                         <div class="form-group">
                                             <label>Details</label>
-                                            <input class="form-control" type="text" name="details" value="<?php echo $s->details?>">
+<!--                                            <input class="form-control" type="text" name="details" value="--><?php //echo $s->details?><!--">-->
+                                            <textarea  id="summernote" name="details" value="<?php echo $s->details?>"><?php echo $s->details?></textarea>
                                         </div>
 
                                         <div class="form-group">

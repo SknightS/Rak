@@ -135,23 +135,20 @@
                              </td>
                              <td class="options">
                                  <div class="dropdown dropdown-options">
-                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i
-                                             class="icon_plus_alt2"></i></a>
+                                    </a>
                                      <?php
 
-
-                                     if ($menu_attr == ""){}else
-
-                                         $res_id=$s->res_id;
+                                     $res_id=$s->res_id;
                                      $item_name=$q->item_name;
 
                                      $query2=$this->db->query("SELECT * FROM `menu_attribute` WHERE `res_id`= '$res_id' AND item_name = '$item_name'");
 
+                                     if ($query2->num_rows() < 1){ ?>
+                                         <a href=""> <i class="icon_plus_alt2"></i></a>
 
-
-
-
-                                         ?>
+                                     <?php } else {    ?>
+                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i
+                                                 class="icon_plus_alt2"></i>
                                          <div class="dropdown-menu">
                                              <h5>Select an option</h5>
                                              <?php
@@ -171,7 +168,7 @@
                              </td>
                          </tr>
                          <?php
-                     }
+                     } }
                     ?>
                 </table>
                     <hr>
