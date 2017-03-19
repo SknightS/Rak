@@ -48,7 +48,7 @@ class Home extends CI_Controller {
 
 
             if ($this->session->userdata('type') == "Admin"){
-                redirect(Admin_Home);
+                redirect(Home);
             } elseif ($this->session->userdata('type') == "User"){
 
                 redirect(Home);

@@ -33,9 +33,22 @@
                         </button>
                         <button class="btn btn-sm btn-success" href="#0" data-toggle="modal" data-target="#register">User Register</button>
                         <?php
-                    }else
+                    } else { ?>
+                    <li>
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><?php echo $username ?>
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="<?php echo base_url()?>Admin_Home">Profile</a></li>
+                        <li><a href="<?php echo base_url()?>Home/Logout">Log Out</a></li>
+
+                    </ul>
+            </div>
+                </li>
+                    <?php }
                     ?>
-                   <a href="<?php echo base_url()?>Home/Logout"> <span style="color: red"; > <?php echo $username ?></span></a>
+
+
 
                 </ul>
             </div><!-- End main-menu -->
