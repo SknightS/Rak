@@ -3,22 +3,18 @@
 
 class Registrationm extends CI_Model
 {
-    public function insert_registeruser($name,$emailto,$username,$full_address,$state,$city,$postal_code,$password2,$country){
-
-
-
+    public function insert_registeruser($name,$emailto,$username,$full_address,$phone_no,$city,$postal_code,$state,$country,$password2){
         $data = array(
             'name' => $name,
             'email' => $emailto,
             'username' => $username,
             'password' => $password2,
+            'phone_number'=>$phone_no,
             'full_address'=>$full_address,
             'city'=>$city,
             'state'=>$state,
             'postcode'=>$postal_code,
             'country'=>$country
-
-
         );
             $this->db->insert('user', $data);
 

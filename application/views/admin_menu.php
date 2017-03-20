@@ -155,7 +155,7 @@
                                     <span class="close">×</span>
 
                                     <h2>Edit Content</h2>
-                                    <form role="form" method="post" action="<?php echo base_url()?>/Admin_menu/insertmenuitem" >
+                                    <form role="form" method="post" action="<?php echo base_url()?>/Admin_menu/insert_menu_type" >
                                         <div class="form-group">
                                             <label>Restuarant</label>
                                             <select class="form-control"  name="name" id="name" onchange="selectid4()" >

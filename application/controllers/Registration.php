@@ -19,6 +19,7 @@ class Registration extends CI_Controller {
             $emailto = $this->input->post('Email');
             $username=$this->input->post('UserName');
             $full_address=$this->input->post('full_address');
+            $phone_no = $this->input->post('phone_number');
             $city=$this->input->post('city');
             $state=$this->input->post('state');
             $postal_code=$this->input->post('postal_code');
@@ -34,6 +35,7 @@ class Registration extends CI_Controller {
             'email'=> $emailto,
             'username'=> $username,
             'full_address'=> $full_address,
+            'phone_number'=>$phone_no,
             'state' => $state,
             'city'=> $city,
             'postal_code'=> $postal_code,
@@ -43,8 +45,8 @@ class Registration extends CI_Controller {
         ];
 
         //$this->load->model('Registrationm');
-        //$this->Registrationm->registeruser($name,$email,$username,$password1);
-        $this->session->set_userdata($data);
+        $this->Registrationm->insert_registeruser($name,$emailto,$username,$full_address,$phone_no,$city,$postal_code,$state,$country,$password1);
+        //$this->session->set_userdata($data);
 
 
 
@@ -61,9 +63,10 @@ class Registration extends CI_Controller {
         //send email
        // mail($admin_email, $subject, $comment , $email);
 ////////////////////////////////////////////////////////////////////////////
-        echo 'http://localhost/Rak/Registration/Approve';
+        //echo 'http://localhost/Rak/Registration/Approve';
 
         }else{ ?> <script>alert("Username already taken");</script><?php }
+        redirect(Home);
     }
 
     public function Approve(){
