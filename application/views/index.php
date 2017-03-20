@@ -322,7 +322,7 @@
         </div>
       	<div class="row">
             <div class="col-md-4 col-md-offset-2">
-            	<a class="box_work" href="submit_restaurant.php">
+            	<a class="box_work" href="<?php echo base_url()?>Submit_Restaurant_Request">
                 <img src="img/submit_restaurant.jpg" width="848" height="480" alt="" class="img-responsive">
                 <h3><?php echo $h_s_6['submit_big']; ?><span><?php echo $h_s_6['submit_small']; ?></span></h3>
                 <p><?php echo $h_s_6['submit_details']; ?>
