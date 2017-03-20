@@ -114,13 +114,14 @@
                                     <th>Date</th>
                                     <th colspan="2">Action</th>
                                 </tr>
+                                <form method="post"   >
                                 <?php foreach ($this->data['te'] as $e) {?>
 
                                     <tr>
-                                        <td><?php echo $e->name ?></td>
-                                        <td><?php echo $e->email ?></td>
-                                        <td><?php echo $e->address ?></td>
-                                        <td><?php echo $e->city ?></td>
+                                        <td><input type="text" name="name" value="<?php echo $e->name ?> " readonly/></td>
+                                        <td><input type="text" name="email"value="<?php echo $e->email ?>"</td>
+                                        <td><input type="text" name="address"value="<?php echo $e->address ?>"</td>
+                                        <td><input type="text" name="city"value="<?php echo $e->city ?>"</td>
                                         <td><?php echo $e->state ?></td>
                                         <td><?php echo $e->postcode ?></td>
                                         <td><?php echo $e->country ?></td>
@@ -135,12 +136,15 @@
                                         <td><?php echo $e->date ?></td>
 
 
-                                        <td><button  data-panel-id=="<?= $e->id ?>" onclick="selectid4(this)">Accept</button></td>
-                                        <td><button  data-panel-id=="<?= $e->id ?>" onclick="selectid4(this)">delete</button></td>
+                                        <!--<td><button  data-panel-id=="<?= $e->id ?>" onclick="selectid4(this)">Accept</button></td>-->
+                                        <td><button type="submit"  formaction="<?php echo base_url()?>Order/accept_order/<?php echo $e->id ?>" onclick="return confirm('Are you confirm to accept this Order?')" >Accept</button></td>
+
+                                        <td><button type="submit"  formaction="<?php echo base_url()?>Order/delete_order/<?php echo $e->id ?>" onclick="return confirm('Are you confirm to delete this Order?')" >delete</button></td>
 
                                     </tr>
-                                    <!--</form>-->
                                 <?php } ?>
+                                    </form>
+
                             </table>
 
 

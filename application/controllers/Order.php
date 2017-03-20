@@ -12,4 +12,19 @@ class Order extends CI_Controller {
         $this->load->view('order',$this->data['te']);
 
     }
+    public function delete_order($id)
+    {
+        $this->load->model('Orderm');
+        $this->Orderm->delete_order($id);
+        redirect(Order);
+
+    }
+    public function accept_order($id)
+    {
+
+        $this->load->model('Orderm');
+        $this->Orderm->accept_order($id);
+        redirect(Order);
+
+    }
 }

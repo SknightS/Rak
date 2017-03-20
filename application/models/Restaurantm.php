@@ -11,6 +11,21 @@ class Restaurantm extends CI_Model
 
 
     }
+    public function show_resuarant_type(){
+
+        $query=$this->db->query("SELECT DISTINCT `type` FROM `restaurant`");
+        return $query->result();
+
+
+    }
+
+    public function show_restuarant_by_type($type){
+
+        $query=$this->db->query("SELECT * FROM `restaurant` WHERE `type`='$type'");
+        return $query->result();
+
+
+    }
 
     public function get_submitted_restaurant(){
 
@@ -209,7 +224,8 @@ class Restaurantm extends CI_Model
     public function get_rating(){
 
         $res_id=$this->uri->segment(3);
-        $query=$this->db->query("SELECT *  FROM  res_rating WHERE `res_id`= '$res_id' AND user_id = 1 ORDER BY `id` DESC LIMIT 1");
+        $username=$this->session->userdata['username'];
+        $query=$this->db->query("SELECT *  FROM  res_rating WHERE `res_id`= '$res_id' AND `username` = '$username' ORDER BY `id` DESC LIMIT 1");
         return $query->result();
     }
 

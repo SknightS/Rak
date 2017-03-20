@@ -57,4 +57,12 @@ class Orderm extends CI_Model
 
 
     }
+    public function delete_order($id){
+
+        /*$query = $this->db->get('order_cart');
+        return $query->result();*/
+        $this->db->query("DELETE FROM `order_cart` WHERE `id`= '$id'");
+
+
+    }
 }

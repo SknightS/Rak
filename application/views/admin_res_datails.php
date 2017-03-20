@@ -140,7 +140,8 @@
                 <h2 class="inner">Description</h2>
 
                 <?php foreach ($details as $e){?>
-                <?php echo $e->description ?>
+                <?php echo $e->description;
+                    //echo $this->session->userdata['username'];?>
                     <?php }?>
 
 
@@ -156,6 +157,26 @@
                     <div class="rating">
                         <!--<i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>-->
                         <?php
+
+                        if ($this->session->userdata['type']== 'User'){
+
+
+                foreach ($rating_avg as $r){ $rating_avg = $r->rat;}
+                for ($i=1 ; $i<=$rating_avg; $i++ ) {
+                    ?>
+                    <i class="icon_star voted"></i>
+                    <?php
+                }
+                for ($i=1 ; $i<=(5-$rating_avg); $i++ ) {
+                    ?>
+                    <i class="icon_star"></i></i>
+                    <?php
+                }
+                ?>
+
+                        <?php } else{
+
+
                         if ($res_rating == ""){
                             ?>
                             <img src="<?php echo base_url()?>img/blank.png" id="imgA" class="img-responsive"  onclick="myfuncA()" width="60px" style="float: left">
@@ -165,11 +186,11 @@
                             <img src="<?php echo base_url()?>img/blank.png" id="imgE" class="img-responsive"  onclick="myfuncE()" width="60px" style="float: left">
 
                         <?php }
-                        foreach ($res_rating as $r){
-                            $rating2=$r->rating;
-                        }
-                        echo $rating2;
+                        foreach ($res_rating as $r) {
+                            $rating2 = $r->rating;
 
+                            echo $rating2;
+                        }
                         if ($rating2 == 1){?>
                             <img src="<?php echo base_url()?>img/yellow.png" id="imgA" class="img-responsive"  onclick="myfuncA()" width="60px" style="float: left">
                             <img src="<?php echo base_url()?>img/blank.png" id="imgB" class="img-responsive"  onclick="myfuncB()" width="60px" style="float: left">
@@ -205,7 +226,7 @@
                             <img src="<?php echo base_url()?>img/yellow.png" id="imgD" class="img-responsive"  onclick="myfuncD()" width="60px" style="float: left">
                             <img src="<?php echo base_url()?>img/yellow.png" id="imgE" class="img-responsive"  onclick="myfuncE()" width="60px" style="float: left">
 
-                        <?php }
+                        <?php }}
                         ?>
 
                     </div>

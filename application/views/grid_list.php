@@ -13,7 +13,7 @@
     <!--[if lte IE 8]>
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>.</p>
     <![endif]-->
-    
+
     <div id="preloader">
         <div class="sk-spinner sk-spinner-wave" id="status">
             <div class="sk-rect1"></div>
@@ -70,14 +70,23 @@
                         <input type="text" id="range" value="" name="range">
 						<h6>Type</h6>
 						<ul>
-							<li><label><input type="checkbox" checked class="icheck">All <small>(49)</small></label></li>
-							<li><label><input type="checkbox" class="icheck">American <small>(12)</small></label><i class="color_1"></i></li>
-							<li><label><input type="checkbox" class="icheck">Chinese <small>(5)</small></label><i class="color_2"></i></li>
-							<li><label><input type="checkbox" class="icheck">Hamburger <small>(7)</small></label><i class="color_3"></i></li>
-							<li><label><input type="checkbox" class="icheck">Fish <small>(1)</small></label><i class="color_4"></i></li>
-							<li><label><input type="checkbox" class="icheck">Mexican <small>(49)</small></label><i class="color_5"></i></li>
-							<li><label><input type="checkbox" class="icheck">Pizza <small>(22)</small></label><i class="color_6"></i></li>
-							<li><label><input type="checkbox" class="icheck">Sushi <small>(43)</small></label><i class="color_7"></i></li>
+                            <?php foreach ($show_res_type as $e) { ?>
+
+                                <li><a href="<?php echo base_url()?>Restaurants/show_restuarant_by_type/<?php echo $e->type ?>"><?php echo $e->type ?></a><li>
+                                <!--<li><button data-panel-id="<?php echo $e->type ?>" onclick="selectid(this)"><?php echo $e->type ?></button></li>
+                                <button type="submit"  formaction="<?php echo base_url()?>Order/accept_order/<?php echo $e->id ?>" onclick="return confirm('Are you confirm to accept this Order?')" >Accept</button></td>
+
+                                <li><label><input type="checkbox" checked class="icheck">All <small>(49)</small></label></li>
+                                <li><label><input type="checkbox" class="icheck">American <small>(12)</small></label><i class="color_1"></i></li>
+                                <li><label><input type="checkbox" class="icheck">Chinese <small>(5)</small></label><i class="color_2"></i></li>
+                                <li><label><input type="checkbox" class="icheck">Hamburger <small>(7)</small></label><i class="color_3"></i></li>
+                                <li><label><input type="checkbox" class="icheck">Fish <small>(1)</small></label><i class="color_4"></i></li>
+                                <li><label><input type="checkbox" class="icheck">Mexican <small>(49)</small></label><i class="color_5"></i></li>
+                                <li><label><input type="checkbox" class="icheck">Pizza <small>(22)</small></label><i class="color_6"></i></li>
+                                <li><label><input type="checkbox" class="icheck">Sushi <small>(43)</small></label><i class="color_7"></i></li>-->
+                                <?php
+                            }
+                            ?>
 						</ul>
 					</div>
 					<div class="filter_type">
@@ -235,18 +244,18 @@
 	<!-- End Search Menu -->
     
 <!-- COMMON SCRIPTS -->
-<script src="js/jquery-2.2.4.min.js"></script>
-<script src="js/common_scripts_min.js"></script>
-<script src="js/functions.js"></script>
-<script src="assets/validate.js"></script>
+<script src="<?php echo base_url()?>js/jquery-2.2.4.min.js"></script>
+<script src="<?php echo base_url()?>js/common_scripts_min.js"></script>
+<script src="<?php echo base_url()?>js/functions.js"></script>
+<script src="<?php echo base_url()?>assets/validate.js"></script>
 
 <!-- SPECIFIC SCRIPTS -->
-<script  src="js/cat_nav_mobile.js"></script>
+<script  src="<?php echo base_url()?>js/cat_nav_mobile.js"></script>
 <script>$('#cat_nav').mobileMenu();</script>
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAs_JyKE9YfYLSQujbyFToZwZy-wc09w7s"></script>
-<script src="js/map.js"></script>
-<script src="js/infobox.js"></script>
-<script src="js/ion.rangeSlider.js"></script>
+<script src="<?php echo base_url()?>js/map.js"></script>
+<script src="<?php echo base_url()?>js/infobox.js"></script>
+<script src="<?php echo base_url()?>js/ion.rangeSlider.js"></script>
 <script>
     $(function () {
 		 'use strict';
