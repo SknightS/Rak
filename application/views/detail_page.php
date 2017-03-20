@@ -144,7 +144,7 @@
                                      $query2=$this->db->query("SELECT * FROM `menu_attribute` WHERE `res_id`= '$res_id' AND item_name = '$item_name'");
 
                                      if ($query2->num_rows() < 1){ ?>
-                                         <a href=""> <i class="icon_plus_alt2"></i></a>
+                                         <a href="#0"> <i class="icon_plus_alt2"  data-panel-id="<?= $s->id ?>" onclick="addcart(this)"></i></a>
 
                                      <?php } else {    ?>
                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i
@@ -341,7 +341,29 @@
         });
     });
 </script>
+<script>
 
+    function addcart(x) {
+
+        btn = $(x).data('panel-id');
+
+      // alert(btn);
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Item_Menu/insert_cart_withoutattr/")?>'+btn,
+            data:{'id':btn},
+            cache: false,
+            success:function(data)
+            {
+               //alert(data);
+            }
+
+        });
+
+        $('#cart_table').load(document.URL +  ' #cart_table');
+    }
+</script>
 
 
 <script>

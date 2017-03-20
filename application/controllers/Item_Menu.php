@@ -50,6 +50,35 @@ class Item_Menu extends CI_Controller
         }
     }
 
+    public function insert_cart_withoutattr()
+    {
+
+        $id = $this->input->post('id');
+
+        $this->load->model('Menum');
+        $this->data['get_cart'] = $this->Menum->get_pro_cart_withoutattr($id);
+
+        // print_r($this->data['get_cart_pro']);
+
+        foreach ($this->data['get_cart'] as $cr) {
+
+            $cid = $cr->id;
+            $citem_name = $cr->item_name;
+            $price = $cr->item_price;
+            $res_id = $cr->res_id;
+
+            $data = array(
+                'id' => $cid,
+                'qty' => 1,
+                'price' => $price,
+                'name' => $citem_name,
+                'coupon' => $res_id
+            );
+
+            $this->cart->insert($data);
+        }
+    }
+
     public function update_add_cart(){
 
         $id = $this->input->post('id');
