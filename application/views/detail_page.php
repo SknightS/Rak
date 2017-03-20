@@ -203,6 +203,9 @@
                                 </td>
                                 </div>
                                 <td>
+                                    <?php echo $c['options']['Size']?>
+                                </td>
+                                <td>
                                     <strong class="pull-right"><span id="update_price"><?php echo $c['price']*$c['qty'];?></span></strong>
                                 </td>
                             </tr>

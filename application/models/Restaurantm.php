@@ -182,8 +182,6 @@ class Restaurantm extends CI_Model
 
     public function restaurant_details_description($id){
 
-
-
         $query = $this->db->get_where('restaurant_details', array('res_id' => $id));
         return $query->result();
 
@@ -240,4 +238,14 @@ class Restaurantm extends CI_Model
         return $query->result();
 
     }
+
+    public function get_rating_avg_without(){
+
+        //$res_id=$this->uri->segment(3);
+        $query=$this->db->query("SELECT `res_id`, ROUND(AVG(`rating`)) as rat FROM `res_rating` GROUP by `res_id`");
+        return $query->result();
+
+    }
+
+
 }

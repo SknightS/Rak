@@ -142,7 +142,10 @@
                             </div>
                             <div class="rating">
                                 <?php
-                                foreach ($rating_avg as $r){ $rating_avg = $r->rat;}
+                                $res_id=$s->res_id;
+                                $query=$this->db->query("SELECT ROUND(AVG(`rating`)) as rat FROM `res_rating` WHERE res_id = '$res_id'");
+
+                                foreach ($query->result() as $r){ $rating_avg = $r->rat;}
                                 for ($i=1 ; $i<=$rating_avg; $i++ ) {
                                     ?>
                                     <i class="icon_star voted"></i>

@@ -34,13 +34,15 @@ class Item_Menu extends CI_Controller
             $citem_name=$cr->item_name;
             $price= $cr->price;
             $res_id=$cr->res_id;
+            $menu_attr=$cr->item_attribute;
 
             $data = array(
                 'id' => $cid,
                 'qty' => 1,
                 'price' => $price,
                 'name' => $citem_name,
-                'coupon' => $res_id
+                'coupon' => $res_id,
+                'options' => array('Size' => $menu_attr)
             );
 
             $this->cart->insert($data);
@@ -72,7 +74,8 @@ class Item_Menu extends CI_Controller
                 'qty' => 1,
                 'price' => $price,
                 'name' => $citem_name,
-                'coupon' => $res_id
+                'coupon' => $res_id,
+                'options' => array('Size' => "")
             );
 
             $this->cart->insert($data);
