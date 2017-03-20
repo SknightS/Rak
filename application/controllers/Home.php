@@ -39,7 +39,8 @@ class Home extends CI_Controller {
 
                 'username' => $result->username,
                 'id'=>$result->id,
-                'type'=>$result->type
+                'type'=>$result->type,
+
             ];
 
             $this->session->set_userdata($data);
@@ -73,7 +74,11 @@ class Home extends CI_Controller {
     }
 
     public function Logout(){
-        $this->session->sess_destroy();
+        //$this->session->sess_destroy();
+
+        $this->session->unset_userdata('username');
+        $this->session->unset_userdata('id');
+        $this->session->unset_userdata('type');
         redirect(Home);
     }
 

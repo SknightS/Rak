@@ -13,16 +13,20 @@ class Restaurantm extends CI_Model
     }
     public function show_resuarant_type(){
 
-        $query=$this->db->query("SELECT DISTINCT `type` FROM `restaurant`");
+        $query=$this->db->query("SELECT * FROM `restaurant` GROUP by TYPE ");
         return $query->result();
 
 
     }
 
-    public function show_restuarant_by_type($type){
+    public function show_restuarant_by_type($id){
 
-        $query=$this->db->query("SELECT * FROM `restaurant` WHERE `type`='$type'");
+
+        $query=$this->db->query("SELECT * FROM `restaurant` WHERE `res_id` = '$id'");
+        //$query=$this->db->query(" select * from restaurant where match($type) against (type)");
         return $query->result();
+
+
 
 
     }

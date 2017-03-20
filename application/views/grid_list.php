@@ -72,22 +72,13 @@
 						<ul>
                             <?php foreach ($show_res_type as $e) { ?>
 
-                                <li><a href="<?php echo base_url()?>Restaurants/show_restuarant_by_type/<?php echo $e->type ?>"><?php echo $e->type ?></a><li>
-                                <!--<li><button data-panel-id="<?php echo $e->type ?>" onclick="selectid(this)"><?php echo $e->type ?></button></li>
-                                <button type="submit"  formaction="<?php echo base_url()?>Order/accept_order/<?php echo $e->id ?>" onclick="return confirm('Are you confirm to accept this Order?')" >Accept</button></td>
-
-                                <li><label><input type="checkbox" checked class="icheck">All <small>(49)</small></label></li>
-                                <li><label><input type="checkbox" class="icheck">American <small>(12)</small></label><i class="color_1"></i></li>
-                                <li><label><input type="checkbox" class="icheck">Chinese <small>(5)</small></label><i class="color_2"></i></li>
-                                <li><label><input type="checkbox" class="icheck">Hamburger <small>(7)</small></label><i class="color_3"></i></li>
-                                <li><label><input type="checkbox" class="icheck">Fish <small>(1)</small></label><i class="color_4"></i></li>
-                                <li><label><input type="checkbox" class="icheck">Mexican <small>(49)</small></label><i class="color_5"></i></li>
-                                <li><label><input type="checkbox" class="icheck">Pizza <small>(22)</small></label><i class="color_6"></i></li>
-                                <li><label><input type="checkbox" class="icheck">Sushi <small>(43)</small></label><i class="color_7"></i></li>-->
-                                <?php
-                            }
-                            ?>
-						</ul>
+                            <li>
+                                <a href="<?php echo base_url() ?>Restaurants/show_restuarant_by_type/<?php echo $e->res_id ?>"><?php echo $e->type ?></a>
+                            <li>
+                               <?php
+                                }
+                                ?>
+                        </ul>
 					</div>
 					<div class="filter_type">
 						<h6>Rating</h6>
@@ -282,6 +273,27 @@
             grid: true
         });
     });
+</script>
+
+<script>
+    function selectid(x) {
+        btn = $(x).data('panel-id');
+       // alert(btn);
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Restaurants/show_restuarant_by_type/")?>'+btn,
+            data:{'id':btn},
+            cache: false,
+            success:function(data)
+            {
+                alert(data);
+               // $('#txtHint').html(data);
+            }
+
+        });
+    }
+
 </script>
 </body>
 </html>

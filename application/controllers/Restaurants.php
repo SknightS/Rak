@@ -14,14 +14,18 @@ class Restaurants extends CI_Controller {
 
     }
 
-    public function show_restuarant_by_type($type)
+    public function show_restuarant_by_type($id)
     {
         //print_r($type);
+       // $type =$this->input->post('id');
         $this->load->model('Restaurantm');
-        $this->data['show_res_content'] = $this->Restaurantm->show_restuarant_by_type($type);
+        $this->data['show_res_content'] = $this->Restaurantm->show_restuarant_by_type($id);
         $this->data['show_res_type']=$this->Restaurantm->show_resuarant_type();
         $this->load->view('grid_list', $this->data);
 
+
+
+       // print_r($this->data['show_res_content']);
 
     }
 }

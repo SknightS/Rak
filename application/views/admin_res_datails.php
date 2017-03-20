@@ -70,6 +70,7 @@
         <div id="sub_content">
             <div id="thumb"><img src="<?php echo base_url() ?>img/thumb_restaurant.jpg" alt=""></div>
             <div class="rating">
+                if()
                 <?php
                 foreach ($rating_avg as $r){ $rating_avg = $r->rat;}
                 for ($i=1 ; $i<=$rating_avg; $i++ ) {
@@ -156,12 +157,10 @@
                     </div>
                     <div class="rating">
                         <!--<i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>-->
-                        <?php
-
-                        if ($this->session->userdata['type']== 'User'){
+                       <?php
 
 
-                foreach ($rating_avg as $r){ $rating_avg = $r->rat;}
+                foreach ($this->data['rating_avg'] as $r){ $this->data['rating_avg'] = $r->rat;}
                 for ($i=1 ; $i<=$rating_avg; $i++ ) {
                     ?>
                     <i class="icon_star voted"></i>
@@ -174,7 +173,7 @@
                 }
                 ?>
 
-                        <?php } else{
+                        <?php
 
 
                         if ($res_rating == ""){
@@ -226,7 +225,7 @@
                             <img src="<?php echo base_url()?>img/yellow.png" id="imgD" class="img-responsive"  onclick="myfuncD()" width="60px" style="float: left">
                             <img src="<?php echo base_url()?>img/yellow.png" id="imgE" class="img-responsive"  onclick="myfuncE()" width="60px" style="float: left">
 
-                        <?php }}
+                        <?php }
                         ?>
 
                     </div>
