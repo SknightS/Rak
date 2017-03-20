@@ -25,7 +25,7 @@
                     <li><a href="<?php echo base_url()?>About">About us</a></li>
                     <li><a href="<?php echo base_url()?>Faq">Faq</a></li>
                     <li><a href="<?php echo base_url()?>Contact">Contacts</a></li>
-                    <?php  $username=$this->session->userdata('username');
+                    <!--<?php  $username=$this->session->userdata('username');
                     if ($username == "") {
                         ?>
                         <button class="btn btn-sm btn-info" href="#0" data-toggle="modal" data-target="#login_2">User
@@ -46,7 +46,51 @@
             </div>
                 </li>
                     <?php }
+                    ?>-->
+                         <?php if($this->session->userdata('loggedin')=="true"){
+                        $username=$this->session->userdata('username');
+                        $usertype=$this->session->userdata('type');
+                        if($usertype=="Admin"){
+
                     ?>
+                    <li>
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><?php echo $username ?>
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="<?php echo base_url()?>Admin_Home">Profile</a></li>
+                                <li><a href="<?php echo base_url()?>Home/Logout">Log Out</a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <?php }elseif ($usertype=="User"){
+
+                    ?>
+
+                    <li>
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><?php echo $username ?>
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="<?php echo base_url()?>Admin_Home">Profile</a></li>
+                                <li><a href="<?php echo base_url()?>Home/Logout">Log Out</a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+
+                  <?php }} else{?>
+
+                    <button class="btn btn-sm btn-info" href="#0" data-toggle="modal" data-target="#login_2">User
+                        Login
+                    </button>
+                    <button class="btn btn-sm btn-success" href="#0" data-toggle="modal" data-target="#register">User Register</button>
+
+                    <?php }?>
+
+
+
 
 
 

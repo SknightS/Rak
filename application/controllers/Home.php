@@ -12,7 +12,7 @@ class Home extends CI_Controller {
         $data['head']=$this->viewall->show_main_content();
        // print_r($data);
         $data['head_res_ad_more']=$this->viewall->home_resturant_andmore_content();
-        //print_r($data['head_res_ad_more']);
+
         $data['head_how_itworks']=$this->viewall->show_howitwork_content();
         $data['head_section_4']=$this->viewall->show_sectionfour_content();
         $data['head_section_5']=$this->viewall->show_sectionfive_content();
@@ -40,6 +40,7 @@ class Home extends CI_Controller {
                 'username' => $result->username,
                 'id'=>$result->id,
                 'type'=>$result->type,
+                'loggedin'=>"true"
 
             ];
 
@@ -49,7 +50,7 @@ class Home extends CI_Controller {
 
 
             if ($this->session->userdata('type') == "Admin"){
-                redirect(Home);
+                redirect(Admin_Home);
             } elseif ($this->session->userdata('type') == "User"){
 
                 redirect(Home);
@@ -74,11 +75,13 @@ class Home extends CI_Controller {
     }
 
     public function Logout(){
-        //$this->session->sess_destroy();
 
-        $this->session->unset_userdata('username');
+
+        /*$this->session->unset_userdata('username');
         $this->session->unset_userdata('id');
-        $this->session->unset_userdata('type');
+        $this->session->unset_userdata('type');*/
+
+        $this->session->sess_destroy();
         redirect(Home);
     }
 

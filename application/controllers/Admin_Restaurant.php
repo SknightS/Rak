@@ -5,39 +5,85 @@ class Admin_Restaurant extends CI_Controller
 {
     public function index()
     {
-        $this->load->model('Restaurantm');
-        $this->data['show_res_content'] = $this->Restaurantm->show_restuarant_content();
-        $this->load->view('admin_restaurant', $this->data );
+        if ($this->session->userdata('type') == "Admin") {
+            $this->load->model('Restaurantm');
+            $this->data['show_res_content'] = $this->Restaurantm->show_restuarant_content();
+            $this->load->view('admin_restaurant', $this->data);
 
+        }
+        else{
+            $this->load->model('viewall');
+            $data['head']=$this->viewall->show_main_content();
+            // print_r($data);
+            $data['head_res_ad_more']=$this->viewall->home_resturant_andmore_content();
+            //print_r($data['head_res_ad_more']);
+            $data['head_how_itworks']=$this->viewall->show_howitwork_content();
+            $data['head_section_4']=$this->viewall->show_sectionfour_content();
+            $data['head_section_5']=$this->viewall->show_sectionfive_content();
+            $data['head_section_6']=$this->viewall->show_sectionsix_content();
+            $this->load->view('index',$data);
+
+        }
     }
 
-    public function insert_res(){
+    public function insert_res()
+    {
+        if ($this->session->userdata('type') == "Admin") {
+            $this->load->model('Restaurantm');
+            $this->Restaurantm->insert_restuarant_content();
+            redirect(Admin_Restaurant);
+        }
+        else{
+            $this->load->model('viewall');
+            $data['head']=$this->viewall->show_main_content();
+            // print_r($data);
+            $data['head_res_ad_more']=$this->viewall->home_resturant_andmore_content();
+            //print_r($data['head_res_ad_more']);
+            $data['head_how_itworks']=$this->viewall->show_howitwork_content();
+            $data['head_section_4']=$this->viewall->show_sectionfour_content();
+            $data['head_section_5']=$this->viewall->show_sectionfive_content();
+            $data['head_section_6']=$this->viewall->show_sectionsix_content();
+            $this->load->view('index',$data);
 
-        $this->load->model('Restaurantm');
-        $this->Restaurantm->insert_restuarant_content();
-        redirect(Admin_Restaurant);
+        }
     }
 
-    public function edit_res($id){
+    public function edit_res($id)
+    {
+        if ($this->session->userdata('type') == "Admin") {
+            $this->load->model('Restaurantm');
+            $this->Restaurantm->edit_res($id);
+            redirect(Admin_Restaurant);
+            /*
+            $this->load->model('Menum');
+            $this->Menum->menuedit($id);
+            redirect(Restaurant_menu);
+            */
+        }
+        else{
+            $this->load->model('viewall');
+            $data['head']=$this->viewall->show_main_content();
+            // print_r($data);
+            $data['head_res_ad_more']=$this->viewall->home_resturant_andmore_content();
+            //print_r($data['head_res_ad_more']);
+            $data['head_how_itworks']=$this->viewall->show_howitwork_content();
+            $data['head_section_4']=$this->viewall->show_sectionfour_content();
+            $data['head_section_5']=$this->viewall->show_sectionfive_content();
+            $data['head_section_6']=$this->viewall->show_sectionsix_content();
+            $this->load->view('index',$data);
 
-        $this->load->model('Restaurantm');
-        $this->Restaurantm->edit_res($id);
-        redirect(Admin_Restaurant);
-        /*
-        $this->load->model('Menum');
-        $this->Menum->menuedit($id);
-        redirect(Restaurant_menu);
-        */
+        }
     }
 
-    public function showedit(){
-
-        $id = $this->input->post('id');
-        $this->load->model('Restaurantm');
-        $this->data['edit'] = $this->Restaurantm->showedit($id);
-        // print_r($this->data['edit']);
-        foreach ($this->data['edit'] as $e) {
-            echo "<form role=\"form\" method=\"post\" action=\"http://localhost/Rak/Admin_Restaurant/edit_res/$e->res_id\" >
+    public function showedit()
+    {
+        if ($this->session->userdata('type') == "Admin") {
+            $id = $this->input->post('id');
+            $this->load->model('Restaurantm');
+            $this->data['edit'] = $this->Restaurantm->showedit($id);
+            // print_r($this->data['edit']);
+            foreach ($this->data['edit'] as $e) {
+                echo "<form role=\"form\" method=\"post\" action=\"http://localhost/Rak/Admin_Restaurant/edit_res/$e->res_id\" >
                                         <div class=\"form-group\">
                                             <label>Name</label>
                                             <input class=\"form-control\" type=\"text\" name=\"name\" value=\" $e->name \">
@@ -94,6 +140,20 @@ class Admin_Restaurant extends CI_Controller
                                         <input class=\"btn btn-success\" type=\"submit\">
                                     </form>
                                     ";
+            }
+        }
+        else{
+            $this->load->model('viewall');
+            $data['head']=$this->viewall->show_main_content();
+            // print_r($data);
+            $data['head_res_ad_more']=$this->viewall->home_resturant_andmore_content();
+            //print_r($data['head_res_ad_more']);
+            $data['head_how_itworks']=$this->viewall->show_howitwork_content();
+            $data['head_section_4']=$this->viewall->show_sectionfour_content();
+            $data['head_section_5']=$this->viewall->show_sectionfive_content();
+            $data['head_section_6']=$this->viewall->show_sectionsix_content();
+            $this->load->view('index',$data);
+
         }
     }
 

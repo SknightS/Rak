@@ -153,7 +153,7 @@ class Menum extends CI_Model
     }
     public function show_menu_item_content($id){
 
-        $query=$this->db->query("SELECT * FROM `menu` WHERE `res_id`= '$id'");
+        $query=$this->db->query("SELECT * FROM `menu` WHERE `res_id`= '$id' GROUP  by item_type");
         return $query->result();
 
 
