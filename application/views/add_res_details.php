@@ -191,11 +191,6 @@
     // When the user clicks the button, open the modal
     // btn = $(x).data('panel-name');
 
-
-
-
-
-
     function selectid(x) {
         modal3.style.display = "block";
 

@@ -88,7 +88,7 @@
             <div class="row">
                 <div class="col-lg-12">
 
-                    <!--                search                  -->
+                    <!--search-->
 
                     <form method="post" action="<?php echo base_url()?>Admin_menu_attribute">
                         <div id="custom-search-input">
@@ -127,7 +127,7 @@
                                             <td><?php echo $e->item_name ?></td>
                                             <td><?php echo $e->item_attribute?></td>
                                             <td><?php echo $e->price?></td>
-                                            <td><button  data-panel-id=="<?= $e->id ?>" onclick="selectid4(this)">Edit</button></td>
+                                            <td><button  data-panel-id="<?= $e->id ?>" onclick="selectid4(this)">Edit</button></td>
 
                                         </tr>
                                     <!--</form>-->

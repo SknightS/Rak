@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Admin_Res_Details extends CI_Controller {
 
     public function index()
-{
+    {
     $this->load->model('Restaurantm');
     $this->data['res_details']= $this->Restaurantm->restaurant_details();
 
@@ -16,7 +16,7 @@ class Admin_Res_Details extends CI_Controller {
 
 
 
-}
+    }
     public function showdetails($id)
     {
         $this->load->model('Restaurantm');

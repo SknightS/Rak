@@ -330,7 +330,7 @@
                 </a>
             </div>
             <div class="col-md-4">
-            	<a class="box_work" href="submit_driver.php">
+            	<a class="box_work" href="<?php echo base_url()?>Submit_Resturant_Request">
                 <img src="img/delivery.jpg" width="848" height="480" alt="" class="img-responsive">
 				<h3>We are looking for a Driver<span>Start to earn money</span></h3>
                 <p>Lorem ipsum dolor sit amet, ut virtute fabellas vix, no pri falli eloquentiam adversarium. Ea legere labore eam. Et eum sumo ocurreret, eos ei saepe oratio omittantur, legere eligendi partiendo pro te.</p>

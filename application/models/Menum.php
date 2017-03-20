@@ -88,7 +88,6 @@ class Menum extends CI_Model
     }
     public function showsearch($text){
 
-
         $this->db->select('*');
         $this->db->from('menu');
         $this->db->like('res_name',$text,'after');
