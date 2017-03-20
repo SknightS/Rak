@@ -56,7 +56,7 @@ class Menum extends CI_Model
                 'item_type' => $itype,
                 'item_name' => $iname,
                 'item_description' => $idescription,
-                //'item_price' => $price,
+                'item_price' => $price,
             );
             $this->db->insert('menu', $menudata);
         }

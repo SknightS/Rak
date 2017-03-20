@@ -12,7 +12,7 @@ class Admin_Res_Details extends CI_Controller {
     $this->data['res_rating']= $this->Restaurantm->get_rating();
     $this->data['rating_avg']= $this->Restaurantm->get_rating_avg();
 
-    $this->load->view('add_res_details',$this->data);
+    $this->load->view('admin_res_details',$this->data);
 
 
 
@@ -20,10 +20,11 @@ class Admin_Res_Details extends CI_Controller {
     public function showdetails($id)
     {
         $this->load->model('Restaurantm');
+        $res_id = $id;
         $this->data['details']= $this->Restaurantm->restaurant_details_description($id);
         $this->data['details_head']= $this->Restaurantm->restaurant_details_head($id);
-        $this->data['res_rating']= $this->Restaurantm->get_rating();
-        $this->data['rating_avg']= $this->Restaurantm->get_rating_avg();
+        $this->data['res_rating']= $this->Restaurantm->get_rating($res_id);
+        $this->data['rating_avg']= $this->Restaurantm->get_rating_avg($res_id);
         //print_r($this->data);
         $this->load->view('admin_res_datails',$this->data);
     }

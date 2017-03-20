@@ -23,19 +23,38 @@ class Admin_Restaurant_Req extends CI_Controller
         $this->load->model('Login');
 
         $id = $this->input->post('id');
-        $data= $this->Restaurantm->show_res_request($id);
+        $this->data['res_app']=$this->Restaurantm->show_res_request($id);
 
-        $this->Login->insert_user($data);
-        $this->Restaurantm->insert_restuarant_content($data);
+        foreach ($this->data['res_app'] as $s){
 
-        //redirect(Admin_Restaurant);
+            $username=$s->username;
+            $password=$s->password;
+            $name = $s->name;
+            $type  = $s->type;
+            $address = $s->address;
+            $city = $s->city;
+            $state= $s->state;
+            $postal_code  = $s->postal_code;
+            $country = $s->country;
+            $time  = $s->time;
+            $vat= $s->vat;
+            $status  = $s->status;
+            $image = $s->image;
+            $website =$s->website;
+            $email = $s->email;
+
+        }
+        $this->Login->insert_res($username,$password);
+        $this->Restaurantm->insert_restuarant_req_content($name,$type,$address,$city,$state,$postal_code,$country,$time,$vat,$status,$image,$website,$email,$username,$password);
+        $this->Restaurantm->del_res_req($id);
+        redirect(Admin_Restaurant_Req);
     }
 
     public function edit_res($id){
 
         $this->load->model('Restaurantm');
         $this->Restaurantm->edit_res($id);
-        redirect(Admin_Restaurant);
+        redirect(Admin_Restaurant_Req);
         /*
         $this->load->model('Menum');
         $this->Menum->menuedit($id);

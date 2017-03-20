@@ -137,82 +137,6 @@
                                 </table>
 
 
-                            <!--
-                            <div id="myModal2" class="modal">
-
-                                <!-- Modal content
-                                <div class="modal-content">
-                                    <span class="close">×</span>
-
-                                    <h2>Add Restaurant Content</h2>
-                                    <form method="post" action="<?php echo base_url()?>Admin_Restaurant/insert_res" enctype="multipart/form-data">
-                                        <div class="form-group">
-                                            <label>Name</label>
-                                            <input class="form-control" type="text" name="name">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Type</label>
-                                            <input class="form-control"type="text" name="type">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Address</label>
-                                            <input class="form-control"type="text" name="address">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Website</label>
-                                            <input class="form-control"type="text" name="website">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Email</label>
-                                            <input class="form-control"type="text" name="email">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>City</label>
-                                            <input class="form-control"type="text" name="city">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>State</label>
-                                            <input class="form-control"type="text" name="state">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Postal Code</label>
-                                            <input class="form-control"type="text" name="postal_code">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Country</label>
-                                            <input class="form-control"type="text" name="country">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Time</label>
-                                            <input class="form-control"type="text" name="time">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Username</label>
-                                            <input class="form-control"type="text" name="username">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>password</label>
-                                            <input class="form-control"type="text" name="password">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>VAT</label>
-                                            <input class="form-control"type="text" name="vat">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Status</label>
-                                            <input class="form-control"type="text" name="status">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>File input</label>
-                                            <input class="form-control" type="file" name="res_image" value="res_image">
-                                        </div>
-
-                                        <input class="btn btn-success" type="submit">
-                                    </form>
-
-                                </div>
-                            -->
                             </div>
 
                             <div id="myModal3" class="modal">
@@ -252,31 +176,24 @@
 
     // Get the modal
     // var modal = document.getElementById('myModal');
-    var modal2 = document.getElementById('myModal2');
+
     var modal3 = document.getElementById('myModal3');
 
     // Get the button that opens the modal
     //var btn = document.getElementById("myBtn");
 
-    var span = document.getElementsByClassName("close")[0];
-    var span2 = document.getElementsByClassName("close")[1];
 
-
+    var span2 = document.getElementsByClassName("close")[0];
     // When the user clicks the button, open the modal
     // btn = $(x).data('panel-name');
-
-    function selectid2(x) {
-
-        modal2.style.display = "block";
-
-    }
 
 
 
 
     function selectid(x) {
-        //modal3.style.display = "block";
+       // modal3.style.display = "block";
         btn = $(x).data('panel-id');
+
         //alert(btn);
 
         $.ajax({
@@ -286,33 +203,19 @@
             cache: false,
             success:function(data)
             {
-                alert("Restaurant request accepted");
+                //alert("Restaurant request accepted");
+            alert(data);
             }
 
         });
 
 
     }
-
-
-    span.onclick = function() {
-        modal2.style.display = "none";
-    }
     span2.onclick = function() {
         modal3.style.display = "none";
     }
 
     // When the user clicks anywhere outside of the modal, close it
-
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal2) {
-            modal2.style.display = "none";
-        }
-    }
-
-
     window.onclick = function(event) {
         if (event.target == modal3) {
             modal3.style.display = "none";

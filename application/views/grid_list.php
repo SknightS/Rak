@@ -147,12 +147,22 @@
                         <div class="ribbon_1">Popular</div>
                         <div class="desc">
                             <div class="thumb_strip">
-                                <img src="img/thumb_restaurant.jpg" alt="">
+                                <div id="thumb"><img src="<?php echo base_url() ?>img/thumb_restaurant.jpg" alt=""></div>
                             </div>
                             <div class="rating">
-                                <i class="icon_star voted"></i><i class="icon_star voted"></i><i
-                                        class="icon_star voted"></i><i class="icon_star voted"></i><i
-                                        class="icon_star"></i>
+                                <?php
+                                foreach ($rating_avg as $r){ $rating_avg = $r->rat;}
+                                for ($i=1 ; $i<=$rating_avg; $i++ ) {
+                                    ?>
+                                    <i class="icon_star voted"></i>
+                                    <?php
+                                }
+                                for ($i=1 ; $i<=(5-$rating_avg); $i++ ) {
+                                    ?>
+                                    <i class="icon_star"></i></i>
+                                    <?php
+                                }
+                                ?>
                             </div>
                             <h3><?php echo $s->name ?></h3>
                             <div class="type">

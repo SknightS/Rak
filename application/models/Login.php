@@ -13,14 +13,27 @@ class Login extends CI_Model {
         return $this->db->get('login')->row();
     }
 
-    public function insert_user() {
+    public function insert_user($req_data) {
+
 
         $username = $this->input->post('username');
         $password = $this->input->post('password');
 
         $data = array(
             'username' => $username,
-            'password' => $password
+            'password' => $password,
+            'type'      => 'User'
+        );
+
+        $this->db->insert('login',$data);
+    }
+
+    public function insert_res($username,$password){
+
+        $data = array(
+            'username' => $username,
+            'password' => $password,
+            'type'      => 'Res'
         );
 
         $this->db->insert('login',$data);
