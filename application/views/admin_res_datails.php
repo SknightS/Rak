@@ -43,25 +43,9 @@
             </div>
             <nav class="col--md-8 col-sm-8 col-xs-8">
                 <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
-                <div class="main-menu">
-                    <div id="header_menu">
-                        <img src="<?php echo base_url() ?>img/logo.png" width="190" height="23" alt="" data-retina="true">
-                    </div>
-                    <a href="#" class="open_close" id="close_in"><i class="icon_close"></i></a>
-                    <ul>
-                        <li>
-                            <a href="<?php echo base_url() ?>index.php">Home</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo base_url() ?>Restaurants">Restaurants</a>
-                        </li>
-                        <li><a href="<?php echo base_url() ?>About">About us</a></li>
-                        <li><a href="<?php echo base_url() ?>Faq">Faq</a></li>
-                        <li><a href="<?php echo base_url() ?>Contact">Contacts</a></li>
-                        <button class="btn btn-sm btn-info" href="#0" data-toggle="modal" data-target="#login_2">User Login</button>
-                        <button class="btn btn-sm btn-success" href="#0" data-toggle="modal" data-target="#register">User Register</button>
-                    </ul>
-                </div><!-- End main-menu -->
+                <!-- Header ================================================== -->
+                <?php include ('menu.php') ?>
+                <!-- End Header =============================================== -->
             </nav>
         </div><!-- End row -->
     </div><!-- End container -->
@@ -161,23 +145,24 @@
                     <div class="rating">
                         <!--<i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>-->
                        <?php
+                       if($this->session->userdata('loggedin') == "true") {
+                           foreach ($this->data['rating_avg'] as $r) {
+                               $this->data['rating_avg'] = $r->rat;
+                           }
+                           for ($i = 1; $i <= $rating_avg; $i++) {
+                               ?>
+                               <i class="icon_star voted"></i>
+                               <?php
+                           }
+                           for ($i = 1; $i <= (5 - $rating_avg); $i++) {
+                               ?>
+                               <i class="icon_star"></i></i>
+                               <?php
+                           }
+                           ?>
 
-
-                foreach ($this->data['rating_avg'] as $r){ $this->data['rating_avg'] = $r->rat;}
-                for ($i=1 ; $i<=$rating_avg; $i++ ) {
-                    ?>
-                    <img src="<?php echo base_url()?>img/yellow.png" id="imgA" class="img-responsive"  onclick="myfuncA()" width="60px" style="float: left">
-                    <?php
-                }
-                for ($i=1 ; $i<=(5-$rating_avg); $i++ ) {
-                    ?>
-                    <img src="<?php echo base_url()?>img/blank.png" id="imgA" class="img-responsive"  onclick="myfuncA()" width="60px" style="float: left">
-                    <?php
-                }
-                ?>
-
-                        <?php
-
+                           <?php
+                       }
 
                         if ($res_rating == ""){
                             ?>

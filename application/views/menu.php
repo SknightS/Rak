@@ -80,7 +80,21 @@
                         </div>
                     </li>
 
-                  <?php }} else{?>
+                  <?php }elseif ($usertype=="Res"){?>
+
+                            <li>
+                                <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><?php echo $username ?>
+                                        <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="<?php echo base_url()?>Res_Admin_Home">Profile</a></li>
+                                        <li><a href="<?php echo base_url()?>Home/Logout">Log Out</a></li>
+
+                                    </ul>
+                                </div>
+                            </li>
+
+                        <?php } } else{?>
 
                     <button class="btn btn-sm btn-info" href="#0" data-toggle="modal" data-target="#login_2">User
                         Login

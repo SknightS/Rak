@@ -6,14 +6,32 @@ class Restaurantm extends CI_Model
 
     public function show_restuarant_content(){
 
-        $query=$this->db->query("SELECT * FROM `restaurant`");
+    $query=$this->db->query("SELECT * FROM `restaurant`");
+    return $query->result();
+
+
+}
+
+    public function show_resturant($usename){
+
+        $query=$this->db->query("SELECT * FROM `restaurant` WHERE `username`='$usename'");
+        //$query=$this->db->query("SELECT * FROM `restaurant`,`menu` WHERE `restaurant`.`username`='$usename' GROUP  BY `name`");
         return $query->result();
 
 
     }
+    public function show_resturant_item_type($id){
+
+        $query=$this->db->query("SELECT * FROM `menu_type` WHERE `res_id`='$id'");
+        //$query=$this->db->query("SELECT * FROM `restaurant`,`menu` WHERE `restaurant`.`username`='$usename' GROUP  BY `name`");
+        return $query->result();
+
+
+    }
+
     public function show_resuarant_type(){
 
-        $query=$this->db->query("SELECT * FROM `restaurant` GROUP by TYPE ");
+        $query=$this->db->query("SELECT * FROM `restaurant` GROUP BY `type` ");
         return $query->result();
 
 

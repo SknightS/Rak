@@ -11,7 +11,7 @@ class Menum extends CI_Model
     }
     public function showadd($id){
 
-        $query=$this->db->query("SELECT * FROM 'menu_attribute' WHERE `id`= '$id'");
+        $query=$this->db->query("SELECT * FROM `menu_attribute` WHERE `id`= '$id'");
         return $query->result();
 
     }
@@ -153,7 +153,7 @@ class Menum extends CI_Model
     }
     public function show_menu_item_content($id){
 
-        $query=$this->db->query("SELECT * FROM `menu_type` WHERE `res_id`= '$id' GROUP  by item_type");
+        $query=$this->db->query("SELECT * FROM `menu_type` WHERE `res_id`= '$id' GROUP  BY `type` ");
         return $query->result();
 
 

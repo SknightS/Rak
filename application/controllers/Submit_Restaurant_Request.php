@@ -11,11 +11,13 @@ class Submit_Restaurant_Request extends CI_Controller
 
     }
 
-    public function insert_res(){
+    public function insert_res()
+    {
 
-        $this->load->model('Restaurantm');
-        $this->Restaurantm->insert_restuarant_content();
-        redirect(Admin_Restaurant_Req);
+            $this->load->model('Restaurantm');
+            $this->Restaurantm->insert_restuarant_content();
+            redirect(Admin_Restaurant_Req);
+
     }
 
     public function submit_res(){

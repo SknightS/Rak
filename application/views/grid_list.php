@@ -54,7 +54,26 @@
 		<div id="map" class="map"></div>
 	</div><!-- End Map -->
 
-<!-- Content ================================================== -->
+
+    <!-- Login modal -->
+    <div class="modal fade" id="login_2" tabindex="-1" role="dialog" aria-labelledby="myLogin" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modal-popup">
+                <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+                <form action="<?php echo base_url()?>Home/login" class="popup-form" id="myLogin" method="post">
+                    <div class="login_icon"><i class="icon_lock_alt"></i></div>
+                    <input type="text" class="form-control form-white" placeholder="Username" name="username" >
+                    <input type="password" class="form-control form-white" placeholder="Password" name="password">
+                    <div class="text-left">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div><!-- End modal -->
+
+    <!-- Content ================================================== -->
 <div class="container margin_60_35">
 	<div class="row">
     

@@ -94,34 +94,31 @@
                         <div class="panel-heading"><h3>Order Content</h3></div>
                         <div class="panel-body">
 
-                            <div style="overflow-x: auto">
-                                <table class=" table table-bordered" >
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Address</th>
-                                            <th>City</th>
-                                            <th>State</th>
-                                            <th>PostCode</th>
-                                            <th>Country</th>
-                                            <th>Phone</th>
-                                            <th>Restaurant Name</th>
-                                            <th>Item Name</th>
-                                            <th>Item Attribute</th>
-                                            <th>Price</th>
-                                            <th>Quantity</th>
-                                            <th>Order Time</th>
-                                            <th>Order Day</th>
-                                            <th>Date</th>
-                                            <th colspan="2">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <form method="post"   >
-                                        <?php foreach ($this->data['te'] as $e) {?>
-                                    <tbody>
+                            <table class=" table table-responsive" border="1">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Address</th>
+                                    <th>City</th>
+                                    <th>State</th>
+                                    <th>PostCode</th>
+                                    <th>Country</th>
+                                    <th>Phone</th>
+                                    <th>Restaurant Name</th>
+                                    <th>Item Name</th>
+                                    <th>Item Attribute</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Order Time</th>
+                                    <th>Order Day</th>
+                                    <th>Date</th>
+                                    <th colspan="2">Action</th>
+                                </tr>
+                                <form method="post"   >
+                                <?php foreach ($this->data['te'] as $e) {?>
+
                                     <tr>
-                                        <td><?php echo $e->name ?></td>
+                                        <td><?php echo $e->name ?> </td>
                                         <td><?php echo $e->email ?></td>
                                         <td><?php echo $e->address ?></td>
                                         <td><?php echo $e->city ?></td>
@@ -140,18 +137,19 @@
 
 
                                         <!--<td><button  data-panel-id=="<?= $e->id ?>" onclick="selectid4(this)">Accept</button></td>-->
-                                        <td><button class="btn btn-success" type="submit"  formaction="<?php echo base_url()?>Order/accept_order/<?php echo $e->id ?>" onclick="return confirm('Are you confirm to accept this Order?')" >Accept</button></td>
+                                        <td><button type="submit"  formaction="<?php echo base_url()?>Order/accept_order/<?php echo $e->id ?>" onclick="return confirm('Are you confirm to accept this Order?')" >Accept</button></td>
 
-                                        <td><button class="btn btn-danger" type="submit"  formaction="<?php echo base_url()?>Order/delete_order/<?php echo $e->id ?>" onclick="return confirm('Are you confirm to delete this Order?')" >Delete</button></td>
+                                        <td><button type="submit"  formaction="<?php echo base_url()?>Order/delete_order/<?php echo $e->id ?>" onclick="return confirm('Are you confirm to delete this Order?')" >delete</button></td>
 
                                     </tr>
-                                    </tbody>
-
-                                        <?php } ?>
+                                <?php } ?>
                                     </form>
 
-                                </table>
-                            </div>
+                            </table>
+
+
+
+
 
                         </div>
 

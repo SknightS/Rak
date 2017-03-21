@@ -12,7 +12,7 @@ class Admin_Res_Details extends CI_Controller {
     $this->data['res_rating']= $this->Restaurantm->get_rating();
     $this->data['rating_avg']= $this->Restaurantm->get_rating_avg();
 
-    $this->load->view('admin_res_details',$this->data);
+    $this->load->view('admin_res_datails',$this->data);
 
 
 

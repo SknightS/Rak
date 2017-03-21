@@ -31,6 +31,13 @@
 </ul>
 <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav side-nav">
+        <?php if($this->session->userdata('loggedin')=="true"){
+        $username=$this->session->userdata('username');
+        $usertype=$this->session->userdata('type');
+        if($usertype=="Admin"){
+
+        ?>
+
         <li  class="active">
             <a href="<?php echo base_url()?>Admin_Home"><i class="fa fa-fw fa-dashboard"></i> Home</a>
         </li>
@@ -77,34 +84,38 @@
         <!--<li>
             <a href="<?php echo base_url()?>Admin_menu_attribute"><i class="fa fa-fw fa-wrench"></i>Menu Attribute</a>
         </li>-->
-        <li>
-            <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-            <ul id="demo1" class="collapse">
-                <li>
-                    <a href="#">Dropdown Item</a>
-                </li>
-                <li>
-                    <a href="#">Dropdown Item</a>
-                </li>
-            </ul>
-        </li>
+
         <li>
             <a href="<?php echo base_url()?>Order"><i class="fa fa-fw fa-wrench"></i>order</a>
         </li>
         <li>
             <a href="<?php echo base_url()?>Rating"><i class="fa fa-fw fa-file"></i> Rating</a>
         </li>
-        <li>
-            <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-        </li>
-        <li>
-            <a href="<?php echo base_url()?>Res_Admin_Home"><i class="fa fa-fw fa-dashboard"></i> Menu</a>
-        </li>
-        <li>
-            <a href="<?php echo base_url()?>Submit_Restaurant_Request"><i class="fa fa-fw fa-dashboard"></i> Submit Restaurant</a>
-        </li>
-        <li>
-            <a href="<?php echo base_url()?>Admin_Restaurant_Req"><i class="fa fa-fw fa-dashboard"></i> Restaurant Request</a>
-        </li>
+            <li>
+                <a href="<?php echo base_url()?>Admin_Restaurant_Req"><i class="fa fa-fw fa-dashboard"></i> Restaurant Request</a>
+            </li>
+
+    <?php }elseif ($usertype=="Res"){?>
+
+
+
+
+
+
+
+            <li  class="active">
+                <a href="<?php echo base_url()?>Res_Admin_Home"><i class="fa fa-fw fa-dashboard"></i> Home</a>
+            </li>
+            <li>
+                <a href="<?php echo base_url()?>Res_Admin_menu_attribute"><i class="fa fa-fw fa-bar-chart-o"></i> Menu Attribute</a>
+            </li>
+            <li>
+                <a href="<?php echo base_url()?>Res_Admin_Restaurant"><i class="fa fa-fw fa-table"></i> Restaurant</a>
+            </li>
+            <li>
+                <a href="<?php echo base_url()?>Res_Admin_Res_Details"><i class="fa fa-fw fa-edit"></i> Restaurant Details</a>
+            </li>
+
+        <?php }}?>
     </ul>
 </div>
