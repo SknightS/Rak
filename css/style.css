@@ -2105,10 +2105,16 @@ footer .form-group {
     background: url(../img/paypal.svg) center right no-repeat #f0f0f0
 }
 
+.panel-success>.panel-heading {
+    background-color: #f2f2f2;
+    border-color: #D4D4D4;
+}
+
 .panel {
     -webkit-box-shadow: none;
     box-shadow: none;
-    border-color: #ededed
+    border-color: #D4D4D4;
+    border-radius:0px;
 }
 
 .panel-title a {
