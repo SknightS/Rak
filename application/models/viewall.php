@@ -66,6 +66,12 @@ class Viewall extends CI_Model
     }
 
 
+    public function most_popular()
+    {
+        $query=$this->db->query("SELECT * FROM `res_rating` GROUP by `res_id` ORDER BY `rating` DESC LIMIT 6");
+        return $query->result();
+
+    }
 
 
 }

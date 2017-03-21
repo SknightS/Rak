@@ -20,12 +20,16 @@
     <!-- search box-->
     <link href="css/style.css" rel="stylesheet">
 
+
+
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
     <link href="css/modal.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>css/sb-admin.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>css/style.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">

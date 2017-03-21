@@ -18,8 +18,12 @@
     <link href="css/sb-admin.css" rel="stylesheet">
     <link href="css/modal.css" rel="stylesheet">
 
+    <link href="<?php echo base_url()?>css/sb-admin.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>css/style.css" rel="stylesheet">
+
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
 
     <script src="js/jquery.js"></script>
 

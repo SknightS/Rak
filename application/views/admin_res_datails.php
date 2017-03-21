@@ -7,7 +7,11 @@
     <?php include ('head.php') ?>
     <![endif]-->    <title>RAK - Quality Delivery or Take Away Food</title>
 
+    <link href="<?php echo base_url()?>css/sb-admin.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>css/style.css" rel="stylesheet">
+
 </head>
+<!-- Custom CSS -->
 
 
 <body>

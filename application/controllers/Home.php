@@ -15,8 +15,10 @@ class Home extends CI_Controller {
 
         $data['head_how_itworks']=$this->viewall->show_howitwork_content();
         $data['head_section_4']=$this->viewall->show_sectionfour_content();
+        $data['most_popular']=$this->viewall->most_popular();
         $data['head_section_5']=$this->viewall->show_sectionfive_content();
         $data['head_section_6']=$this->viewall->show_sectionsix_content();
+
 
 
 
