@@ -7,7 +7,7 @@
     <?php include ('head.php') ?>
     <![endif]-->    <title>RAK - Quality Delivery or Take Away Food</title>
 
-    <link href="<?php echo base_url()?>css/sb-admin.css" rel="stylesheet">
+
     <link href="<?php echo base_url()?>css/style.css" rel="stylesheet">
 
 </head>
@@ -143,28 +143,12 @@
 
                     </div>
                     <div class="rating">
-                        <!--<i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>-->
-                       <?php
-                       if($this->session->userdata('loggedin') == "true") {
-                           foreach ($this->data['rating_avg'] as $r) {
-                               $this->data['rating_avg'] = $r->rat;
-                           }
-                           for ($i = 1; $i <= $rating_avg; $i++) {
-                               ?>
-                               <i class="icon_star voted"></i>
-                               <?php
-                           }
-                           for ($i = 1; $i <= (5 - $rating_avg); $i++) {
-                               ?>
-                               <i class="icon_star"></i></i>
-                               <?php
-                           }
-                           ?>
 
-                           <?php
-                       }
 
-                        if ($res_rating == ""){
+
+                        <?php
+                        if ($this->session->userdata('username') != null){
+                        if ($res_rating == null){
                             ?>
                             <img src="<?php echo base_url()?>img/blank.png" id="imgA" class="img-responsive"  onclick="myfuncA()" width="60px" style="float: left">
                             <img src="<?php echo base_url()?>img/blank.png" id="imgB" class="img-responsive"  onclick="myfuncB()" width="60px" style="float: left">
@@ -213,7 +197,7 @@
                             <img src="<?php echo base_url()?>img/yellow.png" id="imgD" class="img-responsive"  onclick="myfuncD()" width="60px" style="float: left">
                             <img src="<?php echo base_url()?>img/yellow.png" id="imgE" class="img-responsive"  onclick="myfuncE()" width="60px" style="float: left">
 
-                        <?php }}
+                        <?php }} }else {}
                         ?>
 
                     </div>
@@ -680,6 +664,7 @@
             cache: false,
             success:function(data)
             {
+                //alert(data);
                 alert("You have successfully gave rating rating 4");
             }
 

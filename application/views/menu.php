@@ -73,7 +73,7 @@
                             <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><?php echo $username ?>
                                 <span class="caret"></span></button>
                             <ul class="dropdown-menu">
-                                <li><a href="<?php echo base_url()?>Admin_Home">Profile</a></li>
+                                <li><a href="<?php echo base_url()?>Profile/showuser/<?php echo $username; ?>">Profile</a></li>
                                 <li><a href="<?php echo base_url()?>Home/Logout">Log Out</a></li>
 
                             </ul>

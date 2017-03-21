@@ -141,9 +141,13 @@
         
         <div class="row">
 
-                <?php foreach ($most_popular as $mp) {
+                <?php
+
+                foreach ($most_popular as $mp) {
+
                     $res_id=$mp->res_id;
                     $query=$this->db->query("SELECT * FROM `restaurant` WHERE res_id = '$res_id'");
+                    if ($query->result() == null) { } else {
                     foreach ($query->result() as $s){}
                     ?>
             <div class="col-md-6">
@@ -183,7 +187,7 @@
                     </div><!-- End desc-->
                 </a>
             </div><!-- End strip_list-->
-              <?php } ?>
+              <?php } }?>
 
           <!-- End col-md-6-->
 

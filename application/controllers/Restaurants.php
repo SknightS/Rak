@@ -36,7 +36,8 @@ class Restaurants extends CI_Controller {
         $res_id = $id;
         $this->data['details']= $this->Restaurantm->restaurant_details_description($id);
         $this->data['details_head']= $this->Restaurantm->restaurant_details_head($id);
-        $this->data['res_rating']= $this->Restaurantm->get_rating($res_id);
+        if ($this->session->userdata('username') != null){
+        $this->data['res_rating']= $this->Restaurantm->get_rating($res_id);}
         $this->data['rating_avg']= $this->Restaurantm->get_rating_avg($res_id);
         //print_r($this->data);
         $this->load->view('admin_res_datails',$this->data);

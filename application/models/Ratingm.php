@@ -53,13 +53,14 @@ class Ratingm extends CI_Model
         }
     }*/
 
-    public function insert_rating($rating,$r_id)
+    public function insert_rating($rating,$res_id,$username)
     {
-        $rating= $this->input->post('rating');
-        $r_id = $this->input->post('r_id');
+
+
         $data = array(
-            'res_id' => $r_id,
+            'res_id' => $res_id,
             'rating' => $rating,
+            'username' => $username
         );
         $this->db->insert('res_rating',$data);
     }

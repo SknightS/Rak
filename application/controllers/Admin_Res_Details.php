@@ -72,21 +72,20 @@ class Admin_Res_Details extends CI_Controller {
         redirect(Admin_Res_Details);
     }
 
-    public function insert_rating()
-    {
-        //redirect(Home);
-        //$this->id=$this->input->post('id');
-        //$this->res_id=$this->input->post('res_id');
-        //$this->user_id=$this->input->post('user_id');
-        $this->load->model('Ratingm');
-        $this->load->model('Restaurantm');
-        $this->data['res_rating']= $this->Restaurantm->get_rating();
-        $this->rating=$this->input->post('rating');
-        $this->res_id=$this->input->post('r_id');
+    public function insert_rating(){
 
-        $this->Ratingm->insert_rating($this->rating,$this->r_id);
-        echo $this->rating;
-        //redirect(Home);
+
+        if ($this->session->userdata('username') != null) {
+            $this->load->model('Ratingm');
+            $rating = $this->input->post('rating');
+            $res_id = $this->input->post('r_id');
+            $username = $this->session->userdata('username');
+            $this->Ratingm->insert_rating($rating, $res_id, $username);
+
+
+        }
+
+
     }
 
     public function insert_comment()
