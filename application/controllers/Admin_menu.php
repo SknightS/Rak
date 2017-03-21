@@ -120,6 +120,32 @@ class Admin_menu extends CI_Controller
         }
     }
 
+    function insert_menu_type()
+    {
+
+        if ($this->session->userdata('type') == "Admin") {
+            $this->load->model('Menum');
+            $this->Menum->insert_menu_type();
+            //$this->load->view('admin_faq');
+
+            redirect(Admin_menu);
+        }
+        else{
+            $this->load->model('viewall');
+            $data['head']=$this->viewall->show_main_content();
+            // print_r($data);
+            $data['head_res_ad_more']=$this->viewall->home_resturant_andmore_content();
+            //print_r($data['head_res_ad_more']);
+            $data['head_how_itworks']=$this->viewall->show_howitwork_content();
+            $data['head_section_4']=$this->viewall->show_sectionfour_content();
+            $data['head_section_5']=$this->viewall->show_sectionfive_content();
+            $data['head_section_6']=$this->viewall->show_sectionsix_content();
+            $this->load->view('index',$data);
+
+        }
+
+    }
+
     function getres_id()
     {
         if ($this->session->userdata('type') == "Admin") {
@@ -167,7 +193,7 @@ class Admin_menu extends CI_Controller
                     // print_r($this->data['show_menu_item_content']);
                     foreach ($this->data['show_menu_item_content'] as $e) {
                         //echo $e->item_type;
-                        echo "<option value='" . $e->item_type . "'>" . $e->item_type . "</option>";
+                        echo "<option value='" . $e->type . "'>" . $e->type . "</option>";
                     }
                 }
             }

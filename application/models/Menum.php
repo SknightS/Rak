@@ -153,7 +153,7 @@ class Menum extends CI_Model
     }
     public function show_menu_item_content($id){
 
-        $query=$this->db->query("SELECT * FROM `menu` WHERE `res_id`= '$id' GROUP  by item_type");
+        $query=$this->db->query("SELECT * FROM `menu_type` WHERE `res_id`= '$id' GROUP  by item_type");
         return $query->result();
 
 
@@ -176,19 +176,19 @@ class Menum extends CI_Model
 
 
     }
-    public function insertmenuitem(){
+    public function insert_menu_type(){
 
         $resid= $this->input->post('res_id');
         $name = $this->input->post('name');
         $type  = $this->input->post('itype');
 
         $data = array(
-            'res_name' => $name,
-            'item_type' => $type,
             'res_id' => $resid,
+            'type' => $type
+
         );
 
-        $this->db->insert('menu',$data);
+        $this->db->insert('menu_type',$data);
     }
 
     public function show_type($res_id){

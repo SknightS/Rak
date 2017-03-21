@@ -379,6 +379,7 @@
                     <div style="display: none" id="alerttext"><span style="color: red"> UserName Already Taken</span></div>
 
                     <input type="text" class="form-control form-white" placeholder=" Your full address" name="full_address"  >
+                    <input type="text" class="form-control form-white" placeholder=" Your phone number" name="phone_number"  >
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <input type="text"  name="city" class="form-control form-white" placeholder="Your city">
