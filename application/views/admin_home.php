@@ -21,8 +21,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/sb-admin.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>css/sb-admin.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>css/style.css" rel="stylesheet">
 
 
     <!-- Custom Fonts -->
