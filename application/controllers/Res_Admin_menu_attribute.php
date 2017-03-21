@@ -6,9 +6,41 @@ class Res_Admin_menu_attribute extends CI_Controller
     public function index()
     {
         if ($this->session->userdata('type') == "Res") {
-        if (!$this->input->post('btn_search_menu_attr')) {
+            $usename=$this->session->userdata('username');
+            //print_r($usename);
+            $this->load->model('Restaurantm');
+            $this->data['show_resturant']=$this->Restaurantm->show_resturant($usename);
+            foreach ($this->data['show_resturant'] as $e) {
+
+                //print_r($e->res_id);
+                $id = $e->res_id;
+                if (!$this->input->post('btn_search_menu_attr')) {
+                    $this->load->model('Res_Admin_m');
+                    $this->data['mattribute'] = $this->Res_Admin_m->showadd($id);
+                    //print_r($this->data['mattribute']);
+                    $this->data['te'] = '';
+                    $this->load->view('res_menu_attribute', $this->data);
+
+                }
+                else {
+                    $text = $this->input->post('search_menu_att');
+
+                    $this->load->model('Res_Admin_m');
+                    $this->data['mattribute'] = $this->Res_Admin_m->showadd($id);
+                    $this->data['te'] = $this->Res_Admin_m->showsearch_menu_attribute($text,$id);
+                    //print_r($this->data['te']);
+                    $this->load->view('res_menu_attribute', $this->data);
+
+
+                }
+            }
+
+
+
+            /*if (!$this->input->post('btn_search_menu_attr')) {
             $this->load->model('Menum');
             $this->data['mattribute'] = $this->Menum->show_menu_attribute();
+            //print_r($this->data['mattribute']);
             $this->data['te'] = '';
             $this->load->view('res_menu_attribute', $this->data);
         } else {
@@ -19,7 +51,7 @@ class Res_Admin_menu_attribute extends CI_Controller
             $this->load->view('res_menu_attribute', $this->data);
 
 
-        }
+        }*/
     }
         else{
             $this->load->model('viewall');

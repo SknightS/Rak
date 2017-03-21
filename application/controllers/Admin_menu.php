@@ -185,9 +185,10 @@ class Admin_menu extends CI_Controller
             if ($this->session->userdata('type') == "Admin") {
                 $rname = $this->input->post('rname');
                 $this->load->model('Menum');
+                //print_r($rname);
                 $this->data['edit'] = $this->Menum->getres_id($rname);
                 foreach ($this->data['edit'] as $s) {
-                    //echo $s->res_id;
+                    echo $s->res_id;
                     $id = $s->res_id;
                     $this->data['show_menu_item_content'] = $this->Menum->show_menu_item_content($id);
                     // print_r($this->data['show_menu_item_content']);
@@ -197,7 +198,6 @@ class Admin_menu extends CI_Controller
                     }
                 }
             }
-
             else{
                 $this->load->model('viewall');
                 $data['head']=$this->viewall->show_main_content();
@@ -211,8 +211,11 @@ class Admin_menu extends CI_Controller
                 $this->load->view('index',$data);
 
             }
-
         }
+
+
+
+
 
 
     function showadd()

@@ -65,4 +65,15 @@ class Orderm extends CI_Model
 
 
     }
+    public function accept_order($id){
+
+        /*$query = $this->db->get('order_cart');
+        return $query->result();*/
+        $this->db->query("INSERT INTO `order` SELECT * FROM `order_cart` WHERE `id`= '$id'");
+        $this->db->query("DELETE FROM `order_cart` WHERE `id`= '$id'");
+
+
+    }
+
+
 }

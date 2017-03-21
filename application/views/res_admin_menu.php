@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>Rak</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -54,7 +54,10 @@
         <!-- Brand and toggle get grouped for better mobile display -->
 
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-        <?php $this->load->view('res_adminmenu');?>
+
+        <!--sidemenu-->
+        <?php $this->load->view('adminmenu');?>
+        <!--sidemenu-->
 
         <!-- /.navbar-collapse -->
     </nav>
@@ -87,31 +90,36 @@
 
                                 <div class="form-group">
                                     <label>Restuarant</label>
-                                    <select class="form-control"  name="name" id="dst" onchange="selectid()" >
+                                    <?php foreach ($this->data['show_resturant'] as $s){?>
+                                    <input class="form-control"type="text" id="name" name="name" value="<?php echo $s->name ?>" readonly>
 
-                                        <option value="" selected disabled>Res Name</option>
-
-                                        <?php
-
-                                        foreach ($show_res_content as $s)
-                                        {
-                                            echo "<option value='" . $s->name . "'>" . $s->name . "</option>";
-                                        }
-
-                                        ?>
-                                    </select>
                                 </div>
 
-                                <input type="hidden" id="res_id" name="res_id">
+                                <input type="hidden" id="res_id" name="res_id" value="<?php echo $s->res_id ?>">
+                                <?php }?>
                                 <div class="form-group">
                                     <label>Item Type</label>
                                     <!--<input class="form-control" type="text" name="Item_type">-->
-                                    <select class="form-control" name="type" id="type"  >
+                                    <!--<select class="form-control" name="type" id="type"  >
                                         <option selected  >Item Type</option>
                                         <input type="button" class="btn btn-success" name="additem" value="+" onclick="selectid5(this)">
 
 
+                                    </select>-->
+                                    <select class="form-control"  name="type" id="type" " >
+
+                                        <option value="" selected disabled>Item Type</option>
+
+
+                                    <?php foreach ($this->data['show_resturant_item_type'] as $e)
+                                    {
+                                        echo "<option value='" . $e->type . "'>" . $e->type . "</option>";
+                                    }
+
+                                    ?>
+
                                     </select>
+
                                 </div>
                                 <div class="form-group">
                                     <label>Item name</label>

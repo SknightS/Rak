@@ -54,7 +54,9 @@
         <!-- Brand and toggle get grouped for better mobile display -->
 
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-        <?php $this->load->view('res_adminmenu');?>
+        <!--sidemenu-->
+        <?php $this->load->view('adminmenu');?>
+        <!--sidemenu-->
 
         <!-- /.navbar-collapse -->
     </nav>

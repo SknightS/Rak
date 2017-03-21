@@ -7,7 +7,21 @@ class Res_Admin_Home extends CI_Controller {
     public function index()
     {
         if ($this->session->userdata('type') == "Res") {
-            $this->load->model('Homem');
+            $usename=$this->session->userdata('username');
+            //print_r($usename);
+            $this->load->model('Restaurantm');
+            $this->data['show_resturant']=$this->Restaurantm->show_resturant($usename);
+            foreach ($this->data['show_resturant'] as $e){
+
+                print_r($e->res_id);
+                $id=$e->res_id;
+                $this->data['show_resturant_item_type']=$this->Restaurantm->show_resturant_item_type($id);
+                $this->load->view('res_admin_menu', $this->data);
+            }
+
+            //$this->load->view('res_admin_menu', $this->data);
+
+            /*$this->load->model('Homem');
             $this->data['show_main_content'] = $this->Homem->show_main_content();
             $this->data['show_resturant_content'] = $this->Homem->show_resturant_content();
             $this->data['show_howitwork_content'] = $this->Homem->show_howitwork_content();
@@ -15,7 +29,7 @@ class Res_Admin_Home extends CI_Controller {
             $this->data['show_sectionfive_content'] = $this->Homem->show_sectionfive_content();
             $this->data['show_sectionsix_content'] = $this->Homem->show_sectionsix_content();
 
-            $this->load->view('res_admin_menu', $this->data);
+            $this->load->view('res_admin_menu', $this->data);*/
 
         }
         else{

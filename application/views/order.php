@@ -118,10 +118,10 @@
                                 <?php foreach ($this->data['te'] as $e) {?>
 
                                     <tr>
-                                        <td><input type="text" name="name" value="<?php echo $e->name ?> " readonly/></td>
-                                        <td><input type="text" name="email"value="<?php echo $e->email ?>"</td>
-                                        <td><input type="text" name="address"value="<?php echo $e->address ?>"</td>
-                                        <td><input type="text" name="city"value="<?php echo $e->city ?>"</td>
+                                        <td><?php echo $e->name ?> </td>
+                                        <td><?php echo $e->email ?></td>
+                                        <td><?php echo $e->address ?></td>
+                                        <td><?php echo $e->city ?></td>
                                         <td><?php echo $e->state ?></td>
                                         <td><?php echo $e->postcode ?></td>
                                         <td><?php echo $e->country ?></td>
