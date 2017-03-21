@@ -382,6 +382,59 @@
                         </div>
                     </div>
 
+
+                    <div class="panel panel-success">
+                        <div class="panel-heading"><h3>Resturant Content And More</h3></div>
+                        <div class="panel-body">
+                            <form method="post" action="<?php echo base_url()?>Admin_Home/insert_section_five" enctype="multipart/form-data">
+
+                                <?php if ($show_sectionfive_content == Null){ ?>
+
+                                    <div class="form-group">
+                                        <label>Section four Big</label>
+                                        <input class="form-control" type="text" name="sfivebig">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Section four Small</label>
+                                        <input class="form-control" type="text" name="sfivesmall">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Section Five Image</label>
+                                        <input class="form-control" type="file" name="sfiveimage" >
+                                    </div>
+
+                                    <input class="btn btn-default" type="submit">
+                                <?php }else{
+
+                                    foreach ($show_sectionfive_content as $s){
+                                        ?>
+
+                                        <div class="form-group">
+                                            <label>Section four Big</label>
+                                            <input class="form-control" type="text" name="sfivebig" value="<?php echo $s->big?>">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Section four Small</label>
+                                            <input class="form-control" type="text" name="sfivesmall" value="<?php echo $s->small?>">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Section Five Image</label>
+                                            <input class="form-control" type="file" name="sfiveimage" value="<?php echo $s->image?>">
+                                        </div>
+
+                                        <input class="btn btn-success" type="submit">
+                                        <?php
+                                    }}
+                                ?>
+
+                            </form>
+                        </div>
+                    </div>
+
                     <div class="panel panel-success">
                         <div class="panel-heading">
                             <h3>Resturant Content And More</h3>

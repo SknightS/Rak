@@ -140,142 +140,53 @@
         </div>
         
         <div class="row">
+
+                <?php foreach ($most_popular as $mp) {
+                    $res_id=$mp->res_id;
+                    $query=$this->db->query("SELECT * FROM `restaurant` WHERE res_id = '$res_id'");
+                    foreach ($query->result() as $s){}
+                    ?>
             <div class="col-md-6">
-                <a href="<?php echo base_url()?>Details" class="strip_list">
+                <a href="<?php echo base_url()?>Item_Menu/show_menu/<?php echo $res_id?>" class="strip_list">
                 <div class="ribbon_1">Popular</div>
                     <div class="desc">
                         <div class="thumb_strip">
                             <img src="img/thumb_restaurant.jpg" alt="">
                         </div>
                         <div class="rating">
-                            <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
+                            <?php
+                            $query=$this->db->query("SELECT ROUND(AVG(`rating`)) as rat FROM `res_rating` WHERE res_id = '$res_id'");
+                            foreach ($query->result() as $r){ $rating_avg = $r->rat;}
+                            for ($i=1 ; $i<=$rating_avg; $i++ ) {
+                            ?>
+                            <i class="icon_star voted"></i>
+                            <?php
+                            }
+                            for ($i=1 ; $i<=(5-$rating_avg); $i++ ) {
+                                ?>
+                                <i class="icon_star"></i></i>
+                                <?php
+                            }
+                            ?>
                         </div>
-                        <h3>Taco Mexican</h3>
+                        <h3><?php echo $s->name ?></h3>
                         <div class="type">
-                            Mexican / American
+                            <?php echo $s->type ?>
                         </div>
                         <div class="location">
-                            135 Newtownards Road, Belfast, BT4. <span class="opening">Opens at 17:00</span>
+                            <?php echo $s->address ?> <span class="opening"><?php echo $s->time?></span>
                         </div>
                         <ul>
                             <li>Take away<i class="icon_check_alt2 ok"></i></li>
                             <li>Delivery<i class="icon_check_alt2 ok"></i></li>
                         </ul>
                     </div><!-- End desc-->
-                </a><!-- End strip_list-->
-               <a href="<?php echo base_url()?>Details" class="strip_list">
-               <div class="ribbon_1">Popular</div>
-                    <div class="desc">
-                        <div class="thumb_strip">
-                            <img src="img/thumb_restaurant_2.jpg" alt="">
-                        </div>
-                        <div class="rating">
-                            <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
-                        </div>
-                        <h3>Naples Pizza</h3>
-                        <div class="type">
-                            Italian / Pizza
-                        </div>
-                        <div class="location">
-                            135 Newtownards Road, Belfast, BT4. <span class="opening">Opens at 17:00</span>
-                        </div>
-                        <ul>
-                            <li>Take away<i class="icon_check_alt2 ok"></i></li>
-                            <li>Delivery<i class="icon_check_alt2 ok"></i></li>
-                        </ul>
-                    </div><!-- End desc-->
-                </a><!-- End strip_list-->
-                <a href="detail_page.php" class="strip_list">
-                <div class="ribbon_1">Popular</div>
-                    <div class="desc">
-                        <div class="thumb_strip">
-                            <img src="img/thumb_restaurant_3.jpg" alt="">
-                        </div>
-                        <div class="rating">
-                            <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
-                        </div>
-                        <h3>Japan Food</h3>
-                        <div class="type">
-                            Sushi / Japanese
-                        </div>
-                        <div class="location">
-                            135 Newtownards Road, Belfast, BT4. <span class="opening">Opens at 17:00</span>
-                        </div>
-                        <ul>
-                            <li>Take away<i class="icon_check_alt2 ok"></i></li>
-                            <li>Delivery<i class="icon_check_alt2 ok"></i></li>
-                        </ul>
-                    </div><!-- End desc-->
-                </a><!-- End strip_list-->
-            </div><!-- End col-md-6-->
-            <div class="col-md-6">
-                <a href="detail_page.php" class="strip_list">
-                <div class="ribbon_1">Popular</div>
-                    <div class="desc">
-                        <div class="thumb_strip">
-                            <img src="img/thumb_restaurant_4.jpg" alt="">
-                        </div>
-                        <div class="rating">
-                            <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
-                        </div>
-                        <h3>Sushi Gold</h3>
-                        <div class="type">
-                            Sushi / Japanese
-                        </div>
-                        <div class="location">
-                            135 Newtownards Road, Belfast, BT4. <span class="opening">Opens at 17:00</span>
-                        </div>
-                        <ul>
-                            <li>Take away<i class="icon_check_alt2 ok"></i></li>
-                            <li>Delivery<i class="icon_close_alt2 no"></i></li>
-                        </ul>
-                    </div><!-- End desc-->
-                </a><!-- End strip_list-->
-                <a href="detail_page.php" class="strip_list">
-                <div class="ribbon_1">Popular</div>
-                    <div class="desc">
-                        <div class="thumb_strip">
-                            <img src="img/thumb_restaurant_5.jpg" alt="">
-                        </div>
-                        <div class="rating">
-                            <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
-                        </div>
-                        <h3>Dragon Tower</h3>
-                        <div class="type">
-                            Chinese / Thai
-                        </div>
-                        <div class="location">
-                            135 Newtownards Road, Belfast, BT4. <span class="opening">Opens at 17:00</span>
-                        </div>
-                        <ul>
-                            <li>Take away<i class="icon_check_alt2 ok"></i></li>
-                            <li>Delivery<i class="icon_check_alt2 ok"></i></li>
-                        </ul>
-                    </div><!-- End desc-->
-                </a><!-- End strip_list-->
-                <a href="detail_page.php" class="strip_list">
-                <div class="ribbon_1">Popular</div>
-                    <div class="desc">
-                        <div class="thumb_strip">
-                            <img src="img/thumb_restaurant_6.jpg" alt="">
-                        </div>
-                        <div class="rating">
-                            <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
-                        </div>
-                        <h3>China Food</h3>
-                        <div class="type">
-                            Chinese / Vietnam
-                        </div>
-                        <div class="location">
-                            135 Newtownards Road, Belfast, BT4. <span class="opening">Opens at 17:00</span>
-                        </div>
-                        <ul>
-                            <li>Take away<i class="icon_check_alt2 ok"></i></li>
-                            <li>Delivery<i class="icon_check_alt2 ok"></i></li>
-                        </ul>
-                    </div><!-- End desc-->
-                </a><!-- End strip_list-->
-            </div>
+                </a>
+            </div><!-- End strip_list-->
+              <?php } ?>
+
+          <!-- End col-md-6-->
+
         </div><!-- End row -->   
         
         </div><!-- End container -->
@@ -293,13 +204,15 @@
             <?php }?>
         </div><!-- End container -->
       </div><!-- End hight_light -->
-                  
-    <section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url()?>img/bg_office.jpg" data-natural-width="1200" data-natural-height="600">
-    <div class="parallax-content" style=" background:url(<?php echo base_url()?>img/bg_office.jpg) fixed; background-size:cover">
+
+
+    <?php
+    foreach($head_section_5 as $h_s_5 ){?>
+    <section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url()?>img/<?php echo $h_s_5['image']; ?>" data-natural-width="1200" data-natural-height="600">
+    <div class="parallax-content" style=" background:url(<?php echo base_url()?>img/<?php echo $h_s_5['image']; ?>) fixed; background-size:cover">
         <div class="sub_content">
             <i class="icon_mug"></i>
-            <?php
-            foreach($head_section_5 as $h_s_5 ){?>
+
             <h3><?php echo $h_s_5['big']; ?></h3>
             <p>
                 <?php echo $h_s_5['small']; ?>
@@ -323,7 +236,7 @@
       	<div class="row">
             <div class="col-md-4 col-md-offset-2">
             	<a class="box_work" href="<?php echo base_url()?>Submit_Restaurant_Request">
-                <img src="img/submit_restaurant.jpg" width="848" height="480" alt="" class="img-responsive">
+                <img src="img/<?php echo $h_s_6['image']; ?>" width="848" height="480" alt="" class="img-responsive">
                 <h3><?php echo $h_s_6['submit_big']; ?><span><?php echo $h_s_6['submit_small']; ?></span></h3>
                 <p><?php echo $h_s_6['submit_details']; ?>
                     <div class="btn_1">Read more</div>
@@ -415,13 +328,13 @@
 	</div><!-- End Register modal -->
     
 <!-- COMMON SCRIPTS -->
-<script src="js/jquery-2.2.4.min.js"></script>
-<script src="js/common_scripts_min.js"></script>
-<script src="js/functions.js"></script>
-<script src="assets/validate.js"></script>
+<script src="<?php echo base_url()?>js/jquery-2.2.4.min.js"></script>
+<script src="<?php echo base_url()?>js/common_scripts_min.js"></script>
+<script src="<?php echo base_url()?>js/functions.js"></script>
+<script src="<?php echo base_url()?>assets/validate.js"></script>
 
 <!-- SPECIFIC SCRIPTS -->
-<script src="js/video_header.js"></script>
+<script src="<?php echo base_url()?>js/video_header.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="//code.jquery.com/jquery-1.12.4.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
