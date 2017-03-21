@@ -294,8 +294,8 @@
         </div><!-- End container -->
       </div><!-- End hight_light -->
                   
-    <section class="parallax-window" data-parallax="scroll" data-image-src="img/bg_office.jpg" data-natural-width="1200" data-natural-height="600">
-    <div class="parallax-content">
+    <section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url()?>img/bg_office.jpg" data-natural-width="1200" data-natural-height="600">
+    <div class="parallax-content" style=" background:url(<?php echo base_url()?>img/bg_office.jpg) fixed; background-size:cover">
         <div class="sub_content">
             <i class="icon_mug"></i>
             <?php

@@ -22,6 +22,8 @@
 
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -81,38 +83,6 @@
             <div class="row">
                 <div class="col-lg-6">
 
-                    <form role="form">
-
-                        <div class="form-group">
-                            <label >Text Input</label>
-                            <input class="form-control">
-                            <p class="help-block">Example block-level help text here.</p>
-                        </div>
-                        <div class="form-group">
-                            <label>Text Input</label>
-                            <input class="form-control">
-                            <p class="help-block">Example block-level help text here.</p>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Text area</label>
-
-
-                            <textarea id="summernote" class="form-control" rows="3"></textarea>
-
-
-                        </div>
-
-                        <div class="form-group">
-                            <label>File input</label>
-                            <input type="file">
-                        </div>
-
-                        <button type="submit" class="btn btn-default">Submit Button</button>
-                        <button type="reset" class="btn btn-default">Reset Button</button>
-
-                    </form>
-
                     <div class="panel panel-success">
                         <div class="panel-heading"><h3>Main Content</h3></div>
                         <div class="panel-body">
@@ -144,8 +114,8 @@
                                             <label>Main Content Small</label>
 
                                             <textarea id="summernote" class="form-control"  name="main_content_small" value="<?php echo $s->small?>" ><?php echo $s->small?></textarea>
+                                        </div>
 
-                                        <br>
                                         <input class="btn btn-success" type="submit">
                                     <?php } }?>
                             </form>

@@ -67,11 +67,11 @@
 </div><!-- Position -->
 
 <!-- Content ================================================== -->
-<div class="container margin_60_35">
+<div class="container-fluid margin_60_35">
     <div class="row">
 
-
-        <div class="col-md-3">
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
             <p><a href="list_page.php" class="btn_side">Back to search</a></p>
             <div class="box_style_1">
                 <ul id="cat_nav">
@@ -89,7 +89,8 @@
             </div>
         </div><!-- End col-md-3 -->
 
-        <div class="col-md-6">
+
+        <div class="col-md-5">
             <div class="box_style_2" id="main_menu">
                 <h2 class="inner">Menu</h2>
 
@@ -192,16 +193,20 @@
 <!--                                    <a href="#0" class="remove_item"><i class="icon_minus_alt"></i></a>  <input type='button' value='-' class='qtyminus' field='--><?php //echo $c['id']?><!--' />-->
 <!--                                    <input type='text' name='--><?php //echo $c['id']?><!--' value="--><?php //echo $c['qty']?><!--" class='qty' style="width: 20px" />-->
 <!--                                    <input type='button' onclick="plus()" value='+' class='qtyplus' field='--><?php //echo $c['id']?><!--' /> --><?php //echo $c['name'];?>
-                                <div>
-                                    <td>
-                                    <input type="button"  class="btn btn-success" style="width: 20px; float: left" data-panel-id="<?= $c['rowid'] ?>" onclick="minus(this)" value="-"/>
-                                    <input type="text"  name="qty" id="<?php echo $c['rowid']?>" class="form-control" style="width: 45px; height:auto; float: left" value="<?php echo $c['qty']?>"/>
+
+                                <td>
+                                    <input type="button"  class="btn btn-default" style="background:#ec008c; text-align: center; width:19px; color: #fff; font-weight: bold; padding:6px 0px;  border-radius:0px; float: left" data-panel-id="<?= $c['rowid'] ?>" onclick="minus(this)" value="-"/>
+                                    <input type="text"  name="qty" id="<?php echo $c['rowid']?>" class="form-control" style="text-align: center; border-right:none; border-left:none; border-radius:0px; width: 20px; padding:6px 2px; height:auto; float: left" value="<?php echo $c['qty']?>"/>
                                         <input type="hidden" name="res_id" class="form-control"  value="<?php echo $c['id']?>"/>
                                         <input type="hidden" name="item_name" class="form-control"  value="<?php echo $c['name']?>"/>
                                         <input type="hidden" name="price" class="form-control"  value="<?php echo $c['price']*$c['qty'];?>"/>
-                                    <input type="button" class="btn btn-success" data-panel-id="<?= $c['rowid'] ?>" onclick="plus(this)" style="width: 20px; float: left" value="+"> <?php echo $c['name']?>
+                                    <input type="button" class="btn btn-default" data-panel-id="<?= $c['rowid'] ?>" onclick="plus(this)" style="background:#ec008c; font-weight: bold; color: #fff; text-align: center; border-radius:0px; width: 19px; padding: 6px 0px; float: left" value="+">
                                 </td>
-                                </div>
+
+                                <td>
+                                    <?php echo $c['name']?>
+                                </td>
+
                                 <td>
                                     <?php echo $c['options']['Size']?>
                                 </td>
