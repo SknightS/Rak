@@ -5,7 +5,7 @@ class Res_Admin_Restaurant extends CI_Controller
 {
     public function index()
     {
-        if ($this->session->userdata('type') == "Res") {
+       /* if ($this->session->userdata('type') == "Res") {
             $this->load->model('Restaurantm');
             $this->data['show_res_content'] = $this->Restaurantm->show_restuarant_content();
             $this->load->view('res_admin_restaurant', $this->data);
@@ -23,15 +23,46 @@ class Res_Admin_Restaurant extends CI_Controller
             $data['head_section_6']=$this->viewall->show_sectionsix_content();
             $this->load->view('index',$data);
 
+        }*/
+
+        if ($this->session->userdata('type') == "Res") {
+            $usename = $this->session->userdata('username');
+            //print_r($usename);
+            $this->load->model('Restaurantm');
+            $this->data['show_resturant'] = $this->Restaurantm->show_resturant($usename);
+            foreach ($this->data['show_resturant'] as $e) {
+
+                //print_r($e->res_id);
+                $id = $e->res_id;
+                $this->load->model('Res_Admin_m');
+                $this->data['show_res_content'] = $this->Res_Admin_m->show_restuarant_content_for_resadmin($id);
+                $this->load->view('res_admin_restaurant', $this->data);
+            }
         }
+        else{
+            $this->load->model('viewall');
+            $data['head']=$this->viewall->show_main_content();
+            // print_r($data);
+            $data['head_res_ad_more']=$this->viewall->home_resturant_andmore_content();
+            //print_r($data['head_res_ad_more']);
+            $data['head_how_itworks']=$this->viewall->show_howitwork_content();
+            $data['head_section_4']=$this->viewall->show_sectionfour_content();
+            $data['head_section_5']=$this->viewall->show_sectionfive_content();
+            $data['head_section_6']=$this->viewall->show_sectionsix_content();
+            $this->load->view('index',$data);
+
+        }
+
     }
 
     public function insert_res()
     {
         if ($this->session->userdata('type') == "Res") {
 
-            $this->load->model('Restaurantm');
-            $this->Restaurantm->insert_restuarant_content();
+            $id=$this->input->post('res_id');
+            //print_r($id);
+            $this->load->model('Res_Admin_m');
+            $this->Res_Admin_m->insert_restuarant_content();
             redirect(Res_Admin_Restaurant);
         }
         else{

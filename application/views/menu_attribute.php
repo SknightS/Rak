@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+    <?php include ('head.php') ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,7 +53,6 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 
-
     <![endif]-->
 
 
@@ -90,21 +89,88 @@
 
 
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-3">
+
+                    <div class="theiaStickySidebar">
+                        <div class="box_style_1" id="faq_box">
+                            <ul id="cat_nav">
+                                <?php foreach ($resname as $r ) { ?>
+                                    <li><a href="#<?php echo $r->res_id ?>" class="active"><?php echo $r->name ?></a>
+                                    </li>
+                                    <?php
+                                }
+                                ?>
+                            </ul>
+                        </div><!-- End box_style_1 -->
+                    </div>
+                </div>
+
+                <div class="col-lg-9">
 
                     <!--search-->
 
-                    <form method="post" action="<?php echo base_url()?>Admin_menu_attribute">
-                        <div id="custom-search-input">
-                            <div class="input-group">
-                                <input type="text" name="search_menu_att" class=" search-query" placeholder="Search item" id="srch_menu_attr" >
-                                <span class="input-group-btn">
-                                        <input type="submit" name="btn_search_menu_attr" class="btn_search" value="Search"><br/><br/><br/><br/>
-                                        </span>
-                                <br/><br/><br/><br/>
+<!--                    <form method="post" action="--><?php //echo base_url()?><!--Admin_menu_attribute">-->
+<!--                        <div id="custom-search-input">-->
+<!--                            <div class="input-group">-->
+<!--                                <input type="text" name="search_menu_att" class=" search-query" placeholder="Search item" id="srch_menu_attr" >-->
+<!--                                <span class="input-group-btn">-->
+<!--                                        <input type="submit" name="btn_search_menu_attr" class="btn_search" value="Search"><br/><br/><br/><br/>-->
+<!--                                        </span>-->
+<!--                                <br/><br/><br/><br/>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </form>-->
+
+
+
+                    <?php
+                    foreach ($resname as $r) {
+                        $res_id = $r->res_id;
+                        $query = $this->db->query("SELECT * FROM `menu_attribute` WHERE `res_id`= '$res_id'") ?>
+
+                        <h3 class="nomargin_top"><?php echo $r->name ?></h3>
+
+                        <div class="panel-group" id="<?php echo $res_id ?>">
+
+                            <div>
+                                <table class=" table table-responsive" border="1">
+                                    <tr>
+
+                                        <th>Item Name</th>
+                                        <th>Item attribute</th>
+                                        <th>Price</th>
+                                        <th>Serial</th>
+
+                                        <th colspan="2">Action</th>
+                                    </tr>
+                                    <?php foreach ($query->result() as $e) { ?>
+                                        <!--<form method="post" action="<?php echo base_url() ?>Admin_menu_attribute/edit_res"  >
+                                    -->
+                                        <tr>
+                                            <td><?php echo $e->item_name ?></td>
+                                            <td><?php echo $e->item_attribute ?></td>
+                                            <td><?php echo $e->price ?></td>
+                                            <td><?php echo $e->serial ?></td>
+                                            <td>
+                                                <button data-panel-id="<?= $e->id ?>" onclick="selectid4(this)">Edit
+                                                </button>
+                                            </td>
+
+                                        </tr>
+                                        <!--</form>-->
+                                    <?php } ?>
+                                </table>
                             </div>
                         </div>
-                    </form>
+
+                        <?php
+                    }
+                    ?>
+
+
+
+
+
 
                     <div class="panel panel-success">
                         <div class="panel-heading"><h3>Menu Attribute Content</h3></div>
@@ -320,6 +386,24 @@
     }
 
 
+</script>
+<script src="js/theia-sticky-sidebar.js"></script>
+<script>
+    jQuery('#sidebar').theiaStickySidebar({
+        additionalMarginTop: 80
+    });
+</script>
+<script>
+    $('#faq_box a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+        var target = this.hash;
+        var $target = $(target);
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top - 120
+        }, 900, 'swing', function () {
+            window.location.hash = target;
+        });
+    });
 </script>
 
 <!--autocomplete search-->

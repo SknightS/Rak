@@ -78,7 +78,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <button  onclick="selectid(this)">ADD</button>
+
 
 
 
@@ -86,57 +86,66 @@
                         <div class="panel-heading"><h3>Restaurant Details Content</h3></div>
                         <div class="panel-body">
 
+                            <form method="post" action="<?php echo base_url()?>Res_Admin_Res_Details/add_new_res_details" >
+
+
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <input class="form-control"type="text" name="description">
+                                </div>
+                                <div class="form-group">
+                                    <label>Time</label>
+                                    <input class="form-control"type="text" name="time">
+                                </div>
+                                <input class="btn btn-success" type="submit">
+                            </form>
 
 
 
+<!--                            <table class=" table table-responsive" border="1">-->
+<!--                                <tr>-->
+<!--                                    <td>Restaurant Name</td>-->
+<!---->
+<!--                                    <td>Description</td>-->
+<!--                                    <td>Time</td>-->
+<!---->
+<!---->
+<!---->
+<!--                                </tr>-->
+<!--                                --><?php //foreach ($res_details as $s){?>
+<!---->
+<!--                                    <tr>-->
+<!---->
+<!---->
+<!--                                        <td>--><?php //echo $s->name ?><!--</td>-->
+<!---->
+<!--                                        <td>--><?php //echo $s->description ?><!--</td>-->
+<!--                                        <td>--><?php //echo $s->time ?><!--</td>-->
+<!---->
+<!---->
+<!---->
+<!---->
+<!--                                    </tr>-->
+<!--                                    --><?php
+//
+//                                }
+//                                ?>
+<!---->
+<!---->
+<!--                            </table>-->
+                            <!--<div id="myModal3" class="modal">
 
-                            <table class=" table table-responsive" border="1">
-                                <tr>
-                                    <td>Restaurant ID</td>
-
-                                    <td>Description</td>
-                                    <td>Time</td>
-
-
-
-                                </tr>
-                                <?php foreach ($res_details as $s){?>
-
-                                    <tr>
-
-
-                                        <td><?php echo $s->res_id ?></td>
-
-                                        <td><?php echo $s->description ?></td>
-                                        <td><?php echo $s->time ?></td>
-
-
-
-
-                                    </tr>
-                                    <?php
-
-                                }
-                                ?>
-
-
-                            </table>
-                            <div id="myModal3" class="modal">
-
-                                <!-- Modal content -->
+                                <!-- Modal content
                                 <div class="modal-content">
                                     <span class="close">×</span>
 
                                     <h2>Edit Content</h2>
                                     <form method="post" action="<?php echo base_url()?>Res_Admin_Res_Details/add_new_res_details" >
                                         <div class="form-group">
-                                            <label>Restaurant ID</label>
-                                            <input class="form-control" type="text" name="res_id">
+                                            <label>Restaurant Name</label>
+                                            <input class="form-control" type="text" name="name">
                                         </div>
-                                        <div class="form-group">
-                                            <label>rating</label>
-                                            <input class="form-control"type="text" name="rating">
-                                        </div>
+
                                         <div class="form-group">
                                             <label>Description</label>
                                             <input class="form-control"type="text" name="description">
@@ -154,7 +163,7 @@
                                 </div>
 
 
-                            </div>
+                            </div>-->
 
 
 
@@ -178,7 +187,7 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script>
+<!--<script>
 
 
     // Get the modal
@@ -216,7 +225,7 @@
     }
 
 
-</script>
+</script>-->
 <script>
     $(document).ready(function() {
         $('#summernote').summernote();

@@ -135,9 +135,11 @@
                 <div class="text-center" ><button class="btn_full_outline" type = "submit" > Update</button ></div >
             </form >
            <?php } ?>
+        </div>
         </div><!-- End col  -->
     </div><!-- End row  -->
 </div><!-- End container  -->
+
 <!-- End Content =============================================== -->
 
 <!-- Footer ================================================== -->

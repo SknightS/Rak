@@ -9,10 +9,10 @@ class Admin_Res_Details extends CI_Controller {
     $this->data['res_details']= $this->Restaurantm->restaurant_details();
 
 
-    $this->data['res_rating']= $this->Restaurantm->get_rating();
-    $this->data['rating_avg']= $this->Restaurantm->get_rating_avg();
+   /* $this->data['res_rating']= $this->Restaurantm->get_rating();
+    $this->data['rating_avg']= $this->Restaurantm->get_rating_avg();*/
 
-    $this->load->view('admin_res_datails',$this->data);
+    $this->load->view('add_res_details',$this->data);
 
 
 
@@ -63,12 +63,13 @@ class Admin_Res_Details extends CI_Controller {
 
     {
         $id=$this->input->post('res_id');
-        $rating = $this->input->post('rating');
+        //print_r($id);
+
         $description = $this->input->post('description');
         $time = $this->input->post('time');
 
         $this->load->model('Restaurantm');
-        $this->Restaurantm->add_new_res_details($id,$rating,$description,$time);
+        $this->Restaurantm->add_new_res_details($id,$description,$time);
         redirect(Admin_Res_Details);
     }
 
@@ -96,6 +97,35 @@ class Admin_Res_Details extends CI_Controller {
         $username = $this->session->userdata('username');
         $this->Commentm->insert_comment($username);
         redirect(Admin_Res_Details::get_instance());
+    }
+
+    public function editresdetails()
+    {
+        $id=$this->input->post('id');
+        $this->load->model('Restaurantm');
+        $this->data['t']=$this->Restaurantm->edit_res_details($id);
+        foreach ($this->data['t'] as $e){
+
+            echo "
+                    
+                    <form role=\"form\" method=\"post\" action=\"http:/Rak/Admin_Res_Details/add_new_res_details\" >
+                                        
+                                        <input class=\"form - control\"type=\"hidden\" name=\"res_id\" value=\"$e->res_id\">
+                                        <div class=\"form-group\">
+                                            <label>Description</label>
+                                            <input class=\"form-control\"type=\"text\" name=\"description\" value=\"$e->description\">
+                                        </div>
+                                        <div class=\"form-group\">
+                                            <label>Time</label>
+                                            <input class=\"form-control\"type=\"text\" name=\"time\" value=\"$e->time\">
+                                        </div>
+                                        <input class=\"btn btn-success\" type=\"submit\">
+                                    </form>
+            
+            ";
+        }
+
+
     }
 
 }

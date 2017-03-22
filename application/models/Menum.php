@@ -47,7 +47,7 @@ class Menum extends CI_Model
         $textbox = $this->input->post('textbox[]');
         $textimage = $this->input->post('textimage[]');
 
-
+        $textserial= $this->input->post('textserial[]');
 
         if(array_filter($textbox)==null && array_filter($textimage) ==null) {
             $menudata = array(
@@ -67,6 +67,7 @@ class Menum extends CI_Model
                     'item_name' => $iname,
                     'item_attribute	' => $textbox[$i],
                     'price' => $textimage[$i],
+                    'serial' => $textserial[$i]
                 );
                 $menudata = array(
                     'res_id' => $res_id,
@@ -235,10 +236,15 @@ class Menum extends CI_Model
 
     }
 
-    function get_search_menu_attr_autocomplete($q)
+    function get_search_menu_attr_autocomplete($q,$id)
     {
+
         $this->db->distinct('item_name');
         $this->db->select('item_name');
+
+        $this->db->select('item_name');
+        $this->db->where('res_id', $id);
+
         $this->db->like('item_name', $q,'after');
         $query = $this->db->get('menu_attribute');
         // $query=$this->db->query("SELECT * FROM `products` WHERE `product_name` LIKE "%$q%" ");
@@ -251,4 +257,8 @@ class Menum extends CI_Model
         }
     }
 
+    public function getres(){
+        $query=$this->db->query("SELECT * FROM `restaurant` GROUP BY `name`");
+        return $query->result();
+    }
 }

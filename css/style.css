@@ -1727,6 +1727,15 @@ input[type=text] {
     padding: 25px;
 }
 
+input[type=file] {
+    border-radius: 0px;
+    padding-top: 8px;
+}
+
+#dropdown-style select {
+    border-radius: 0px;
+}
+
 .form-control.form-white {
     color: #fff;
     font-size: 16px;
@@ -1894,6 +1903,17 @@ select.form-control.form-white {
     border-radius: 0px;
     padding: 10px 20px;
     transition: all 0.5s ease;
+}
+
+.summer .btn {
+    padding: 7px 15px;
+}
+
+.summer .panel {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
 }
 
 .btn.btn-submit {
@@ -2118,13 +2138,19 @@ footer .form-group {
 
 .panel-success>.panel-heading {
     border-radius:0px;
-    background-color: #f5f5f5;
+    background-color: #78cfcf;
     border-color: #D4D4D4;
 }
 
+.panel-success>.panel-heading h3 {
+    color: #fff;
+}
+
 .panel {
-    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    -moz-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    -o-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
     border-color: #D4D4D4;
     border-radius:0px;
 }
@@ -3044,4 +3070,8 @@ ul.plan-features {
 
 .plan-tall + .plan {
     border-left: 0
+}
+
+thead {
+    background: #F2F2F2;
 }

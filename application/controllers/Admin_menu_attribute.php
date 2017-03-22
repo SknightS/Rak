@@ -10,6 +10,7 @@ class Admin_menu_attribute extends CI_Controller
                 $this->load->model('Menum');
                 $this->data['mattribute'] = $this->Menum->show_menu_attribute();
                 $this->data['te'] = '';
+                $this->data['resname']= $this->Menum->getres();
                 $this->load->view('menu_attribute', $this->data);
             } else {
                 $text = $this->input->post('search_menu_att');

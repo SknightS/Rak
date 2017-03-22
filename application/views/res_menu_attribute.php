@@ -113,8 +113,8 @@
                             <div>
                                 <table class=" table table-responsive" border="1">
                                     <tr>
-                                        <th>id</th>
-                                        <th>Res_id</th>
+
+
                                         <th>Item Name</th>
                                         <th>Item attribute</th>
                                         <th>Price</th>
@@ -124,8 +124,8 @@
                                     <!--<form method="post" action="<?php echo base_url()?>Admin_menu_attribute/edit_res"  >
                                     -->
                                         <tr>
-                                            <td><?php echo $e->id ?></td>
-                                            <td><?php echo $e->res_id ?></td>
+
+
                                             <td><?php echo $e->item_name ?></td>
                                             <td><?php echo $e->item_attribute?></td>
                                             <td><?php echo $e->price?></td>
@@ -145,11 +145,11 @@
 
                             <table class=" table table-responsive" border="1">
                                 <tr>
-                                    <th>id</th>
-                                    <th>Res_id</th>
+
                                     <th>Item Name</th>
                                     <th>Item attribute</th>
                                     <th>Price</th>
+                                    <th>Serial</th>
                                     <th colspan="2">Action</th>
 
 
@@ -160,11 +160,11 @@
                                 ?>
 
                                     <tr>
-                                        <td><?php echo $s->id ?></td>
-                                        <td><?php echo $s->res_id ?></td>
+
                                         <td><?php echo $s->item_name ?></td>
                                         <td><?php echo $s->item_attribute ?></td>
                                         <td><?php echo $s->price ?></td>
+                                        <td><?php echo $s->serial ?></td>
                                         <td>
                                             <button data-panel-id="<?= $s->id ?>" onclick="selectid(this)">Edit</button>
                                         </td>

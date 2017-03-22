@@ -42,13 +42,13 @@
             <a href="<?php echo base_url()?>Admin_Home"><i class="fa fa-fw fa-dashboard"></i> Home</a>
         </li>
         <li>
-            <a href="<?php echo base_url()?>Admin_Faq"><i class="fa fa-fw fa-bar-chart-o"></i> Faq</a>
+            <a href="<?php echo base_url()?>Admin_Faq"><i class="fa fa-fw fa-bar-chart-o"></i> FAQ</a>
         </li>
         <li>
             <a href="<?php echo base_url()?>Admin_contact"><i class="fa fa-fw fa-table"></i> Contact</a>
         </li>
         <li>
-            <a href="<?php echo base_url()?>Admin_aboutus"><i class="fa fa-fw fa-edit"></i> About us</a>
+            <a href="<?php echo base_url()?>Admin_aboutus"><i class="fa fa-fw fa-edit"></i> About Us</a>
         </li>
         <li>
             <!--<a href="<?php echo base_url()?>Admin_Restaurant"><i class="fa fa-fw fa-desktop"></i> Restaurant</a>-->
@@ -56,8 +56,12 @@
             <ul id="dropdown" class="collapse">
                 <li>
                     <a href="<?php echo base_url()?>Admin_Restaurant">Restaurant</a>
-
+                </li>
+                <li>
                     <a href="<?php echo base_url()?>Admin_Res_Details">Add Restaurant Details</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url()?>Order"><i class="fa fa-fw fa-wrench"></i>order</a>
                 </li>
             </ul>
 
@@ -85,15 +89,16 @@
             <a href="<?php echo base_url()?>Admin_menu_attribute"><i class="fa fa-fw fa-wrench"></i>Menu Attribute</a>
         </li>-->
 
+
+
+
         <li>
-            <a href="<?php echo base_url()?>Order"><i class="fa fa-fw fa-wrench"></i>order</a>
+            <a href="<?php echo base_url()?>Order"><i class="fa fa-fw fa-wrench"></i>Order</a>
         </li>
+
         <li>
-            <a href="<?php echo base_url()?>Rating"><i class="fa fa-fw fa-file"></i> Rating</a>
-        </li>
-            <li>
-                <a href="<?php echo base_url()?>Admin_Restaurant_Req"><i class="fa fa-fw fa-dashboard"></i> Restaurant Request</a>
-            </li>
+            <a href="<?php echo base_url()?>Admin_Restaurant_Req"><i class="fa fa-fw fa-dashboard"></i> Restaurant Request</a>
+         </li>
 
     <?php }elseif ($usertype=="Res"){?>
 

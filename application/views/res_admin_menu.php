@@ -123,6 +123,7 @@
                                     ?>
 
                                     </select>
+                                    <input type="button" class="btn btn-success" name="additem" value="+" onclick="selectid5(this)">
 
                                 </div>
                                 <div class="form-group">
@@ -167,24 +168,12 @@
                                     <span class="close">×</span>
 
                                     <h2>Edit Content</h2>
-                                    <form role="form" method="post" action="<?php echo base_url()?>/Res_Admin_menu/insertmenuitem" >
+                                    <form role="form" method="post" action="<?php echo base_url()?>/Res_Admin_Home/insertmenuitem" >
                                         <div class="form-group">
                                             <label>Restuarant</label>
-                                            <select class="form-control"  name="name" id="name" onchange="selectid4()" >
-
-                                                <option value="" selected disabled>Res Name</option>
-
-                                                <?php
-
-                                                foreach ($show_res_content as $s)
-                                                {
-                                                    echo "<option value='" . $s->name . "'>" . $s->name . "</option>";
-                                                }
-
-                                                ?>
-                                            </select>
+                                            <input class="form-control"type="text" id="res_name" name="name" value="<?php echo $s->name ?>" readonly>
                                         </div>
-                                        <input type="hidden" id="res_id2" name="res_id">
+                                        <input type="hidden" id="res_id2" name="res_id" value="<?php echo $s->res_id ?>">
 
                                         <div class="form-group">
                                             <label>Item type</label>
@@ -253,6 +242,21 @@
 
         modal5.style.display = "block";
         //btn1 = document.getElementById('addtype').value;
+        btn = document.getElementById('res_id').value;
+        //alert(btn);
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Res_Admin_Home/getres_id/")?>'+btn,
+            data:{'rname':btn},
+            cache: false,
+            success:function(data)
+            {
+                $('#res_name').val(data)
+
+            }
+
+        });
+
 
 
 

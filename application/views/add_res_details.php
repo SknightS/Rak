@@ -77,7 +77,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <button  onclick="selectid(this)">ADD</button>
+
 
 
 
@@ -91,10 +91,11 @@
 
                             <table class=" table table-responsive" border="1">
                                 <tr>
-                                    <td>Restaurant ID</td>
-                                    <td>Rating</td>
+                                    <td>Restaurant Name</td>
+
                                     <td>Description</td>
                                     <td>Time</td>
+                                    <td colspan="2">Action</td>
 
 
 
@@ -104,10 +105,11 @@
                                     <tr>
 
 
-                                        <td><?php echo $s->res_id ?></td>
-                                        <td><?php echo $s->rating ?></td>
+                                        <td><?php echo $s->name ?></td>
+
                                         <td><?php echo $s->description ?></td>
                                         <td><?php echo $s->time ?></td>
+                                        <td><button  data-panel-id="<?= $s->res_id ?>" onclick="selectid(this)">Edit</button></td>
 
 
 
@@ -127,25 +129,7 @@
                                     <span class="close">×</span>
 
                                     <h2>Edit Content</h2>
-                                    <form method="post" action="<?php echo base_url()?>Admin_Res_Details/add_new_res_details" >
-                                        <div class="form-group">
-                                            <label>Restaurant ID</label>
-                                            <input class="form-control" type="text" name="res_id">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>rating</label>
-                                            <input class="form-control"type="text" name="rating">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Description</label>
-                                            <input class="form-control"type="text" name="description">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Time</label>
-                                            <input class="form-control"type="text" name="time">
-                                        </div>
-                                        <input class="btn btn-success" type="submit">
-                                    </form>
+
 
 
                                     <div id="txtHint"></div>
@@ -198,7 +182,21 @@
     function selectid(x) {
         modal3.style.display = "block";
 
+        btn = $(x).data('panel-id');
         //alert(btn);
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Admin_Res_Details/editresdetails/")?>'+btn,
+            data:{'id':btn},
+            cache: false,
+            success:function(data)
+            {
+                //alert(data);
+                $('#txtHint').html(data);
+            }
+
+        });
 
 
 

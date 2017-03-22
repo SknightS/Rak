@@ -77,7 +77,7 @@
             <!-- /.row -->
 
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-8">
 
                     <div class="panel panel-success">
                         <div class="panel-heading">
@@ -115,7 +115,25 @@
                             </form>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading"><h3>About Visual Instruction</h3></div>
+                        <div class="panel-body">
+                            <div style="margin-bottom: 10px">
+                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                            </div>
+                            <div>
+                                <p>This is some textual instructions...</p>
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
                     <div class="panel panel-success">
                         <div class="panel-heading">
                             <h3>About Details</h3>
@@ -161,11 +179,28 @@
                             </form>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading"><h3>About Details Visual Instruction</h3></div>
+                        <div class="panel-body">
+                            <div style="margin-bottom: 10px">
+                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                            </div>
+                            <div>
+                                <p>This is some textual instructions...</p>
+                            </div>
+
+                        </div>
                     </div>
-                <div class="col-lg-12">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
                     <div class="panel panel-success">
                         <div class="panel-heading">
-                            <h3>About feature</h3>
+                            <h3>About Feature</h3>
                         </div>
 
                         <div class="panel-body">
@@ -203,9 +238,9 @@
                                             <?php
 
                                             foreach ($icon as $i)
-                                                {
-                                                    echo "<option value='" . $i->icon_name . "'>" . $i->icon_name . "</option>";
-                                                }
+                                            {
+                                                echo "<option value='" . $i->icon_name . "'>" . $i->icon_name . "</option>";
+                                            }
 
                                             ?>
                                         </select>
@@ -214,31 +249,34 @@
 
                                     <input class="btn btn-success" type="submit">
                                 <?php }else{ ?>
-                                    <table class="table table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
                                             <tr>
-                                                <td>Sl</td>
-                                                <td style="width: 10%">Big</td>
-                                                <td style="width: 10%">Small</td>
-                                                <td style="width: 10%">Box Header</td>
-                                                <td style="width: 50%">Box details</td>
-                                                <td style="width: 20%">Icon</td>
-                                                <td style="width: 20%">Icon image</td>
-                                                <td style="width: 10%">Action</td>
+                                                <th>Sl</th>
+                                                <th style="width: 10%">Big</th>
+                                                <th style="width: 10%">Small</th>
+                                                <th style="width: 10%">Box Header</th>
+                                                <th style="width: 50%">Box details</th>
+                                                <th style="width: 20%">Icon</th>
+                                                <th style="width: 20%">Icon image</th>
+                                                <th style="width: 10%">Action</th>
 
                                             </tr>
+                                        </thead>
+
                                     <?php
                                     $count=1;
                                     foreach ($show_about_us_feature_content as $s){
                                         ?>
 
-
+                                        <tbody>
                                             <tr>
                                                 <td><?php echo $count;?></td>
                                                 <td><?php echo $s->big?></td>
                                                 <td><?php echo $s->small?></td>
                                                 <td><?php echo $s->box_header?></td>
                                                 <td><?php echo $s->box_details?></td>
-                                                <td>
+                                                <td id="dropdown-style">
                                                     <select class="form-control"  name="icon" id="dst" onchange="myfunc()">
 
                                                         <option value="<?php echo $s->box_icon ?>" selected disabled><?php echo $s->box_icon ?></option>
@@ -254,23 +292,43 @@
                                                     </select>
                                                 </td>
                                                 <td ><i id="icon" class="<?php echo $s->box_icon ?>"></i></td>
-                                                <td><button>edit</button></td>
+                                                <td><button class="btn btn-warning">Edit</button></td>
                                             </tr>
-                                        </table>
+                                        </tbody>
+
+
                                         <?php $count++; } ?>
-                                        <input class="btn btn-success" type="submit">
-                                        <?php
-                                    }
+                                    </table>
+                                    <input class="btn btn-success" type="submit">
+                                    <?php
+                                }
                                 ?>
 
                             </form>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading"><h3>About Feature Visual Instruction</h3></div>
+                        <div class="panel-body">
+                            <div style="margin-bottom: 10px">
+                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                            </div>
+                            <div>
+                                <p>This is some textual instructions...</p>
+                            </div>
+
+                        </div>
                     </div>
-                <div class="col-lg-6">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
                     <div class="panel panel-success">
                         <div class="panel-heading">
-                            <h3>About banner</h3>
+                            <h3>About Banner</h3>
                         </div>
 
                         <div class="panel-body">
@@ -301,7 +359,7 @@
 
                                         <div class="form-group">
                                             <label>image</label>
-                                            <input class="form-control" type="text" name="image">
+                                            <input class="form-control" type="file" name="image">
                                         </div>
 
                                         <input class="btn btn-success" type="submit">
@@ -313,9 +371,21 @@
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="col-md-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading"><h3>About Banner Visual Instruction</h3></div>
+                        <div class="panel-body">
+                            <div style="margin-bottom: 10px">
+                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                            </div>
+                            <div>
+                                <p>This is some textual instructions...</p>
+                            </div>
 
-            <!-- /.row -->
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
         <!-- /.container-fluid -->
