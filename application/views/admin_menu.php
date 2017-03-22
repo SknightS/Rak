@@ -134,6 +134,7 @@
                                     <div id="TextBoxDiv1" class="form-group">
                                         <label>Size/Extra #1 : </label><input class="form-control" type='textbox' id='textbox1' name="textbox[]" >
                                         <label>Price #1 : </label><input class="form-control" type='textbox' id='textimage1' name="textimage[]">
+                                        <label>Serial #1 : </label><input class="form-control" type='textbox' id='textserial1' name="textserial[]">
                                     </div>
                                 </div>
                                     <input type='button' value='Add Button' id='addButton'>
@@ -365,6 +366,8 @@
                 '<input class="form-control" type="text" name="textbox[]' + counter +
                 '" id="textbox' + counter + '" value="" >' + '<label>Price #'+ counter + ' : </label>' +
                 '<input class="form-control" type="text" name="textimage[]' + counter +
+                '" id="textimage' + counter + '" value="" >' + '<label>Serial #'+ counter + ' : </label>' +
+                '<input class="form-control" type="text" name="textserial[]' + counter +
                 '" id="textimage' + counter + '" value="" >'
             );
 

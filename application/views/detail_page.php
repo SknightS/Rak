@@ -119,20 +119,26 @@
                     <?php
                     $res_id=$s->res_id;
                     $item_type=$s->item_type;
+                    $item_name=$s->item_name;
                     $query1=$this->db->query("SELECT * FROM `menu` WHERE `res_id`= '$res_id' AND item_type='$item_type'");
                      foreach ($query1->result() as $q) {
                          ?>
                          <tr>
                              <td>
-                                 <figure class="thumb_menu_list"><img src="<?php echo base_url() ?>img/menu-thumb-1.jpg"
-                                                                      alt="thumb"></figure>
+<!--                                 <figure class="thumb_menu_list"><img src="--><?php //echo base_url() ?><!--img/menu-thumb-1.jpg"-->
+<!--                                                                      alt="thumb"></figure>-->
                                  <h5><?php echo $q->item_name?></h5>
                                  <p>
                                      <?php echo $q->item_description?>
                                  </p>
                              </td>
                              <td>
-                                 <strong><?php echo $q->item_price?></strong>
+                                 <strong><?php
+                                     if ($q->item_price == null){
+                                         $query3=$this->db->query("SELECT * FROM `menu_attribute` WHERE `res_id`= '$res_id' AND item_name = '$item_name' LIMIT 1");
+                                     foreach ($query3->result() as $s) { echo $s->price;}
+                                     }
+                                     echo $q->item_price?></strong>
                              </td>
                              <td class="options">
                                  <div class="dropdown dropdown-options">
@@ -186,7 +192,12 @@
                     <table id="cart_table" class="table table_summary">
 
                         <tbody>
-                        <?php foreach ($this->cart->contents() as $c) {    ?>
+                        <?php
+                        $total = 0;
+                        foreach ($this->cart->contents() as $c) {
+
+                            ?>
+
 
                             <tr>
 
@@ -211,10 +222,12 @@
                                     <?php echo $c['options']['Size']?>
                                 </td>
                                 <td>
-                                    <strong class="pull-right"><span id="update_price"><?php echo $c['price']*$c['qty'];?></span></strong>
+                                    <strong class="pull-right"><span id="update_price"><?php echo $c['subtotal'];?></span></strong>
                                 </td>
                             </tr>
                             <?php
+                            $total = $total+$c['subtotal'];
+
                         }
                         ?>
                         </tbody>
@@ -231,21 +244,22 @@
                     </div><!-- Edn options 2 -->
 
                     <hr>
-                    <table class="table table_summary">
+                    <table class="table table_summary" id="total_table">
                         <tbody>
                         <tr>
                             <td>
-                                Subtotal <span class="pull-right">$56</span>
+
+                                Subtotal <span class="pull-right"><?php echo $total ?></span>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                Delivery fee <span class="pull-right">$10</span>
+                                Delivery fee <span class="pull-right"><?php echo $del_free=2?></span>
                             </td>
                         </tr>
                         <tr>
                             <td class="total">
-                                TOTAL <span class="pull-right">$66</span>
+                                TOTAL <span class="pull-right"><?php echo $total+$del_free?></span>
                             </td>
                         </tr>
                         </tbody>
@@ -370,6 +384,8 @@
         });
 
         $('#cart_table').load(document.URL +  ' #cart_table');
+        $('#total_table').load(document.URL +  ' #total_table');
+
     }
 </script>
 
@@ -401,6 +417,7 @@
             //$("#cart_boxt").load('detail_page.php');
             $('#cart_table').load(document.URL +  ' #cart_table');
             $('#reload').load(document.URL +  ' #reload');
+            $('#total_table').load(document.URL +  ' #total_table');
 
 
         }
@@ -434,6 +451,7 @@
         });
 
         $('#cart_table').load(document.URL +  ' #cart_table');
+        $('#total_table').load(document.URL +  ' #total_table');
     }
 
     function minus(x) {
@@ -457,6 +475,7 @@
 
         });
         $('#cart_table').load(document.URL +  ' #cart_table');
+        $('#total_table').load(document.URL +  ' #total_table');
     }
 
 </script>
