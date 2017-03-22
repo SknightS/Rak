@@ -130,7 +130,8 @@
                                             <td><?php echo $s->status ?></td>
                                             <td><img src = "<?php echo base_url()?>/img/slider_single_restuarant/<?php echo $s->image ?>" alt = 'pic' height="100" width="100"/></td>
 
-                                            <td><button data-panel-id="<?= $s->res_id ?>" onclick="selectid(this)">Accept</button></td>
+                                            <td><button data-panel-id="<?= $s->id ?>" onclick="selectid(this)">Accept</button></td>
+                                            <td><button data-panel-id="<?= $s->id ?>" onclick="selectid1(this)">Delete</button></td>
 
                                         </tr>
 
@@ -199,19 +200,20 @@
         btn = $(x).data('panel-id');
 
         //alert(btn);
-
         $.ajax({
             type:'POST',
-            url:'<?php echo base_url("Admin_Restaurant_Req/insert_res/")?>'+btn,
+            url:'<?php echo base_url("Admin_Restaurant_Req/accept_res/")?>'+btn,
             data:{'id':btn},
             cache: false,
             success:function(data)
             {
                 //alert("Restaurant request accepted");
-            alert(data);
+                alert(data);
             }
 
         });
+
+
 
 
     }

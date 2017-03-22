@@ -213,11 +213,23 @@ class Restaurantm extends CI_Model
         return $query->result();
 
     }
-    public function restaurant_details(){
+    /*public function restaurant_details(){
 
 
 
         $query = $this->db->get('restaurant_details');
+        return $query->result();
+
+
+    }*/
+    public function restaurant_details(){
+
+
+
+        /*$query = $this->db->get_where('restaurant_details', array('res_id' => $id));
+        return $query->result();*/
+
+        $query=$this->db->query("SELECT * FROM`restaurant`,`restaurant_details` WHERE `restaurant`.`res_id`=`restaurant_details`.`res_id`");
         return $query->result();
 
     }
@@ -226,18 +238,20 @@ class Restaurantm extends CI_Model
         $query = $this->db->get_where('restaurant_details', array('res_id' => $id));
         return $query->result();
     }
-    public function add_new_res_details($id,$rating,$description,$time){
+    public function add_new_res_details($id,$description,$time){
 
 
 
         $data = array(
-            'res_id' => $id ,
-            'rating' => $rating ,
+
+
             'description' => $description,
             'time'=>$time,
         );
+        $this->db->where('res_id', $id);
+        $this->db->update('restaurant_details', $data);
 
-        $this->db->insert('restaurant_details', $data);
+
     }
 
 
@@ -262,6 +276,22 @@ class Restaurantm extends CI_Model
         //$res_id=$this->uri->segment(3);
         $query=$this->db->query("SELECT `res_id`, ROUND(AVG(`rating`)) as rat FROM `res_rating` GROUP by `res_id`");
         return $query->result();
+
+    }
+    public function edit_res_details($id){
+
+        //$res_id=$this->uri->segment(3);
+        $query=$this->db->query("SELECT * FROM `restaurant`,`restaurant_details` WHERE `restaurant`.`res_id`=`restaurant_details`.`res_id` and `restaurant`.`res_id`='$id' ");
+        return $query->result();
+
+    }
+    public function accept_res($id){
+
+        //$res_id=$this->uri->segment(3);
+        /*$query=$this->db->query("SELECT * FROM `restaurant`,`restaurant_details` WHERE `restaurant`.`res_id`=`restaurant_details`.`res_id` and `restaurant`.`res_id`='$id' ");
+        return $query->result();*/
+        $this->db->query("INSERT INTO `restaurant` SELECT * FROM `order_cart` WHERE `id`= '$id'");
+
 
     }
 

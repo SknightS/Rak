@@ -56,8 +56,12 @@
             <ul id="dropdown" class="collapse">
                 <li>
                     <a href="<?php echo base_url()?>Admin_Restaurant">Restaurant</a>
-
+                </li>
+                <li>
                     <a href="<?php echo base_url()?>Admin_Res_Details">Add Restaurant Details</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url()?>Order"><i class="fa fa-fw fa-wrench"></i>order</a>
                 </li>
             </ul>
 
@@ -85,9 +89,7 @@
             <a href="<?php echo base_url()?>Admin_menu_attribute"><i class="fa fa-fw fa-wrench"></i>Menu Attribute</a>
         </li>-->
 
-        <li>
-            <a href="<?php echo base_url()?>Order"><i class="fa fa-fw fa-wrench"></i>order</a>
-        </li>
+
         <li>
             <a href="<?php echo base_url()?>Rating"><i class="fa fa-fw fa-file"></i> Rating</a>
         </li>

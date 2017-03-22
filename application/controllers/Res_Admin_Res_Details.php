@@ -5,9 +5,9 @@ class Res_Admin_Res_Details extends CI_Controller {
 
     public function index()
 {
-    if ($this->session->userdata('type') == "Res") {
-    $this->load->model('Restaurantm');
-    $this->data['res_details']= $this->Restaurantm->restaurant_details();
+    /*if ($this->session->userdata('type') == "Res") {
+    $this->load->model('Res_Admin_m');
+    $this->data['res_details']= $this->Res_Admin_m->restaurant_details();
 
 
 
@@ -29,7 +29,37 @@ class Res_Admin_Res_Details extends CI_Controller {
         $data['head_section_6']=$this->viewall->show_sectionsix_content();
         $this->load->view('index',$data);
 
+    }*/
+
+    if ($this->session->userdata('type') == "Res") {
+        $usename = $this->session->userdata('username');
+        //print_r($usename);
+        $this->load->model('Restaurantm');
+        $this->data['show_resturant'] = $this->Restaurantm->show_resturant($usename);
+        foreach ($this->data['show_resturant'] as $e) {
+
+            //print_r($e->res_id);
+            $id = $e->res_id;
+
+            $this->load->model('Res_Admin_m');
+            $this->data['res_details'] = $this->Res_Admin_m->restaurant_details($id);
+            $this->load->view('res_add_res_details', $this->data);
+        }
     }
+    else{
+            $this->load->model('viewall');
+            $data['head']=$this->viewall->show_main_content();
+            // print_r($data);
+            $data['head_res_ad_more']=$this->viewall->home_resturant_andmore_content();
+            //print_r($data['head_res_ad_more']);
+            $data['head_how_itworks']=$this->viewall->show_howitwork_content();
+            $data['head_section_4']=$this->viewall->show_sectionfour_content();
+            $data['head_section_5']=$this->viewall->show_sectionfive_content();
+            $data['head_section_6']=$this->viewall->show_sectionsix_content();
+            $this->load->view('index',$data);
+
+        }
+
 }
     public function showdetails($id)
     {
@@ -105,15 +135,49 @@ class Res_Admin_Res_Details extends CI_Controller {
     public function add_new_res_details()
 
     {
-        if ($this->session->userdata('type') == "Res") {
-            $id = $this->input->post('res_id');
-            $rating = $this->input->post('rating');
+        /*if ($this->session->userdata('type') == "Res") {
+
+            //$id = $this->input->post('res_id');
+            //$rating = $this->input->post('rating');
             $description = $this->input->post('description');
             $time = $this->input->post('time');
 
-            $this->load->model('Restaurantm');
-            $this->Restaurantm->add_new_res_details($id, $rating, $description, $time);
+            $this->load->model('Res_Admin_m');
+            $this->Res_Admin_m->add_new_res_details($id, $description, $time);
             redirect(Res_Admin_Res_Details);
+        }
+        else{
+            $this->load->model('viewall');
+            $data['head']=$this->viewall->show_main_content();
+            // print_r($data);
+            $data['head_res_ad_more']=$this->viewall->home_resturant_andmore_content();
+            //print_r($data['head_res_ad_more']);
+            $data['head_how_itworks']=$this->viewall->show_howitwork_content();
+            $data['head_section_4']=$this->viewall->show_sectionfour_content();
+            $data['head_section_5']=$this->viewall->show_sectionfive_content();
+            $data['head_section_6']=$this->viewall->show_sectionsix_content();
+            $this->load->view('index',$data);
+
+        }*/
+
+        if ($this->session->userdata('type') == "Res") {
+            $usename = $this->session->userdata('username');
+            //print_r($usename);
+            $this->load->model('Restaurantm');
+            $this->data['show_resturant'] = $this->Restaurantm->show_resturant($usename);
+            foreach ($this->data['show_resturant'] as $e) {
+
+                //print_r($e->res_id);
+                $id = $e->res_id;
+
+                $description = $this->input->post('description');
+                $time = $this->input->post('time');
+                $this->load->model('Res_Admin_m');
+                $this->Res_Admin_m->add_new_res_details($id,$description, $time);
+                redirect(Res_Admin_Res_Details);
+
+
+            }
         }
         else{
             $this->load->model('viewall');

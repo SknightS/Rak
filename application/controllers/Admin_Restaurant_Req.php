@@ -62,6 +62,18 @@ class Admin_Restaurant_Req extends CI_Controller
         */
     }
 
+    public function accept_res($id){
+
+        $this->load->model('Restaurantm');
+        $this->Restaurantm->accept_res($id);
+        redirect(Admin_Restaurant_Req);
+        /*
+        $this->load->model('Menum');
+        $this->Menum->menuedit($id);
+        redirect(Restaurant_menu);
+        */
+    }
+
     public function showedit(){
 
         $id = $this->input->post('id');

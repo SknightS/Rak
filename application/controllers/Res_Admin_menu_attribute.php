@@ -72,12 +72,24 @@ class Res_Admin_menu_attribute extends CI_Controller
     {
 
         if ($this->session->userdata('type') == "Res") {
-            $this->load->model('Menum');
-            if (isset($_GET['term'])) {
-                $q = strtolower($_GET['term']);
-                $this->Menum->get_search_menu_attr_autocomplete($q);
+
+            $usename = $this->session->userdata('username');
+            //print_r($usename);
+            $this->load->model('Res_Admin_m');
+            $this->data['show_resturant'] = $this->Res_Admin_m->show_resturant($usename);
+            foreach ($this->data['show_resturant'] as $e) {
+
+                //print_r($e->res_id);
+                $id = $e->res_id;
+
+                $this->load->model('Res_Admin_m');
+                if (isset($_GET['term'])) {
+                    $q = strtolower($_GET['term']);
+                    $this->Res_Admin_m->get_search_menu_attr_autocomplete($q,$id);
+                }
             }
         }
+
         else{
             $this->load->model('viewall');
             $data['head']=$this->viewall->show_main_content();
@@ -99,8 +111,8 @@ class Res_Admin_menu_attribute extends CI_Controller
 
         if ($this->session->userdata('type') == "Res") {
 
-            $this->load->model('Menum');
-            $this->Menum->edit_res($id);
+            $this->load->model('Res_Admin_m');
+            $this->Res_Admin_m->edit_res($id);
             redirect(Res_Admin_menu_attribute);
             /*
             $this->load->model('Menum');
@@ -134,13 +146,13 @@ class Res_Admin_menu_attribute extends CI_Controller
             foreach ($this->data['edit'] as $e) {
                 echo "<form role=\"form\" method=\"post\" action=\"http://localhost/Rak/Res_Admin_menu_attribute/edit_res/$e->id\" >
                                         <div class=\"form-group\">
-                                            <label>ID</label>      <?php echo $e->id;?>                                   
+                                                                      
                                             
-                                            <input class=\"form-control\" type=\"text\" name=\"id\" value=\" $e->id \" readonly>
+                                            <input class=\"form-control\" type=\"hidden\" name=\"id\" value=\" $e->id \" readonly>
                                         </div>
                                         <div class=\"form-group\">
-                                            <label>Res_id</label>
-                                            <input class=\"form-control\" type=\"text\" name=\"res_id\" value=\" $e->res_id \" readonly>
+                                           
+                                            <input class=\"form-control\" type=\"hidden\" name=\"res_id\" value=\" $e->res_id \" readonly>
                                         </div>
                                         <div class=\"form-group\">
                                             <label>Item Name</label>

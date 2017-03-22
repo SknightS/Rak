@@ -235,10 +235,12 @@ class Menum extends CI_Model
 
     }
 
-    function get_search_menu_attr_autocomplete($q)
+    function get_search_menu_attr_autocomplete($q,$id)
     {
+
         $this->db->select('item_name');
-        $this->db->like('item_name', $q);
+        $this->db->where('res_id', $id);
+        $this->db->like('item_name', $q,'after');
         $query = $this->db->get('menu_attribute');
         // $query=$this->db->query("SELECT * FROM `products` WHERE `product_name` LIKE "%$q%" ");
         // return $query->result();

@@ -68,15 +68,8 @@
 
         <div class="container-fluid">
 
-            <!-- Page Heading -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">
-                        Restaurant Page Contents
-                    </h1>
-                </div>
-            </div>
-            <!-- /.row -->
+
+
 
             <div class="row">
                 <div class="col-lg-12">
@@ -87,57 +80,120 @@
                         <div class="panel-heading"><h3>Restaurant Content</h3></div>
                         <div class="panel-body">
 
-                            <a href="#"> <button class="btn btn-success" onclick="selectid2(this)">Add New</button></a>
-                            <?php
-                            $count=1;
-                           ?>
-                                    <table class=" table table-responsive" border="1">
-                                        <tr>
-                                            <td>SL</td>
-                                            <td>Name</td>
-                                            <td>Type</td>
-                                            <td>Address</td>
-                                            <td>City</td>
-                                            <td>State</td>
-                                            <td>Postal Code</td>
-                                            <td>Country</td>
-                                            <td>Time</td>
-                                            <td>Username</td>
-                                            <td>Password</td>
-                                            <td>VAT</td>
-                                            <td>Status</td>
-                                            <td>Image</td>
-                                            <td>Action</td>
 
-                                        </tr>
-                             <?php foreach ($show_res_content as $s){?>
-                                        <tr>
-                                            <td><?php echo $count ?></td>
-                                            <td><?php echo $s->name ?></td>
-                                            <td><?php echo $s->type ?></td>
-                                            <td><?php echo $s->address ?></td>
-                                            <td><?php echo $s->city ?></td>
-                                            <td><?php echo $s->state ?></td>
-                                            <td><?php echo $s->postal_code ?></td>
-                                            <td><?php echo $s->country ?></td>
-                                            <td><?php echo $s->time ?></td>
-                                            <td><?php echo $s->username ?></td>
-                                            <td><?php echo $s->password ?></td>
-                                            <td><?php echo $s->vat ?></td>
-                                            <td><?php echo $s->status ?></td>
-                                            <td><img src = "<?php echo base_url()?>/img/slider_single_restuarant/<?php echo $s->Image ?>" alt = 'pic' height="100" width="100"/></td>
 
-                                            <td><button data-panel-id="<?= $s->res_id ?>" onclick="selectid(this)">Edit</button></td>
-                                        </tr>
 
-                                    <?php
-                                $count++;
-                            }
-                            ?>
-                                    </table>
-                            <div id="myModal2" class="modal">
 
-                                <!-- Modal content -->
+                                <h2>Add Restaurant Content</h2>
+                            <?php foreach ($this->data['show_res_content'] as $e){?>
+                                <form method="post" action="<?php echo base_url()?>Res_Admin_Restaurant/insert_res" enctype="multipart/form-data">
+                                    <div class="col-md-6 col-sm-6" >
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input class="form-control" type="text" name="name" value="<?php echo $e->name?>">
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6" >
+                                    <div class="form-group">
+                                        <label>Type</label>
+                                        <input class="form-control"type="text" name="type" value="<?php echo $e->type?>">
+                                    </div>
+                                    </div>
+                                    <?php } ?>
+                                    <div class="col-md-6 col-sm-6" >
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <input class="form-control"type="text" name="address" value="<?php echo $e->address?>">
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6" >
+                                    <div class="form-group">
+                                        <label>City</label>
+                                        <input class="form-control"type="text" name="city" value="<?php echo $e->city?>">
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6" >
+                                    <div class="form-group">
+                                        <label>State</label>
+                                        <input class="form-control"type="text" name="state" value="<?php echo $e->state?>">
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6" >
+                                    <div class="form-group">
+                                        <label>Postal Code</label>
+                                        <input class="form-control"type="text" name="postal_code" value="<?php echo $e->postal_code?>">
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6" >
+                                    <div class="form-group">
+                                        <label>Country</label>
+                                        <input class="form-control"type="text" name="country" value="<?php echo $e->country?>">
+                                    </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-6" >
+                                        <div class="form-group">
+                                            <label>Website</label>
+                                            <input class="form-control"type="text" name="website" value="<?php echo $e->website?>">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-6" >
+                                    <div class="form-group">
+                                        <label>Time</label>
+                                        <input class="form-control"type="text" name="time" value="<?php echo $e->time?>">
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6" >
+                                    <div class="form-group">
+                                        <label>Username</label>
+                                        <input class="form-control"type="text" name="username" value="<?php echo $e->username?>" readonly>
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6" >
+                                    <div class="form-group">
+                                        <label>password</label>
+                                        <input class="form-control"type="text" name="password" value="<?php echo $e->password?>">
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6" >
+                                    <div class="form-group">
+                                        <label>VAT</label>
+                                        <input class="form-control"type="text" name="vat"value="<?php echo $e->vat?>">
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6" >
+                                    <div class="form-group">
+                                        <label>Status</label>
+                                        <input class="form-control"type="text" name="status" value="<?php echo $e->status?>">
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6" >
+
+                                    <div class="form-group">
+                                        <label>File input</label>
+                                        <input class="form-control" type="file" name="res_image" value="res_image" >
+                                    </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-6" >
+
+                                        <div class="form-group">
+
+                                            <input class="form-control" type="hidden" name="res_id" value="<?php echo $e->res_id?>" >
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 col-sm-12" >
+                                    <input   class="btn btn-success" type="submit">
+                                    </div>
+                                </form>
+
+                            </div>
+
+                            <!--<div id="myModal2" class="modal">
+
+                                <!-- Modal content
                                 <div class="modal-content">
                                     <span class="close">×</span>
 
@@ -200,14 +256,14 @@
                                         <input class="btn btn-success" type="submit">
                                     </form>
 
-                                </div>
+                                </div>-->
 
 
                             </div>
 
-                            <div id="myModal3" class="modal">
+                            <!--<div id="myModal3" class="modal">
 
-                                <!-- Modal content -->
+                                <!-- Modal content
                                 <div class="modal-content">
                                     <span class="close">×</span>
 
@@ -217,7 +273,7 @@
                                 </div>
 
 
-                            </div>
+                            </div>-->
 
                         </div>
 
@@ -237,7 +293,7 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script>
+<!--<script>
 
 
     // Get the modal
@@ -311,7 +367,7 @@
     }
 
 
-</script>
+</script>-->
 <script>
     $(document).ready(function() {
         $('#summernote').summernote();
