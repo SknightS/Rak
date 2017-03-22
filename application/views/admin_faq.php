@@ -78,32 +78,37 @@
             <!-- /.row -->
 
             <div class="row">
-                <div class="col-lg-6">
-
-
+                <div class="col-lg-12">
 
                     <div class="panel panel-success">
                         <div class="panel-heading"><h3>Main Content</h3></div>
                         <div class="panel-body">
+                            <div style="float: right;>
+                                <a href="#"> <button class="btn btn-success" onclick="selectid2(this)">Add New</button></a><br><br>
+                            </div>
 
-                           <a href="#"> <button class="btn btn-success" onclick="selectid2(this)">Add New</button></a>
                             <?php
                             foreach ($show_faq_content as $s){
                                 $header = $s->header;?>
-                                <h4><?php echo $header;?></h4><?php
+                                <h4 style="font-weight: bold"><?php echo $header;?></h4><?php
                                 $query=$this->db->query("SELECT * FROM `faq` WHERE `header`= '$s->header'");
                                 foreach ($query->result() as $q){?>
-                                   <table class="table-responsive" border="1">
-                                       <tr>
-                                            <td>Sub Header</td>
-                                            <td>Details</td>
-                                            <td>Action</td>
-                                       </tr>
-                                       <tr>
-                                           <td><?php echo $q->sub_header?></td>
-                                           <td><?php echo $q->details?></td>
-                                           <td><button data-panel-id="<?= $q->id ?>" onclick="selectid(this)">Edit</button></td>
-                                       </tr>
+                                   <table class="table table-bordered">
+                                       <thead>
+                                           <tr>
+                                               <th style="width: 150px">Sub Header</th>
+                                               <th>Details</th>
+                                               <th style="width: 100px;">Action</th>
+                                           </tr>
+                                       </thead>
+
+                                       <tbody>
+                                           <tr>
+                                               <td><?php echo $q->sub_header?></td>
+                                               <td><?php echo $q->details?></td>
+                                               <td style="text-align: center"><button class="btn btn-warning" data-panel-id="<?= $q->id ?>" onclick="selectid(this)">Edit</button></td>
+                                           </tr>
+                                       </tbody>
                                    </table>
                             <?php
                                 }

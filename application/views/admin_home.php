@@ -81,7 +81,7 @@
             <!-- /.row -->
 
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-md-8">
 
                     <div class="panel panel-success">
                         <div class="panel-heading"><h3>Main Content</h3></div>
@@ -95,7 +95,7 @@
                                     <br>
                                     <label>Main Content Small</label>
 
-                                    <textarea  id="summernote" name="main_content_small" ></textarea>
+                                    <textarea id="summernote" name="main_content_small" ></textarea>
 
                                     <br>
 
@@ -110,7 +110,7 @@
                                             <p class="help-block">This is demo instruction line.</p>
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group summer">
                                             <label>Main Content Small</label>
 
                                             <textarea id="summernote" class="form-control"  name="main_content_small" value="<?php echo $s->small?>" ><?php echo $s->small?></textarea>
@@ -121,7 +121,25 @@
                             </form>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading"><h3>Main Content Visual Instruction</h3></div>
+                        <div class="panel-body">
+                            <div style="margin-bottom: 10px">
+                                <a target="_blank" href="<?php echo base_url()?>img/main_content_image.png"><img class="img-responsive" src="<?php echo base_url()?>img/main_content_image.png"></a>
+                            </div>
+                            <div>
+                                <p>This is some textual instructions...</p>
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
                     <div class="panel panel-success">
                         <div class="panel-heading"><h3>Resturant Content And More</h3></div>
                         <div class="panel-body">
@@ -166,7 +184,25 @@
                             </form>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading"><h3>Resturant Content And More Visual Instruction</h3></div>
+                        <div class="panel-body">
+                            <div style="margin-bottom: 10px">
+                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                            </div>
+                            <div>
+                                <p>This is some textual instructions...</p>
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
                     <div class="panel panel-success">
                         <div class="panel-heading"><h3>Resturant Content And More</h3></div>
                         <div class="panel-body">
@@ -288,7 +324,25 @@
                             </form>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading"><h3>Resturant Content And More Visual Instruction</h3></div>
+                        <div class="panel-body">
+                            <div style="margin-bottom: 10px">
+                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                            </div>
+                            <div>
+                                <p>This is some textual instructions...</p>
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
                     <div class="panel panel-success">
                         <div class="panel-heading"><h3>Resturant Content And More</h3></div>
                         <div class="panel-body">
@@ -339,7 +393,25 @@
                             </form>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading"><h3>Resturant Content And More Visual Instruction</h3></div>
+                        <div class="panel-body">
+                            <div style="margin-bottom: 10px">
+                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                            </div>
+                            <div>
+                                <p>This is some textual instructions...</p>
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
                     <div class="panel panel-success">
                         <div class="panel-heading"><h3>Resturant Content And More</h3></div>
                         <div class="panel-body">
@@ -381,8 +453,25 @@
                             </form>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading"><h3>Resturant Content And More Visual Instruction</h3></div>
+                        <div class="panel-body">
+                            <div style="margin-bottom: 10px">
+                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                            </div>
+                            <div>
+                                <p>This is some textual instructions...</p>
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="row">
+                <div class="col-md-8">
                     <div class="panel panel-success">
                         <div class="panel-heading"><h3>Resturant Content And More</h3></div>
                         <div class="panel-body">
@@ -434,7 +523,25 @@
                             </form>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading"><h3>Resturant Content And More Visual Instruction</h3></div>
+                        <div class="panel-body">
+                            <div style="margin-bottom: 10px">
+                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                            </div>
+                            <div>
+                                <p>This is some textual instructions...</p>
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
                     <div class="panel panel-success">
                         <div class="panel-heading">
                             <h3>Resturant Content And More</h3>
@@ -520,9 +627,21 @@
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="col-md-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading"><h3>Resturant Content And More Visual Instruction</h3></div>
+                        <div class="panel-body">
+                            <div style="margin-bottom: 10px">
+                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                            </div>
+                            <div>
+                                <p>This is some textual instructions...</p>
+                            </div>
 
-            <!-- /.row -->
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
         <!-- /.container-fluid -->
