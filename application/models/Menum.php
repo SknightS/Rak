@@ -47,7 +47,7 @@ class Menum extends CI_Model
         $textbox = $this->input->post('textbox[]');
         $textimage = $this->input->post('textimage[]');
 
-
+        $textserial= $this->input->post('textserial[]');
 
         if(array_filter($textbox)==null && array_filter($textimage) ==null) {
             $menudata = array(
@@ -67,6 +67,7 @@ class Menum extends CI_Model
                     'item_name' => $iname,
                     'item_attribute	' => $textbox[$i],
                     'price' => $textimage[$i],
+                    'serial' => $textserial[$i]
                 );
                 $menudata = array(
                     'res_id' => $res_id,
@@ -252,4 +253,8 @@ class Menum extends CI_Model
         }
     }
 
+    public function getres(){
+        $query=$this->db->query("SELECT * FROM `restaurant` GROUP BY `name`");
+        return $query->result();
+    }
 }
