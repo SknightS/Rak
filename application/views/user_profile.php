@@ -58,7 +58,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <?php foreach ($profile as $p) {?>
-                <form method = "post" action = "<?php echo base_url()?>Profile/update_usre" enctype = "multipart/form-data" >
+                <form method = "post" action = "<?php echo base_url()?>Profile/update_user/" enctype = "multipart/form-data" >
                 <div class="row" >
                     <div class="col-md-6 col-sm-6" >
                         <div class="form-group" >
@@ -70,7 +70,7 @@
                     <div class="col-md-6 col-sm-6" >
                         <div class="form-group" >
                             <label > Email </label >
-                            <input type = "email" class="form-control" id = "type" name = "email" value="<?php echo $p->email; ?>" >
+                            <input type = "text" class="form-control" id = "email" name = "email" value="<?php echo $p->email; ?>" >
                         </div >
                     </div >
                 </div >
@@ -78,7 +78,7 @@
                     <div class="col-md-6 col-sm-6" >
                         <div class="form-group" >
                             <label > Username</label >
-                            <input type = "text" id = "address" name = "username" class="form-control "value="<?php echo $p->username ?>" >
+                            <input type = "text" id = "address" name = "username" class="form-control "value="<?php echo $p->username ?>" readonly>
                         </div >
                     </div >
                     <div class="col-md-6 col-sm-6" >
@@ -112,7 +112,7 @@
                     <div class="col-md-6" >
                         <div class="form-group" >
                             <label > Postal code </label >
-                            <input type = "text" id = "postal_code" name = "postal_code" class="form-control" value="<?php echo $p->postcode; ?>" >
+                            <input type = "text" id = "postcode" name = "postcode" class="form-control" value="<?php echo $p->postcode; ?>" >
                         </div >
                     </div >
                 </div ><!--End row-->

@@ -236,41 +236,27 @@
                     <a href="#" class="btn_1 add_bottom_15" data-toggle="modal" data-target="#myReview">Leave a review</a>
                 </div><!-- End summary_review -->
 
-                <div class="review_strip_single">
-                    <img src="<?php echo base_url() ?>img/avatar1.jpg" alt="" class="img-circle">
-                    <small> - 10 March 2015 -</small>
-                    <h4>Jhon Doe</h4>
-                    <p>
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
-                    </p>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="rating">
-                                <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i>
-                            </div>
-                            Food Quality
-                        </div>
-                        <div class="col-md-3">
-                            <div class="rating">
-                                <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i>
-                            </div>
-                            Price
-                        </div>
-                        <div class="col-md-3">
-                            <div class="rating">
-                                <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
-                            </div>
-                            Punctuality
-                        </div>
-                        <div class="col-md-3">
-                            <div class="rating">
-                                <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
-                            </div>
-                            Courtesy
-                        </div>
-                    </div><!-- End row -->
-                </div><!-- End review strip -->
 
+
+                    <?php foreach($comments as $c){  ?>
+
+                <div class="review_strip_single">
+                    <?php
+                    $username=$c->username;
+                    $query =$this->db->query(" select name from user WHERE `username`= '$username'");
+                    foreach ($query->result() as $r ){$name=$r->name;}
+                    ?>
+                    <h4><?php echo $name ?> said</h4>
+                    <p>
+                         <?php echo $c->comment ?>
+                        <small> at - <?php echo $c->Date ?>-</small>
+                    </p>
+
+
+                </div><!-- End review strip -->
+                    <?php } ?>
+
+                <!--
                 <div class="review_strip_single">
                     <img src="<?php echo base_url() ?>img/avatar3.jpg" alt="" class="img-circle">
                     <small> - 25 March 2015 -</small>
@@ -303,43 +289,10 @@
                             </div>
                             Courtesy
                         </div>
-                    </div><!-- End row -->
+                    </div><!-- End row
                 </div><!-- End review strip -->
 
-                <div class="review_strip_single last">
-                    <img src="<?php echo base_url() ?>img/avatar2.jpg" alt="" class="img-circle">
-                    <small> - 10 April 2015 -</small>
-                    <h4>Frank Cooper</h4>
-                    <p>
-                        "Ne mea congue facilis eligendi, possit utamur sensibus id qui, mel tollit euismod alienum eu. Ad tollit lucilius praesent per, ex probo utroque placerat eos. Tale verear efficiendi et cum, meis timeam vix et, et duis debet nostro mel. Aeterno labitur per no, id nec tantas nemore. An minim molestie per, mei sumo vulputate cu."
-                    </p>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="rating">
-                                <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i>
-                            </div>
-                            Food Quality
-                        </div>
-                        <div class="col-md-3">
-                            <div class="rating">
-                                <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i>
-                            </div>
-                            Price
-                        </div>
-                        <div class="col-md-3">
-                            <div class="rating">
-                                <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i>
-                            </div>
-                            Punctuality
-                        </div>
-                        <div class="col-md-3">
-                            <div class="rating">
-                                <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i>
-                            </div>
-                            Courtesy
-                        </div>
-                    </div><!-- End row -->
-                </div><!-- End review strip -->
+
 
             </div><!-- End box_style_1 -->
         </div>
@@ -472,10 +425,10 @@
 
             <form method="post" action="<?php echo base_url() ?>Admin_Res_Details/insert_comment/" name="review" id="review" class="popup-form">
                 <div class="login_icon"><i class="icon_comment_alt"></i></div>
-                <?php foreach ($details as $e){?>
+                <?php foreach ($res_details as $e){?>
 
                 <input name="restaurant_name" id="restaurant_name" type="hidden" value="Mexican Taco Mex">
-                <input name="re_id" id="re_id" type="text" value="<?php echo $e->res_id ?>" style="color: violet">
+                <input name="re_id" id="re_id" type="hidden" value="<?php echo $e->res_id ?>" style="color: black">
 
                 <?php }?>
 
