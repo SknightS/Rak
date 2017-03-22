@@ -78,9 +78,7 @@
             <!-- /.row -->
 
             <div class="row">
-                <div class="col-lg-6">
-
-
+                <div class="col-lg-8">
 
                     <div class="panel panel-success">
                         <div class="panel-heading"><h3>Main Content</h3></div>
@@ -89,7 +87,7 @@
 
                             <form method="post" action="<?php echo base_url()?>Admin_menu/insert_menu_attr" >
 
-                                <div class="form-group">
+                                <div class="form-group" id="dropdown-style">
                                     <label>Restuarant</label>
                                     <select class="form-control"  name="name" id="dst" onchange="selectid()" >
 
@@ -107,15 +105,13 @@
                                 </div>
 
                                 <input type="hidden" id="res_id" name="res_id">
-                                <div class="form-group">
+                                <div class="form-group" id="dropdown-style">
                                     <label>Item Type</label>
                                     <!--<input class="form-control" type="text" name="Item_type">-->
                                     <select class="form-control" name="type" id="type"  >
                                         <option selected  >Item Type</option>
-                                        <input type="button" class="btn btn-success" name="additem" value="+" onclick="selectid5(this)">
-
-
                                     </select>
+                                    <input type="button" class="btn btn-success" name="additem" value="+" onclick="selectid5(this)">
                                 </div>
                                 <div class="form-group">
                                     <label>Item name</label>
@@ -126,7 +122,7 @@
                                     <textarea class="form-control"  name="Item_description"></textarea><br/>
                                     <label>If you want to add some item click </label>
 <!--                                    <button data-panel-id="" onclick="selectid2()">Edit</button>-->
-                                    <input type="button" name = 'add' value='Add'onclick="selectid2()">
+                                    <input class="btn btn-success" type="button" name = 'add' value='Add'onclick="selectid2()">
 
                                 </div>
                                 <div id="showattr" class="form-group" style="display: none">
@@ -147,12 +143,6 @@
                                 <input class="btn btn-success" type="submit">
                             </form>
 
-
-
-
-
-
-
                             <div id="myModal5" class="modal">
 
                                 <!-- Modal content -->
@@ -161,21 +151,22 @@
 
                                     <h2>Edit Content</h2>
                                     <form role="form" method="post" action="<?php echo base_url()?>/Admin_menu/insert_menu_type" >
-                                        <div class="form-group">
+                                        <div class="form-group" id="dropdown-style">
                                             <label>Restuarant</label>
-                                            <select class="form-control"  name="name" id="name" onchange="selectid4()" >
+                                                <select class="form-control"  name="name" id="name" onchange="selectid4()" >
 
                                                 <option value="" selected disabled>Res Name</option>
 
-                                                <?php
+                                                    <?php
 
-                                                foreach ($show_res_content as $s)
-                                                {
-                                                    echo "<option value='" . $s->name . "'>" . $s->name . "</option>";
-                                                }
+                                                    foreach ($show_res_content as $s)
+                                                    {
+                                                        echo "<option value='" . $s->name . "'>" . $s->name . "</option>";
+                                                    }
 
-                                                ?>
+                                                    ?>
                                             </select>
+
                                         </div>
                                         <input type="hidden" id="res_id2" name="res_id">
 
@@ -196,6 +187,20 @@
                         </div>
 
 
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading"><h3>Main Content Visual Instruction</h3></div>
+                        <div class="panel-body">
+                            <div style="margin-bottom: 10px">
+                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                            </div>
+                            <div>
+                                <p>This is some textual instructions...</p>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>

@@ -14,14 +14,9 @@
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- search box-->
-    <link href="css/style.css" rel="stylesheet">
-
-
-
-
     <!-- Custom CSS -->
-    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>css/sb-admin.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>css/style.css" rel="stylesheet">
     <link href="css/modal.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
@@ -99,52 +94,48 @@
                                 </div>
                             </div>
                         </form><br><br>
-                        <?php if($this->input->post('btnsearch')){
-                        foreach ($this->data['te'] as $e) {?>
+                        <?php if($this->input->post('btnsearch')){ ?>
+
                         <div>
 
 
+                            <div class="table-responsive">
+                                <table class=" table table-bordered">
+                                    <thead>
+                                        <tr>
 
-                                <table class=" table table-responsive" border="1">
-                                <tr>
+                                            <th >Rsetaurant Name</th>
+                                            <th >Item Type</th>
+                                            <th >Item Name</th>
+                                            <th >Item Description</th>
+                                            <th >Item Price</th>
+                                            <th colspan="2">Action</th>
 
-
-                                    <td >Rsetaurant Name</td>
-                                    <td >Item Type</td>
-                                    <td >Item Name</td>
-                                    <td >Item Description</td>
-                                    <td >Item Price</td>
-                                    <td colspan="2">Action</td>
-
-                                </tr>
-
-
-
+                                        </tr>
+                                    </thead>
 
                                     <form method="post" action="<?php echo base_url()?>Restaurant_menu/editmenu"  >
 
-                                    <tr>
+                            <?php foreach ($this->data['te'] as $e) { ?>
+                                    <tbody>
+                                        <tr>
 
+                                            <td><?php echo $e->res_name; ?></td>
+                                            <td> <?php echo $e->item_type; ?></td>
+                                            <td><?php echo $e->item_name; ?></td>
+                                            <td><?php echo $e->item_description; ?></td>
+                                            <td><?php echo $e->item_price; ?></td>
 
-                                        <td><?php echo $e->res_name; ?></td>
-                                        <td> <?php echo $e->item_type; ?></td>
-                                        <td><?php echo $e->item_name; ?></td>
-                                        <td><?php echo $e->item_description; ?></td>
-                                        <td><?php echo $e->item_price; ?></td>
+                                            <td ><input class="btn btn-warning" type="button"  name="btnedit" value="Edit" data-panel-id="<?php echo $e->id ?>" onclick="selectid(this)"/></td>
+                                            <td ><button class="btn btn-danger" type="submit"  formaction="<?php echo base_url()?>Restaurant_menu/delete/<?php echo $e->id ?>" onclick="return confirm('Are you confirm to delete this menu?')" >Delete</button></td>
 
-                                        <td><input type="button"  name="btnedit" value="Edit" data-panel-id="<?php echo $e->id ?>" onclick="selectid(this)"/></td>
-                                        <td><button type="submit"  formaction="<?php echo base_url()?>Restaurant_menu/delete/<?php echo $e->id ?>" onclick="return confirm('Are you confirm to delete this menu?')" >delete</button></td>
+                                        </tr>
+                                    </tbody>
 
-
-
-                                    </tr>
                                     </form>
-                                <?php }} ?>
-                            </table>
-
-
-
-
+                                    <?php }} ?>
+                                </table>
+                            </div>
 
                         </div>
 

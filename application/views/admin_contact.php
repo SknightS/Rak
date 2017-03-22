@@ -80,7 +80,7 @@
             <!-- /.row -->
 
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-8">
 
                     <div class="panel panel-success">
                         <div class="panel-heading">
@@ -118,8 +118,26 @@
                             </form>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading"><h3>Contact Visual Instruction</h3></div>
+                        <div class="panel-body">
+                            <div style="margin-bottom: 10px">
+                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                            </div>
+                            <div>
+                                <p>This is some textual instructions...</p>
+                            </div>
 
-                   <div class="panel panel-success">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="panel panel-success">
                         <div class="panel-heading">
                             <h3>Customer Service</h3>
                         </div>
@@ -129,9 +147,9 @@
 
                                 <?php if ($show_customer_content == Null){ ?>
 
-                                    <div class="form-group">
+                                    <div class="form-group summer">
                                         <label>Details</label>
-                                        <input class="form-control" type="text" name="details">
+                                        <textarea  id="summernote" name="details"></textarea>
                                     </div>
 
                                     <div class="form-group">
@@ -152,9 +170,9 @@
                                     foreach ($show_customer_content as $s){
                                         ?>
 
-                                        <div class="form-group">
+                                        <div class="form-group summer">
                                             <label>Details</label>
-<!--                                            <input class="form-control" type="text" name="details" value="--><?php //echo $s->details?><!--">-->
+                                            <!--                                            <input class="form-control" type="text" name="details" value="--><?php //echo $s->details?><!--">-->
                                             <textarea  id="summernote" name="details" value="<?php echo $s->details?>"><?php echo $s->details?></textarea>
                                         </div>
 
@@ -176,7 +194,25 @@
                             </form>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading"><h3>Customer Service Visual Instruction</h3></div>
+                        <div class="panel-body">
+                            <div style="margin-bottom: 10px">
+                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                            </div>
+                            <div>
+                                <p>This is some textual instructions...</p>
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
                     <div class="panel panel-success">
                         <div class="panel-heading">
                             <h3>Resturant Service</h3>
@@ -233,6 +269,26 @@
                             </form>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading"><h3>Resturant Service Visual Instruction</h3></div>
+                        <div class="panel-body">
+                            <div style="margin-bottom: 10px">
+                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                            </div>
+                            <div>
+                                <p>This is some textual instructions...</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
                 </div>
             </div>
 

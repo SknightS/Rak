@@ -15,7 +15,6 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/sb-admin.css" rel="stylesheet">
     <link href="css/modal.css" rel="stylesheet">
 
     <!-- Custom CSS -->
@@ -89,59 +88,62 @@
                             <?php
                             $count=1;
                            ?>
-
-                                    <table class=" table table-responsive" border="1">
+                            <div class="table-responsive">
+                                <table class="table table-borderd">
+                                    <thead>
                                         <tr>
-                                            <td>SL</td>
-                                            <td>Name</td>
-                                            <td>Type</td>
-                                            <td>Address</td>
-                                            <td>Website</td>
-                                            <td>Email</td>
-                                            <td>City</td>
-                                            <td>State</td>
-                                            <td>Postal Code</td>
-                                            <td>Country</td>
-                                            <td>Time</td>
-                                            <td>Username</td>
-                                            <td>Password</td>
-                                            <td>VAT</td>
-                                            <td>Status</td>
-                                            <td>Image</td>
-                                            <td colspan="2">Action</td>
+                                            <th>SL</th>
+                                            <th>Name</th>
+                                            <th>Type</th>
+                                            <th>Address</th>
+                                            <th>Website</th>
+                                            <th>Email</th>
+                                            <th>City</th>
+                                            <th>State</th>
+                                            <th>Postal Code</th>
+                                            <th>Country</th>
+                                            <th>Time</th>
+                                            <th>Username</th>
+                                            <th>Password</th>
+                                            <th>VAT</th>
+                                            <th>Status</th>
+                                            <th>Image</th>
+                                            <th>Action</th>
 
                                         </tr>
-                             <?php foreach ($req_restaurant as $s){?>
-                                        <tr>
-                                            <td><?php echo $count ?></td>
-                                            <td><?php echo $s->name ?></td>
-                                            <td><?php echo $s->type ?></td>
-                                            <td><?php echo $s->address ?></td>
-                                            <td><?php echo $s->website ?></td>
-                                            <td><?php echo $s->email ?></td>
-                                            <td><?php echo $s->city ?></td>
-                                            <td><?php echo $s->state ?></td>
-                                            <td><?php echo $s->postal_code ?></td>
-                                            <td><?php echo $s->country ?></td>
-                                            <td><?php echo $s->time ?></td>
-                                            <td><?php echo $s->username ?></td>
-                                            <td><?php echo $s->password ?></td>
-                                            <td><?php echo $s->vat ?></td>
-                                            <td><?php echo $s->status ?></td>
-                                            <td><img src = "<?php echo base_url()?>/img/slider_single_restuarant/<?php echo $s->image ?>" alt = 'pic' height="100" width="100"/></td>
+                                    </thead>
 
-                                            <td><button data-panel-id="<?= $s->res_id ?>" onclick="selectid(this)">Accept</button></td>
+                                    <?php foreach ($req_restaurant as $s){ ?>
+                                        <tbody>
+                                            <tr>
+                                                <td><?php echo $count ?></td>
+                                                <td><?php echo $s->name ?></td>
+                                                <td><?php echo $s->type ?></td>
+                                                <td><?php echo $s->address ?></td>
+                                                <td><?php echo $s->website ?></td>
+                                                <td><?php echo $s->email ?></td>
+                                                <td><?php echo $s->city ?></td>
+                                                <td><?php echo $s->state ?></td>
+                                                <td><?php echo $s->postal_code ?></td>
+                                                <td><?php echo $s->country ?></td>
+                                                <td><?php echo $s->time ?></td>
+                                                <td><?php echo $s->username ?></td>
+                                                <td><?php echo $s->password ?></td>
+                                                <td><?php echo $s->vat ?></td>
+                                                <td><?php echo $s->status ?></td>
+                                                <td><img src = "<?php echo base_url()?>/img/slider_single_restuarant/<?php echo $s->image ?>" height="100" width="100"/></td>
 
-                                        </tr>
+                                                <td> <button class="btn btn-success" data-panel-id="<?= $s->res_id ?>" onclick="selectid(this)">Accept</button> </td>
+                                            </tr>
+                                        </tbody>
 
-                                    <?php
-                                $count++;
-                            }
-                            ?>
+                                        <?php
+                                        $count++;
+                                    }
+                                    ?>
                                 </table>
-
-
                             </div>
+                        </div>
 
                             <div id="myModal3" class="modal">
 
