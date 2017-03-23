@@ -204,7 +204,9 @@
                         </div>
 
                         <div class="panel-body">
-                            <form method="post" action="<?php echo base_url()?>Admin_aboutus/insert_about_us_feature_content" enctype="multipart/form-data">
+
+                            <input class="btn btn-success" type="button" value="ADD" onclick="selectid1(this)" >
+                            <!--<form method="post" action="<?php echo base_url()?>Admin_aboutus/insert_about_us_feature_content" enctype="multipart/form-data">-->
 
                                 <?php if ($show_about_us_feature_content == Null){ ?>
 
@@ -247,8 +249,9 @@
                                     </div>
 
 
-                                    <input class="btn btn-success" type="submit">
+
                                 <?php }else{ ?>
+
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
@@ -292,22 +295,177 @@
                                                     </select>
                                                 </td>
                                                 <td ><i id="icon" class="<?php echo $s->box_icon ?>"></i></td>
-                                                <td><button class="btn btn-warning">Edit</button></td>
+                                                <td><button data-panel-id="<?= $s->id ?>" onclick="selectid(this)" class="btn btn-warning">Edit</button></td>
                                             </tr>
                                         </tbody>
 
 
-                                        <?php $count++; } ?>
+                                        <?php $count++; } }?>
                                     </table>
-                                    <input class="btn btn-success" type="submit">
-                                    <?php
-                                }
-                                ?>
+                                    <!--<input class="btn btn-success" type="submit">-->
+
+
+
+                            <!--</form>-->
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+                <div id="myModal1" class="modal">
+
+                    <!-- Modal content -->
+
+                    <div class="modal-content">
+                        <span class="close">×</span>
+
+                        <h2>Edit Content</h2>
+
+
+
+                        <div id="txtHint"></div>
+
+                    </div>
+
+
+
+                </div>
+
+                <div id="myModal2" class="modal">
+
+                    <!-- Modal content -->
+
+                    <div class="modal-content">
+                        <span class="close">×</span>
+
+                        <h2>Edit Content</h2>
+
+                        <form method="post" action="<?php echo base_url()?>Admin_aboutus/insert_about_us_feature_content" enctype="multipart/form-data">
+
+                            <?php if ($show_about_us_feature_content == Null){ ?>
+
+                                <div class="form-group">
+                                    <label>Big</label>
+                                    <input class="form-control" type="text" name="big">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Small</label>
+                                    <input class="form-control" type="text" name="small">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Box Header</label>
+                                    <input class="form-control" type="text" name="boxheader" >
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Box details</label>
+                                    <input class="form-control" type="text" name="boxdetails" >
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Icon</label>
+
+                                    <select class="form-control"  name="icon" id="dst" >
+
+                                        <option value="" selected disabled>Icon Name</option>
+
+                                        <?php
+
+                                        foreach ($icon as $i)
+                                        {
+                                            echo "<option value='" . $i->icon_name . "'>" . $i->icon_name . "</option>";
+                                        }
+
+                                        ?>
+                                    </select>
+                                </div>
+
+
+
+                            <?php }else{ ?>
+
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Sl</th>
+                                    <th style="width: 10%">Big</th>
+                                    <th style="width: 10%">Small</th>
+                                    <th style="width: 10%">Box Header</th>
+                                    <th style="width: 50%">Box details</th>
+                                    <th style="width: 20%">Icon</th>
+                                    <th style="width: 20%">Icon image</th>
+
+
+                                </tr>
+                                </thead>
+
+                                <?php
+                                $count=1;
+                                foreach ($show_about_us_feature_content as $s){
+                                    ?>
+
+                                    <tbody>
+                                    <tr>
+                                        <td><?php echo $count;?></td>
+                                        <td><?php echo $s->big?></td>
+                                        <td><?php echo $s->small?></td>
+                                        <td><?php echo $s->box_header?></td>
+                                        <td><?php echo $s->box_details?></td>
+                                        <td id="dropdown-style">
+                                            <select class="form-control"  name="icon" id="dst" onchange="myfunc()">
+
+                                                <option value="<?php echo $s->box_icon ?>" selected disabled><?php echo $s->box_icon ?></option>
+
+                                                <?php
+
+                                                foreach ($icon as $i)
+                                                {
+                                                    echo "<option  value='" . $i->icon_name . "'>" . $i->icon_name . "</option>";
+                                                }
+
+                                                ?>
+                                            </select>
+                                        </td>
+                                        <td ><i id="icon" class="<?php echo $s->box_icon ?>"></i></td>
+
+                                    </tr>
+                                    </tbody>
+
+
+                                    <?php $count++; } }?>
+                            </table>
+                            <input class="btn btn-success" type="submit">
+
+
 
                             </form>
-                        </div>
+
+
+
+                        <div id="txtHint"></div>
+
                     </div>
+
+
+
                 </div>
+
+
+
+
+
+
+                </div>
+
+
+
                 <div class="col-md-4">
                     <div class="panel panel-success">
                         <div class="panel-heading"><h3>About Feature Visual Instruction</h3></div>
@@ -406,6 +564,81 @@
         var x = document.getElementById("dst").value;
         document.getElementById("icon").className = x;
     }
+</script>
+
+<script>
+
+
+    // Get the modal
+    // var modal = document.getElementById('myModal');
+    var modal1 = document.getElementById('myModal1');
+    var modal2 = document.getElementById('myModal2');
+
+
+
+    // Get the button that opens the modal
+    //var btn = document.getElementById("myBtn");
+
+    var span = document.getElementsByClassName("close")[0];
+    var span1 = document.getElementsByClassName("close")[1];
+
+
+    function selectid(x) {
+        modal1.style.display = "block";
+
+        btn = $(x).data('panel-id');
+        //alert(btn);
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url()?>Admin_aboutus/edit_about_us_feature_content/"'+btn,
+            data:{'id':btn},
+            cache: false,
+            success:function(data)
+            {
+                //alert(data);
+                $('#txtHint').html(data);
+            }
+
+        });
+
+
+
+
+
+    }
+
+    function selectid1(x) {
+        modal2.style.display = "block";
+
+
+    }
+
+
+
+    span.onclick = function() {
+            modal1.style.display = "none";
+        }
+    span1.onclick = function() {
+        modal2.style.display = "none";
+    }
+
+
+
+    window.onclick = function(event) {
+            if (event.target == modal1) {
+                modal1.style.display = "none";
+            }
+        }
+
+    window.onclick = function(event) {
+        if (event.target == modal2) {
+            modal2.style.display = "none";
+        }
+    }
+
+
+
 </script>
 
 

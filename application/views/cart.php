@@ -209,13 +209,15 @@
 						</div>
                         <div class="col-md-6 col-sm-6">
                             <div class="form-group">
-                                <label>Order Time</label>
+
 
                                     <?php
                                     date_default_timezone_set("America/New_York");
 
                                     ?>
-                                    <input type="text" id="order_time" name="order_time" class="form-control" placeholder="Order Time"  value="<?php echo  date("h:i:sa");?>" readonly>
+                                    <input type="hidden" id="order_time" name="order_time" class="form-control" placeholder="Order Time"  value="<?php echo  date("h:i:sa");?>" readonly>
+                                <input type="hidden" id="date" name="date" class="form-control" placeholder="Date"  value="<?php echo  date("Y-m-d");?>" readonly>
+
 
                             </div>
                         </div>

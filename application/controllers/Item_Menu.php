@@ -153,6 +153,7 @@ class Item_Menu extends CI_Controller
         $country = $this->input->post('country_order');
         $order_day = $this->input->post('delivery_schedule_day');
         $order_time = $this->input->post('order_time');
+        $date=$this->input->post('date');
         $id = $this->input->post('res_id');
         $att_id = $this->input->post('attr_id');
         $price = $this->input->post('price');
@@ -168,7 +169,7 @@ class Item_Menu extends CI_Controller
             $item_attr=$e->item_attribute;
             //print_r($item_attr);
             $this->load->model('Orderm');
-            $this->Orderm->order($name,$username,$phone,$email,$address,$city,$state,$post_code,$country,$order_day,$order_time,$id,$res_name,$item_attr,$price,$quantity,$item_name);
+            $this->Orderm->order($name,$username,$phone,$email,$address,$city,$state,$post_code,$country,$order_day,$order_time,$date,$id,$res_name,$item_attr,$price,$quantity,$item_name);
         }
         redirect(Home);
         //print_r($res_id);

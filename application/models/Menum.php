@@ -69,16 +69,24 @@ class Menum extends CI_Model
                     'price' => $textimage[$i],
                     'serial' => $textserial[$i]
                 );
-                $menudata = array(
+                /*$menudata = array(
                     'res_id' => $res_id,
                     'res_name' => $res_name,
                     'item_type' => $itype,
                     'item_name' => $iname,
                     'item_description' => $idescription,
-                );
-                $this->db->insert('menu', $menudata);
+                );*/
+                //$this->db->insert('menu', $menudata);
                 $this->db->insert('menu_attribute', $data);
             }
+            $menudata = array(
+                'res_id' => $res_id,
+                'res_name' => $res_name,
+                'item_type' => $itype,
+                'item_name' => $iname,
+                'item_description' => $idescription,
+            );
+            $this->db->insert('menu', $menudata);
         }
 
     }
