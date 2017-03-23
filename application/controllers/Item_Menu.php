@@ -125,7 +125,7 @@ class Item_Menu extends CI_Controller
         //$this->load->view('cart');
         $name = $this->input->post('name_order');
         //$userid=$this->session->userdata('userid');
-        $userid= 1;
+        //$userid= 1;
         $phone = $this->input->post('tel_order');
         $email = $this->input->post('email_order');
         $address = $this->input->post('address_order');
@@ -150,7 +150,7 @@ class Item_Menu extends CI_Controller
             $item_attr=$e->item_attribute;
             //print_r($item_attr);
             $this->load->model('Orderm');
-            $this->Orderm->order($userid,$name,$phone,$email,$address,$city,$state,$post_code,$country,$order_day,$order_time,$id,$res_name,$item_attr,$price,$quantity,$item_name);
+            $this->Orderm->order($name,$phone,$email,$address,$city,$state,$post_code,$country,$order_day,$order_time,$id,$res_name,$item_attr,$price,$quantity,$item_name);
         }
         redirect(Home);
         //print_r($res_id);

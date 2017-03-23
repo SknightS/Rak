@@ -18,11 +18,11 @@ class Profile extends CI_Controller
 
     }
 
-    public function update_usre(){
+    public function update_user(){
 
         $this->load->model('Profilem');
         $this->Profilem->updateuser();
-        redirect(Profile::get_instance());
+        redirect(  base_url());
     }
 
 

@@ -3,13 +3,13 @@
 
 class Orderm extends CI_Model
 {
-    public function order($userid,$name,$phone,$email,$address,$city,$state,$post_code,$country,$order_day,$order_time,$id,$res_name,$item_attr,$price,$quantity,$item_name){
+    public function order($name,$phone,$email,$address,$city,$state,$post_code,$country,$order_day,$order_time,$id,$res_name,$item_attr,$price,$quantity,$item_name){
 
         /*$query=$this->db->query("SELECT * FROM `restaurant`");
         return $query->result();*/
 
         $data = array(
-            'userid' => $userid,
+
             'name'=>$name,
             'email' => $email ,
 
@@ -65,14 +65,44 @@ class Orderm extends CI_Model
 
 
     }
-    public function accept_order($id){
+    public function accept_order($id)
+    {
 
         /*$query = $this->db->get('order_cart');
         return $query->result();*/
-        $this->db->query("INSERT INTO `order` SELECT * FROM `order_cart` WHERE `id`= '$id'");
-        $this->db->query("DELETE FROM `order_cart` WHERE `id`= '$id'");
+        /* $this->db->query("INSERT INTO `order` SELECT * FROM `order_cart` WHERE `id`= '$id'");
+         $this->db->query("DELETE FROM `order_cart` WHERE `id`= '$id'");*/
+
+        $query = $this->db->get_where('order_cart', array('id' => $id));
+
+        foreach ($query->result() as $e) {
+
+            $data = array(
+                'name' => $e->name,
+                'username' => $e->username,
+                'email' => $e->email,
+                'address' => $e->address,
+                'city' => $e->city,
+                'state' => $e->state,
+                'postcode' => $e->postcode,
+                'country' => $e->country,
+                'phone' => $e->phone,
+                'res_id' => $e->res_id,
+                'res_name' => $e->res_name,
+                'item_name' => $e->item_name,
+                'item_attr' => $e->item_attr,
+                'price' => $e->price,
+                'quantity' => $e->quantity,
+                'order_time' => $e->order_time,
+                'order_day' => $e->order_day,
+                'date' => $e->date,
 
 
+            );
+            $this->db->insert('order', $data);
+
+        }
+        $this->db->delete('order', array('id' => $id));
     }
 
 

@@ -87,33 +87,17 @@
 
                             <?php
                             $count=1;
+
                            ?>
                             <div class="table-responsive">
                                 <table class="table table-borderd">
+
                                     <thead>
                                         <tr>
 
-                                            <td><?php echo $count ?></td>
-                                            <td><?php echo $s->name ?></td>
-                                            <td><?php echo $s->type ?></td>
-                                            <td><?php echo $s->address ?></td>
-                                            <td><?php echo $s->website ?></td>
-                                            <td><?php echo $s->email ?></td>
-                                            <td><?php echo $s->city ?></td>
-                                            <td><?php echo $s->state ?></td>
-                                            <td><?php echo $s->postal_code ?></td>
-                                            <td><?php echo $s->country ?></td>
-                                            <td><?php echo $s->time ?></td>
-                                            <td><?php echo $s->username ?></td>
-                                            <td><?php echo $s->password ?></td>
-                                            <td><?php echo $s->vat ?></td>
-                                            <td><?php echo $s->status ?></td>
-                                            <td><img src = "<?php echo base_url()?>/img/slider_single_restuarant/<?php echo $s->image ?>" alt = 'pic' height="100" width="100"/></td>
 
-                                            <td><button data-panel-id="<?= $s->id ?>" onclick="selectid(this)">Accept</button></td>
-                                            <td><button data-panel-id="<?= $s->id ?>" onclick="selectid1(this)">Delete</button></td>
 
-                                            <th>SL</th>
+
                                             <th>Name</th>
                                             <th>Type</th>
                                             <th>Address</th>
@@ -129,16 +113,18 @@
                                             <th>VAT</th>
                                             <th>Status</th>
                                             <th>Image</th>
-                                            <th>Action</th>
+                                            <th colspan="2">Action</th>
 
 
                                         </tr>
                                     </thead>
 
+
+                                    <form method="post"   >
                                     <?php foreach ($req_restaurant as $s){ ?>
                                         <tbody>
                                             <tr>
-                                                <td><?php echo $count ?></td>
+
                                                 <td><?php echo $s->name ?></td>
                                                 <td><?php echo $s->type ?></td>
                                                 <td><?php echo $s->address ?></td>
@@ -155,31 +141,24 @@
                                                 <td><?php echo $s->status ?></td>
                                                 <td><img src = "<?php echo base_url()?>/img/slider_single_restuarant/<?php echo $s->image ?>" height="100" width="100"/></td>
 
-                                                <td> <button class="btn btn-success" data-panel-id="<?= $s->res_id ?>" onclick="selectid(this)">Accept</button> </td>
+
+                                                <td><button class="btn btn-success" type="submit"  formaction="<?php echo base_url()?>Admin_Restaurant_Req/accept_res/<?php echo $s->id ?>" onclick="return confirm('Are you confirm to accept this Resturant?')" >Accept</button></td>
+
+                                                <td><button class="btn btn-danger" type="submit"  formaction="<?php echo base_url()?>Admin_Restaurant_Req/delete_res/<?php echo $s->id ?>" onclick="return confirm('Are you confirm to delete this Resturant?')" >Delete</button></td>
+
+
                                             </tr>
                                         </tbody>
 
                                         <?php
-                                        $count++;
+
                                     }
                                     ?>
                                 </table>
                             </div>
                         </div>
 
-                            <div id="myModal3" class="modal">
 
-                                <!-- Modal content -->
-                                <div class="modal-content">
-                                    <span class="close">×</span>
-
-                                    <h2>Edit Content</h2>
-                                    <div id="txtHint"></div>
-
-                                </div>
-
-
-                            </div>
 
                         </div>
 
@@ -199,60 +178,7 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script>
 
-
-    // Get the modal
-    // var modal = document.getElementById('myModal');
-
-    var modal3 = document.getElementById('myModal3');
-
-    // Get the button that opens the modal
-    //var btn = document.getElementById("myBtn");
-
-
-    var span2 = document.getElementsByClassName("close")[0];
-    // When the user clicks the button, open the modal
-    // btn = $(x).data('panel-name');
-
-
-
-
-    function selectid(x) {
-       // modal3.style.display = "block";
-        btn = $(x).data('panel-id');
-
-        //alert(btn);
-        $.ajax({
-            type:'POST',
-            url:'<?php echo base_url("Admin_Restaurant_Req/accept_res/")?>'+btn,
-            data:{'id':btn},
-            cache: false,
-            success:function(data)
-            {
-                //alert("Restaurant request accepted");
-                alert(data);
-            }
-
-        });
-
-
-
-
-    }
-    span2.onclick = function() {
-        modal3.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal3) {
-            modal3.style.display = "none";
-        }
-    }
-
-
-</script>
 <script>
     $(document).ready(function() {
         $('#summernote').summernote();

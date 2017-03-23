@@ -287,10 +287,48 @@ class Restaurantm extends CI_Model
     }
     public function accept_res($id){
 
-        //$res_id=$this->uri->segment(3);
-        /*$query=$this->db->query("SELECT * FROM `restaurant`,`restaurant_details` WHERE `restaurant`.`res_id`=`restaurant_details`.`res_id` and `restaurant`.`res_id`='$id' ");
-        return $query->result();*/
-        $this->db->query("INSERT INTO `restaurant` SELECT * FROM `order_cart` WHERE `id`= '$id'");
+
+
+        $query = $this->db->get_where('res_request', array('id' => $id));
+        //return $query->result();
+
+        foreach ($query->result() as $e){
+
+            $data=array(
+                'name'=>$e->name,
+                'type'=>$e->type,
+                'address'=>$e->address,
+                'website'=>$e->website,
+                'email'=>$e->email,
+                'city'=>$e->city,
+                'state'=>$e->state,
+                'postal_code'=>$e->postal_code,
+                'country'=>$e->country,
+                'time'=>$e->time,
+                'username'=>$e->username,
+                'password'=>$e->password,
+                'vat'=>$e->vat,
+                'status'=>$e->status,
+                'image'=>$e->image,
+
+            );
+            $data1= array(
+                'username'=>$e->username,
+                'password'=>$e->password,
+                'type'=>'Res'
+
+            );
+            $this->db->insert('restaurant', $data);
+            $this->db->insert('login', $data1);
+
+        }
+        $this->db->delete('res_request', array('id' => $id));
+
+    }
+
+    public function delete_res($id){
+
+        $this->db->delete('res_request', array('id' => $id));
 
 
     }

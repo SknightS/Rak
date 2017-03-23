@@ -19,7 +19,7 @@ class Profilem extends CI_Model
         $address=$this->input->post('address');
         $city=$this->input->post('city');
         $state=$this->input->post('state');
-        $postcode=$this->input->post('postcode');
+        $postcode=$this->input->post('postal_code');
         $country=$this->input->post('country');
 
         $data = array(
