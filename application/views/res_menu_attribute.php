@@ -18,13 +18,13 @@
 
 
     <!-- search box-->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>css/style.css" rel="stylesheet">
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>css/sb-admin.css" rel="stylesheet">
     <link href="css/modal.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
@@ -110,28 +110,29 @@
 
                             <?php if($this->input->post('btn_search_menu_attr')){
                             ?>
-                            <div>
-                                <table class=" table table-responsive" border="1">
-                                    <tr>
+                            <div class="table-responsive">
+                                <table class=" table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Item Name</th>
+                                            <th>Item attribute</th>
+                                            <th>Price</th>
+                                            <th colspan="2">Action</th>
+                                        </tr>
+                                    </thead>
 
-
-                                        <th>Item Name</th>
-                                        <th>Item attribute</th>
-                                        <th>Price</th>
-                                        <th colspan="2">Action</th>
-                                    </tr>
                                     <?php foreach ($this->data['te'] as $e) {?>
                                     <!--<form method="post" action="<?php echo base_url()?>Admin_menu_attribute/edit_res"  >
                                     -->
-                                        <tr>
+                                        <tbody>
+                                            <tr>
+                                                <td><?php echo $e->item_name ?></td>
+                                                <td><?php echo $e->item_attribute?></td>
+                                                <td><?php echo $e->price?></td>
+                                                <td><button  data-panel-id="<?= $e->id ?>" onclick="selectid4(this)">Edit</button></td>
+                                            </tr>
+                                        </tbody>
 
-
-                                            <td><?php echo $e->item_name ?></td>
-                                            <td><?php echo $e->item_attribute?></td>
-                                            <td><?php echo $e->price?></td>
-                                            <td><button  data-panel-id="<?= $e->id ?>" onclick="selectid4(this)">Edit</button></td>
-
-                                        </tr>
                                     <!--</form>-->
                                     <?php }} ?>
                                 </table>
@@ -143,39 +144,47 @@
                             $count = 1;
                             ?>
 
-                            <table class=" table table-responsive" border="1">
-                                <tr>
+                            <div class="table-responsive">
+                                <table class=" table table-bordered">
+                                    <thead>
+                                        <tr>
 
-                                    <th>Item Name</th>
-                                    <th>Item attribute</th>
-                                    <th>Price</th>
-                                    <th>Serial</th>
-                                    <th colspan="2">Action</th>
+                                            <th>Item Name</th>
+                                            <th>Item attribute</th>
+                                            <th>Price</th>
+                                            <th>Serial</th>
+                                            <th colspan="2">Action</th>
 
-
-                                </tr>
-
-                                <?php
-                                foreach ($mattribute as $s) {
-                                ?>
-
-                                    <tr>
-
-                                        <td><?php echo $s->item_name ?></td>
-                                        <td><?php echo $s->item_attribute ?></td>
-                                        <td><?php echo $s->price ?></td>
-                                        <td><?php echo $s->serial ?></td>
-                                        <td>
-                                            <button data-panel-id="<?= $s->id ?>" onclick="selectid(this)">Edit</button>
-                                        </td>
-                                    </tr>
+                                        </tr>
+                                    </thead>
 
                                     <?php
+                                    foreach ($mattribute as $s) {
+                                        ?>
+                                        <tbody>
+                                            <tr>
+
+                                                <td><?php echo $s->item_name ?></td>
+                                                <td><?php echo $s->item_attribute ?></td>
+                                                <td><?php echo $s->price ?></td>
+                                                <td><?php echo $s->serial ?></td>
+                                                <td>
+                                                    <button data-panel-id="<?= $s->id ?>" onclick="selectid(this)">Edit</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+
+
+                                        <?php
                                         $count++;
-                                        }}
+                                    }}
                                     ?>
 
-                            </table>
+                                </table>
+                            </div>
+
+
 
                             <div id="myModal3" class="modal">
                                 <br/><br/><br/>
