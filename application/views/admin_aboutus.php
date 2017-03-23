@@ -121,10 +121,10 @@
                         <div class="panel-heading"><h3>About Visual Instruction</h3></div>
                         <div class="panel-body">
                             <div style="margin-bottom: 10px">
-                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                                <a target="_blank" href="<?php echo base_url()?>img/rak-screen-short-desing/about1.JPG"><img class="img-responsive" src="<?php echo base_url()?>img/rak-screen-short-desing/about1.JPG"></a>
                             </div>
                             <div>
-                                <p>This is some textual instructions...</p>
+                                <p></p>
                             </div>
 
                         </div>
@@ -185,10 +185,10 @@
                         <div class="panel-heading"><h3>About Details Visual Instruction</h3></div>
                         <div class="panel-body">
                             <div style="margin-bottom: 10px">
-                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                                <a target="_blank" href="<?php echo base_url()?>img/rak-screen-short-desing/about2.JPG"><img class="img-responsive" src="<?php echo base_url()?>img/rak-screen-short-desing/about2.JPG"></a>
                             </div>
                             <div>
-                                <p>This is some textual instructions...</p>
+                                <p></p>
                             </div>
 
                         </div>
@@ -313,10 +313,10 @@
                         <div class="panel-heading"><h3>About Feature Visual Instruction</h3></div>
                         <div class="panel-body">
                             <div style="margin-bottom: 10px">
-                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                                <a target="_blank" href="<?php echo base_url()?>img/rak-screen-short-desing/about3.JPG"><img class="img-responsive" src="<?php echo base_url()?>img/rak-screen-short-desing/about3.JPG"></a>
                             </div>
                             <div>
-                                <p>This is some textual instructions...</p>
+                                <p></p>
                             </div>
 
                         </div>
@@ -376,10 +376,10 @@
                         <div class="panel-heading"><h3>About Banner Visual Instruction</h3></div>
                         <div class="panel-body">
                             <div style="margin-bottom: 10px">
-                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                                <a target="_blank" href="<?php echo base_url()?>img/rak-screen-short-desing/about4.JPG"><img class="img-responsive" src="<?php echo base_url()?>img/rak-screen-short-desing/about4.JPG"></a>
                             </div>
                             <div>
-                                <p>This is some textual instructions...</p>
+                                <p></p>
                             </div>
 
                         </div>

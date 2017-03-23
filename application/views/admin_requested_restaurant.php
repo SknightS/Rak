@@ -93,26 +93,6 @@
                                     <thead>
                                         <tr>
 
-                                            <td><?php echo $count ?></td>
-                                            <td><?php echo $s->name ?></td>
-                                            <td><?php echo $s->type ?></td>
-                                            <td><?php echo $s->address ?></td>
-                                            <td><?php echo $s->website ?></td>
-                                            <td><?php echo $s->email ?></td>
-                                            <td><?php echo $s->city ?></td>
-                                            <td><?php echo $s->state ?></td>
-                                            <td><?php echo $s->postal_code ?></td>
-                                            <td><?php echo $s->country ?></td>
-                                            <td><?php echo $s->time ?></td>
-                                            <td><?php echo $s->username ?></td>
-                                            <td><?php echo $s->password ?></td>
-                                            <td><?php echo $s->vat ?></td>
-                                            <td><?php echo $s->status ?></td>
-                                            <td><img src = "<?php echo base_url()?>/img/slider_single_restuarant/<?php echo $s->image ?>" alt = 'pic' height="100" width="100"/></td>
-
-                                            <td><button data-panel-id="<?= $s->id ?>" onclick="selectid(this)">Accept</button></td>
-                                            <td><button data-panel-id="<?= $s->id ?>" onclick="selectid1(this)">Delete</button></td>
-
                                             <th>SL</th>
                                             <th>Name</th>
                                             <th>Type</th>
@@ -129,7 +109,7 @@
                                             <th>VAT</th>
                                             <th>Status</th>
                                             <th>Image</th>
-                                            <th>Action</th>
+                                            <th colspan="2">Action</th>
 
 
                                         </tr>
@@ -156,6 +136,7 @@
                                                 <td><img src = "<?php echo base_url()?>/img/slider_single_restuarant/<?php echo $s->image ?>" height="100" width="100"/></td>
 
                                                 <td> <button class="btn btn-success" data-panel-id="<?= $s->res_id ?>" onclick="selectid(this)">Accept</button> </td>
+                                                <td> <button class="btn btn-success" data-panel-id="<?= $s->res_id ?>" onclick="selectid1(this)">Reject</button> </td>
                                             </tr>
                                         </tbody>
 
@@ -201,22 +182,14 @@
 <!-- jQuery -->
 <script>
 
-
     // Get the modal
     // var modal = document.getElementById('myModal');
-
     var modal3 = document.getElementById('myModal3');
-
     // Get the button that opens the modal
     //var btn = document.getElementById("myBtn");
-
-
     var span2 = document.getElementsByClassName("close")[0];
     // When the user clicks the button, open the modal
     // btn = $(x).data('panel-name');
-
-
-
 
     function selectid(x) {
        // modal3.style.display = "block";
@@ -225,7 +198,7 @@
         //alert(btn);
         $.ajax({
             type:'POST',
-            url:'<?php echo base_url("Admin_Restaurant_Req/accept_res/")?>'+btn,
+            url:'<?php echo base_url("Admin_Restaurant_Req/insert_res/")?>'+btn,
             data:{'id':btn},
             cache: false,
             success:function(data)
@@ -237,12 +210,35 @@
         });
 
 
+    }
+
+
+    function selectid1(x) {
+        // modal3.style.display = "block";
+        btn = $(x).data('panel-id');
+
+        //alert(btn);
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Admin_Restaurant_Req/insert_res/")?>'+btn,
+            data:{'id':btn},
+            cache: false,
+            success:function(data)
+            {
+                //alert("Restaurant request accepted");
+                alert(data);
+            }
+
+        });
 
 
     }
+
     span2.onclick = function() {
         modal3.style.display = "none";
     }
+
+
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {

@@ -24,7 +24,7 @@ class Submit_Restaurant_Request extends CI_Controller
 
         $this->load->model('Restaurantm');
         $this->Restaurantm->submit_restuarant_content();
-        redirect(Admin_Restaurant_Req);
+        redirect(Submit_Restaurant_Request);
     }
 
     public function get_submitted_res(){

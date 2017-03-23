@@ -73,7 +73,7 @@ class Restaurantm extends CI_Model
         $password= $this->input->post('password');
         $vat= $this->input->post('vat');
         $status  = $this->input->post('status');
-        $image = $this->input->post('image');
+        $phone = $this->input->post('phone_number');
         $website = $this->input->post('website');
         $email = $this->input->post('email');
 
@@ -84,6 +84,7 @@ class Restaurantm extends CI_Model
             'name' => $name,
             'type' => $type,
             'address' => $address,
+            'phone' =>$phone,
             'website' => $website,
             'email' =>$email,
             'city' => $city,

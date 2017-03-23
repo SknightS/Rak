@@ -127,10 +127,10 @@
                         <div class="panel-heading"><h3>Main Content Visual Instruction</h3></div>
                         <div class="panel-body">
                             <div style="margin-bottom: 10px">
-                                <a target="_blank" href="<?php echo base_url()?>img/main_content_image.png"><img class="img-responsive" src="<?php echo base_url()?>img/main_content_image.png"></a>
+                                <a target="_blank" href="<?php echo base_url()?>img/rak-screen-short-desing/home1.JPG"><img class="img-responsive" src="<?php echo base_url()?>img/rak-screen-short-desing/home1.JPG"></a>
                             </div>
                             <div>
-                                <p>This is some textual instructions...</p>
+                                <p></p>
                             </div>
 
                         </div>
@@ -190,7 +190,7 @@
                         <div class="panel-heading"><h3>Resturant Content And More Visual Instruction</h3></div>
                         <div class="panel-body">
                             <div style="margin-bottom: 10px">
-                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                                <a target="_blank" href="<?php echo base_url()?>img/rak-screen-short-desing/home1.2.JPG"><img class="img-responsive" src="<?php echo base_url()?>img/rak-screen-short-desing/home1.2.JPG"></a>
                             </div>
                             <div>
                                 <p>This is some textual instructions...</p>
@@ -327,10 +327,10 @@
                 </div>
                 <div class="col-md-4">
                     <div class="panel panel-success">
-                        <div class="panel-heading"><h3>Resturant Content And More Visual Instruction</h3></div>
+                        <div class="panel-heading"><h3>Section two Content And More Visual Instruction</h3></div>
                         <div class="panel-body">
                             <div style="margin-bottom: 10px">
-                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                                <a target="_blank" href="<?php echo base_url()?>img/rak-screen-short-desing/customercontact2.JPG"><img class="img-responsive" src="<?php echo base_url()?>img/rak-screen-short-desing/customercontact2.JPG"></a>
                             </div>
                             <div>
                                 <p>This is some textual instructions...</p>
@@ -456,13 +456,13 @@
                 </div>
                 <div class="col-md-4">
                     <div class="panel panel-success">
-                        <div class="panel-heading"><h3>Resturant Content And More Visual Instruction</h3></div>
+                        <div class="panel-heading"><h3>Section four Content And More Visual Instruction</h3></div>
                         <div class="panel-body">
                             <div style="margin-bottom: 10px">
-                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                                <a target="_blank" href="<?php echo base_url()?>img/rak-screen-short-desing/home4.JPG"><img class="img-responsive" src="<?php echo base_url()?>img/rak-screen-short-desing/home4.JPG"></a>
                             </div>
                             <div>
-                                <p>This is some textual instructions...</p>
+                                <p></p>
                             </div>
 
                         </div>
@@ -473,7 +473,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="panel panel-success">
-                        <div class="panel-heading"><h3>Resturant Content And More</h3></div>
+                        <div class="panel-heading"><h3>Section five Content And More</h3></div>
                         <div class="panel-body">
                             <form method="post" action="<?php echo base_url()?>Admin_Home/insert_section_five" enctype="multipart/form-data">
 
@@ -501,12 +501,12 @@
                                         ?>
 
                                         <div class="form-group">
-                                            <label>Section four Big</label>
+                                            <label>Section five Big</label>
                                             <input class="form-control" type="text" name="sfivebig" value="<?php echo $s->big?>">
                                         </div>
 
                                         <div class="form-group">
-                                            <label>Section four Small</label>
+                                            <label>Section five Small</label>
                                             <input class="form-control" type="text" name="sfivesmall" value="<?php echo $s->small?>">
                                         </div>
 
@@ -526,13 +526,13 @@
                 </div>
                 <div class="col-md-4">
                     <div class="panel panel-success">
-                        <div class="panel-heading"><h3>Resturant Content And More Visual Instruction</h3></div>
+                        <div class="panel-heading"><h3>Section five Content And More Visual Instruction</h3></div>
                         <div class="panel-body">
                             <div style="margin-bottom: 10px">
-                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                                <a target="_blank" href="<?php echo base_url()?>img/rak-screen-short-desing/home5.JPG"><img class="img-responsive" src="<?php echo base_url()?>img/rak-screen-short-desing/home5.JPG"></a>
                             </div>
                             <div>
-                                <p>This is some textual instructions...</p>
+                                <p></p>
                             </div>
 
                         </div>
@@ -629,13 +629,13 @@
                 </div>
                 <div class="col-md-4">
                     <div class="panel panel-success">
-                        <div class="panel-heading"><h3>Resturant Content And More Visual Instruction</h3></div>
+                        <div class="panel-heading"><h3>Section six Content And More Visual Instruction</h3></div>
                         <div class="panel-body">
                             <div style="margin-bottom: 10px">
-                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                                <a target="_blank" href="<?php echo base_url()?>img/rak-screen-short-desing/home6.JPG"><img class="img-responsive" src="<?php echo base_url()?>img/rak-screen-short-desing/home6.JPG"></a>
                             </div>
                             <div>
-                                <p>This is some textual instructions...</p>
+                                <p></p>
                             </div>
 
                         </div>

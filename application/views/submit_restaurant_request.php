@@ -67,13 +67,13 @@
 							<div class="col-md-6 col-sm-6">
 								<div class="form-group">
 									<label>Name</label>
-									<input type="text" class="form-control" id="name" name="name" placeholder="Jhon">
+									<input type="text" class="form-control" id="name" name="name" placeholder="">
 								</div>
 							</div>
 							<div class="col-md-6 col-sm-6">
 								<div class="form-group">
 									<label>Type</label>
-									<input type="text" class="form-control" id="type" name="type" placeholder="Doe">
+									<input type="text" class="form-control" id="type" name="type" placeholder="">
 								</div>
 							</div>
 						</div>
@@ -81,13 +81,13 @@
 							<div class="col-md-6 col-sm-6">
 								<div class="form-group">
 									<label>Address</label>
-									<input type="email" id="address" name="address" class="form-control " placeholder="jhon@email.com">
+									<input type="text" id="address" name="address" class="form-control " placeholder="">
 								</div>
 							</div>
 							<div class="col-md-6 col-sm-6">
 								<div class="form-group">
 									<label>Website</label>
-									<input type="text" id="website" name="website" class="form-control" placeholder="00 44 5435435">
+									<input type="text" id="website" name="website" class="form-control" placeholder="">
 								</div>
 							</div>
 						</div>
@@ -95,13 +95,13 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<label>Email</label>
-                                   <input type="text" id="email" name="email" class="form-control" placeholder="Pizza King">
+                                   <input type="text" id="email" name="email" class="form-control" placeholder="">
 								</div>
 							</div>
                             <div class="col-md-6">
 								<div class="form-group">
 									<label>City</label>
-                                   <input type="text" id="city" name="city" class="form-control" placeholder="http://">
+                                   <input type="text" id="city" name="city" class="form-control" placeholder="">
 								</div>
 							</div>
 						</div><!-- End row  -->
@@ -109,13 +109,13 @@
 							<div class="col-md-6">
 								<div class="form-group">
                                 	<label>State</label>
-                                   <input type="text" id="state" name="state" class="form-control" placeholder="Las Vegas">
+                                   <input type="text" id="state" name="state" class="form-control" placeholder="">
 								</div>
 							</div>
                             <div class="col-md-6">
 								<div class="form-group">
                                 	<label>Postal code</label>
-                                   <input type="text" id="postal_code" name="postal_code" class="form-control" placeholder="00103">
+                                   <input type="text" id="postal_code" name="postal_code" class="form-control" placeholder="">
 								</div>
 							</div>
 						</div><!-- End row  -->
@@ -123,13 +123,13 @@
 							<div class="col-md-6">
 								<div class="form-group">
                                 	<label>Country</label>
-                                   <input type="text" class="form-control" placeholder="Password"  id="country" name="country">
+                                   <input type="text" class="form-control" placeholder=""  id="country" name="country">
 								</div>
 							</div>
                             <div class="col-md-6">
 								<div class="form-group">
                                 	<label>Time</label>
-                                   <input type="text" class="form-control" placeholder="Confirm password"  id="time" name="time">
+                                   <input type="text" class="form-control" placeholder=""  id="time" name="time">
 								</div>
 							</div>
 						</div><!-- End row  -->
@@ -137,13 +137,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>User name</label>
-                                    <input type="text" class="form-control" placeholder="Confirm password"  id="password2" name="username">
+                                    <input type="text" class="form-control" placeholder=""  id="password2" name="username">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input type="text" class="form-control" placeholder="Password"  id="password" name="password">
+                                    <input type="text" class="form-control" placeholder=""  id="password" name="password">
                                 </div>
                             </div>
                         </div><!-- End row  -->
@@ -151,17 +151,23 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Vat</label>
-                                    <input type="text" class="form-control" placeholder="Vat"  id="vat" name="vat">
+                                    <input type="text" class="form-control" placeholder=""  id="vat" name="vat">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Status</label>
-                                    <input type="text" class="form-control" placeholder="Status"  id="status" name="status">
+                                    <input type="text" class="form-control" placeholder=""  id="status" name="status">
                                 </div>
                             </div>
                         </div><!-- End row  -->
                         <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="text" id="phone_number" name="phone_number" class="form-control " placeholder="">
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <label>Image </label>
                                 <input class="form-control" type="file" name="res_image" id="res_image" value="res_image" >

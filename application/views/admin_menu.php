@@ -194,10 +194,27 @@
                         <div class="panel-heading"><h3>Main Content Visual Instruction</h3></div>
                         <div class="panel-body">
                             <div style="margin-bottom: 10px">
-                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+
                             </div>
                             <div>
-                                <p>This is some textual instructions...</p>
+                                <p>
+                                    1. You can select any restaurant name from the "Restaurant" drop-down menu.<br/>
+                                    2. You can choose any item type from the item type drop-down menu.<br/>
+                                    3. If there is no item type then select the '+' button.<br/>
+                                        3.1. A pop up window will appear.<br/>
+                                        3.2. Select the restaurant name again from the drop-down menu.<br/>
+                                        3.4. Then type the menu you want to add.<br/>
+                                        3.5. Then press the submit button on order to add the item type.<br/>
+                                    4. Add the item name in the item name field.<br/>
+                                    5. Add some description of the item in the description field.<br/>
+                                    6. If you want to add some extra attribute to the item press "Add" button.<br/>
+                                        6.1. Add the size of the item.<br/>
+                                        6.2. Add the price of the item for the size.<br/>
+                                        6.3. Add the serial number.<br/>
+                                        6.4. If you want another attribute to add press "Add Button" in below.<br/>
+                                        6.5. If you want to remove attribute press the "Remove Button".<br/>
+                                    7. If you complete the form, then press the "submit" button to add the item in your menu.<br/>
+                                </p>
                             </div>
 
                         </div>

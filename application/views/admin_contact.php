@@ -124,7 +124,7 @@
                         <div class="panel-heading"><h3>Contact Visual Instruction</h3></div>
                         <div class="panel-body">
                             <div style="margin-bottom: 10px">
-                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                                <a target="_blank" href="<?php echo base_url()?>img/rak-screen-short-desing/contact1.JPG"><img class="img-responsive" src="<?php echo base_url()?>img/rak-screen-short-desing/contact1.JPG"></a>
                             </div>
                             <div>
                                 <p>This is some textual instructions...</p>
@@ -200,10 +200,10 @@
                         <div class="panel-heading"><h3>Customer Service Visual Instruction</h3></div>
                         <div class="panel-body">
                             <div style="margin-bottom: 10px">
-                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                                <a target="_blank" href="<?php echo base_url()?>img/rak-screen-short-desing/customercontact2.JPG"><img class="img-responsive" src="<?php echo base_url()?>img/rak-screen-short-desing/customercontact2.JPG"></a>
                             </div>
                             <div>
-                                <p>This is some textual instructions...</p>
+                                <p></p>
                             </div>
 
                         </div>
@@ -275,7 +275,7 @@
                         <div class="panel-heading"><h3>Resturant Service Visual Instruction</h3></div>
                         <div class="panel-body">
                             <div style="margin-bottom: 10px">
-                                <a target="_blank" href="<?php echo base_url()?>img/#.png"><img class="img-responsive" src="<?php echo base_url()?>img/#.png"></a>
+                                <a target="_blank" href="<?php echo base_url()?>img/rak-screen-short-desing/rescontact2.JPG"><img class="img-responsive" src="<?php echo base_url()?>img/rak-screen-short-desing/rescontact2.JPG"></a>
                             </div>
                             <div>
                                 <p>This is some textual instructions...</p>
