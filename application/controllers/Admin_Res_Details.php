@@ -92,9 +92,11 @@ class Admin_Res_Details extends CI_Controller {
     public function insert_comment()
     {
         $this->load->model('Commentm');
-        $review = $this->input->post('review_text');
-        $res_id = $this->input->post('restaurant_name');
-        $this->Commentm->insert_comment($review,$res_id);
+        //$review = $this->input->post('review_text');
+        //$res_id = $this->input->post('restaurant_name');
+        $username = $this->session->userdata('username');
+        $this->Commentm->insert_comment($username);
+        redirect(Admin_Res_Details::get_instance());
     }
 
     public function editresdetails()

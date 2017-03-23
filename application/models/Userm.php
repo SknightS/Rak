@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 
-class Commentm extends CI_Model
+class Userm extends CI_Model
 {
     public function insert_comment($username)
     {
@@ -17,9 +17,9 @@ class Commentm extends CI_Model
         $this->db->insert('res_comment',$data);
     }
 
-    public function get_comment($resid)
+    public function get_user($user)
     {
-        $query = $this->db->query("SELECT * FROM `res_comment` WHERE `res_id` = '$resid'");
+        $query = $this->db->query("SELECT * FROM `user` WHERE `username` = '$user'");
         return $query->result();
     }
 }

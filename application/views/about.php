@@ -89,6 +89,7 @@
 			<img src="img/devices.jpg" alt="" class="img-responsive">
 		</div>
 	</div><!-- End row -->
+
 	<hr class="more_margin">
     <?php
     foreach ($aboutUsfeature as $ausf) {
@@ -102,8 +103,14 @@
 
         <php }?>
         </div>
-	<div class="row">
-		<div class="col-md-6 wow fadeIn" data-wow-delay="0.1s">
+
+
+    <div class="row">
+        <?php
+    foreach ($aboutUsfeature as $ausf) {
+
+    ?>
+        <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s">
 			<div class="feature">
 				<i class="<?php echo $ausf->box_icon ?>"></i>
 				<h3><span><?php echo $ausf->box_header ?></span></h3>
@@ -111,56 +118,12 @@
                     <?php echo $ausf->box_details ?></p>
 			</div>
 		</div>
-		<div class="col-md-6 wow fadeIn" data-wow-delay="0.2s">
-			<div class="feature">
-				<i class="icon_documents_alt"></i>
-				<h3><span>+1000</span> Food Menu</h3>
-				<p>
-					 Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.
-				</p>
-			</div>
-		</div>
-	</div><!-- End row -->
-	<div class="row">
-		<div class="col-md-6 wow fadeIn" data-wow-delay="0.3s">
-			<div class="feature">
-				<i class="icon_bag_alt"></i>
-				<h3><span>Delivery</span> or Takeaway</h3>
-				<p>
-					 Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.
-				</p>
-			</div>
-		</div>
-		<div class="col-md-6 wow fadeIn" data-wow-delay="0.4s">
-			<div class="feature">
-				<i class="icon_mobile"></i>
-				<h3><span>Mobile</span> support</h3>
-				<p>
-					 Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.
-				</p>
-			</div>
-		</div>
-	</div><!-- End row -->
-	<div class="row">
-		<div class="col-md-6 wow fadeIn" data-wow-delay="0.5s">
-			<div class="feature">
-				<i class="icon_wallet"></i>
-				<h3><span>Cash</span> payment</h3>
-				<p>
-					 Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.
-				</p>
-			</div>
-		</div>
-		<div class="col-md-6 wow fadeIn" data-wow-delay="0.6s">
-			<div class="feature">
-				<i class="icon_creditcard"></i>
-				<h3><span>Secure card</span> payment</h3>
-				<p>
-					 Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.
-				</p>
-			</div>
-		</div>
-	</div><!-- End row -->
+    <?php } ?>
+    </div><!-- End row -->
+
+
+	<!--</div><!-- End row -->
+
 </div><!-- End container -->
 
 <div class="container-fluid">
