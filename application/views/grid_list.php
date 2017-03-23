@@ -78,16 +78,11 @@
 	<div class="row">
     
 		<div class="col-md-3">
-			<p>
-				<a class="btn_map" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap">View on map</a>
-			</p>
 			<div id="filters_col">
 				<a data-toggle="collapse" href="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters" id="filters_col_bt">Filters <i class="icon-plus-1 pull-right"></i></a>
 				<div class="collapse" id="collapseFilters">
 					<div class="filter_type">
-                    	<h6>Distance</h6>
-                        <input type="text" id="range" value="" name="range">
-						<h6>Type</h6>
+						<h6>Type:</h6>
 						<ul>
                             <?php foreach ($show_res_type as $e) { ?>
 
@@ -98,35 +93,6 @@
                                 }
                                 ?>
                         </ul>
-					</div>
-					<div class="filter_type">
-						<h6>Rating</h6>
-						<ul>
-							<li><label><input type="checkbox" class="icheck"><span class="rating">
-							<i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i>
-							</span></label></li>
-							<li><label><input type="checkbox" class="icheck"><span class="rating">
-							<i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
-							</span></label></li>
-							<li><label><input type="checkbox" class="icheck"><span class="rating">
-							<i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i>
-							</span></label></li>
-							<li><label><input type="checkbox" class="icheck"><span class="rating">
-							<i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i>
-							</span></label></li>
-							<li><label><input type="checkbox" class="icheck"><span class="rating">
-							<i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i><i class="icon_star"></i>
-							</span></label></li>
-						</ul>
-					</div>
-					<div class="filter_type">
-						<h6>Options</h6>
-						<ul class="nomargin">
-							<li><label><input type="checkbox" class="icheck">Delivery</label></li>
-							<li><label><input type="checkbox" class="icheck">Take Away</label></li>
-							<li><label><input type="checkbox" class="icheck">Distance 10Km</label></li>
-							<li><label><input type="checkbox" class="icheck">Distance 5Km</label></li>
-						</ul>
 					</div>
 				</div><!--End collapse -->
 			</div><!--End filters col-->
@@ -152,7 +118,7 @@
 			</div><!--End tools -->
             <div class="row">
         <?php foreach ($show_res_content as $s) { ?>
-                <div class="col-md-6 col-sm-6 wow zoomIn" data-wow-delay="0.1s">
+                <div class="col-md-6 col-sm-6 wow zoomIn" data-wow-delay="0.1s" style="height: 360px">
                     <a class="strip_list grid" href="<?php echo base_url()?>Item_Menu/show_menu/<?php echo $s->res_id?>">
                         <div class="ribbon_1">Popular</div>
                         <div class="desc">

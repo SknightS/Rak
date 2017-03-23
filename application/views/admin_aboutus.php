@@ -252,6 +252,10 @@
 
                                 <?php }else{ ?>
 
+
+
+                                    <input class="btn btn-success" type="button" value="ADD">
+
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
