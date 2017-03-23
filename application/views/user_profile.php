@@ -61,8 +61,7 @@
             <?php foreach ($this->data['profile'] as $p) {?>
                 <form method = "post" action = "<?php echo base_url()?>Profile/update_user" enctype = "multipart/form-data" >
 
-            <?php foreach ($profile as $p) {?>
-                <form method = "post" action = "<?php echo base_url()?>Profile/update_user/" enctype = "multipart/form-data" >
+
 
                 <div class="row" >
                     <div class="col-md-6 col-sm-6" >

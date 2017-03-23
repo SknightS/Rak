@@ -97,52 +97,105 @@
 			<div class="col-md-6">
 				<div class="box_style_2" id="order_process">
 					<h2 class="inner">Your order details</h2>
+
+                    <?php if ($this->session->userdata('type') == "User") {
+                    foreach ($this->data['show_userinfo'] as $e){?>
                     <form method="post" action="<?php echo base_url("Item_Menu/order_confirm/")?>">
 					<div class="form-group">
 						<label>Name</label>
-						<input type="text" class="form-control"  name="name_order" placeholder="name">
+						<input type="text" class="form-control"  name="name_order" placeholder="name" value="<?php echo $e->name?>">
 					</div>
 
 					<div class="form-group">
 						<label>Telephone/mobile</label>
-						<input type="text" id="tel_order" name="tel_order" class="form-control" placeholder="Telephone/mobile">
+						<input type="text" id="tel_order" name="tel_order" class="form-control" placeholder="Telephone/mobile" value="<?php echo $e->phone?>">
 					</div>
 					<div class="form-group">
 						<label>Email</label>
-						<input type="email" id="email_booking_2" name="email_order" class="form-control" placeholder="Your email">
+						<input type="email" id="email_booking_2" name="email_order" class="form-control" placeholder="Your email" value="<?php echo $e->email?>">
 					</div>
 					<div class="form-group">
 						<label>Your full address</label>
-						<input type="text" id="address_order" name="address_order" class="form-control" placeholder=" Your full address">
+						<input type="text" id="address_order" name="address_order" class="form-control" placeholder=" Your full address" value="<?php echo $e->full_address?>">
 					</div>
 					<div class="row">
 						<div class="col-md-6 col-sm-6">
 							<div class="form-group">
 								<label>City</label>
-								<input type="text" id="city_order" name="city_order" class="form-control" placeholder="Your city">
+								<input type="text" id="city_order" name="city_order" class="form-control" placeholder="Your city" value="<?php echo $e->city?>">
 							</div>
 						</div>
                         <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>State</label>
-                                <input type="text" id="city_order" name="state_order" class="form-control" placeholder="Your state">
+                                <input type="text" id="city_order" name="state_order" class="form-control" placeholder="Your state" value="<?php echo $e->state?>">
                             </div>
                         </div>
 
 						<div class="col-md-6 col-sm-6">
 							<div class="form-group">
 								<label>Postal code</label>
-								<input type="text" id="pcode_oder" name="pcode_oder" class="form-control" placeholder=" Your postal code">
+								<input type="text" id="pcode_oder" name="pcode_oder" class="form-control" placeholder=" Your postal code" value="<?php echo $e->postcode?>">
 							</div>
 						</div>
                         <div class="col-md-6 col-sm-6">
                             <div class="form-group">
                                 <label>Country</label>
-                                <input type="text" id="city_order" name="country_order" class="form-control" placeholder="Your county">
+                                <input type="text" id="city_order" name="country_order" class="form-control" placeholder="Your county" value="<?php echo $e->country?>">
                             </div>
                         </div>
 					</div>
 					<hr>
+                        <?php }} else{?>
+
+                        <form method="post" action="<?php echo base_url("Item_Menu/order_confirm/")?>">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" class="form-control"  name="name_order" placeholder="name" >
+                            </div>
+
+                            <div class="form-group">
+                                <label>Telephone/mobile</label>
+                                <input type="text" id="tel_order" name="tel_order" class="form-control" placeholder="Telephone/mobile" >
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" id="email_booking_2" name="email_order" class="form-control" placeholder="Your email" >
+                            </div>
+                            <div class="form-group">
+                                <label>Your full address</label>
+                                <input type="text" id="address_order" name="address_order" class="form-control" placeholder=" Your full address" >
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>City</label>
+                                        <input type="text" id="city_order" name="city_order" class="form-control" placeholder="Your city" >
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>State</label>
+                                        <input type="text" id="city_order" name="state_order" class="form-control" placeholder="Your state" >
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Postal code</label>
+                                        <input type="text" id="pcode_oder" name="pcode_oder" class="form-control" placeholder=" Your postal code" >
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Country</label>
+                                        <input type="text" id="city_order" name="country_order" class="form-control" placeholder="Your county" >
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <?php }?>
+
 					<div class="row">
 						<div class="col-md-6 col-sm-6">
 							<div class="form-group">
@@ -154,42 +207,21 @@
 								</select>
 							</div>
 						</div>
-						<div class="col-md-6 col-sm-6">
-							<div class="form-group">
-								<label>Delivery time</label>
-								<select class="form-control" name="delivery_schedule_time" id="delivery_schedule_time">
-									<option value="" selected>Select time</option>
-									<option value="11.30am">11.30am</option>
-									<option value="11.45am">11.45am</option>
-									<option value="12.15am">12.15am</option>
-									<option value="12.30am">12.30am</option>
-									<option value="12.45am">12.45am</option>
-									<option value="01.00pm">01.00pm</option>
-									<option value="01.15pm">01.15pm</option>
-									<option value="01.30pm">01.30pm</option>
-									<option value="01.45pm">01.45pm</option>
-									<option value="02.00pm">02.00pm</option>
-									<option value="07.00pm">07.00pm</option>
-									<option value="07.15pm">07.15pm</option>
-									<option value="07.30pm">07.30pm</option>
-									<option value="07.45pm">07.45pm</option>
-									<option value="08.00pm">08.00pm</option>
-									<option value="08.15pm">08.15pm</option>
-									<option value="08.30pm">08.30pm</option>
-									<option value="08.45pm">08.45pm</option>
-								</select>
-							</div>
-						</div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <label>Order Time</label>
+
+                                    <?php
+                                    date_default_timezone_set("America/New_York");
+
+                                    ?>
+                                    <input type="text" id="order_time" name="order_time" class="form-control" placeholder="Order Time"  value="<?php echo  date("h:i:sa");?>" readonly>
+
+                            </div>
+                        </div>
 					</div>
 					<hr>
-					<div class="row">
-						<div class="col-md-12">
-				
-								<label>Notes for the restaurant</label>
-								<textarea class="form-control" style="height:150px" placeholder="Ex. Allergies, cash change..." name="notes" id="notes"></textarea>
-				
-						</div>
-					</div>
+
 				</div><!-- End box_style_1 -->
 			</div><!-- End col-md-6 -->
             

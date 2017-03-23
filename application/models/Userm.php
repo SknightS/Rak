@@ -22,5 +22,10 @@ class Userm extends CI_Model
         $query = $this->db->query("SELECT * FROM `user` WHERE `username` = '$user'");
         return $query->result();
     }
+    public function show_userinfo($usename)
+    {
+        $query = $this->db->query("SELECT * FROM `user` WHERE `username` = '$usename'");
+        return $query->result();
+    }
 }
 ?>
