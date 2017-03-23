@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 20, 2017 at 12:34 PM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 5.5.38
+-- Generation Time: Mar 23, 2017 at 09:24 AM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 7.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -90,7 +90,8 @@ CREATE TABLE `about_us_feature` (
 
 INSERT INTO `about_us_feature` (`id`, `big`, `small`, `box_header`, `box_details`, `box_icon`) VALUES
 (1, 'Quick food quality feautures', 'Cum doctus civibus efficiantur in imperdiet deterruisset.', '+ 1000 Restaurants', 'Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.', 'icon_pencil'),
-(2, 'Quick food quality feautures', 'Cum doctus civibus efficiantur in imperdiet deterruisset.', '+ 1000 Restaurants', 'Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.', 'icon_pencil');
+(2, 'Quick food quality feautures', 'Cum doctus civibus efficiantur in imperdiet deterruisset.', '+ 1000 Restaurants', 'Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.', 'icon_pencil'),
+(3, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -309,7 +310,8 @@ CREATE TABLE `home_section_5` (
 INSERT INTO `home_section_5` (`id`, `big`, `small`, `image`) VALUES
 (1, 'We also deliver to your office', 'Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.', ''),
 (2, 'this is big', '', '15777061_1283400545037215_5109786879746060967_o.jpg'),
-(3, 'We also deliver to your office', 'Ridiculus sociosqu cursus neque cursus curae ante ..', '15777061_1283400545037215_5109786879746060967_o.jpg.');
+(3, 'We also deliver to your office', 'Ridiculus sociosqu cursus neque cursus curae ante ..', '15777061_1283400545037215_5109786879746060967_o.jpg.'),
+(4, 'We also deliver to your office', 'Ridiculus sociosqu cursus neque cursus curae ante ..', 'bg_office.jpg');
 
 -- --------------------------------------------------------
 
@@ -333,7 +335,8 @@ CREATE TABLE `home_section_6` (
 
 INSERT INTO `home_section_6` (`id`, `big`, `small`, `submit_big`, `submit_small`, `submit_details`, `image`) VALUES
 (1, 'Work with Us', 'Cum doctus civibus efficiantur in imperdiet deterruisset.', 'Submit your Restaurant', 'Start to earn customers', 'Lorem ipsum dolor sit amet, ut virtute fabellas vix, no pri falli eloquentiam adversarium. Ea legere labore eam. Et eum sumo ocurreret, eos ei saepe oratio omittantur, legere eligendi partiendo pro te.', ''),
-(2, 'Work with Us', '\nCum doctus civibus efficiantur in imperdiet deterruisset.', 'We are looking for a Driver', 'Start to earn money', 'Lorem ipsum dolor sit amet, ut virtute fabellas vix, no pri falli eloquentiam adversarium. Ea legere labore eam. Et eum sumo ocurreret, eos ei saepe oratio omittantur, legere eligendi partiendo pro te.', '');
+(2, 'Work with Us', '\nCum doctus civibus efficiantur in imperdiet deterruisset.', 'We are looking for a Driver', 'Start to earn money', 'Lorem ipsum dolor sit amet, ut virtute fabellas vix, no pri falli eloquentiam adversarium. Ea legere labore eam. Et eum sumo ocurreret, eos ei saepe oratio omittantur, legere eligendi partiendo pro te.', ''),
+(3, 'Work with Us', 'Cum doctus civibus efficiantur in imperdiet deterruisset.', 'We are looking for a Driver', 'Start to earn money', 'Lorem ipsum dolor sit amet, ut virtute fabellas vix, no pri falli eloquentiam adversarium. Ea legere labore eam. Et eum sumo ocurreret, eos ei saepe oratio omittantur, legere eligendi partiendo pro te.', 'submit_restaurant.jpg');
 
 -- --------------------------------------------------------
 
@@ -452,7 +455,47 @@ CREATE TABLE `login` (
 
 INSERT INTO `login` (`id`, `username`, `password`, `type`) VALUES
 (1, 'admin', 'admin@123', 'Admin'),
-(2, 'rumi', '123', 'User');
+(2, 'rumi', '123', 'User'),
+(3, 'akib', '123', 'Res'),
+(4, 'mmkkmk', 'kmmkmkm', 'Res'),
+(6, '', '', 'Res'),
+(7, '', '', 'Res'),
+(8, '', '', 'Res'),
+(9, '', '', 'Res'),
+(10, '', '', 'Res'),
+(11, '', '', 'Res'),
+(12, '', '', 'Res'),
+(13, '', '', 'Res'),
+(14, 'asdsad', 'asdsad', 'Res'),
+(15, 'asdsad', 'asdsad', 'Res'),
+(16, 'asdsad', 'asdsad', 'Res'),
+(17, 'mmkkmk', 'kmmkmkm', 'Res'),
+(18, 'mmkkmk', 'kmmkmkm', 'Res'),
+(19, 'mmkkmk', 'kmmkmkm', 'Res'),
+(20, 'mmkkmk', 'kmmkmkm', 'Res'),
+(21, 'mmkkmk', 'kmmkmkm', 'Res'),
+(22, 'asdsad', 'asdsad', 'Res'),
+(23, 'asdsad', 'asdsad', 'Res'),
+(24, 'asdsad', 'asdsad', 'Res'),
+(25, '', '', 'Res'),
+(26, '', '', 'Res'),
+(27, '', '', 'Res'),
+(28, 'asdsad', 'asdsad', 'Res'),
+(29, 'asdsad', 'asdsad', 'Res'),
+(30, 'asdsad', 'asdsad', 'Res'),
+(31, 'mmkkmk', 'kmmkmkm', 'Res'),
+(32, 'mmkkmk', 'kmmkmkm', 'Res'),
+(33, 'mmkkmk', 'kmmkmkm', 'Res'),
+(34, 'mmkkmk', 'kmmkmkm', 'Res'),
+(35, 'mmkkmk', 'kmmkmkm', 'Res'),
+(36, 'mmkkmk', 'kmmkmkm', 'Res'),
+(37, 'mmkkmk', 'kmmkmkm', 'Res'),
+(38, 'mmkkmk', 'kmmkmkm', 'Res'),
+(39, 'mmkkmk', 'kmmkmkm', 'Res'),
+(40, 'mmkkmk', 'kmmkmkm', 'Res'),
+(41, 'dt', '123', 'Res'),
+(42, '', '', 'Res'),
+(43, 'mmkkmk', 'kmmkmkm', 'Res');
 
 -- --------------------------------------------------------
 
@@ -475,8 +518,8 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`id`, `res_id`, `res_name`, `item_type`, `item_name`, `item_description`, `item_price`) VALUES
-(60, '5', 'Mexican TacoMex', 'Mexican Enchiladas', 'Fajitas', 'Fuisset mentitum deleniti sit ea.', NULL),
-(62, '5', 'Mexican TacoMex', 'Mexican Enchiladas', 'Mexican Enchiladas', 'Fuisset mentitum deleniti sit ea.', NULL),
+(60, '5', 'Mexican TacoMex', 'Mexican Enchiladas', 'Fajitas', 'Fuisset mentitum deleniti sit ea.', '100'),
+(62, '5', 'Mexican TacoMex', 'Mexican Enchiladas', 'Mexican Enchiladas', 'Fuisset mentitum deleniti sit ea.', '200'),
 (66, '6', 'Naples Pizza', 'Mexican Enchiladas', 'Fajitas', 'Fuisset mentitum deleniti sit ea', NULL),
 (67, '6', 'Naples Pizza', 'Mexican Enchiladas', 'Fajitas', 'Fuisset mentitum deleniti sit ea', NULL),
 (70, '8', 'Japan Food Sushi ', ' Mexican Enchiladas', 'Fajitas', 'Fuisset mentitum deleniti sit ea', NULL),
@@ -485,7 +528,7 @@ INSERT INTO `menu` (`id`, `res_id`, `res_name`, `item_type`, `item_name`, `item_
 (74, '9', 'Dragon Tower Chinese ', 'Cheese Quesadilla', 'Chorizo & Cheese', 'Fuisset mentitum deleniti sit ea.\r\n\r\n', NULL),
 (75, '9', 'Dragon Tower Chinese ', 'Cheese Quesadilla', 'Chorizo & Cheese', 'Fuisset mentitum deleniti sit ea.\r\n\r\n', NULL),
 (76, '9', 'Dragon Tower Chinese ', 'Cheese Quesadilla', 'Chorizo & Cheese', 'Fuisset mentitum deleniti sit ea.\r\n\r\n', NULL),
-(78, '11', 'China Food ', 'Chorizo & Cheese', 'Beef Taco', 'Fuisset mentitum deleniti sit ea.\r\n\r\n', NULL),
+(78, '11', 'China Food ', 'Chorizo & Cheese', 'Beef Taco', 'Fuisset mentitum deleniti sit ea.\r\n\r\n', '300'),
 (81, '11', 'China Food ', 'Chorizo & Cheese', 'Cheese Quesadilla', 'Fuisset mentitum deleniti sit ea.', NULL),
 (82, '11', 'China Food ', 'Chorizo & Cheese', 'Cheese Quesadilla', 'Fuisset mentitum deleniti sit ea.', NULL),
 (83, '11', 'China Food ', 'Chorizo & Cheese', 'Cheese Quesadilla', 'Fuisset mentitum deleniti sit ea.', NULL),
@@ -494,7 +537,21 @@ INSERT INTO `menu` (`id`, `res_id`, `res_name`, `item_type`, `item_name`, `item_
 (86, '6', 'Naples Pizza', 'Mexican Enchiladas', 'Cheese Quesadilla', 'Fuisset mentitum deleniti sit ea.', NULL),
 (88, '9', 'Dragon Tower Chinese ', 'Cheese Quesadilla', 'Chorizo & Cheese', 'Chorizo & Cheese Chorizo & Cheese', NULL),
 (89, '9', 'Dragon Tower Chinese ', 'Cheese Quesadilla', 'Chorizo & Cheese', 'Chorizo & Cheese Chorizo & Cheese', NULL),
-(90, '9', 'Dragon Tower Chinese ', 'Cheese Quesadilla', 'Chorizo & Cheese', 'Chorizo & Cheese Chorizo & Cheese', NULL);
+(90, '9', 'Dragon Tower Chinese ', 'Cheese Quesadilla', 'Chorizo & Cheese', 'Chorizo & Cheese Chorizo & Cheese', NULL),
+(91, '5', 'Mexican TacoMex', 'food', NULL, NULL, NULL),
+(92, '5', 'Mexican TacoMex', 'food', 'asa', 'asdas', '500'),
+(93, '5', 'Mexican TacoMex', 'pizza', NULL, NULL, NULL),
+(94, '5', 'Mexican TacoMex', 'Mexican Enchiladas', 'as', 'asd', '999'),
+(95, '5', 'Mexican TacoMex', 'FOOD', 'as', 'as', '111'),
+(96, '5', 'Mexican TacoMex', 'FOOD', 'as', 'as', '111'),
+(97, '5', 'Mexican TacoMex', 'FOOD', 'asasd', 'sadasda', NULL),
+(98, '5', 'Mexican TacoMex', 'FOOD', 'rumi', 'rumi', '000'),
+(99, '5', 'Mexican TacoMex', 'Mexican Enchiladas', 'asas', 'assadas', '222'),
+(100, '5', 'Mexican TacoMex', 'Mexican Enchiladas', 'asas', 'assadas', '222'),
+(101, '11', 'China Food ', 'Chorizo & Cheese', 'rumi', 'akib', '0000'),
+(102, '11', 'China Food ', 'Chorizo & Cheese', 'rumi', 'akib', NULL),
+(103, '5', 'Mexican TacoMex', 'FOOD', 'akib', 'akib', '66'),
+(104, '5', 'Mexican TacoMex', 'FOOD', 'akib', 'akib', NULL);
 
 -- --------------------------------------------------------
 
@@ -516,7 +573,6 @@ CREATE TABLE `menu_attribute` (
 --
 
 INSERT INTO `menu_attribute` (`id`, `res_id`, `item_name`, `item_attribute`, `price`, `serial`) VALUES
-(7, '5', 'Fajitas', 'Medium', '30', 0),
 (8, '5', 'Fajitas', 'Extra Large', '40', 0),
 (9, '5', 'Mexican Enchiladas', 'Medium', '10', 0),
 (10, '5', 'Mexican Enchiladas', 'Large', '20', 0),
@@ -526,12 +582,9 @@ INSERT INTO `menu_attribute` (`id`, `res_id`, `item_name`, `item_attribute`, `pr
 (14, '8', 'Fajitas', 'Medium ', '10', 0),
 (15, '8', 'Fajitas', 'Large ', '20', 0),
 (16, '8', 'Fajitas', 'Extra Large ', '30', 0),
-(17, '9', 'Chorizo & Cheese', 'Medium ', '10', 0),
+(17, '9', '   Chorizo & Cheese   ', ' small ', '   10   ', 2),
 (18, '9', 'Chorizo & Cheese', 'Large ', '20', 0),
 (19, '9', 'Chorizo & Cheese', 'Extra Large ', '30', 0),
-(20, '11', 'Beef Taco', 'Medium ', '10', 0),
-(21, '11', 'Beef Taco', 'Large ', '20', 0),
-(22, '11', 'Beef Taco', 'Extra Large ', '30', 0),
 (23, '11', 'Cheese Quesadilla', 'Medium ', '10', 0),
 (24, '11', 'Cheese Quesadilla', 'Large ', '20', 0),
 (25, '11', 'Cheese Quesadilla', 'Extra Large ', '30', 0),
@@ -540,8 +593,12 @@ INSERT INTO `menu_attribute` (`id`, `res_id`, `item_name`, `item_attribute`, `pr
 (28, '6', 'Cheese Quesadilla', 'Medium ', '10', 0),
 (29, '6', 'Cheese Quesadilla', 'Large ', '20', 0),
 (30, '9', 'Chorizo & Cheese', 'Medium ', '10', 0),
-(31, '9', 'Chorizo & Cheese', 'Large ', '20', 0),
-(32, '9', 'Chorizo & Cheese', 'Extra Large ', '30', 0);
+(31, '9', ' Chorizo ', ' Large  ', ' 20 ', 2),
+(32, '9', ' Chorizo & Cheese ', 'very small', ' 30 ', 1),
+(33, '5', 'asasd', 'sda', '555', 0),
+(34, '11', 'rumi', 'rumi', '1', 0),
+(35, '5', 'akib', 'akib', '66', 0),
+(37, '5', 'Fajitas ', ' Medium ', ' 300', 0);
 
 -- --------------------------------------------------------
 
@@ -555,6 +612,53 @@ CREATE TABLE `menu_type` (
   `type` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `menu_type`
+--
+
+INSERT INTO `menu_type` (`id`, `res_id`, `type`) VALUES
+(1, '11', 'Chorizo & Cheese'),
+(2, '5', 'Mexican Enchiladas'),
+(3, '5', 'FOOD'),
+(5, '9', 'burger');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order`
+--
+
+CREATE TABLE `order` (
+  `id` int(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `address` varchar(10000) NOT NULL,
+  `city` varchar(100) NOT NULL,
+  `state` varchar(100) NOT NULL,
+  `postcode` varchar(100) NOT NULL,
+  `country` varchar(100) NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `res_id` varchar(100) NOT NULL,
+  `res_name` varchar(100) NOT NULL,
+  `item_name` varchar(100) NOT NULL,
+  `item_attr` varchar(100) NOT NULL,
+  `price` varchar(100) NOT NULL,
+  `quantity` varchar(100) NOT NULL,
+  `order_time` varchar(100) NOT NULL,
+  `order_day` varchar(100) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `order`
+--
+
+INSERT INTO `order` (`id`, `name`, `username`, `email`, `address`, `city`, `state`, `postcode`, `country`, `phone`, `res_id`, `res_name`, `item_name`, `item_attr`, `price`, `quantity`, `order_time`, `order_day`, `date`) VALUES
+(1, 'rumi', 'rumi', 'mujtaba.rumi1@gmail.com', 'mirpur', 'dhaka', 'dhaka', '1216', 'bangladesh', '016800000', '6', '', 'burger', '', '200', '1', '08.45pm', 'Today', '2017-03-16 12:06:05'),
+(2, 'akib', 'rumi', 'mujtaba.rumi1@gmail.com', 'mirpur', 'dhaka', 'dhaka', '1216', 'bangladesh', '016800000', '1', '  American Burger  ', 'rumi', '', '5000', '1', '01.30pm', 'Tomorrow', '2017-03-16 12:06:05'),
+(6, 'sakib', '1', 'md.sakbi@gmail.com', 'asdasd', 'fsdfsf', 'df', '1215', 'bana', '013467865', '5', 'Mexican TacoMex', 'Fajitas', 'Extra Large', '40', '1', '01.30pm', 'Today', '2017-03-21 10:36:24');
+
 -- --------------------------------------------------------
 
 --
@@ -564,7 +668,7 @@ CREATE TABLE `menu_type` (
 CREATE TABLE `order_cart` (
   `id` int(100) NOT NULL,
   `name` varchar(100) NOT NULL,
-  `userid` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `address` varchar(10000) NOT NULL,
   `city` varchar(100) NOT NULL,
@@ -587,10 +691,10 @@ CREATE TABLE `order_cart` (
 -- Dumping data for table `order_cart`
 --
 
-INSERT INTO `order_cart` (`id`, `name`, `userid`, `email`, `address`, `city`, `state`, `postcode`, `country`, `phone`, `res_id`, `res_name`, `item_name`, `item_attr`, `price`, `quantity`, `order_time`, `order_day`, `date`) VALUES
-(1, '', 'rumi', 'mujtaba.rumi1@gmail.com', 'mirpur', 'dhaka', 'dhaka', '1216', 'bangladesh', '016800000', '6', '', 'burger', '', '200', '1', '08.45pm', 'Today', '2017-03-16 12:06:05'),
-(2, '', 'rumi', 'mujtaba.rumi1@gmail.com', 'mirpur', 'dhaka', 'dhaka', '1216', 'bangladesh', '016800000', '1', '  American Burger  ', 'rumi', '', '5000', '1', '01.30pm', 'Tomorrow', '2017-03-16 12:06:05'),
-(3, '', 'rumi', 'mujtaba.rumi1@gmail.com', 'mirpur', 'dhaka', 'dhaka', '1216', 'bangladesh', '016800000', '1', '  American Burger  ', 'rumi', 'rumi', '5000', '1', '01.30pm', 'Tomorrow', '2017-03-16 12:06:05');
+INSERT INTO `order_cart` (`id`, `name`, `username`, `email`, `address`, `city`, `state`, `postcode`, `country`, `phone`, `res_id`, `res_name`, `item_name`, `item_attr`, `price`, `quantity`, `order_time`, `order_day`, `date`) VALUES
+(4, '', '1', '', '', '', '', '', '', '', '5', 'Mexican TacoMex', 'Mexican Enchiladas', 'Large', '20', '1', '', '', '2017-03-21 10:31:16'),
+(6, 'rumi1', '', 'mujtaba.rumi@yahoo.com', 'Mirpur,Shewrapara', 'Dhaka', 'Dhaka', '1216', 'Bangladesh', '01680674598', '5', '  tarka  ', 'akib', 'akib', '132', '2', '04:01:22am', '', '2017-03-23 08:05:53'),
+(7, 'rumi1', 'rumi', 'mujtaba.rumi@yahoo.com', 'Mirpur,Shewrapara', 'Dhaka', 'Dhaka', '1216', 'Bangladesh', '01680674598', '5', '  tarka  ', 'akib', 'akib', '198', '3', '04:09:02am', '', '2017-03-23 08:09:20');
 
 -- --------------------------------------------------------
 
@@ -622,11 +726,12 @@ CREATE TABLE `restaurant` (
 --
 
 INSERT INTO `restaurant` (`res_id`, `name`, `type`, `address`, `city`, `state`, `postal_code`, `country`, `website`, `time`, `email`, `username`, `password`, `vat`, `status`, `Image`) VALUES
-(5, 'Mexican TacoMex', 'Mexican/American', 'Mexican / American  135 Newtownards Road, Belfast, BT4 1AB', 'Belfast', 'Belfast', '222', 'American', 'http://rak.com/', 'American', 'test@gmail.com', 'admin', 'admin', 'American', 'American', ''),
-(6, 'Naples Pizza', 'Italian / Pizza', '135 Newtownards Road, Belfast, BT4.  ', 'Belfast', 'Belfast', '222', 'American', 'www.test.com', 'American', 'test@gmail.com', 'admin', 'admin', 'American', 'American', ''),
-(8, 'Japan Food Sushi ', 'Japanese ', '135 Newtownards Road, Belfast, BT4.  ', 'Belfast', 'Belfast', '222', 'American', 'http://example.com/', 'American', 'email@gmail.com', 'admins@gmail.co', '2222', 'American', 'American', ''),
-(9, 'Dragon Tower Chinese ', 'Thai', ' 135 Newtownards Road, Belfast, BT4.  ', 'Belfast', 'Belfast', '222', 'American', 'http://example.com/', 'American', 'admin@gmail.com', 'admin', 'admin', 'American', 'American', ''),
-(11, 'China Food ', 'Chinese / Vietnam', '135 Newtownards Road, Belfast, BT4', 'Belfast', 'Belfast', '222', 'American', 'www.test.com', 'American', 'email@gmail.com', 'admins@gmail.com', 'admin', 'American', 'American', '');
+(5, '  tarka  ', '   Mexican/American   ', '   Mexican / American  135 Newtownards Road, Belfast, BT4 1AB   ', '   Belfast   ', '   Belfast   ', '   222   ', '   American   ', '', '   American   ', '', '   akib   ', '   admin   ', '  20%  ', '   American   ', '4_medium.jpg'),
+(6, 'tarka', 'Italian / Pizza', '135 Newtownards Road, Belfast, BT4.  ', 'Belfast', 'Belfast', '222', 'American', 'www.test.com', 'American', 'test@gmail.com', 'admin', 'admin', 'American', 'American', ''),
+(8, 'tarka', 'Japanese ', '135 Newtownards Road, Belfast, BT4.  ', 'Belfast', 'Belfast', '222', 'American', 'http://example.com/', 'American', 'email@gmail.com', 'admins@gmail.co', '2222', 'American', 'American', ''),
+(9, 'Burger king', 'Fast Food', '135 Newtownards Road, Belfast, BT4.  ', 'Belfast', 'Belfast', '222', 'American', 'http://example.com/', 'American', '', 'dt', '123', '50%', 'Active', ''),
+(11, 'tarka', 'Chinese / Vietnam', '135 Newtownards Road, Belfast, BT4', 'Belfast', 'Belfast', '222', 'American', 'www.test.com', 'American', 'email@gmail.com', 'admins@gmail.com', 'admin', 'American', 'American', ''),
+(12, 'flambe', 'all', 'gulshan@asd.com', 'aasdsad', 'dasdsad', 'sadasdasdas', 'sadasdsad', 'dasdas.com', 'mmk', 'asdasda@asd.com', 'mmkkmk', 'kmmkmkm', 'mkmkkm', 'sdasdsa', '8_medium.jpg');
 
 -- --------------------------------------------------------
 
@@ -637,10 +742,17 @@ INSERT INTO `restaurant` (`res_id`, `name`, `type`, `address`, `city`, `state`, 
 CREATE TABLE `restaurant_details` (
   `id` int(11) NOT NULL,
   `res_id` varchar(100) NOT NULL,
-  `rating` varchar(100) NOT NULL,
   `description` varchar(10000) NOT NULL,
   `time` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `restaurant_details`
+--
+
+INSERT INTO `restaurant_details` (`id`, `res_id`, `description`, `time`) VALUES
+(1, '9', 'mine', '3:46'),
+(4, '5', 'my own', '3:46');
 
 -- --------------------------------------------------------
 
@@ -660,23 +772,56 @@ CREATE TABLE `res_rating` (
 --
 
 INSERT INTO `res_rating` (`id`, `res_id`, `username`, `rating`) VALUES
-(1, '1', 'rumi', 3),
-(2, '', '', 3),
-(3, '', '', 3),
-(4, '', '', 3),
-(5, '', '', 4),
-(6, '', '', 5),
-(7, '', '', 2),
-(8, '', '', 4),
-(9, '', '', 5),
-(10, '', '', 4),
+(1, '5', 'rumi', 3),
+(2, '6', '', 3),
+(3, '8', '', 3),
+(4, '9', '', 3),
+(5, '11', '', 4),
+(6, '5', '', 5),
+(7, '8', '', 2),
+(8, '9', '', 4),
+(9, '9', '', 5),
+(10, '5', '', 4),
 (11, '8', '', 1),
 (12, '8', '', 5),
 (13, '8', '', 2),
 (14, '8', '', 4),
 (15, '8', '', 3),
 (16, '8', '', 5),
-(17, '14', '', 5);
+(17, '6', '', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `res_request`
+--
+
+CREATE TABLE `res_request` (
+  `id` int(100) NOT NULL,
+  `name` varchar(1000) NOT NULL,
+  `type` varchar(1000) NOT NULL,
+  `address` varchar(1000) NOT NULL,
+  `website` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `city` varchar(100) NOT NULL,
+  `state` varchar(100) NOT NULL,
+  `postal_code` varchar(100) NOT NULL,
+  `country` varchar(100) NOT NULL,
+  `time` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(1000) NOT NULL,
+  `vat` varchar(100) NOT NULL,
+  `status` varchar(200) NOT NULL,
+  `image` varchar(400) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `res_request`
+--
+
+INSERT INTO `res_request` (`id`, `name`, `type`, `address`, `website`, `email`, `city`, `state`, `postal_code`, `country`, `time`, `username`, `password`, `vat`, `status`, `image`) VALUES
+(2, 'sdsad', 'asdasd', 'asdasd@asdasd.com', 'asdasd', 'asasdas', 'adsdasd', 'asdasd', 'dasdas', 'dasdsad', 'sadsad', 'asdsad', 'asdsad', 'dsadasd', 'asdasdasd', '4_medium.jpg'),
+(3, 'sdasdsad', 'dasdsa', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -687,7 +832,8 @@ INSERT INTO `res_rating` (`id`, `res_id`, `username`, `rating`) VALUES
 CREATE TABLE `user` (
   `id` int(20) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `email` varchar(20) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `phone` varchar(200) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(20) NOT NULL,
   `full_address` varchar(1000) NOT NULL,
@@ -701,8 +847,8 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `email`, `username`, `password`, `full_address`, `city`, `state`, `postcode`, `country`) VALUES
-(30, 'rumi', 'mujtaba.rumi1@gmail.', 'rumi', '123', 'mirpur', 'dhaka', 'dhaka', '1216', 'bangladesh');
+INSERT INTO `user` (`id`, `name`, `email`, `phone`, `username`, `password`, `full_address`, `city`, `state`, `postcode`, `country`) VALUES
+(30, 'rumi1', 'mujtaba.rumi@yahoo.com', '01680674598', 'rumi', '123', 'Mirpur,Shewrapara', 'Dhaka', 'Dhaka', '1216', 'Bangladesh');
 
 --
 -- Indexes for dumped tables
@@ -817,6 +963,12 @@ ALTER TABLE `menu_type`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `order`
+--
+ALTER TABLE `order`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `order_cart`
 --
 ALTER TABLE `order_cart`
@@ -838,6 +990,12 @@ ALTER TABLE `restaurant_details`
 -- Indexes for table `res_rating`
 --
 ALTER TABLE `res_rating`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `res_request`
+--
+ALTER TABLE `res_request`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -870,7 +1028,7 @@ ALTER TABLE `about_us_details`
 -- AUTO_INCREMENT for table `about_us_feature`
 --
 ALTER TABLE `about_us_feature`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `contact`
 --
@@ -910,12 +1068,12 @@ ALTER TABLE `home_section_4`
 -- AUTO_INCREMENT for table `home_section_5`
 --
 ALTER TABLE `home_section_5`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `home_section_6`
 --
 ALTER TABLE `home_section_6`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `icon`
 --
@@ -925,42 +1083,52 @@ ALTER TABLE `icon`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 --
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
 --
 -- AUTO_INCREMENT for table `menu_attribute`
 --
 ALTER TABLE `menu_attribute`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 --
 -- AUTO_INCREMENT for table `menu_type`
 --
 ALTER TABLE `menu_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `order`
+--
+ALTER TABLE `order`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `order_cart`
 --
 ALTER TABLE `order_cart`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `restaurant`
 --
 ALTER TABLE `restaurant`
-  MODIFY `res_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `res_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `restaurant_details`
 --
 ALTER TABLE `restaurant_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `res_rating`
 --
 ALTER TABLE `res_rating`
   MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+--
+-- AUTO_INCREMENT for table `res_request`
+--
+ALTER TABLE `res_request`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `user`
 --

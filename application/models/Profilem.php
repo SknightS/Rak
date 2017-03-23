@@ -9,18 +9,9 @@ class Profilem extends CI_Model
         return $query->result();
     }
 
-    public function updateuser(){
+    public function updateuser($id,$name,$email,$username,$password,$address,$city,$state,$postcode,$country){
 
-        $id =$this->input->post('id');
-        $name=$this->input->post('name');
-        $email=$this->input->post('email');
-        $username=$this->input->post('username');
-        $password=$this->input->post('password');
-        $address=$this->input->post('address');
-        $city=$this->input->post('city');
-        $state=$this->input->post('state');
-        $postcode=$this->input->post('postal_code');
-        $country=$this->input->post('country');
+
 
         $data = array(
             'name' => $name,
