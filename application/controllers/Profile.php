@@ -20,9 +20,24 @@ class Profile extends CI_Controller
 
     public function update_user(){
 
+       /* $email=$this->input->post('email');
+        print_r($email);*/
+
+        $id =$this->input->post('id');
+        $name=$this->input->post('name');
+        $email=$this->input->post('email');
+        $username=$this->input->post('username');
+        $password=$this->input->post('password');
+        $address=$this->input->post('address');
+        $city=$this->input->post('city');
+        $state=$this->input->post('state');
+        $postcode=$this->input->post('postcode');
+        $country=$this->input->post('country');
+
+        //print_r($email);
         $this->load->model('Profilem');
-        $this->Profilem->updateuser();
-        redirect(Profile::get_instance());
+        $this->Profilem->updateuser($id,$name,$email,$username,$password,$address,$city,$state,$postcode,$country);
+        redirect( base_url());
     }
 
 

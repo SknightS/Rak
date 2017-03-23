@@ -78,6 +78,36 @@ class Aboutusm extends CI_Model
         $data = $this->security->xss_clean($data);
         $this->db->insert('about_us_feature',$data);
     }
+
+    function get_about_us_feature_content($id){
+       /* $query = $this->db->get_where('about_us_feature', array('id' => $id));
+        return $query->result();*/
+
+        $query=$this->db->query("SELECT * FROM `about_us_feature` WHERE `about_us_feature`.`id`='$id' ");
+        return $query->result();
+
+    }
+    function update_about_us_feature_content($id,$big,$small,$boxheader,$boxdetails,$box_icon){
+        /* $query = $this->db->get_where('about_us_feature', array('id' => $id));
+         return $query->result();*/
+
+        $data = array(
+            'big' => $big,
+            'small' => $small,
+            'box_header' => $boxheader,
+            'box_details' => $boxdetails,
+            'box_icon' => $box_icon
+        );
+
+
+        $this->db->where('id',$id);
+        $this->db->insert('about_us_feature',$data);
+
+
+
+
+    }
+
     function insert_about_us_banner_content(){
         $details = $this->input->post('details');
         $phone  = $this->input->post('phone');

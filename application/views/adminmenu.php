@@ -11,22 +11,34 @@
 <ul class="nav navbar-right top-nav">
 
     <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+        <?php if($this->session->userdata('loggedin')=="true"){
+        $username=$this->session->userdata('username');
+        $usertype=$this->session->userdata('type');
+        if($usertype=="Admin"){
+
+        ?>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Admin <b class="caret"></b></a>
         <ul class="dropdown-menu">
+
             <li>
-                <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-            </li>
-            <li class="divider"></li>
-            <li>
-                <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                <a href="<?php echo base_url()?>Home/Logout"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
             </li>
         </ul>
+        <?php }elseif ($usertype=="Res"){?>
+
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $username?> <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="<?php echo base_url()?>Res_Admin_Home"><i class="fa fa-fw fa-user"></i> Profile</a>
+            </li>
+
+            <li class="divider"></li>
+            <li>
+                <a href="<?php echo base_url()?>Home/Logout"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+            </li>
+        </ul>
+<?php } }?>
+
     </li>
 </ul>
 <div class="collapse navbar-collapse navbar-ex1-collapse">

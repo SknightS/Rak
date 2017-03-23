@@ -172,78 +172,8 @@
 
 
 
-                    <div class="panel panel-success">
-                        <div class="panel-heading"><h3>Menu Attribute Content</h3></div>
-                        <div class="panel-body">
-
-                            <?php if($this->input->post('btn_search_menu_attr')){
-                            ?>
-                            <div>
-                                <table class=" table table-responsive" border="1">
-                                    <tr>
-                                        <th>id</th>
-                                        <th>Res_id</th>
-                                        <th>Item Name</th>
-                                        <th>Item attribute</th>
-                                        <th>Price</th>
-                                        <th colspan="2">Action</th>
-                                    </tr>
-                                    <?php foreach ($this->data['te'] as $e) {?>
-                                    <!--<form method="post" action="<?php echo base_url()?>Admin_menu_attribute/edit_res"  >
-                                    -->
-                                        <tr>
-                                            <td><?php echo $e->id ?></td>
-                                            <td><?php echo $e->res_id ?></td>
-                                            <td><?php echo $e->item_name ?></td>
-                                            <td><?php echo $e->item_attribute?></td>
-                                            <td><?php echo $e->price?></td>
-                                            <td><button  data-panel-id="<?= $e->id ?>" onclick="selectid4(this)">Edit</button></td>
-
-                                        </tr>
-                                    <!--</form>-->
-                                    <?php }} ?>
-                                </table>
-                            </div>
 
 
-
-                            <?php if(!$this->input->post('btn_search_menu_attr')){
-                            $count = 1;
-                            ?>
-
-                            <table class=" table table-responsive" border="1">
-                                <tr>
-                                    <th>id</th>
-                                    <th>Res_id</th>
-                                    <th>Item Name</th>
-                                    <th>Item attribute</th>
-                                    <th>Price</th>
-                                    <th colspan="2">Action</th>
-
-
-                                </tr>
-
-                                <?php
-                                foreach ($mattribute as $s) {
-                                ?>
-
-                                    <tr>
-                                        <td><?php echo $s->id ?></td>
-                                        <td><?php echo $s->res_id ?></td>
-                                        <td><?php echo $s->item_name ?></td>
-                                        <td><?php echo $s->item_attribute ?></td>
-                                        <td><?php echo $s->price ?></td>
-                                        <td>
-                                            <button data-panel-id="<?= $s->id ?>" onclick="selectid(this)">Edit</button>
-                                        </td>
-                                    </tr>
-
-                                    <?php
-                                        $count++;
-                                        }}
-                                    ?>
-
-                            </table>
 
                             <div id="myModal3" class="modal">
                                 <br/><br/><br/>
@@ -259,10 +189,9 @@
 
                             </div>
 
-                        </div>
 
 
-                    </div>
+
                 </div>
             </div>
         </div>

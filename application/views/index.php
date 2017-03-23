@@ -43,16 +43,6 @@
                    <?php echo $big['small']; ?>
             </p>
             <?php } ?>
-            <form method="post" action="list_page.php">
-                <div id="custom-search-input">
-                    <div class="input-group">
-                        <input type="text" class=" search-query" placeholder="Your Address or postal code">
-                        <span class="input-group-btn">
-                        <input type="submit" class="btn_search" value="submit">
-                        </span>
-                    </div>
-                </div>
-            </form>
         </div><!-- End sub_content -->
     </div>
     <img src="img/video_fix.png" alt="" class="header-video--media" data-video-src="video/intro" data-teaser-source="video/intro" data-provider="Vimeo" data-video-width="1920" data-video-height="960">

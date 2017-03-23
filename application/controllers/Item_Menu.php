@@ -118,14 +118,32 @@ class Item_Menu extends CI_Controller
     }
     public function order_now(){
 
-        $this->load->view('cart');
+        if ($this->session->userdata('type') == "User") {
+            $usename=$this->session->userdata('username');
+            $this->load->model('Userm');
+            $this->data['show_userinfo'] = $this->Userm->show_userinfo($usename);
+            $this->load->view('cart',$this->data);
+            /*foreach ($this->data['show_userinfo'] as $e){
+
+                //print_r($e->res_id);
+                $id=$e->id;
+                //print_r($id);
+
+        }*/
+        }else {
+
+            $this->load->view('cart');
+        }
+
+
+        //$this->load->view('cart');
     }
     public function order_confirm(){
 
         //$this->load->view('cart');
         $name = $this->input->post('name_order');
         //$userid=$this->session->userdata('userid');
-        $userid= 1;
+        $username= $this->session->userdata('username');;
         $phone = $this->input->post('tel_order');
         $email = $this->input->post('email_order');
         $address = $this->input->post('address_order');
@@ -134,7 +152,8 @@ class Item_Menu extends CI_Controller
         $post_code = $this->input->post('pcode_oder');
         $country = $this->input->post('country_order');
         $order_day = $this->input->post('delivery_schedule_day');
-        $order_time = $this->input->post('delivery_schedule_time');
+        $order_time = $this->input->post('order_time');
+        $date=$this->input->post('date');
         $id = $this->input->post('res_id');
         $att_id = $this->input->post('attr_id');
         $price = $this->input->post('price');
@@ -150,7 +169,7 @@ class Item_Menu extends CI_Controller
             $item_attr=$e->item_attribute;
             //print_r($item_attr);
             $this->load->model('Orderm');
-            $this->Orderm->order($userid,$name,$phone,$email,$address,$city,$state,$post_code,$country,$order_day,$order_time,$id,$res_name,$item_attr,$price,$quantity,$item_name);
+            $this->Orderm->order($name,$username,$phone,$email,$address,$city,$state,$post_code,$country,$order_day,$order_time,$date,$id,$res_name,$item_attr,$price,$quantity,$item_name);
         }
         redirect(Home);
         //print_r($res_id);

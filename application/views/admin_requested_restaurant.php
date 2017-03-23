@@ -87,13 +87,21 @@
 
                             <?php
                             $count=1;
+
                            ?>
                             <div class="table-responsive">
                                 <table class="table table-borderd">
+
                                     <thead>
                                         <tr>
 
+<<<<<<< HEAD
                                             <th>SL</th>
+=======
+
+
+
+>>>>>>> 0c47201599741f9edee1ff6d6ef1da5fdb9f2e15
                                             <th>Name</th>
                                             <th>Type</th>
                                             <th>Address</th>
@@ -115,10 +123,12 @@
                                         </tr>
                                     </thead>
 
+
+                                    <form method="post"   >
                                     <?php foreach ($req_restaurant as $s){ ?>
                                         <tbody>
                                             <tr>
-                                                <td><?php echo $count ?></td>
+
                                                 <td><?php echo $s->name ?></td>
                                                 <td><?php echo $s->type ?></td>
                                                 <td><?php echo $s->address ?></td>
@@ -135,32 +145,29 @@
                                                 <td><?php echo $s->status ?></td>
                                                 <td><img src = "<?php echo base_url()?>/img/slider_single_restuarant/<?php echo $s->image ?>" height="100" width="100"/></td>
 
+
                                                 <td> <button class="btn btn-success" data-panel-id="<?= $s->res_id ?>" onclick="selectid(this)">Accept</button> </td>
                                                 <td> <button class="btn btn-success" data-panel-id="<?= $s->res_id ?>" onclick="selectid1(this)">Reject</button> </td>
+
+
+                                                <td><button class="btn btn-success" type="submit"  formaction="<?php echo base_url()?>Admin_Restaurant_Req/accept_res/<?php echo $s->id ?>" onclick="return confirm('Are you confirm to accept this Resturant?')" >Accept</button></td>
+
+                                                <td><button class="btn btn-danger" type="submit"  formaction="<?php echo base_url()?>Admin_Restaurant_Req/delete_res/<?php echo $s->id ?>" onclick="return confirm('Are you confirm to delete this Resturant?')" >Delete</button></td>
+
+
+
                                             </tr>
                                         </tbody>
 
                                         <?php
-                                        $count++;
+
                                     }
                                     ?>
                                 </table>
                             </div>
                         </div>
 
-                            <div id="myModal3" class="modal">
 
-                                <!-- Modal content -->
-                                <div class="modal-content">
-                                    <span class="close">×</span>
-
-                                    <h2>Edit Content</h2>
-                                    <div id="txtHint"></div>
-
-                                </div>
-
-
-                            </div>
 
                         </div>
 
@@ -180,6 +187,7 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
+<<<<<<< HEAD
 <script>
 
     // Get the modal
@@ -249,6 +257,9 @@
 
 
 </script>
+=======
+
+>>>>>>> 0c47201599741f9edee1ff6d6ef1da5fdb9f2e15
 <script>
     $(document).ready(function() {
         $('#summernote').summernote();
