@@ -97,19 +97,13 @@
                                 <table class=" table table-bordered">
                                     <thead>
                                         <tr>
+                                            <th>SL</th>
                                             <th>Name</th>
+                                            <th>Phone</th>
                                             <th>Email</th>
                                             <th>Address</th>
-                                            <th>City</th>
-                                            <th>State</th>
-                                            <th>PostCode</th>
-                                            <th>Country</th>
-                                            <th>Phone</th>
                                             <th>Restaurant Name</th>
-                                            <th>Item Name</th>
-                                            <th>Item Attribute</th>
-                                            <th>Price</th>
-                                            <th>Quantity</th>
+                                            <th>Oder</th>
                                             <th>Order Time</th>
                                             <th>Order Day</th>
                                             <th>Date</th>
@@ -118,23 +112,70 @@
                                     </thead>
 
                                     <form method="post"   >
-                                        <?php foreach ($this->data['te'] as $e) {?>
+                                        <?php
+                                        $count =1;
+                                        foreach ($this->data['te'] as $e) {?>
 
                                             <tbody>
                                                 <tr>
-                                                    <td><?php echo $e->name ?> </td>
-                                                    <td><?php echo $e->email ?></td>
-                                                    <td><?php echo $e->address ?></td>
-                                                    <td><?php echo $e->city ?></td>
-                                                    <td><?php echo $e->state ?></td>
-                                                    <td><?php echo $e->postcode ?></td>
-                                                    <td><?php echo $e->country ?></td>
+                                                    <td><?php echo $count ?> </td>
+                                                    <td><?php echo $e->name ?></td>
                                                     <td><?php echo $e->phone ?></td>
+                                                    <td><?php echo $e->email?></td>
+                                                    <td><?php echo $e->address ?></td>
                                                     <td><?php echo $e->res_name ?></td>
-                                                    <td><?php echo $e->item_name ?></td>
-                                                    <td><?php echo $e->item_attr ?></td>
-                                                    <td><?php echo $e->price ?></td>
-                                                    <td><?php echo $e->quantity ?></td>
+                                                    <td>
+                                                        <table class="table-bordered table-responsive">
+                                                            <tr>
+                                                            <th>
+                                                                Item Name
+                                                            </th>
+                                                            <th>
+                                                                Size
+                                                            </th>
+                                                            <th>
+                                                                Quantity
+                                                            </th>
+                                                            <th>
+                                                                price
+                                                            </th>
+                                                            </tr>
+                                                            <?php
+                                                            $res_id=$e->res_id;
+                                                            $date=$e->date;
+                                                            $query=$this->db->query("SELECT * FROM `order_cart` WHERE `res_id` = '$res_id' and `date`='$date'" );
+                                                            $total=1;
+                                                            foreach ( $query->result() as $s ) {
+
+                                                                ?>
+                                                                <tr>
+                                                                    <td>
+                                                                        <?php echo $s->item_name ?>
+                                                                    </td>
+                                                                    <td>
+                                                                        <?php echo $s->item_attr ?>
+                                                                    </td>
+                                                                    <td>
+                                                                        <?php echo $s->quantity ?>
+                                                                    </td>
+                                                                    <td>
+                                                                        <?php echo $s->price ?>
+                                                                    </td>
+                                                                </tr>
+
+                                                                <?php
+                                                            
+                                                            }
+
+                                                            ?>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td>total</td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
                                                     <td><?php echo $e->order_time ?></td>
                                                     <td><?php echo $e->order_day ?></td>
                                                     <td><?php echo $e->date ?></td>
@@ -146,7 +187,9 @@
                                                 </tr>
                                             </tbody>
 
-                                        <?php } ?>
+                                        <?php
+                                        $count++;
+                                        } ?>
                                     </form>
 
                                 </table>
